@@ -17,7 +17,7 @@
 
 #pragma mark - 新聞
 #define API_NEWS                        @"news"
-
+#define API_NEWS_BANNER                 @"?json=get_app_index"
 
 
 #endif /* BJAPIAddress_h */

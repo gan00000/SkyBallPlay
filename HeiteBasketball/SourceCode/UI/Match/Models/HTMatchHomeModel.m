@@ -12,7 +12,7 @@
 
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{
-             @"match_id": @"id"
+             @"game_id": @"id"
              };
 }
 

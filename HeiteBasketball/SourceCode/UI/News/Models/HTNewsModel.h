@@ -17,7 +17,8 @@
 @property (nonatomic, copy) NSString *date;
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, copy) NSString *img_url;
-@property (nonatomic, copy) NSString *type;
-@property (nonatomic, assign) NSInteger read_count;
+@property (nonatomic, copy) NSString *view_count;
+@property (nonatomic, copy) NSString *time;
+@property (nonatomic, strong) NSDictionary *custom_fields;
 
 @end

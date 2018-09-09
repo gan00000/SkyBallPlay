@@ -10,7 +10,7 @@
 
 @interface HTMatchHomeModel : NSObject
 
-@property (nonatomic, copy) NSString *match_id;
+@property (nonatomic, copy) NSString *game_id;
 @property (nonatomic, copy) NSString *scheduleStatus;
 @property (nonatomic, copy) NSString *originalDate;
 @property (nonatomic, copy) NSString *originalTime;

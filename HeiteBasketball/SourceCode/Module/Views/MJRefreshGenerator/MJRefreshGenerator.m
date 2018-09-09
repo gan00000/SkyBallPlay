@@ -20,7 +20,7 @@
     return header;
 }
 + (MJRefreshBackStateFooter *)bj_foorterWithRefreshingBlock:(MJRefreshComponentRefreshingBlock)refreshingBlock {
-    MJRefreshBackStateFooter *footer = [MJRefreshBackStateFooter footerWithRefreshingBlock:refreshingBlock];
+    MJRefreshBackStateFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:refreshingBlock];
     [footer setTitle:@"上拉加载更多" forState:MJRefreshStateIdle];
     [footer setTitle:@"释放加载" forState:MJRefreshStatePulling];
     [footer setTitle:@"正在加载" forState:MJRefreshStateRefreshing];

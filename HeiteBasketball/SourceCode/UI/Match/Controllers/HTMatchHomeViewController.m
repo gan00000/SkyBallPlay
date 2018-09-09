@@ -38,11 +38,6 @@
     [super viewDidLoad];
     
     [self setupViews];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
     [self loadData];
 }
 
@@ -126,6 +121,12 @@
     self.tableView.mj_header = [MJRefreshGenerator bj_headerWithRefreshingBlock:^{
         [weakSelf loadData];
     }];
+    
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     
     // test
     NSDateFormatter *formt = [NSDateFormatter dr_dateFormatter];

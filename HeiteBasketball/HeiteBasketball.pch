@@ -21,6 +21,7 @@
 #import "MJRefreshGenerator.h"
 #import "UIView+Toast.h"
 #import "UIView+Loading.h"
+#import "UIView+EmptyView.h"
 #import "BJLoadingHud.h"
 #import "NSDate+Core.h"
 #import "NSDateFormatter+DRExtension.h"

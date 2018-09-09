@@ -51,7 +51,7 @@
  */
 + (NSString *)dateToShowFromDateString:(NSString *)dateString {
     NSDateFormatter *formt = [NSDateFormatter dr_dateFormatter];
-    [formt setDateFormat:@"yyyy-MM-dd"];
+    [formt setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     return [self dateToShowFromDate:[formt dateFromString:dateString]];
 }
 
