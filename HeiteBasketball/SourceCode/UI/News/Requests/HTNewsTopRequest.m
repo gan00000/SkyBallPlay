@@ -10,4 +10,14 @@
 
 @implementation HTNewsTopRequest
 
++ (void)requestWithSuccessBlock:(void(^)(NSArray<HTNewsModel *> *newsList))successBlock
+                     errorBlock:(BJServiceErrorBlock)errorBlock {
+    [BJHTTPServiceEngine getRequestWithFunctionPath:API_NEWS_TOP params:nil successBlock:^(id responseData) {
+        NSArray *newsList = [NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"posts"]];
+        if (successBlock) {
+            successBlock(newsList);
+        }
+    } errorBlock:errorBlock];
+}
+
 @end

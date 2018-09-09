@@ -9,6 +9,7 @@
 #import "HTNewsModel.h"
 #import "BJDateFormatUtility.h"
 
+// TODO: 在set方法中xxxx...
 @implementation HTNewsModel
 
 + (NSDictionary *)modelCustomPropertyMapper {
@@ -44,6 +45,24 @@
         }    
     }
     return _img_url;
+}
+
+- (CGFloat)detailHeaderHeight {
+    if (!_detailHeaderHeight) {
+        CGFloat titleHeight = [self.title jx_sizeWithFont:[UIFont systemFontOfSize:17 weight:UIFontWeightMedium] constrainedToWidth:SCREEN_WIDTH-30].height;
+        _detailHeaderHeight = titleHeight + 70;
+    }
+    return _detailHeaderHeight;
+}
+
+- (NSString *)news_type {
+    if (!_news_type) {
+        _news_type = @"新聞";
+        if ([RX(@"<iframe>(.*?)</iframe>") isMatch:self.content]) {
+            _news_type = @"影片";
+        }
+    }
+    return _news_type;
 }
 
 @end

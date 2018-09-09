@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BJHTTPServiceEngine.h"
+#import "HTNewsModel.h"
 
 @interface HTNewsTopRequest : NSObject
+
++ (void)requestWithSuccessBlock:(void(^)(NSArray<HTNewsModel *> *newsList))successBlock
+                     errorBlock:(BJServiceErrorBlock)errorBlock;
 
 @end

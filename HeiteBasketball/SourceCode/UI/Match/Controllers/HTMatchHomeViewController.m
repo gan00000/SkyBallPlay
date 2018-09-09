@@ -25,6 +25,7 @@
 @property (nonatomic, strong) NSDate *startDate;
 @property (nonatomic, strong) NSDate *endDate;
 @property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, assign) BOOL requesting;
 
 @end
 
@@ -137,7 +138,7 @@
     [self refreshTimeTitle];
     [self.view showLoadingView];
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:5.0
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:10.0
                                                   target:self
                                                 selector:@selector(loadData)
                                                 userInfo:nil
@@ -145,6 +146,12 @@
 }
 
 - (void)loadData {
+    if (self.requesting) {
+        return;
+    }
+    
+    self.requesting = YES;
+    
     self.endDate = [self.startDate dateByAddingDays:7];
     
     [HTMatchHomeRequest requestWithStartDate:[self ymdWithDate:self.startDate]
@@ -164,6 +171,8 @@
                                     [BJLoadingHud hideHUDInView:self.view];
                                     
                                     [self refreshTimeTitle];
+                                    
+                                    self.requesting = NO;
                                 } errorBlock:^(BJError *error) {
                                     [self.view hideLoadingView];
                                     [self.view showToast:error.msg];
@@ -176,6 +185,8 @@
                                             [weakSelf.view showLoadingView];
                                         }];
                                     }
+                                    
+                                    self.requesting = NO;
                                 }];
 }
 

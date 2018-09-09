@@ -8,17 +8,35 @@
 
 #import "HTNewsHeaderCell.h"
 
+@interface HTNewsHeaderCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *kindLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *viewCountLabel;
+
+
+@end
+
 @implementation HTNewsHeaderCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setupWithNewsModel:(HTNewsModel *)newsModel {
+    self.titleLabel.text = newsModel.title;
+    self.kindLabel.text = newsModel.news_type;
+    self.timeLabel.text = newsModel.time;
+    self.viewCountLabel.text = newsModel.view_count;
 }
 
 @end

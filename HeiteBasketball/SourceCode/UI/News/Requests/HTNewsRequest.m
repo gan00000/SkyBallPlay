@@ -29,7 +29,7 @@
     params[@"count"] = @20;
     params[@"page"] = @(self.page);
     
-    [BJHTTPServiceEngine getRequestWithFunctionPath:API_NEWS params:params successBlock:^(id responseData) {
+    [BJHTTPServiceEngine getRequestWithFunctionPath:API_NEWS_HOME params:params successBlock:^(id responseData) {
         [self.newsList removeAllObjects];
         
         if (self.page < [responseData[@"pages"] integerValue]) {
@@ -59,7 +59,7 @@
     params[@"count"] = @20;
     params[@"page"] = @(self.page);
     
-    [BJHTTPServiceEngine getRequestWithFunctionPath:API_NEWS params:params successBlock:^(id responseData) {
+    [BJHTTPServiceEngine getRequestWithFunctionPath:API_NEWS_HOME params:params successBlock:^(id responseData) {
         if (self.page < [responseData[@"pages"] integerValue]) {
             self.page ++;
             self.hasMore = YES;

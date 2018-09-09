@@ -13,4 +13,5 @@
 
 @property (nonatomic, weak) HTNewsModel *newsModel;
 
+
 @end

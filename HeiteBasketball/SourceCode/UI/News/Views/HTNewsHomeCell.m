@@ -37,6 +37,7 @@
     [self.thumbImageView sd_setImageWithURL:[NSURL URLWithString:newsModel.img_url] placeholderImage:HT_DEFAULT_IMAGE];
     self.titleLabel.text = newsModel.title;
     self.timeLabel.text = newsModel.time;
+    self.kindLabel.text = newsModel.news_type;
     self.viewLabel.text = newsModel.view_count;
 }
 

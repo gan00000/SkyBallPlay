@@ -16,8 +16,9 @@
 #define API_LIVE_FEED                   @"api/get_live_feed"
 
 #pragma mark - 新聞
-#define API_NEWS                        @"news"
+#define API_NEWS_HOME                   @"news"
 #define API_NEWS_BANNER                 @"?json=get_app_index"
+#define API_NEWS_TOP                    @"api/get_top_posts"
 
 
 #endif /* BJAPIAddress_h */

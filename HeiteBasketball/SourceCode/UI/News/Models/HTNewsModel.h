@@ -16,9 +16,14 @@
 @property (nonatomic, copy) NSString *url;
 @property (nonatomic, copy) NSString *date;
 @property (nonatomic, copy) NSString *content;
-@property (nonatomic, copy) NSString *img_url;
-@property (nonatomic, copy) NSString *view_count;
 @property (nonatomic, copy) NSString *time;
 @property (nonatomic, strong) NSDictionary *custom_fields;
+
+@property (nonatomic, copy) NSString *img_url;
+@property (nonatomic, copy) NSString *view_count;
+@property (nonatomic, assign) CGFloat detailHeaderHeight;
+@property (nonatomic, copy) NSString *news_type;
+@property (nonatomic, copy) NSString *iframe;
+//@property (nonatomic, copy) <#class#> *<#name#>;
 
 @end

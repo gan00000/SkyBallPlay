@@ -33,6 +33,8 @@
 		FE6BD08821457D920090118A /* HTNewsWebCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6BD08621457D920090118A /* HTNewsWebCell.m */; };
 		FE6BD08921457D920090118A /* HTNewsWebCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE6BD08721457D920090118A /* HTNewsWebCell.xib */; };
 		FE6BD08F21457FEC0090118A /* HTNewsTopRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6BD08E21457FEC0090118A /* HTNewsTopRequest.m */; };
+		FE6BD092214584C30090118A /* HTNewsTopHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6BD091214584C30090118A /* HTNewsTopHeaderView.m */; };
+		FE6BD094214584DA0090118A /* HTNewsTopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE6BD093214584DA0090118A /* HTNewsTopHeaderView.xib */; };
 		FEC112622143D058002DB617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC112612143D058002DB617 /* Assets.xcassets */; };
 		FEC112682143D058002DB617 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC112672143D058002DB617 /* main.m */; };
 		FEC115BD2143D4A0002DB617 /* BJLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113132143D4A0002DB617 /* BJLaunchViewController.m */; };
@@ -159,6 +161,9 @@
 		FE6BD08721457D920090118A /* HTNewsWebCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTNewsWebCell.xib; sourceTree = "<group>"; };
 		FE6BD08D21457FEC0090118A /* HTNewsTopRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTNewsTopRequest.h; sourceTree = "<group>"; };
 		FE6BD08E21457FEC0090118A /* HTNewsTopRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTNewsTopRequest.m; sourceTree = "<group>"; };
+		FE6BD090214584C30090118A /* HTNewsTopHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTNewsTopHeaderView.h; sourceTree = "<group>"; };
+		FE6BD091214584C30090118A /* HTNewsTopHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTNewsTopHeaderView.m; sourceTree = "<group>"; };
+		FE6BD093214584DA0090118A /* HTNewsTopHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTNewsTopHeaderView.xib; sourceTree = "<group>"; };
 		FEC112552143D057002DB617 /* HeiteBasketball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeiteBasketball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC112612143D058002DB617 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEC112662143D058002DB617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -764,6 +769,9 @@
 				FE6BD08521457D920090118A /* HTNewsWebCell.h */,
 				FE6BD08621457D920090118A /* HTNewsWebCell.m */,
 				FE6BD08721457D920090118A /* HTNewsWebCell.xib */,
+				FE6BD090214584C30090118A /* HTNewsTopHeaderView.h */,
+				FE6BD091214584C30090118A /* HTNewsTopHeaderView.m */,
+				FE6BD093214584DA0090118A /* HTNewsTopHeaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -994,6 +1002,7 @@
 				FEC1172B2143E43A002DB617 /* Launch.xcassets in Resources */,
 				FEC1161C2143D4A1002DB617 /* BJTabBarView.xib in Resources */,
 				FEC116EF2143D8C9002DB617 /* MatchHome.storyboard in Resources */,
+				FE6BD094214584DA0090118A /* HTNewsTopHeaderView.xib in Resources */,
 				FE6BD04D2144FAF60090118A /* ViewStatus.xcassets in Resources */,
 				FEC116FF2143DCAF002DB617 /* FilmHome.storyboard in Resources */,
 				FE6BD0602144FED00090118A /* MatchWordLive.storyboard in Resources */,
@@ -1017,12 +1026,13 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FDStackView/FDStackView.framework",
 				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/HexColors/HexColors.framework",
+				"${BUILT_PRODUCTS_DIR}/JXExtension/JXExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/LTNavigationBar/LTNavigationBar.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
@@ -1030,6 +1040,7 @@
 				"${BUILT_PRODUCTS_DIR}/NJKWebViewProgress/NJKWebViewProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/RegExCategories/RegExCategories.framework",
+				"${BUILT_PRODUCTS_DIR}/SDVersion/SDVersion.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
@@ -1041,6 +1052,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDStackView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HexColors.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JXExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LTNavigationBar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
@@ -1048,13 +1060,14 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NJKWebViewProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RegExCategories.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDVersion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebViewJavascriptBridge.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BF9D3AFDF9A356103E352831 /* [CP] Check Pods Manifest.lock */ = {
@@ -1100,6 +1113,7 @@
 				FEC1164A2143D4A1002DB617 /* BJNavigationController.m in Sources */,
 				FEC116102143D4A1002DB617 /* BJTabBarView.m in Sources */,
 				FEC116932143D4A1002DB617 /* BJHTTPServiceEngine.m in Sources */,
+				FE6BD092214584C30090118A /* HTNewsTopHeaderView.m in Sources */,
 				FEC116B82143D4A1002DB617 /* BJBaseNavigationController.m in Sources */,
 				FEDF8FCE21444A3E005C7C4D /* NSDateFormatter+DRExtension.m in Sources */,
 				FE6BD07921452B570090118A /* HTNewsHomeBannerCell.m in Sources */,

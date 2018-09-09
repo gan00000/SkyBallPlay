@@ -19,5 +19,6 @@ pod 'BlocksKit'
 pod 'HexColors', '4.0.0'
 pod 'LTNavigationBar', :git => 'https://github.com/JeasonL/LTNavigationBar.git'
 pod 'FDStackView', :git => 'https://github.com/forkingdog/FDStackView.git'
+pod 'JXExtension'
 
 end

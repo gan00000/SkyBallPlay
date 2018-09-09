@@ -17,6 +17,7 @@
 #import <HexColors/HexColors.h>
 #import <RegExCategories/RegExCategories.h>
 #import <HMSegmentedControl/HMSegmentedControl.h>
+#import <JXExtension/JXExtension.h>
 
 #import "MJRefreshGenerator.h"
 #import "UIView+Toast.h"

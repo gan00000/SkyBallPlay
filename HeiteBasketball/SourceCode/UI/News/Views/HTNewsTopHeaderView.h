@@ -1,5 +1,5 @@
 //
-//  HTNewsHeaderCell.h
+//  HTNewsTopHeaderView.h
 //  HeiteBasketball
 //
 //  Created by 冯生伟 on 2018/9/10.
@@ -7,10 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HTNewsModel.h"
 
-@interface HTNewsHeaderCell : UITableViewCell
-
-- (void)setupWithNewsModel:(HTNewsModel *)newsModel;
+@interface HTNewsTopHeaderView : UITableViewHeaderFooterView
 
 @end

@@ -45,12 +45,19 @@
 }
 
 #pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0) {
+        return 1;
+    }
     return self.newsList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0) {
         kWeakSelf
         HTNewsHomeBannerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsHomeBannerCell"];
         [cell setupWithNewsModels:self.bannerList];
@@ -69,13 +76,17 @@
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
+    if (indexPath.section == 0) {
         return SCREEN_WIDTH * 2 / 3;
     }
     return 90;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return;
+    }
+    
     HTNewsModel *newsModel = self.newsList[indexPath.row];
     
     HTNewsDetailViewController *detailVc = [HTNewsDetailViewController viewController];
@@ -146,6 +157,8 @@
         self.error = nil;
     }
     
+    self.tableView.mj_header.hidden = NO;
+    self.tableView.mj_footer.hidden = NO;
     [self.tableView reloadData];
 }
 

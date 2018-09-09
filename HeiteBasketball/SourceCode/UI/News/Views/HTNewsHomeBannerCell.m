@@ -95,13 +95,7 @@
         }
     }
     
-    NSInteger index = (NSInteger)(self.scrollView.contentOffset.x / SCREEN_WIDTH);
-    if (self.bannerList.count > 1) {
-        index -= 1;
-    }
-    HTNewsModel *currentModel = self.bannerList[index];
-    self.titleLabel.text = currentModel.title;
-
+    [self p_setupTitle];
     [self startScrollTimer];
 }
 
@@ -127,6 +121,7 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [self p_setupTitle];
     [self p_fixScrollOffset];
 }
 
@@ -181,6 +176,21 @@
 
 - (CGFloat)p_height {
     return CGRectGetHeight(self.bounds);
+}
+
+- (void)p_setupTitle {
+    NSInteger index = (NSInteger)(self.scrollView.contentOffset.x / SCREEN_WIDTH);
+    if (self.bannerList.count > 1) {
+        index -= 1;
+    }
+    
+    if (index < 0) {
+        index = self.bannerList.count - 1;
+    } else if (index >= self.bannerList.count) {
+        index = 0;
+    }
+    HTNewsModel *currentModel = self.bannerList[index];
+    self.titleLabel.text = currentModel.title;
 }
 
 @end

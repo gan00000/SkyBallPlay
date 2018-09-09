@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HTNewsModel.h"
 
 @interface HTNewsWebCell : UITableViewCell
+
+@property (nonatomic, copy) void(^onContentHeightUpdateBlock)(CGFloat height);
+
+- (void)setupWithNewsModel:(HTNewsModel *)newsModel;
 
 @end
