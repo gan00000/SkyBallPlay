@@ -7,6 +7,7 @@
 //
 
 #import "BJBaseViewController.h"
+#import <LTNavigationBar/UINavigationBar+Awesome.h>
 
 @interface BJBaseViewController ()
 
@@ -22,7 +23,11 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = RGBA_COLOR_HEX(0xf4f4f4);
-    self.title = self.tabBarItem.title;
+    
+    [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor redColor]];
+    if (self.navigationController.viewControllers.count == 1) {
+        self.title = self.navigationController.tabBarItem.title;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {

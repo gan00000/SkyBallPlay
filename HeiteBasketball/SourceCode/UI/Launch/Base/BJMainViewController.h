@@ -11,7 +11,7 @@
 typedef NS_ENUM(NSInteger, BJMainTabIndex) {
     BJMainTabIndexMatch= 0,
     BJMainTabIndexNews,
-    BJMainTabIndexVideo,
+    BJMainTabIndexFilm,
     BJMainTabIndexData,
     BJMainTabIndexRank
 };

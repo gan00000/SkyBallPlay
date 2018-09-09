@@ -54,8 +54,8 @@
         
         NSDictionary *responseDict = responseData;
         
-        NSString *code = [NSString stringWithFormat:@"%@", responseDict[@"code"]];
-        if (code.length > 0 && code.integerValue == BJResponseCodeOK) {
+        NSString *code = [NSString stringWithFormat:@"%@", responseDict[@"status"]];
+        if (code.length > 0 && [code isEqualToString:@"ok"]) {
             if (successBlock) {
                 successBlock(responseData);
             }

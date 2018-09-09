@@ -8,9 +8,9 @@
 
 #import "BJServiceConfigurator.h"
 
-static NSString * const kServerProductURL = @"http://api.benjia99.com/service/";
-static NSString * const kServerTestURL = @"http://api.benjia99.com/service/"; //测试环境地址
-static NSString * const kServerDevURL = @"http://api.benjia99.com/service/"; //开发环境地址
+static NSString * const kServerProductURL = @"http://app.ballgametime.com/";
+static NSString * const kServerTestURL = @"http://app.ballgametime.com/"; //测试环境地址
+static NSString * const kServerDevURL = @"http://app.ballgametime.com/"; //开发环境地址
 
 static NSString * const kH5ProductURL = @"";
 static NSString * const kH5TestURL = @""; //测试环境地址
@@ -26,8 +26,11 @@ static NSString * const kServiceUrlTypeKey = @"kServiceUrlTypeKey"; //正式环�
     dispatch_once(&token, ^{
         instance = [[BJServiceConfigurator alloc] init];
         
-        //调试时默认为测试环境
-        [[NSUserDefaults standardUserDefaults] registerDefaults:@{kServiceUrlTypeKey:@0}];
+        if (BJ_DEBUG) {
+            [[NSUserDefaults standardUserDefaults] registerDefaults:@{kServiceUrlTypeKey:@1}];
+        } else {
+            [[NSUserDefaults standardUserDefaults] registerDefaults:@{kServiceUrlTypeKey:@0}];
+        }
         
     });
     return instance;

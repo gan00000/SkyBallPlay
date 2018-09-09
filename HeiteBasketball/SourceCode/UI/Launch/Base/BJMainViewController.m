@@ -9,7 +9,7 @@
 #import "BJMainViewController.h"
 #import "HTMatchHomeViewController.h"
 #import "HTNewsHomeViewController.h"
-#import "HTVideoHomeViewController.h"
+#import "HTFilmHomeViewController.h"
 #import "HTDataHomeViewController.h"
 #import "HTRankHomeViewController.h"
 
@@ -22,7 +22,7 @@
 @property (nonatomic, strong) HTNewsHomeViewController *vc2;
 
 @property (nonatomic, strong) BJNavigationController *nav3;
-@property (nonatomic, strong) HTVideoHomeViewController *vc3;
+@property (nonatomic, strong) HTFilmHomeViewController *vc3;
 
 @property (nonatomic, strong) BJNavigationController *nav4;
 @property (nonatomic, strong) HTDataHomeViewController *vc4;
@@ -55,7 +55,7 @@
 
 #pragma mark - 
 - (NSArray<NSString *> *)tabBarTitles {
-    return @[@"比赛", @"新闻", @"影片", @"数据", @"排行"];
+    return @[@"比賽", @"新聞", @"影片", @"數據", @"排行"];
 }
 
 - (NSArray<UIImage *> *)tabBarIcons {
@@ -63,7 +63,7 @@
              [[UIImage imageNamed:@"tab_icon_normal2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_normal3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_normal4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-             [[UIImage imageNamed:@"tab_icon_normal4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+             [[UIImage imageNamed:@"tab_icon_normal5"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 }
 
 - (NSArray<UIImage *> *)tabBarSelectedIcons {
@@ -71,7 +71,7 @@
              [[UIImage imageNamed:@"tab_icon_selected2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_selected3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_selected4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-             [[UIImage imageNamed:@"tab_icon_selected4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+             [[UIImage imageNamed:@"tab_icon_selected5"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 }
 
 - (NSArray<UIViewController *> *)tabBarControllers {
@@ -84,7 +84,7 @@
         self.nav2 = [[BJNavigationController alloc] initWithRootViewController:self.vc2];
     }
     if (!self.vc3) {
-        self.vc3 = [HTVideoHomeViewController viewController];
+        self.vc3 = [HTFilmHomeViewController viewController];
         self.nav3 = [[BJNavigationController alloc] initWithRootViewController:self.vc3];
     }
     if (!self.vc4) {

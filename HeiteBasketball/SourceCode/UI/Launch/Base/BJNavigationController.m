@@ -9,7 +9,7 @@
 #import "BJNavigationController.h"
 #import "HTMatchHomeViewController.h"
 #import "HTNewsHomeViewController.h"
-#import "HTVideoHomeViewController.h"
+#import "HTFilmHomeViewController.h"
 #import "HTDataHomeViewController.h"
 #import "HTRankHomeViewController.h"
 
@@ -47,7 +47,7 @@
 - (NSArray<Class> *)viewControllersNotHideTabBar {
     return @[[HTMatchHomeViewController class],
              [HTNewsHomeViewController class],
-             [HTVideoHomeViewController class],
+             [HTFilmHomeViewController class],
              [HTDataHomeViewController class],
              [HTRankHomeViewController class]];
 }
