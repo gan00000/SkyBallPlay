@@ -11,7 +11,6 @@
 
 @interface HTNewsWebCell ()
 
-@property (nonatomic, weak) HTNewsModel *newsModel;
 @property (nonatomic, strong) UIScrollView *webContentView;
 @property (nonatomic, strong) WKWebView *webView;
 
@@ -30,39 +29,11 @@
     BJLog(@"cell: %@ dealloc", NSStringFromClass([self class]));
 }
 
-- (void)setupWithNewsModel:(HTNewsModel *)newsModel {
-    if (!newsModel) {
+- (void)setupWithClearHtmlContent:(NSString *)htmlContent {
+    if (!htmlContent) {
         return;
     }
-    if (self.newsModel == newsModel) {
-        return;
-    }
-    self.newsModel = newsModel;
-    
-//    if (!self.hasLoad) {
-//        self.hasLoad = YES;
-//        NSMutableString *tempHtmlStr = [NSMutableString stringWithString:self.newsModel.content];
-//
-//        /*
-//         NSString *cssStyleStart = @"<style> * {margin: 0;padding: 0;}";
-//         NSString *bodyStley = @"body{padding: 10px;color: #101010;font-size:14px;font-family: 'Helvetica Neue'; font-weight: 300;}";
-//         NSString *dtStyle = @"dt{margin-bottom: 0;}";
-//         NSString *ddStyle = @"dd{margin-bottom: 15px; line-height: 1.5; text-align: justify; display: inline-block;}";
-//         NSString *pStyle = @"p{text-indent: 2em;}";
-//         NSString *imgStyle = @"img{display: block;width: 100%;}";
-//         NSString *cssStyleEnd = @"</style>";
-//         NSString *cssStyle = [NSString stringWithFormat:@"%@%@%@%@%@%@%@", cssStyleStart, bodyStley, dtStyle, ddStyle, pStyle, imgStyle, cssStyleEnd];
-//         */
-//
-//        NSString *meta = @"<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no\">";
-//
-//        NSString *path = [[NSBundle mainBundle] pathForResource:@"bid_safety" ofType:@"css"];
-//        NSString *safetyStyle = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-//
-//        NSString *htmlStr = [NSString stringWithFormat:@"<!DOCTYPE html><html>%@<body>%@%@</body></html>", meta, safetyStyle, tempHtmlStr];
-//        [self.webView loadHTMLString:htmlStr baseURL:nil];
-//    }
-    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.newsModel.url]]];
+    [self.webView loadHTMLString:htmlContent baseURL:nil];
 }
 
 #pragma mark - KVO

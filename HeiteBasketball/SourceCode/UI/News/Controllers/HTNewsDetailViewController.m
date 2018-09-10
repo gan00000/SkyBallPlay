@@ -17,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *topNewsList;
+@property (nonatomic, copy) NSString *htmlContent;
 @property (nonatomic, assign) CGFloat newsContentHeight;
 @property (nonatomic, assign) BOOL topRequestDone;
 @property (nonatomic, assign) BOOL htmlLoadDone;
@@ -61,7 +62,7 @@
     } else if (indexPath.section == 1) {
         kWeakSelf
         HTNewsWebCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsWebCell"];
-        [cell setupWithNewsModel:self.newsModel];
+        [cell setupWithClearHtmlContent:self.htmlContent];
         cell.onContentHeightUpdateBlock = ^(CGFloat height) {
             if (fabs(height - weakSelf.newsContentHeight) < 1) {
                 return;
@@ -142,14 +143,22 @@
 }
 
 - (void)loadData {
+    kWeakSelf
+    
     [HTNewsTopRequest requestWithSuccessBlock:^(NSArray<HTNewsModel *> *newsList) {
-        self.topNewsList = newsList;
-        self.topRequestDone = YES;
-        [self refreshUI];
+        weakSelf.topNewsList = newsList;
+        weakSelf.topRequestDone = YES;
+        [weakSelf refreshUI];
     } errorBlock:^(BJError *error) {
-        [self.view showToast:error.msg];
-        self.topRequestDone = YES;
-        [self refreshUI];
+        [weakSelf.view showToast:error.msg];
+        weakSelf.topRequestDone = YES;
+        [weakSelf refreshUI];
+    }];
+    
+    [self.newsModel getClearContentWithBlock:^(BOOL success, NSString *content) {
+        weakSelf.htmlContent = content;
+        weakSelf.htmlLoadDone = YES;
+        [weakSelf refreshUI];
     }];
 }
 

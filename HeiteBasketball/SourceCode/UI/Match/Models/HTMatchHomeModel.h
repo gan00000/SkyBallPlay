@@ -33,6 +33,9 @@
 @property (nonatomic, copy) NSString *home_pts;
 @property (nonatomic, copy) NSString *gamedate;
 
+@property (nonatomic, copy) NSString *img_home_logo;
+@property (nonatomic, copy) NSString *img_away_logo;
+
 @end
 
 

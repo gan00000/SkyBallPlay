@@ -8,8 +8,9 @@
 
 #import "HTNewsModel.h"
 #import "BJDateFormatUtility.h"
+#import "BJHTTPServiceEngine.h"
 
-@interface HTNewsModel ()
+@interface HTNewsModel () <NSURLConnectionDelegate>
 
 @property (nonatomic, copy) NSString *clearContent;
 
@@ -32,15 +33,19 @@
         _img_url = [[[firstImg componentsSeparatedByString:@"src=\""] lastObject] stringByReplacingOccurrencesOfString:@"\"" withString:@""];
     }
     
-    _iframe = [[RX(@"<iframe>(.*?)</iframe>") matches:content] firstObject];
+    NSString *iframe = [[RX(@"<iframe(.*?)</iframe>") matches:content] firstObject];
     _news_type = @"新聞";
-    _filmCellHeight = 200;
-    if (_iframe) {
+    _filmCellHeight = 260;
+    if (iframe) {
         _news_type = @"影片";
-        NSInteger width = [[[RX(@"\\d+") matches:[[RX(@"width=\"\\d+\"") matches:_iframe] firstObject]] firstObject] integerValue];
-        NSInteger height = [[[RX(@"\\d+") matches:[[RX(@"height=\"\\d+\"") matches:_iframe] firstObject]] firstObject] integerValue];
-        _filmCellHeight = SCREEN_WIDTH * height / width;
+        NSInteger width = [[[RX(@"\\d+") matches:[[RX(@"width=\"\\d+\"") matches:iframe] firstObject]] firstObject] integerValue];
+        NSInteger height = [[[RX(@"\\d+") matches:[[RX(@"height=\"\\d+\"") matches:iframe] firstObject]] firstObject] integerValue];
+        CGFloat iframeHeight = SCREEN_WIDTH * height / width;
+        CGFloat titleHeiht = [self.title jx_sizeWithFont:[UIFont systemFontOfSize:14] constrainedToWidth:SCREEN_WIDTH-30].height;
+        _filmCellHeight = iframeHeight + titleHeiht + 75;
     }
+    
+    _iframe = [NSString stringWithFormat:@"<!DOCTYPE html><html><body><p>%@</p></body></html>", iframe];
 }
 
 - (void)setDate:(NSString *)date {
@@ -68,7 +73,90 @@
 }
 
 - (void)getClearContentWithBlock:(void(^)(BOOL success, NSString *content))block {
-    block(YES, self.content);
+    if (!block) {
+        return;
+    }
+    
+    if (self.clearContent) {
+        block(YES, self.clearContent);
+    }
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURL *url = [NSURL URLWithString:self.url];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"GET";
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        if (error) {
+            block(NO, nil);
+            return;
+        }
+        
+        NSString *html = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        
+        html = [html stringByReplacingOccurrencesOfString:@"class=\"onelist\""
+                                               withString:@" style=\" display: none\""];
+        
+        html = [html stringByReplacingOccurrencesOfString:@"class=\"next-prev-posts clearfix\""
+                                               withString:@" style=\" display: none\""];
+        
+        html = [html stringByReplacingOccurrencesOfString:@"id=\"footer\""
+                                               withString:@" style=\" display: none\""];
+        
+        html = [html stringByReplacingOccurrencesOfString:@"id=\"header\""
+                                               withString:@" style=\" display: none\""];
+        
+        html = [html stringByReplacingOccurrencesOfString:@"class=\"sidebar sidebar-right\""
+                                               withString:@" style=\" display: none\""];
+        
+        html = [html stringByReplacingOccurrencesOfString:@"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+                                               withString:@"#"];
+        
+        html = [html stringByReplacingOccurrencesOfString:@"class=\"heateorSssSharingRound\""
+                                               withString:@" style=\" display: none\""];
+        
+        html = [html stringByReplacingOccurrencesOfString:@"class=\"adsbygoogle\""
+                                               withString:@" style=\" display: none\""];
+        
+        html = [html stringByReplacingOccurrencesOfString:@"class=\"to-top\""
+                                               withString:@" style=\" display: none\""];
+        
+        html = [html stringByReplacingOccurrencesOfString:@"class=\"post_icon\""
+                                               withString:@" style=\" display: none\""];
+        
+        html = [html stringByReplacingOccurrencesOfString:@"class=\"post-content\""
+                                               withString:@"class=\"post-content app-hidden-ads\""];
+        
+        html = [html stringByReplacingOccurrencesOfString:@"class=\"post-entry-categories\""
+                                               withString:@" style=\" display: none\""];
+        
+        html = [html stringByReplacingOccurrencesOfString:@"class=\"post-title\""
+                                               withString:@" style=\" display: none\""];
+        
+        html = [html stringByReplacingOccurrencesOfString:@"id=\"recommendedrPosts\""
+                                               withString:@"id=\"recommendedrPostsApps\""];
+        
+        html = [html stringByReplacingOccurrencesOfString:@"plugins/wp-polls"
+                                               withString:@"#"];
+        
+        html = [html stringByReplacingOccurrencesOfString:@"plugins/popups"
+                                               withString:@"#"];
+        
+        html = [html stringByReplacingOccurrencesOfString:@"plugins/adrotate"
+                                               withString:@"#"];
+        
+        html = [html stringByReplacingOccurrencesOfString:@"content-cjtz-mini"
+                                               withString:@"app_ad_hidden"];
+        
+        self.clearContent = html;
+        block(YES, self.clearContent);
+        
+    }];
+    [task resume];
+
+
+
 }
+
 
 @end
