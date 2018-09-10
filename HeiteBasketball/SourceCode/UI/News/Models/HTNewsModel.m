@@ -9,6 +9,12 @@
 #import "HTNewsModel.h"
 #import "BJDateFormatUtility.h"
 
+@interface HTNewsModel ()
+
+@property (nonatomic, copy) NSString *clearContent;
+
+@end
+
 // TODO: 在set方法中xxxx...
 @implementation HTNewsModel
 
@@ -18,51 +24,51 @@
              };
 }
 
-- (NSString *)time {
-    if (!_time) {
-        _time = [BJDateFormatUtility dateToShowFromDateString:self.date];
+- (void)setContent:(NSString *)content {
+    _content = content;
+    
+    NSString *firstImg = [[RX(@"<img(.*?)src=\"(.*?)\"") matches:content] firstObject];
+    if (firstImg) {
+        _img_url = [[[firstImg componentsSeparatedByString:@"src=\""] lastObject] stringByReplacingOccurrencesOfString:@"\"" withString:@""];
     }
-    return _time;
+    
+    _iframe = [[RX(@"<iframe>(.*?)</iframe>") matches:content] firstObject];
+    _news_type = @"新聞";
+    _filmCellHeight = 200;
+    if (_iframe) {
+        _news_type = @"影片";
+        NSInteger width = [[[RX(@"\\d+") matches:[[RX(@"width=\"\\d+\"") matches:_iframe] firstObject]] firstObject] integerValue];
+        NSInteger height = [[[RX(@"\\d+") matches:[[RX(@"height=\"\\d+\"") matches:_iframe] firstObject]] firstObject] integerValue];
+        _filmCellHeight = SCREEN_WIDTH * height / width;
+    }
 }
 
-- (NSString *)view_count {
-    if (!_view_count) {
-        NSInteger sum = 1000;
-        NSArray *views = self.custom_fields[@"views"];
-        for (NSString *view in views) {
-            sum += view.integerValue;
-        }
-        _view_count = [NSString stringWithFormat:@"%ld", sum];
-    }
-    return _view_count;
+- (void)setDate:(NSString *)date {
+    _date = date;
+    
+    _time = [BJDateFormatUtility dateToShowFromDateString:date];
 }
 
-- (NSString *)img_url {
-    if (!_img_url) {
-        NSString *firstImg = [[RX(@"<img(.*?)src=\"(.*?)\"") matches:self.content] firstObject];
-        if (firstImg) {
-            _img_url = [[[firstImg componentsSeparatedByString:@"src=\""] lastObject] stringByReplacingOccurrencesOfString:@"\"" withString:@""];
-        }    
+- (void)setCustom_fields:(NSDictionary *)custom_fields {
+    _custom_fields = custom_fields;
+    
+    NSInteger sum = 1000;
+    NSArray *views = custom_fields[@"views"];
+    for (NSString *view in views) {
+        sum += view.integerValue;
     }
-    return _img_url;
+    _view_count = [NSString stringWithFormat:@"%ld", sum];
 }
 
-- (CGFloat)detailHeaderHeight {
-    if (!_detailHeaderHeight) {
-        CGFloat titleHeight = [self.title jx_sizeWithFont:[UIFont systemFontOfSize:17 weight:UIFontWeightMedium] constrainedToWidth:SCREEN_WIDTH-30].height;
-        _detailHeaderHeight = titleHeight + 70;
-    }
-    return _detailHeaderHeight;
+- (void)setTitle:(NSString *)title {
+    _title = title;
+    
+    CGFloat titleHeight = [title jx_sizeWithFont:[UIFont systemFontOfSize:17 weight:UIFontWeightMedium] constrainedToWidth:SCREEN_WIDTH-30].height;
+    _detailHeaderHeight = titleHeight + 70;
 }
 
-- (NSString *)news_type {
-    if (!_news_type) {
-        _news_type = @"新聞";
-        if ([RX(@"<iframe>(.*?)</iframe>") isMatch:self.content]) {
-            _news_type = @"影片";
-        }
-    }
-    return _news_type;
+- (void)getClearContentWithBlock:(void(^)(BOOL success, NSString *content))block {
+    block(YES, self.content);
 }
 
 @end

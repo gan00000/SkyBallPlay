@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *topNewsList;
 @property (nonatomic, assign) CGFloat newsContentHeight;
+@property (nonatomic, assign) BOOL topRequestDone;
+@property (nonatomic, assign) BOOL htmlLoadDone;
 
 @end
 
@@ -133,15 +135,31 @@
     }
     
     self.newsContentHeight = 300;
+    self.topRequestDone = NO;
+    self.htmlLoadDone = NO;
+    
+    [self.view showLoadingView];
 }
 
 - (void)loadData {
     [HTNewsTopRequest requestWithSuccessBlock:^(NSArray<HTNewsModel *> *newsList) {
         self.topNewsList = newsList;
-        [self.tableView reloadData];
+        self.topRequestDone = YES;
+        [self refreshUI];
     } errorBlock:^(BJError *error) {
         [self.view showToast:error.msg];
+        self.topRequestDone = YES;
+        [self refreshUI];
     }];
+}
+
+- (void)refreshUI {
+    if (!self.topRequestDone || !self.htmlLoadDone) {
+        return;
+    }
+    
+    [self.view hideLoadingView];
+    [self.tableView reloadData];
 }
 
 @end

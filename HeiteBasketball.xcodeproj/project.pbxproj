@@ -35,6 +35,9 @@
 		FE6BD08F21457FEC0090118A /* HTNewsTopRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6BD08E21457FEC0090118A /* HTNewsTopRequest.m */; };
 		FE6BD092214584C30090118A /* HTNewsTopHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6BD091214584C30090118A /* HTNewsTopHeaderView.m */; };
 		FE6BD094214584DA0090118A /* HTNewsTopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE6BD093214584DA0090118A /* HTNewsTopHeaderView.xib */; };
+		FE81D1462146B2680047A4A2 /* HTFilmRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D1452146B2680047A4A2 /* HTFilmRequest.m */; };
+		FE81D14A2146B3090047A4A2 /* HTFilmHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D1482146B3090047A4A2 /* HTFilmHomeCell.m */; };
+		FE81D14B2146B3090047A4A2 /* HTFilmHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE81D1492146B3090047A4A2 /* HTFilmHomeCell.xib */; };
 		FEC112622143D058002DB617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC112612143D058002DB617 /* Assets.xcassets */; };
 		FEC112682143D058002DB617 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC112672143D058002DB617 /* main.m */; };
 		FEC115BD2143D4A0002DB617 /* BJLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113132143D4A0002DB617 /* BJLaunchViewController.m */; };
@@ -164,6 +167,11 @@
 		FE6BD090214584C30090118A /* HTNewsTopHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTNewsTopHeaderView.h; sourceTree = "<group>"; };
 		FE6BD091214584C30090118A /* HTNewsTopHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTNewsTopHeaderView.m; sourceTree = "<group>"; };
 		FE6BD093214584DA0090118A /* HTNewsTopHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTNewsTopHeaderView.xib; sourceTree = "<group>"; };
+		FE81D1442146B2680047A4A2 /* HTFilmRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTFilmRequest.h; sourceTree = "<group>"; };
+		FE81D1452146B2680047A4A2 /* HTFilmRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTFilmRequest.m; sourceTree = "<group>"; };
+		FE81D1472146B3090047A4A2 /* HTFilmHomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTFilmHomeCell.h; sourceTree = "<group>"; };
+		FE81D1482146B3090047A4A2 /* HTFilmHomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTFilmHomeCell.m; sourceTree = "<group>"; };
+		FE81D1492146B3090047A4A2 /* HTFilmHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTFilmHomeCell.xib; sourceTree = "<group>"; };
 		FEC112552143D057002DB617 /* HeiteBasketball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeiteBasketball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC112612143D058002DB617 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEC112662143D058002DB617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -703,7 +711,6 @@
 			isa = PBXGroup;
 			children = (
 				FEC1170D2143DE32002DB617 /* Requests */,
-				FEC1170C2143DE2A002DB617 /* Models */,
 				FEC1170B2143DE1A002DB617 /* Views */,
 				FEC1170A2143DE0E002DB617 /* Controllers */,
 				FEC116FE2143DCAF002DB617 /* FilmHome.storyboard */,
@@ -810,20 +817,18 @@
 		FEC1170B2143DE1A002DB617 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FE81D1472146B3090047A4A2 /* HTFilmHomeCell.h */,
+				FE81D1482146B3090047A4A2 /* HTFilmHomeCell.m */,
+				FE81D1492146B3090047A4A2 /* HTFilmHomeCell.xib */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		FEC1170C2143DE2A002DB617 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		FEC1170D2143DE32002DB617 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				FE81D1442146B2680047A4A2 /* HTFilmRequest.h */,
+				FE81D1452146B2680047A4A2 /* HTFilmRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1007,6 +1012,7 @@
 				FEC116FF2143DCAF002DB617 /* FilmHome.storyboard in Resources */,
 				FE6BD0602144FED00090118A /* MatchWordLive.storyboard in Resources */,
 				FEDF8FC5214441C6005C7C4D /* HTMatchHomeCell.xib in Resources */,
+				FE81D14B2146B3090047A4A2 /* HTFilmHomeCell.xib in Resources */,
 				FE6BD08921457D920090118A /* HTNewsWebCell.xib in Resources */,
 				FEC117282143DF45002DB617 /* RankHome.xcassets in Resources */,
 				FEC116DD2143D877002DB617 /* Match.xcassets in Resources */,
@@ -1135,6 +1141,7 @@
 				FEC1167A2143D4A1002DB617 /* BJWebViewCacheHelper.m in Sources */,
 				FEC116142143D4A1002DB617 /* BJUnPasteTextField.m in Sources */,
 				FE6BD0502144FC190090118A /* HTMatchDetailViewController.m in Sources */,
+				FE81D14A2146B3090047A4A2 /* HTFilmHomeCell.m in Sources */,
 				FEC116D22143D4A1002DB617 /* BJUtility.m in Sources */,
 				FEC116CA2143D4A1002DB617 /* NSString+MessageDigest.m in Sources */,
 				FEC117092143DDEE002DB617 /* HTNewsHomeViewController.m in Sources */,
@@ -1142,6 +1149,7 @@
 				FEC116112143D4A1002DB617 /* UIScrollView+AllowScreenEdgePanGestureRecognizer.m in Sources */,
 				FEC117102143DE50002DB617 /* HTFilmHomeViewController.m in Sources */,
 				FE6BD05E2144FE550090118A /* HTMatchDashboardViewController.m in Sources */,
+				FE81D1462146B2680047A4A2 /* HTFilmRequest.m in Sources */,
 				FEDF8FC821444610005C7C4D /* HTMatchHomeModel.m in Sources */,
 				FEC1160A2143D4A1002DB617 /* UIView+EmptyView.m in Sources */,
 				FEC117312143EAC2002DB617 /* BJBaseResponceModel.m in Sources */,

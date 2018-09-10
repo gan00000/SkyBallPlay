@@ -24,6 +24,9 @@
 @property (nonatomic, assign) CGFloat detailHeaderHeight;
 @property (nonatomic, copy) NSString *news_type;
 @property (nonatomic, copy) NSString *iframe;
-//@property (nonatomic, copy) <#class#> *<#name#>;
+@property (nonatomic, assign) CGFloat filmCellHeight;
+
+/// 新闻详情页使用
+- (void)getClearContentWithBlock:(void(^)(BOOL success, NSString *content))block;
 
 @end

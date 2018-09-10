@@ -144,7 +144,7 @@
     }
     
     if (self.error) {
-        if (!self.bannerList || self.newsList) {
+        if (!self.bannerList || !self.newsList) {
             kWeakSelf
             [self.view showEmptyViewWithTitle:@"獲取失敗，點擊重試" tapBlock:^{
                 [weakSelf.view hideEmptyView];

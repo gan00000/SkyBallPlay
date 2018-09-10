@@ -20,8 +20,10 @@
 #define API_NEWS_BANNER                 @"?json=get_app_index"
 #define API_NEWS_TOP                    @"api/get_top_posts"
 
+#pragma mark - 影片
+#define API_FILM_HOME                   @"highlight"
 
-#endif /* BJAPIAddress_h */
+#endif
 
 
 
