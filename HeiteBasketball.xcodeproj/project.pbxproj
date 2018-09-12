@@ -47,6 +47,10 @@
 		FE81D15E21496B380047A4A2 /* HTDataHomeInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D15D21496B380047A4A2 /* HTDataHomeInfoModel.m */; };
 		FE81D1622149716D0047A4A2 /* HTDataHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D1602149716D0047A4A2 /* HTDataHomeCell.m */; };
 		FE81D1632149716D0047A4A2 /* HTDataHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE81D1612149716D0047A4A2 /* HTDataHomeCell.xib */; };
+		FE81D16621497D8C0047A4A2 /* HTRankHomeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D16521497D8C0047A4A2 /* HTRankHomeRequest.m */; };
+		FE81D16921497DB60047A4A2 /* HTRankHomeInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D16821497DB60047A4A2 /* HTRankHomeInfoModel.m */; };
+		FE81D16D21497DDE0047A4A2 /* HTRankHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D16B21497DDE0047A4A2 /* HTRankHomeCell.m */; };
+		FE81D16E21497DDE0047A4A2 /* HTRankHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE81D16C21497DDE0047A4A2 /* HTRankHomeCell.xib */; };
 		FEC112622143D058002DB617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC112612143D058002DB617 /* Assets.xcassets */; };
 		FEC112682143D058002DB617 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC112672143D058002DB617 /* main.m */; };
 		FEC115BD2143D4A0002DB617 /* BJLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113132143D4A0002DB617 /* BJLaunchViewController.m */; };
@@ -111,13 +115,10 @@
 		FEC116FF2143DCAF002DB617 /* FilmHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC116FE2143DCAF002DB617 /* FilmHome.storyboard */; };
 		FEC117092143DDEE002DB617 /* HTNewsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC117082143DDEE002DB617 /* HTNewsHomeViewController.m */; };
 		FEC117102143DE50002DB617 /* HTFilmHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1170F2143DE50002DB617 /* HTFilmHomeViewController.m */; };
-		FEC117122143DE5E002DB617 /* Video.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC117112143DE5E002DB617 /* Video.xcassets */; };
 		FEC117192143DEA0002DB617 /* HTDataHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC117182143DEA0002DB617 /* HTDataHomeViewController.m */; };
 		FEC1171B2143DEAD002DB617 /* DataHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC1171A2143DEAD002DB617 /* DataHome.storyboard */; };
-		FEC1171D2143DEDC002DB617 /* DataHome.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC1171C2143DEDC002DB617 /* DataHome.xcassets */; };
 		FEC117242143DF12002DB617 /* HTRankHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC117232143DF12002DB617 /* HTRankHomeViewController.m */; };
 		FEC117262143DF33002DB617 /* RankHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC117252143DF33002DB617 /* RankHome.storyboard */; };
-		FEC117282143DF45002DB617 /* RankHome.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC117272143DF45002DB617 /* RankHome.xcassets */; };
 		FEC1172B2143E43A002DB617 /* Launch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC1172A2143E43A002DB617 /* Launch.xcassets */; };
 		FEC1172E2143EAA3002DB617 /* BJError.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1172D2143EAA3002DB617 /* BJError.m */; };
 		FEC117312143EAC2002DB617 /* BJBaseResponceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1172F2143EAC2002DB617 /* BJBaseResponceModel.m */; };
@@ -196,6 +197,13 @@
 		FE81D15F2149716D0047A4A2 /* HTDataHomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataHomeCell.h; sourceTree = "<group>"; };
 		FE81D1602149716D0047A4A2 /* HTDataHomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataHomeCell.m; sourceTree = "<group>"; };
 		FE81D1612149716D0047A4A2 /* HTDataHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDataHomeCell.xib; sourceTree = "<group>"; };
+		FE81D16421497D8C0047A4A2 /* HTRankHomeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTRankHomeRequest.h; sourceTree = "<group>"; };
+		FE81D16521497D8C0047A4A2 /* HTRankHomeRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTRankHomeRequest.m; sourceTree = "<group>"; };
+		FE81D16721497DB60047A4A2 /* HTRankHomeInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTRankHomeInfoModel.h; sourceTree = "<group>"; };
+		FE81D16821497DB60047A4A2 /* HTRankHomeInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTRankHomeInfoModel.m; sourceTree = "<group>"; };
+		FE81D16A21497DDE0047A4A2 /* HTRankHomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTRankHomeCell.h; sourceTree = "<group>"; };
+		FE81D16B21497DDE0047A4A2 /* HTRankHomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTRankHomeCell.m; sourceTree = "<group>"; };
+		FE81D16C21497DDE0047A4A2 /* HTRankHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTRankHomeCell.xib; sourceTree = "<group>"; };
 		FEC112552143D057002DB617 /* HeiteBasketball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeiteBasketball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC112612143D058002DB617 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEC112662143D058002DB617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -314,15 +322,12 @@
 		FEC117082143DDEE002DB617 /* HTNewsHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTNewsHomeViewController.m; sourceTree = "<group>"; };
 		FEC1170E2143DE50002DB617 /* HTFilmHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTFilmHomeViewController.h; sourceTree = "<group>"; };
 		FEC1170F2143DE50002DB617 /* HTFilmHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTFilmHomeViewController.m; sourceTree = "<group>"; };
-		FEC117112143DE5E002DB617 /* Video.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Video.xcassets; sourceTree = "<group>"; };
 		FEC117172143DEA0002DB617 /* HTDataHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataHomeViewController.h; sourceTree = "<group>"; };
 		FEC117182143DEA0002DB617 /* HTDataHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataHomeViewController.m; sourceTree = "<group>"; };
 		FEC1171A2143DEAD002DB617 /* DataHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DataHome.storyboard; sourceTree = "<group>"; };
-		FEC1171C2143DEDC002DB617 /* DataHome.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DataHome.xcassets; sourceTree = "<group>"; };
 		FEC117222143DF11002DB617 /* HTRankHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTRankHomeViewController.h; sourceTree = "<group>"; };
 		FEC117232143DF12002DB617 /* HTRankHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTRankHomeViewController.m; sourceTree = "<group>"; };
 		FEC117252143DF33002DB617 /* RankHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RankHome.storyboard; sourceTree = "<group>"; };
-		FEC117272143DF45002DB617 /* RankHome.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = RankHome.xcassets; sourceTree = "<group>"; };
 		FEC1172A2143E43A002DB617 /* Launch.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Launch.xcassets; sourceTree = "<group>"; };
 		FEC1172C2143EAA3002DB617 /* BJError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJError.h; sourceTree = "<group>"; };
 		FEC1172D2143EAA3002DB617 /* BJError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJError.m; sourceTree = "<group>"; };
@@ -716,7 +721,6 @@
 				FEC1171F2143DEED002DB617 /* Views */,
 				FEC1171E2143DEE5002DB617 /* Controllers */,
 				FEC117252143DF33002DB617 /* RankHome.storyboard */,
-				FEC117272143DF45002DB617 /* RankHome.xcassets */,
 			);
 			path = Rank;
 			sourceTree = "<group>";
@@ -730,7 +734,6 @@
 				FEC117132143DE69002DB617 /* Controllers */,
 				FEC1171A2143DEAD002DB617 /* DataHome.storyboard */,
 				FE81D15A2149613B0047A4A2 /* DataHomeSub.storyboard */,
-				FEC1171C2143DEDC002DB617 /* DataHome.xcassets */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -742,7 +745,6 @@
 				FEC1170B2143DE1A002DB617 /* Views */,
 				FEC1170A2143DE0E002DB617 /* Controllers */,
 				FEC116FE2143DCAF002DB617 /* FilmHome.storyboard */,
-				FEC117112143DE5E002DB617 /* Video.xcassets */,
 			);
 			path = Film;
 			sourceTree = "<group>";
@@ -914,6 +916,9 @@
 		FEC1171F2143DEED002DB617 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FE81D16A21497DDE0047A4A2 /* HTRankHomeCell.h */,
+				FE81D16B21497DDE0047A4A2 /* HTRankHomeCell.m */,
+				FE81D16C21497DDE0047A4A2 /* HTRankHomeCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -921,6 +926,8 @@
 		FEC117202143DEF8002DB617 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FE81D16721497DB60047A4A2 /* HTRankHomeInfoModel.h */,
+				FE81D16821497DB60047A4A2 /* HTRankHomeInfoModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -928,6 +935,8 @@
 		FEC117212143DEFF002DB617 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				FE81D16421497D8C0047A4A2 /* HTRankHomeRequest.h */,
+				FE81D16521497D8C0047A4A2 /* HTRankHomeRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1031,7 +1040,6 @@
 				FE6BD075214526980090118A /* HTNewsHomeCell.xib in Resources */,
 				FEC116FA2143DC72002DB617 /* News.xcassets in Resources */,
 				FEDF8FE02144D05C005C7C4D /* HTMatchHomeGroupHeaderView.xib in Resources */,
-				FEC117122143DE5E002DB617 /* Video.xcassets in Resources */,
 				FEC116042143D4A1002DB617 /* XJLoadingView.xib in Resources */,
 				FE6BD0522144FC270090118A /* MatchDetail.storyboard in Resources */,
 				FEC1162A2143D4A1002DB617 /* BJHUDView.xib in Resources */,
@@ -1049,6 +1057,7 @@
 				FEC116EF2143D8C9002DB617 /* MatchHome.storyboard in Resources */,
 				FE6BD094214584DA0090118A /* HTNewsTopHeaderView.xib in Resources */,
 				FE6BD04D2144FAF60090118A /* ViewStatus.xcassets in Resources */,
+				FE81D16E21497DDE0047A4A2 /* HTRankHomeCell.xib in Resources */,
 				FEC116FF2143DCAF002DB617 /* FilmHome.storyboard in Resources */,
 				FE6BD0602144FED00090118A /* MatchWordLive.storyboard in Resources */,
 				FEDF8FC5214441C6005C7C4D /* HTMatchHomeCell.xib in Resources */,
@@ -1056,10 +1065,8 @@
 				FE81D14B2146B3090047A4A2 /* HTFilmHomeCell.xib in Resources */,
 				FE6BD08921457D920090118A /* HTNewsWebCell.xib in Resources */,
 				FE81D15B2149613B0047A4A2 /* DataHomeSub.storyboard in Resources */,
-				FEC117282143DF45002DB617 /* RankHome.xcassets in Resources */,
 				FEC116DD2143D877002DB617 /* Match.xcassets in Resources */,
 				FEC116792143D4A1002DB617 /* BJWKWebViewPostJS.html in Resources */,
-				FEC1171D2143DEDC002DB617 /* DataHome.xcassets in Resources */,
 				FE6BD0622144FEF90090118A /* MatchCompare.storyboard in Resources */,
 				FEC112622143D058002DB617 /* Assets.xcassets in Resources */,
 			);
@@ -1144,6 +1151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEC116B72143D4A1002DB617 /* BJBaseTabBarController.m in Sources */,
+				FE81D16921497DB60047A4A2 /* HTRankHomeInfoModel.m in Sources */,
 				FEC112682143D058002DB617 /* main.m in Sources */,
 				FEC116762143D4A1002DB617 /* BJURINavigator.m in Sources */,
 				FEC116492143D4A1002DB617 /* BJMainViewController.m in Sources */,
@@ -1219,8 +1227,10 @@
 				FEC1168C2143D4A1002DB617 /* BJServiceConfigurator.m in Sources */,
 				FEC116C92143D4A1002DB617 /* NSObject+nextresponder.m in Sources */,
 				FEC116082143D4A1002DB617 /* XJToastView.m in Sources */,
+				FE81D16621497D8C0047A4A2 /* HTRankHomeRequest.m in Sources */,
 				FEDF8FD72144B1CC005C7C4D /* HTMatchHomeRequest.m in Sources */,
 				FEC116C62143D4A1002DB617 /* UIView+QuickFrame.m in Sources */,
+				FE81D16D21497DDE0047A4A2 /* HTRankHomeCell.m in Sources */,
 				FEC116C02143D4A1002DB617 /* UIImage+Generator.m in Sources */,
 				FEC116292143D4A1002DB617 /* BJHUDView.m in Sources */,
 				FEC1167C2143D4A1002DB617 /* BJWebViewJSBridge.m in Sources */,
