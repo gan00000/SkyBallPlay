@@ -9,7 +9,7 @@
 #import "HTNewsHomeViewController.h"
 #import "HTNewsDetailViewController.h"
 
-#import "HTNewsRequest.h"
+#import "HTNewsHomeRequest.h"
 #import "HTNewsBannerRequest.h"
 #import "HTNewsHomeCell.h"
 #import "HTNewsHomeBannerCell.h"
@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *newsList;
 @property (nonatomic, strong) NSArray *bannerList;
-@property (nonatomic, strong) HTNewsRequest *request;
+@property (nonatomic, strong) HTNewsHomeRequest *request;
 @property (nonatomic, strong) BJError *error;
 @property (nonatomic, assign) BOOL newsRequestDone;
 @property (nonatomic, assign) BOOL bannerRequestDone;
@@ -203,9 +203,9 @@
 }
 
 #pragma mark - lazy load
-- (HTNewsRequest *)request {
+- (HTNewsHomeRequest *)request {
     if (!_request) {
-        _request = [[HTNewsRequest alloc] init];
+        _request = [[HTNewsHomeRequest alloc] init];
     }
     return _request;
 }

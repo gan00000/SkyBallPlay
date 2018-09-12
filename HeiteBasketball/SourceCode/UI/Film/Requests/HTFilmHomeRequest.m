@@ -1,21 +1,21 @@
 //
-//  HTFilmRequest.m
+//  HTFilmHomeRequest.m
 //  HeiteBasketball
 //
 //  Created by 冯生伟 on 2018/9/10.
 //  Copyright © 2018年 Dean_F. All rights reserved.
 //
 
-#import "HTFilmRequest.h"
+#import "HTFilmHomeRequest.h"
 
-@interface HTFilmRequest ()
+@interface HTFilmHomeRequest ()
 
 @property (nonatomic, strong) NSMutableArray *newsList;
 @property (nonatomic, assign) NSInteger page;
 
 @end
 
-@implementation HTFilmRequest
+@implementation HTFilmHomeRequest
 
 - (void)requestWithSuccessBlock:(void(^)(NSArray<HTNewsModel *> *newsList))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock {

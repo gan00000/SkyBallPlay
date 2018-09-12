@@ -24,6 +24,9 @@
 #pragma mark - 影片
 #define API_FILM_HOME                   @"highlight"
 
+#pragma mark - 数据
+#define API_DATA_HOME                   @"api/index.php"
+
 #endif
 
 

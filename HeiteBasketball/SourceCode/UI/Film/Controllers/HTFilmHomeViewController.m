@@ -8,13 +8,13 @@
 
 #import "HTFilmHomeViewController.h"
 #import "HTNewsDetailViewController.h"
-#import "HTFilmRequest.h"
+#import "HTFilmHomeRequest.h"
 #import "HTFilmHomeCell.h"
 
 @interface HTFilmHomeViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) HTFilmRequest *request;
+@property (nonatomic, strong) HTFilmHomeRequest *request;
 @property (nonatomic, strong) NSArray *filmList;
 @property (nonatomic, strong) BJError *error;
 
@@ -143,9 +143,9 @@
 }
 
 #pragma mark - lazy load
-- (HTFilmRequest *)request {
+- (HTFilmHomeRequest *)request {
     if (!_request) {
-        _request = [[HTFilmRequest alloc] init];
+        _request = [[HTFilmHomeRequest alloc] init];
     }
     return _request;
 }

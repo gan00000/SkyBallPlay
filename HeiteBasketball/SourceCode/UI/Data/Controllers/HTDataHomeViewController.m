@@ -7,8 +7,17 @@
 //
 
 #import "HTDataHomeViewController.h"
+#import "HTDataHomeSubViewController.h"
+#import <HMSegmentedControl/HMSegmentedControl.h>
 
-@interface HTDataHomeViewController ()
+@interface HTDataHomeViewController () <UIScrollViewDelegate>
+
+@property (nonatomic, strong) HMSegmentedControl *segmentControl;
+@property (nonatomic, strong) UIScrollView *containerView;
+
+@property (nonatomic, strong) NSMutableArray *loadedControllersArray;
+@property (nonatomic, strong) NSMutableArray *loadedFlagArray;
+@property (nonatomic, assign) NSInteger currentIndex;
 
 @end
 
@@ -20,22 +29,132 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self initData];
+    [self setupUI];
+    [self segmentedValueChangedHandle:self.currentIndex];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark -- method
+
+- (void)initData {
+    self.currentIndex = 0;
+    for (NSInteger i = 0; i < 2; i++) {
+        [self.loadedFlagArray addObject:@(NO)];
+        [self.loadedControllersArray addObject:@(NO)];
+    }
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    CGPoint offset = scrollView.contentOffset;
+    NSInteger page = offset.x / SCREEN_WIDTH;
+    self.currentIndex = page;
+    [self loadChildViewControllerByIndex:page];
+    [self.segmentControl setSelectedSegmentIndex:page animated:YES];
 }
-*/
+
+
+#pragma mark -- HMSegmentedControl Action
+- (void)segmentedValueChangedHandle:(NSInteger)index {
+    self.currentIndex = index;
+    [self loadChildViewControllerByIndex:index];
+    [self.containerView setContentOffset:CGPointMake(index * SCREEN_WIDTH, 0) animated:YES];
+}
+
+- (void)loadChildViewControllerByIndex:(NSInteger)index {
+    if ([self.loadedFlagArray[index] boolValue]) {
+        HTDataHomeSubViewController *vc = self.loadedControllersArray[index];
+        vc.type = index + 1;
+        return;
+    }
+    
+    HTDataHomeSubViewController *vc = [HTDataHomeSubViewController viewController];
+    vc.type = index + 1;
+    [self addChildViewController:vc];
+    [self.containerView addSubview:vc.view];
+    [self.loadedFlagArray replaceObjectAtIndex:index withObject:@(YES)];
+    [self.loadedControllersArray replaceObjectAtIndex:index withObject:vc];
+    [self setChildViewFrame:vc.view byIndex:index];
+}
+
+- (void)setChildViewFrame:(UIView *)childView byIndex:(NSInteger)index {
+    [childView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.containerView);
+        make.width.equalTo(self.containerView);
+        make.height.equalTo(self.containerView);
+        make.left.equalTo(self.containerView).offset(index * SCREEN_WIDTH);
+    }];
+}
+
+#pragma mark ---- UI
+- (void)setupUI {
+    self.title = @"专栏";
+    self.currentIndex = 0;
+    
+    [self.view addSubview:self.segmentControl];
+    [self.segmentControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.mas_offset(0);
+        make.height.mas_equalTo(40);
+    }];
+    
+    [self.view addSubview:self.containerView];
+    [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.mas_offset(0);
+        make.top.mas_equalTo(self.segmentControl.mas_bottom).mas_offset(1);
+    }];
+}
+
+#pragma mark -- lazy load
+- (NSMutableArray *)loadedFlagArray {
+    if (!_loadedFlagArray) {
+        _loadedFlagArray = [NSMutableArray array];
+    }
+    return _loadedFlagArray;
+}
+
+- (NSMutableArray *)loadedControllersArray {
+    if (!_loadedControllersArray) {
+        _loadedControllersArray = [NSMutableArray array];
+    }
+    return _loadedControllersArray;
+}
+
+- (HMSegmentedControl *)segmentControl {
+    if (!_segmentControl) {
+        _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"隊員數據", @"球隊數據"]];
+        _segmentControl.selectionIndicatorColor = [UIColor hx_colorWithHexRGBAString:@"F40000"];
+        _segmentControl.selectionIndicatorHeight = 3.0f;
+        _segmentControl.selectionIndicatorEdgeInsets = UIEdgeInsetsMake(0, -8, 0, -18);
+        _segmentControl.titleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:15 weight:UIFontWeightMedium],NSForegroundColorAttributeName:[UIColor hx_colorWithHexRGBAString:@"666666"]};
+        _segmentControl.selectedTitleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:15 weight:UIFontWeightMedium],NSForegroundColorAttributeName:[UIColor hx_colorWithHexRGBAString:@"F40000"]};
+        _segmentControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+        _segmentControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
+       
+        kWeakSelf
+        _segmentControl.indexChangeBlock = ^(NSInteger index){
+            [weakSelf segmentedValueChangedHandle:index];
+        };
+    }
+    return _segmentControl;
+}
+
+- (UIScrollView *)containerView {
+    if (!_containerView) {
+        _containerView = [[UIScrollView alloc] init];
+        _containerView.showsVerticalScrollIndicator = NO;
+        _containerView.showsHorizontalScrollIndicator = NO;
+        _containerView.delegate = self;
+        _containerView.backgroundColor = self.view.backgroundColor;
+        _containerView.pagingEnabled = YES;
+        _containerView.autoresizingMask = UIViewAutoresizingNone;
+        _containerView.contentSize = CGSizeMake(SCREEN_WIDTH * 2, SCREEN_HEIGHT - 64 - SCREEN_HEIGHT - 1);
+    }
+    return _containerView;
+}
+
+- (void)dealloc {
+    BJLog(@"\n---- %@ is dealloc!!\n-",[self class]);
+}
 
 @end

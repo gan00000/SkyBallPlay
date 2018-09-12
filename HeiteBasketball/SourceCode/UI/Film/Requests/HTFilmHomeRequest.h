@@ -1,5 +1,5 @@
 //
-//  HTFilmRequest.h
+//  HTFilmHomeRequest.h
 //  HeiteBasketball
 //
 //  Created by 冯生伟 on 2018/9/10.
@@ -10,7 +10,7 @@
 #import "BJHTTPServiceEngine.h"
 #import "HTNewsModel.h"
 
-@interface HTFilmRequest : NSObject
+@interface HTFilmHomeRequest : NSObject
 
 @property (nonatomic, assign) BOOL hasMore;
 

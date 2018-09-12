@@ -1,21 +1,21 @@
 //
-//  HTNewsRequest.m
+//  HTNewsHomeRequest.m
 //  HeiteBasketball
 //
 //  Created by 冯生伟 on 2018/9/9.
 //  Copyright © 2018年 Dean_F. All rights reserved.
 //
 
-#import "HTNewsRequest.h"
+#import "HTNewsHomeRequest.h"
 
-@interface HTNewsRequest ()
+@interface HTNewsHomeRequest ()
 
 @property (nonatomic, strong) NSMutableArray *newsList;
 @property (nonatomic, assign) NSInteger page;
 
 @end
 
-@implementation HTNewsRequest
+@implementation HTNewsHomeRequest
 
 - (void)requestWithSuccessBlock:(void(^)(NSArray<HTNewsModel *> *newsList))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock {

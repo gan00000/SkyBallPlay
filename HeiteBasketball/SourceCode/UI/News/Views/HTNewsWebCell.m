@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) UIScrollView *webContentView;
 @property (nonatomic, strong) WKWebView *webView;
+@property (nonatomic, assign) BOOL hasLoad;
 
 @end
 
@@ -33,6 +34,10 @@
     if (!htmlContent) {
         return;
     }
+    if (self.hasLoad) {
+        return;
+    }
+    self.hasLoad = YES;
     [self.webView loadHTMLString:htmlContent baseURL:nil];
 }
 

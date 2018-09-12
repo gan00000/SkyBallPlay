@@ -1,5 +1,5 @@
 //
-//  HTNewsRequest.h
+//  HTNewsHomeRequest.h
 //  HeiteBasketball
 //
 //  Created by 冯生伟 on 2018/9/9.
@@ -10,7 +10,7 @@
 #import "BJHTTPServiceEngine.h"
 #import "HTNewsModel.h"
 
-@interface HTNewsRequest : NSObject
+@interface HTNewsHomeRequest : NSObject
 
 @property (nonatomic, assign) BOOL hasMore;
 

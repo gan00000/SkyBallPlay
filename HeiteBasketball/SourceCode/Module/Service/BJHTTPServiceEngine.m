@@ -54,8 +54,8 @@
         
         NSDictionary *responseDict = responseData;
         
-        NSString *code = [NSString stringWithFormat:@"%@", responseDict[@"status"]];
-        if (code.length > 0 && [code isEqualToString:@"ok"]) {
+        NSString *code = responseDict[@"status"];
+        if (!code || (code.length > 0 && [code isEqualToString:@"ok"])) {
             if (successBlock) {
                 successBlock(responseData);
             }
@@ -91,8 +91,8 @@
         
         NSDictionary *responseDict = responseData;
         
-        NSString *code = [NSString stringWithFormat:@"%@", responseDict[@"status"]];
-        if (code.length > 0 && [code isEqualToString:@"ok"]) {
+        NSString *code = responseDict[@"status"];
+        if (!code || (code.length > 0 && [code isEqualToString:@"ok"])) {
             if (successBlock) {
                 successBlock(responseData);
             }
@@ -134,8 +134,8 @@
         
         NSDictionary *responseDict = responseData;
         
-        NSString *code = [NSString stringWithFormat:@"%@", responseDict[@"status"]];
-        if (code.length > 0 && [code isEqualToString:@"ok"]) {
+        NSString *code = responseDict[@"status"];
+        if (!code || (code.length > 0 && [code isEqualToString:@"ok"])) {
             if (successBlock) {
                 successBlock(responseData);
             }
@@ -178,8 +178,8 @@
         
         NSDictionary *responseDict = responseData;
         
-        NSString *code = [NSString stringWithFormat:@"%@", responseDict[@"status"]];
-        if (code.length > 0 && [code isEqualToString:@"ok"]) {
+        NSString *code = responseDict[@"status"];
+        if (!code || (code.length > 0 && [code isEqualToString:@"ok"])) {
             if (successBlock) {
                 successBlock(responseData);
             }
