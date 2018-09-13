@@ -79,5 +79,6 @@
 
 // load storyboard
 #define kLoadStoryboardWithName(name) [UIStoryboard storyboardWithName:name bundle:nil].instantiateInitialViewController;
+#define kLoadXibWithName(name) [[[NSBundle mainBundle] loadNibNamed:name owner:self options:nil] lastObject];
 
 #endif

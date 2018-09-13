@@ -7,7 +7,7 @@
 //
 
 #import "HTMatchHomeModel.h"
-#import "HTSvgLogoUtil.h"
+#import "HTHtmlLoadUtil.h"
 
 @implementation HTMatchHomeModel
 
@@ -20,18 +20,16 @@
 - (void)setHomeLogo:(NSString *)homeLogo {
     _homeLogo = homeLogo;
     
-    if ([RX(@".svg") isMatch:homeLogo]) {
-//        _img_home_logo = [NSString stringWithFormat:@"<!DOCTYPE html><html><body><p><img src=\"%@\"></p></body></html>", homeLogo];
-        _img_home_logo = [[HTSvgLogoUtil sharedInstance] htmlWithSrc:homeLogo];
+    if ([RX(@".svg$") isMatch:homeLogo]) {
+        _img_home_logo = [[HTHtmlLoadUtil sharedInstance] svgHtmlWithUrl:homeLogo];
     }
 }
 
 - (void)setAwayLogo:(NSString *)awayLogo {
     _awayLogo = awayLogo;
     
-    if ([RX(@".svg") isMatch:awayLogo]) {
-//        _img_away_logo = [NSString stringWithFormat:@"<!DOCTYPE html><html><body><p><img src=\"%@\"></p></body></html>", awayLogo];
-        _img_away_logo = [[HTSvgLogoUtil sharedInstance] htmlWithSrc:awayLogo];
+    if ([RX(@".svg%") isMatch:awayLogo]) {
+        _img_away_logo = [[HTHtmlLoadUtil sharedInstance] svgHtmlWithUrl:awayLogo];
     }
 }
 

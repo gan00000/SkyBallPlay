@@ -17,7 +17,7 @@
              @"ast": [HTDataHomeModel class],
              @"stl": [HTDataHomeModel class],
              @"blk": [HTDataHomeModel class],
-             @"ptturnovers": [HTDataHomeModel class]
+             @"turnover": [HTDataHomeModel class]
              };
 }
 

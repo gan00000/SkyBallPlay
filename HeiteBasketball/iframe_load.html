@@ -11,19 +11,12 @@
                         </style>
                     <script>
                         window.onload = function(){
-                            var size = 60;
                             var tp = document.getElementById('tp');
-                            if(tp.width > size || tp.height > size){
-                                if(tp.width > tp.height){
-                                    tp.width = size;
-                                }else{
-                                    tp.height = size;
-                                }
-                            }
+                            tp.width = %ld;
                         }
                     </script>
                     </head>
     <body>
-        <img id='tp' src="%@" />
+        <iframe id='tp' %@></iframe>
     </body>
 </html>

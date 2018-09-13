@@ -138,11 +138,11 @@
     [self refreshTimeTitle];
     [self.view showLoadingView];
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:10.0
-                                                  target:self
-                                                selector:@selector(loadData)
-                                                userInfo:nil
-                                                 repeats:YES];
+//    self.timer = [NSTimer scheduledTimerWithTimeInterval:10.0
+//                                                  target:self
+//                                                selector:@selector(loadData)
+//                                                userInfo:nil
+//                                                 repeats:YES];
 }
 
 - (void)loadData {

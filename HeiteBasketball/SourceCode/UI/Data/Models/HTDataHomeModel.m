@@ -7,7 +7,16 @@
 //
 
 #import "HTDataHomeModel.h"
+#import "HTHtmlLoadUtil.h"
 
 @implementation HTDataHomeModel
+
+- (void)setTeam_logo:(NSString *)team_logo {
+    _team_logo = team_logo;
+    
+    if ([RX(@".svg$") isMatch:team_logo]) {
+        _html_team_logo = [[HTHtmlLoadUtil sharedInstance] svgHtmlWithUrl:team_logo];
+    }
+}
 
 @end

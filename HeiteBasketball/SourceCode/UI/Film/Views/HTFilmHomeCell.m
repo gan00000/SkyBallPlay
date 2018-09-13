@@ -53,6 +53,7 @@
         _webView = [[UIWebView alloc] init];
         _webView.scrollView.scrollEnabled = NO;
         _webView.delegate = self;
+        _webView.clearsContextBeforeDrawing = YES;
     }
     return _webView;
 }
@@ -62,7 +63,7 @@
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    NSLog(@"加载失败");
+    NSLog(@"加载失败 -- %@", error);
 }
 
 @end

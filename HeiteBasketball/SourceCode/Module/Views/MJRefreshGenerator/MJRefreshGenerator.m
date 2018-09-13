@@ -19,6 +19,7 @@
     header.lastUpdatedTimeLabel.hidden = YES;
     return header;
 }
+
 + (MJRefreshBackStateFooter *)bj_foorterWithRefreshingBlock:(MJRefreshComponentRefreshingBlock)refreshingBlock {
     MJRefreshBackStateFooter *footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:refreshingBlock];
     [footer setTitle:@"上拉加载更多" forState:MJRefreshStateIdle];

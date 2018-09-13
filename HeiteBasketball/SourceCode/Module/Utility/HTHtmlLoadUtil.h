@@ -1,5 +1,5 @@
 //
-//  HTSvgLogoUtil.h
+//  HTHtmlLoadUtil.h
 //  HeiteBasketball
 //
 //  Created by 冯生伟 on 2018/9/10.
@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HTSvgLogoUtil : NSObject
+@interface HTHtmlLoadUtil : NSObject
 
 + (instancetype)sharedInstance;
-- (NSString *)htmlWithSrc:(NSString *)img_url;
+- (NSString *)svgHtmlWithUrl:(NSString *)img_url;
+- (NSString *)iframHtmlWithContent:(NSString *)iframe_content;
 
 @end

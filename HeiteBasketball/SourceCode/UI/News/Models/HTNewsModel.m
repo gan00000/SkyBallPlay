@@ -9,6 +9,7 @@
 #import "HTNewsModel.h"
 #import "BJDateFormatUtility.h"
 #import "BJHTTPServiceEngine.h"
+#import "HTHtmlLoadUtil.h"
 
 @interface HTNewsModel () <NSURLConnectionDelegate>
 
@@ -35,17 +36,18 @@
     
     NSString *iframe = [[RX(@"<iframe(.*?)</iframe>") matches:content] firstObject];
     _news_type = @"新聞";
-    _filmCellHeight = 260;
     if (iframe) {
-        _news_type = @"影片";
         NSInteger width = [[[RX(@"\\d+") matches:[[RX(@"width=\"\\d+\"") matches:iframe] firstObject]] firstObject] integerValue];
         NSInteger height = [[[RX(@"\\d+") matches:[[RX(@"height=\"\\d+\"") matches:iframe] firstObject]] firstObject] integerValue];
         CGFloat iframeHeight = SCREEN_WIDTH * height / width;
         CGFloat titleHeiht = [self.title jx_sizeWithFont:[UIFont systemFontOfSize:14] constrainedToWidth:SCREEN_WIDTH-30].height;
+        
+        NSString *iframe_content = [[[RX(@"src(.*?)>") matches:iframe] firstObject] stringByReplacingOccurrencesOfString:@">" withString:@""];
+        
+        _news_type = @"影片";
         _filmCellHeight = iframeHeight + titleHeiht + 75;
-    }
-    
-    _iframe = [NSString stringWithFormat:@"<!DOCTYPE html><html><body><p>%@</p></body></html>", iframe];
+        _iframe = [[HTHtmlLoadUtil sharedInstance] iframHtmlWithContent:iframe_content];
+    } 
 }
 
 - (void)setDate:(NSString *)date {
