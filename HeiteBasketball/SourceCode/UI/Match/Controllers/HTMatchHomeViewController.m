@@ -11,6 +11,7 @@
 #import "HTMatchHomeRequest.h"
 #import "HTMatchHomeCell.h"
 #import "HTMatchHomeGroupHeaderView.h"
+#import "HTDatePickerView.h"
 
 #import "NSDateFormatter+DRExtension.h"
 #import "UIView+Loading.h"
@@ -57,6 +58,16 @@
     self.startDate = [self.startDate dateByAddingDays:8];
     [BJLoadingHud showHUDInView:self.view];
     [self loadData];
+}
+
+- (IBAction)onSelectDateButtonTapped:(id)sender {
+    kWeakSelf
+    [HTDatePickerView showWithWithDate:self.startDate didTapEnterBlock:^BOOL(NSDate *date) {
+        weakSelf.startDate = date;
+        [BJLoadingHud showHUDInView:weakSelf.view];
+        [weakSelf loadData];
+        return YES;
+    }];
 }
 
 #pragma mark - UITableViewDataSource
@@ -129,20 +140,15 @@
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     
-    // test
-    NSDateFormatter *formt = [NSDateFormatter dr_dateFormatter];
-    [formt setDateFormat:@"yyyy-MM-dd"];
-    self.startDate = [formt dateFromString:@"2018-06-05"];
-    
-//    self.startDate = [NSDate date];
+    self.startDate = [NSDate date];
     [self refreshTimeTitle];
     [self.view showLoadingView];
     
-//    self.timer = [NSTimer scheduledTimerWithTimeInterval:10.0
-//                                                  target:self
-//                                                selector:@selector(loadData)
-//                                                userInfo:nil
-//                                                 repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:10.0
+                                                  target:self
+                                                selector:@selector(loadData)
+                                                userInfo:nil
+                                                 repeats:YES];
 }
 
 - (void)loadData {

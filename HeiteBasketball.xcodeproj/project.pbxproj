@@ -127,6 +127,8 @@
 		FEDAC975214B9117005E8B63 /* HTDataHomeTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDAC973214B9117005E8B63 /* HTDataHomeTeamCell.xib */; };
 		FEDAC978214B9129005E8B63 /* HTDataCellTeamView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDAC977214B9129005E8B63 /* HTDataCellTeamView.m */; };
 		FEDAC97A214B9139005E8B63 /* HTDataCellTeamView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDAC979214B9139005E8B63 /* HTDataCellTeamView.xib */; };
+		FEDAC97D214BBD28005E8B63 /* HTDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDAC97C214BBD28005E8B63 /* HTDatePickerView.m */; };
+		FEDAC97F214BBD37005E8B63 /* HTDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDAC97E214BBD37005E8B63 /* HTDatePickerView.xib */; };
 		FEDF8FC4214441C6005C7C4D /* HTMatchHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDF8FC2214441C6005C7C4D /* HTMatchHomeCell.m */; };
 		FEDF8FC5214441C6005C7C4D /* HTMatchHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDF8FC3214441C6005C7C4D /* HTMatchHomeCell.xib */; };
 		FEDF8FC821444610005C7C4D /* HTMatchHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDF8FC721444610005C7C4D /* HTMatchHomeModel.m */; };
@@ -347,6 +349,9 @@
 		FEDAC976214B9129005E8B63 /* HTDataCellTeamView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataCellTeamView.h; sourceTree = "<group>"; };
 		FEDAC977214B9129005E8B63 /* HTDataCellTeamView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataCellTeamView.m; sourceTree = "<group>"; };
 		FEDAC979214B9139005E8B63 /* HTDataCellTeamView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDataCellTeamView.xib; sourceTree = "<group>"; };
+		FEDAC97B214BBD28005E8B63 /* HTDatePickerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDatePickerView.h; sourceTree = "<group>"; };
+		FEDAC97C214BBD28005E8B63 /* HTDatePickerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDatePickerView.m; sourceTree = "<group>"; };
+		FEDAC97E214BBD37005E8B63 /* HTDatePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDatePickerView.xib; sourceTree = "<group>"; };
 		FEDF8FC1214441C6005C7C4D /* HTMatchHomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchHomeCell.h; sourceTree = "<group>"; };
 		FEDF8FC2214441C6005C7C4D /* HTMatchHomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchHomeCell.m; sourceTree = "<group>"; };
 		FEDF8FC3214441C6005C7C4D /* HTMatchHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMatchHomeCell.xib; sourceTree = "<group>"; };
@@ -977,6 +982,9 @@
 				FEDF8FDC2144D04B005C7C4D /* HTMatchHomeGroupHeaderView.h */,
 				FEDF8FDD2144D04B005C7C4D /* HTMatchHomeGroupHeaderView.m */,
 				FEDF8FDF2144D05C005C7C4D /* HTMatchHomeGroupHeaderView.xib */,
+				FEDAC97B214BBD28005E8B63 /* HTDatePickerView.h */,
+				FEDAC97C214BBD28005E8B63 /* HTDatePickerView.m */,
+				FEDAC97E214BBD37005E8B63 /* HTDatePickerView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1085,6 +1093,7 @@
 				FEC1161C2143D4A1002DB617 /* BJTabBarView.xib in Resources */,
 				FEC116EF2143D8C9002DB617 /* MatchHome.storyboard in Resources */,
 				FE6BD094214584DA0090118A /* HTNewsTopHeaderView.xib in Resources */,
+				FEDAC97F214BBD37005E8B63 /* HTDatePickerView.xib in Resources */,
 				FE6BD04D2144FAF60090118A /* ViewStatus.xcassets in Resources */,
 				FE81D16E21497DDE0047A4A2 /* HTRankHomeCell.xib in Resources */,
 				FEC116FF2143DCAF002DB617 /* FilmHome.storyboard in Resources */,
@@ -1181,6 +1190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEDAC97D214BBD28005E8B63 /* HTDatePickerView.m in Sources */,
 				FEC116B72143D4A1002DB617 /* BJBaseTabBarController.m in Sources */,
 				FE81D16921497DB60047A4A2 /* HTRankHomeInfoModel.m in Sources */,
 				FEC112682143D058002DB617 /* main.m in Sources */,
