@@ -39,8 +39,8 @@
     return self;
 }
 
-- (NSString *)svgHtmlWithUrl:(NSString *)img_url {
-    return [NSString stringWithFormat:self.svgHtml, img_url];
+- (NSString *)svgHtmlWithUrl:(NSString *)img_url width:(NSInteger)width {
+    return [NSString stringWithFormat:self.svgHtml, width, img_url];
 }
 
 - (NSString *)iframHtmlWithContent:(NSString *)iframe_content {

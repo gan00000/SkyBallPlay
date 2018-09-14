@@ -54,6 +54,7 @@
         _webView.scrollView.scrollEnabled = NO;
         _webView.delegate = self;
         _webView.clearsContextBeforeDrawing = YES;
+        _webView.clipsToBounds = YES;
     }
     return _webView;
 }

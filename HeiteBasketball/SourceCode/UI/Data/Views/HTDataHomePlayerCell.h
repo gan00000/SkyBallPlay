@@ -1,5 +1,5 @@
 //
-//  HTDataHomeCell.h
+//  HTDataHomePlayerCell.h
 //  HeiteBasketball
 //
 //  Created by 冯生伟 on 2018/9/13.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HTDataHomeModel.h"
 
-@interface HTDataHomeCell : UITableViewCell
+@interface HTDataHomePlayerCell : UITableViewCell
 
 @property (nonatomic, copy) void (^showMoreBlock)(void);
 

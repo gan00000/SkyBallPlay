@@ -8,7 +8,8 @@
 
 #import "HTDataHomeSubViewController.h"
 #import "HTDataHomeRequest.h"
-#import "HTDataHomeCell.h"
+#import "HTDataHomePlayerCell.h"
+#import "HTDataHomeTeamCell.h"
 
 @interface HTDataHomeSubViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -42,65 +43,165 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HTDataHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTDataHomeCell"];
+    
+    HTDataHomePlayerCell *playerCell;
+    HTDataHomeTeamCell *teamCell;
+    if (self.type == 1) {
+        playerCell = [tableView dequeueReusableCellWithIdentifier:@"HTDataHomePlayerCell"];
+    } else {
+        teamCell = [tableView dequeueReusableCellWithIdentifier:@"HTDataHomeTeamCell"];
+    }
+    // TODO: 查看更多，点击回调
     switch (indexPath.row) {
             case 0: {
-                cell.showMoreBlock = ^{
-                    
-                };
-                [cell setupWithTitle:@"得分" datas:self.homeInfoModel.pts];
+                if (self.type == 1) {
+                    playerCell.showMoreBlock = ^{
+                        
+                    };
+                    [playerCell setupWithTitle:@"得分" datas:self.homeInfoModel.pts];
+                } else {
+                    teamCell.showMoreBlock = ^{
+                        
+                    };
+                    [teamCell setupWithTitle:@"得分" datas:self.homeInfoModel.pts];
+                }
             } break;
             
             case 1: {
-                cell.showMoreBlock = ^{
-                    
-                };
-                [cell setupWithTitle:@"籃板" datas:self.homeInfoModel.reb];
+                if (self.type == 1) {
+                    playerCell.showMoreBlock = ^{
+                        
+                    };
+                    [playerCell setupWithTitle:@"得分" datas:self.homeInfoModel.reb];
+                } else {
+                    teamCell.showMoreBlock = ^{
+                        
+                    };
+                    [teamCell setupWithTitle:@"得分" datas:self.homeInfoModel.reb];
+                }
             } break;
             
             case 2: {
-                cell.showMoreBlock = ^{
-                    
-                };
-                [cell setupWithTitle:@"助攻" datas:self.homeInfoModel.ast];
+                if (self.type == 1) {
+                    playerCell.showMoreBlock = ^{
+                        
+                    };
+                    [playerCell setupWithTitle:@"得分" datas:self.homeInfoModel.ast];
+                } else {
+                    teamCell.showMoreBlock = ^{
+                        
+                    };
+                    [teamCell setupWithTitle:@"得分" datas:self.homeInfoModel.ast];
+                }
             } break;
             
             case 3: {
-                cell.showMoreBlock = ^{
-                    
-                };
-                [cell setupWithTitle:@"搶斷" datas:self.homeInfoModel.stl];
+                if (self.type == 1) {
+                    playerCell.showMoreBlock = ^{
+                        
+                    };
+                    [playerCell setupWithTitle:@"得分" datas:self.homeInfoModel.stl];
+                } else {
+                    teamCell.showMoreBlock = ^{
+                        
+                    };
+                    [teamCell setupWithTitle:@"得分" datas:self.homeInfoModel.stl];
+                }
             } break;
             
             case 4: {
-                cell.showMoreBlock = ^{
-                    
-                };
-                [cell setupWithTitle:@"蓋帽" datas:self.homeInfoModel.blk];
+                if (self.type == 1) {
+                    playerCell.showMoreBlock = ^{
+                        
+                    };
+                    [playerCell setupWithTitle:@"得分" datas:self.homeInfoModel.blk];
+                } else {
+                    teamCell.showMoreBlock = ^{
+                        
+                    };
+                    [teamCell setupWithTitle:@"得分" datas:self.homeInfoModel.blk];
+                }
             } break;
             
             case 5: {
-                cell.showMoreBlock = ^{
-                    
-                };
-                [cell setupWithTitle:@"失誤" datas:self.homeInfoModel.turnover];
+                if (self.type == 1) {
+                    playerCell.showMoreBlock = ^{
+                        
+                    };
+                    [playerCell setupWithTitle:@"得分" datas:self.homeInfoModel.turnover];
+                } else {
+                    teamCell.showMoreBlock = ^{
+                        
+                    };
+                    [teamCell setupWithTitle:@"得分" datas:self.homeInfoModel.turnover];
+                }
             } break;
             
         default:
             break;
     }
-    return cell;
+    if (self.type == 1) {
+        return playerCell;
+    } else {
+        return teamCell;
+    }
 }
 
+#pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger count = 0;
+    switch (indexPath.row) {
+        case 0: {
+            count = self.homeInfoModel.pts.count;
+        } break;
+            
+        case 1: {
+            count = self.homeInfoModel.reb.count;
+        } break;
+            
+        case 2: {
+            count = self.homeInfoModel.ast.count;
+        } break;
+            
+        case 3: {
+            count = self.homeInfoModel.stl.count;
+        } break;
+            
+        case 4: {
+            count = self.homeInfoModel.blk.count;
+        } break;
+            
+        case 5: {
+            count = self.homeInfoModel.turnover.count;
+        } break;
+            
+        default:
+            break;
+    }
+    if (count) {
+        if (self.type == 1) { // 队员
+            return (SCREEN_WIDTH/count-30) * 3 / 2 + 145;
+        } else {
+            return SCREEN_WIDTH / count + 88;
+        }
+    }
+    return 0.000001;
+}
+
+#pragma mark - private
 - (void)setupViews {
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = 190;
     self.tableView.tableFooterView = [[UIView alloc] init];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"HTDataHomeCell" bundle:nil]
-         forCellReuseIdentifier:@"HTDataHomeCell"];
+    if (self.type == 1) {
+        [self.tableView registerNib:[UINib nibWithNibName:@"HTDataHomePlayerCell" bundle:nil]
+             forCellReuseIdentifier:@"HTDataHomePlayerCell"];
+    } else {
+        [self.tableView registerNib:[UINib nibWithNibName:@"HTDataHomeTeamCell" bundle:nil]
+             forCellReuseIdentifier:@"HTDataHomeTeamCell"];
+    }
     
     kWeakSelf
     self.tableView.mj_header = [MJRefreshGenerator bj_headerWithRefreshingBlock:^{

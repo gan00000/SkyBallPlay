@@ -11,11 +11,13 @@
 
 @implementation HTDataHomeModel
 
-- (void)setTeam_logo:(NSString *)team_logo {
-    _team_logo = team_logo;
-    
-    if ([RX(@".svg$") isMatch:team_logo]) {
-        _html_team_logo = [[HTHtmlLoadUtil sharedInstance] svgHtmlWithUrl:team_logo];
+- (void)imageUrlFixWithWidth:(NSInteger)width {
+    if (!_html_team_logo) {
+        _html_team_logo = @"";
+        if ([RX(@".svg$") isMatch:self.team_logo]) {
+            _html_team_logo = [[HTHtmlLoadUtil sharedInstance] svgHtmlWithUrl:self.team_logo
+                                                                        width:width];
+        }
     }
 }
 

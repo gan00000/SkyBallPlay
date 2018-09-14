@@ -17,4 +17,6 @@
 @property (nonatomic, copy) NSString *html_team_logo;
 @property (nonatomic, assign) CGFloat score;
 
+- (void)imageUrlFixWithWidth:(NSInteger)width;
+
 @end

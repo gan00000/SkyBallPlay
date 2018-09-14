@@ -45,8 +45,8 @@
 		FE81D159214819FA0047A4A2 /* HTDataHomeSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D158214819FA0047A4A2 /* HTDataHomeSubViewController.m */; };
 		FE81D15B2149613B0047A4A2 /* DataHomeSub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE81D15A2149613B0047A4A2 /* DataHomeSub.storyboard */; };
 		FE81D15E21496B380047A4A2 /* HTDataHomeInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D15D21496B380047A4A2 /* HTDataHomeInfoModel.m */; };
-		FE81D1622149716D0047A4A2 /* HTDataHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D1602149716D0047A4A2 /* HTDataHomeCell.m */; };
-		FE81D1632149716D0047A4A2 /* HTDataHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE81D1612149716D0047A4A2 /* HTDataHomeCell.xib */; };
+		FE81D1622149716D0047A4A2 /* HTDataHomePlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D1602149716D0047A4A2 /* HTDataHomePlayerCell.m */; };
+		FE81D1632149716D0047A4A2 /* HTDataHomePlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE81D1612149716D0047A4A2 /* HTDataHomePlayerCell.xib */; };
 		FE81D16621497D8C0047A4A2 /* HTRankHomeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D16521497D8C0047A4A2 /* HTRankHomeRequest.m */; };
 		FE81D16921497DB60047A4A2 /* HTRankHomeInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D16821497DB60047A4A2 /* HTRankHomeInfoModel.m */; };
 		FE81D16D21497DDE0047A4A2 /* HTRankHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D16B21497DDE0047A4A2 /* HTRankHomeCell.m */; };
@@ -122,6 +122,11 @@
 		FEC1172B2143E43A002DB617 /* Launch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC1172A2143E43A002DB617 /* Launch.xcassets */; };
 		FEC1172E2143EAA3002DB617 /* BJError.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1172D2143EAA3002DB617 /* BJError.m */; };
 		FEC117312143EAC2002DB617 /* BJBaseResponceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1172F2143EAC2002DB617 /* BJBaseResponceModel.m */; };
+		FEDAC970214B86C7005E8B63 /* HTDataCellPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDAC96F214B86C7005E8B63 /* HTDataCellPlayerView.xib */; };
+		FEDAC974214B9117005E8B63 /* HTDataHomeTeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDAC972214B9117005E8B63 /* HTDataHomeTeamCell.m */; };
+		FEDAC975214B9117005E8B63 /* HTDataHomeTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDAC973214B9117005E8B63 /* HTDataHomeTeamCell.xib */; };
+		FEDAC978214B9129005E8B63 /* HTDataCellTeamView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDAC977214B9129005E8B63 /* HTDataCellTeamView.m */; };
+		FEDAC97A214B9139005E8B63 /* HTDataCellTeamView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDAC979214B9139005E8B63 /* HTDataCellTeamView.xib */; };
 		FEDF8FC4214441C6005C7C4D /* HTMatchHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDF8FC2214441C6005C7C4D /* HTMatchHomeCell.m */; };
 		FEDF8FC5214441C6005C7C4D /* HTMatchHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDF8FC3214441C6005C7C4D /* HTMatchHomeCell.xib */; };
 		FEDF8FC821444610005C7C4D /* HTMatchHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDF8FC721444610005C7C4D /* HTMatchHomeModel.m */; };
@@ -131,7 +136,7 @@
 		FEDF8FDE2144D04B005C7C4D /* HTMatchHomeGroupHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDF8FDD2144D04B005C7C4D /* HTMatchHomeGroupHeaderView.m */; };
 		FEDF8FE02144D05C005C7C4D /* HTMatchHomeGroupHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDF8FDF2144D05C005C7C4D /* HTMatchHomeGroupHeaderView.xib */; };
 		FEEABBE72149F90800A585DA /* iframe_load.html in Resources */ = {isa = PBXBuildFile; fileRef = FEEABBE62149F90700A585DA /* iframe_load.html */; };
-		FEEABBF6214AA57600A585DA /* HTDataCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEABBF5214AA57600A585DA /* HTDataCellView.m */; };
+		FEEABBF6214AA57600A585DA /* HTDataCellPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEABBF5214AA57600A585DA /* HTDataCellPlayerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -196,9 +201,9 @@
 		FE81D15A2149613B0047A4A2 /* DataHomeSub.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DataHomeSub.storyboard; sourceTree = "<group>"; };
 		FE81D15C21496B380047A4A2 /* HTDataHomeInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataHomeInfoModel.h; sourceTree = "<group>"; };
 		FE81D15D21496B380047A4A2 /* HTDataHomeInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataHomeInfoModel.m; sourceTree = "<group>"; };
-		FE81D15F2149716D0047A4A2 /* HTDataHomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataHomeCell.h; sourceTree = "<group>"; };
-		FE81D1602149716D0047A4A2 /* HTDataHomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataHomeCell.m; sourceTree = "<group>"; };
-		FE81D1612149716D0047A4A2 /* HTDataHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDataHomeCell.xib; sourceTree = "<group>"; };
+		FE81D15F2149716D0047A4A2 /* HTDataHomePlayerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataHomePlayerCell.h; sourceTree = "<group>"; };
+		FE81D1602149716D0047A4A2 /* HTDataHomePlayerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataHomePlayerCell.m; sourceTree = "<group>"; };
+		FE81D1612149716D0047A4A2 /* HTDataHomePlayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDataHomePlayerCell.xib; sourceTree = "<group>"; };
 		FE81D16421497D8C0047A4A2 /* HTRankHomeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTRankHomeRequest.h; sourceTree = "<group>"; };
 		FE81D16521497D8C0047A4A2 /* HTRankHomeRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTRankHomeRequest.m; sourceTree = "<group>"; };
 		FE81D16721497DB60047A4A2 /* HTRankHomeInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTRankHomeInfoModel.h; sourceTree = "<group>"; };
@@ -335,6 +340,13 @@
 		FEC1172D2143EAA3002DB617 /* BJError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJError.m; sourceTree = "<group>"; };
 		FEC1172F2143EAC2002DB617 /* BJBaseResponceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJBaseResponceModel.m; sourceTree = "<group>"; };
 		FEC117302143EAC2002DB617 /* BJBaseResponceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJBaseResponceModel.h; sourceTree = "<group>"; };
+		FEDAC96F214B86C7005E8B63 /* HTDataCellPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDataCellPlayerView.xib; sourceTree = "<group>"; };
+		FEDAC971214B9117005E8B63 /* HTDataHomeTeamCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataHomeTeamCell.h; sourceTree = "<group>"; };
+		FEDAC972214B9117005E8B63 /* HTDataHomeTeamCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataHomeTeamCell.m; sourceTree = "<group>"; };
+		FEDAC973214B9117005E8B63 /* HTDataHomeTeamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDataHomeTeamCell.xib; sourceTree = "<group>"; };
+		FEDAC976214B9129005E8B63 /* HTDataCellTeamView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataCellTeamView.h; sourceTree = "<group>"; };
+		FEDAC977214B9129005E8B63 /* HTDataCellTeamView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataCellTeamView.m; sourceTree = "<group>"; };
+		FEDAC979214B9139005E8B63 /* HTDataCellTeamView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDataCellTeamView.xib; sourceTree = "<group>"; };
 		FEDF8FC1214441C6005C7C4D /* HTMatchHomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchHomeCell.h; sourceTree = "<group>"; };
 		FEDF8FC2214441C6005C7C4D /* HTMatchHomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchHomeCell.m; sourceTree = "<group>"; };
 		FEDF8FC3214441C6005C7C4D /* HTMatchHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMatchHomeCell.xib; sourceTree = "<group>"; };
@@ -350,8 +362,8 @@
 		FEDF8FDD2144D04B005C7C4D /* HTMatchHomeGroupHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchHomeGroupHeaderView.m; sourceTree = "<group>"; };
 		FEDF8FDF2144D05C005C7C4D /* HTMatchHomeGroupHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMatchHomeGroupHeaderView.xib; sourceTree = "<group>"; };
 		FEEABBE62149F90700A585DA /* iframe_load.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = iframe_load.html; sourceTree = "<group>"; };
-		FEEABBF4214AA57600A585DA /* HTDataCellView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataCellView.h; sourceTree = "<group>"; };
-		FEEABBF5214AA57600A585DA /* HTDataCellView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataCellView.m; sourceTree = "<group>"; };
+		FEEABBF4214AA57600A585DA /* HTDataCellPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataCellPlayerView.h; sourceTree = "<group>"; };
+		FEEABBF5214AA57600A585DA /* HTDataCellPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataCellPlayerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -883,11 +895,18 @@
 		FEC117142143DE7B002DB617 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FE81D15F2149716D0047A4A2 /* HTDataHomeCell.h */,
-				FE81D1602149716D0047A4A2 /* HTDataHomeCell.m */,
-				FE81D1612149716D0047A4A2 /* HTDataHomeCell.xib */,
-				FEEABBF4214AA57600A585DA /* HTDataCellView.h */,
-				FEEABBF5214AA57600A585DA /* HTDataCellView.m */,
+				FE81D15F2149716D0047A4A2 /* HTDataHomePlayerCell.h */,
+				FE81D1602149716D0047A4A2 /* HTDataHomePlayerCell.m */,
+				FE81D1612149716D0047A4A2 /* HTDataHomePlayerCell.xib */,
+				FEEABBF4214AA57600A585DA /* HTDataCellPlayerView.h */,
+				FEEABBF5214AA57600A585DA /* HTDataCellPlayerView.m */,
+				FEDAC96F214B86C7005E8B63 /* HTDataCellPlayerView.xib */,
+				FEDAC971214B9117005E8B63 /* HTDataHomeTeamCell.h */,
+				FEDAC972214B9117005E8B63 /* HTDataHomeTeamCell.m */,
+				FEDAC973214B9117005E8B63 /* HTDataHomeTeamCell.xib */,
+				FEDAC976214B9129005E8B63 /* HTDataCellTeamView.h */,
+				FEDAC977214B9129005E8B63 /* HTDataCellTeamView.m */,
+				FEDAC979214B9139005E8B63 /* HTDataCellTeamView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1047,17 +1066,19 @@
 				FE6BD07A21452B570090118A /* HTNewsHomeBannerCell.xib in Resources */,
 				FE6BD075214526980090118A /* HTNewsHomeCell.xib in Resources */,
 				FEC116FA2143DC72002DB617 /* News.xcassets in Resources */,
+				FEDAC97A214B9139005E8B63 /* HTDataCellTeamView.xib in Resources */,
 				FEDF8FE02144D05C005C7C4D /* HTMatchHomeGroupHeaderView.xib in Resources */,
 				FEC116042143D4A1002DB617 /* XJLoadingView.xib in Resources */,
 				FE6BD0522144FC270090118A /* MatchDetail.storyboard in Resources */,
 				FEC1162A2143D4A1002DB617 /* BJHUDView.xib in Resources */,
+				FEDAC975214B9117005E8B63 /* HTDataHomeTeamCell.xib in Resources */,
 				FE6BD0642144FF1F0090118A /* MatchDashboard.storyboard in Resources */,
 				FEC116F82143DC57002DB617 /* NewsHome.storyboard in Resources */,
 				FEC117262143DF33002DB617 /* RankHome.storyboard in Resources */,
 				FEC116092143D4A1002DB617 /* XJToastImageView.xib in Resources */,
 				FE6BD04B2144FA3C0090118A /* HUD.xcassets in Resources */,
 				FEC1171B2143DEAD002DB617 /* DataHome.storyboard in Resources */,
-				FE81D1632149716D0047A4A2 /* HTDataHomeCell.xib in Resources */,
+				FE81D1632149716D0047A4A2 /* HTDataHomePlayerCell.xib in Resources */,
 				FEC116072143D4A1002DB617 /* XJToastView.xib in Resources */,
 				FE6BD07F21457BBC0090118A /* NewsDetail.storyboard in Resources */,
 				FEC1172B2143E43A002DB617 /* Launch.xcassets in Resources */,
@@ -1067,6 +1088,7 @@
 				FE6BD04D2144FAF60090118A /* ViewStatus.xcassets in Resources */,
 				FE81D16E21497DDE0047A4A2 /* HTRankHomeCell.xib in Resources */,
 				FEC116FF2143DCAF002DB617 /* FilmHome.storyboard in Resources */,
+				FEDAC970214B86C7005E8B63 /* HTDataCellPlayerView.xib in Resources */,
 				FE6BD0602144FED00090118A /* MatchWordLive.storyboard in Resources */,
 				FEDF8FC5214441C6005C7C4D /* HTMatchHomeCell.xib in Resources */,
 				FE81D14D2146CA1F0047A4A2 /* logo_load.html in Resources */,
@@ -1164,6 +1186,7 @@
 				FEC112682143D058002DB617 /* main.m in Sources */,
 				FEC116762143D4A1002DB617 /* BJURINavigator.m in Sources */,
 				FEC116492143D4A1002DB617 /* BJMainViewController.m in Sources */,
+				FEDAC974214B9117005E8B63 /* HTDataHomeTeamCell.m in Sources */,
 				FEC117242143DF12002DB617 /* HTRankHomeViewController.m in Sources */,
 				FEC1164B2143D4A1002DB617 /* BJBaseViewController.m in Sources */,
 				FEC116052143D4A1002DB617 /* XJLoadingView.m in Sources */,
@@ -1171,7 +1194,7 @@
 				FE6BD0582144FDE10090118A /* HTMatchCompareViewController.m in Sources */,
 				FEC116CD2143D4A1002DB617 /* UIImage+Resize.m in Sources */,
 				FEDF8FDE2144D04B005C7C4D /* HTMatchHomeGroupHeaderView.m in Sources */,
-				FEEABBF6214AA57600A585DA /* HTDataCellView.m in Sources */,
+				FEEABBF6214AA57600A585DA /* HTDataCellPlayerView.m in Sources */,
 				FEC1162B2143D4A1002DB617 /* BJLoadingHud.m in Sources */,
 				FEC116C42143D4A1002DB617 /* UITableView+EstimatedHeight.m in Sources */,
 				FEC1164C2143D4A1002DB617 /* BJViewControllerCenter.m in Sources */,
@@ -1194,7 +1217,7 @@
 				FEC116B62143D4A1002DB617 /* BJBaseHTTPEngine.m in Sources */,
 				FEC116782143D4A1002DB617 /* BJURINavHelper.m in Sources */,
 				FE81D15E21496B380047A4A2 /* HTDataHomeInfoModel.m in Sources */,
-				FE81D1622149716D0047A4A2 /* HTDataHomeCell.m in Sources */,
+				FE81D1622149716D0047A4A2 /* HTDataHomePlayerCell.m in Sources */,
 				FEC116CB2143D4A1002DB617 /* UITextField+MQCustom.m in Sources */,
 				FE6BD08F21457FEC0090118A /* HTNewsTopRequest.m in Sources */,
 				FEC116CC2143D4A1002DB617 /* UIColor+Generator.m in Sources */,
@@ -1242,6 +1265,7 @@
 				FEC116C62143D4A1002DB617 /* UIView+QuickFrame.m in Sources */,
 				FE81D16D21497DDE0047A4A2 /* HTRankHomeCell.m in Sources */,
 				FEC116C02143D4A1002DB617 /* UIImage+Generator.m in Sources */,
+				FEDAC978214B9129005E8B63 /* HTDataCellTeamView.m in Sources */,
 				FEC116292143D4A1002DB617 /* BJHUDView.m in Sources */,
 				FEC1167C2143D4A1002DB617 /* BJWebViewJSBridge.m in Sources */,
 				FE6BD074214526980090118A /* HTNewsHomeCell.m in Sources */,

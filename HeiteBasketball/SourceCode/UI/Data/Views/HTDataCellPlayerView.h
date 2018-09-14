@@ -1,5 +1,5 @@
 //
-//  HTDataCellView.h
+//  HTDataCellPlayerView.h
 //  HeiteBasketball
 //
 //  Created by 冯生伟 on 2018/9/13.
@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "HTDataHomeModel.h"
 
-@interface HTDataCellView : UIView
+@interface HTDataCellPlayerView : UIView
 
++ (instancetype)dataCellViewWithFrame:(CGRect)frame addToView:(UIView *)view;
 - (void)setupWithDataModel:(HTDataHomeModel *)dataModel;
 
 @end
