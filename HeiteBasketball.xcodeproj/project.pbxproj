@@ -37,6 +37,8 @@
 		FE6BD094214584DA0090118A /* HTNewsTopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE6BD093214584DA0090118A /* HTNewsTopHeaderView.xib */; };
 		FE706F02214FF3430078DF30 /* HTDataMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE706F01214FF3430078DF30 /* HTDataMoreViewController.m */; };
 		FE706F04214FF3530078DF30 /* DataMore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE706F03214FF3530078DF30 /* DataMore.storyboard */; };
+		FE706F08215006430078DF30 /* HTDataHomeHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE706F06215006430078DF30 /* HTDataHomeHeaderCell.m */; };
+		FE706F09215006430078DF30 /* HTDataHomeHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE706F07215006430078DF30 /* HTDataHomeHeaderCell.xib */; };
 		FE81D1462146B2680047A4A2 /* HTFilmHomeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D1452146B2680047A4A2 /* HTFilmHomeRequest.m */; };
 		FE81D14A2146B3090047A4A2 /* HTFilmHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D1482146B3090047A4A2 /* HTFilmHomeCell.m */; };
 		FE81D14B2146B3090047A4A2 /* HTFilmHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE81D1492146B3090047A4A2 /* HTFilmHomeCell.xib */; };
@@ -191,6 +193,9 @@
 		FE706F00214FF3430078DF30 /* HTDataMoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataMoreViewController.h; sourceTree = "<group>"; };
 		FE706F01214FF3430078DF30 /* HTDataMoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataMoreViewController.m; sourceTree = "<group>"; };
 		FE706F03214FF3530078DF30 /* DataMore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DataMore.storyboard; sourceTree = "<group>"; };
+		FE706F05215006430078DF30 /* HTDataHomeHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataHomeHeaderCell.h; sourceTree = "<group>"; };
+		FE706F06215006430078DF30 /* HTDataHomeHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataHomeHeaderCell.m; sourceTree = "<group>"; };
+		FE706F07215006430078DF30 /* HTDataHomeHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDataHomeHeaderCell.xib; sourceTree = "<group>"; };
 		FE81D1442146B2680047A4A2 /* HTFilmHomeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTFilmHomeRequest.h; sourceTree = "<group>"; };
 		FE81D1452146B2680047A4A2 /* HTFilmHomeRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTFilmHomeRequest.m; sourceTree = "<group>"; };
 		FE81D1472146B3090047A4A2 /* HTFilmHomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTFilmHomeCell.h; sourceTree = "<group>"; };
@@ -908,18 +913,21 @@
 		FEC117142143DE7B002DB617 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FE81D15F2149716D0047A4A2 /* HTDataHomePlayerCell.h */,
-				FE81D1602149716D0047A4A2 /* HTDataHomePlayerCell.m */,
-				FE81D1612149716D0047A4A2 /* HTDataHomePlayerCell.xib */,
 				FEEABBF4214AA57600A585DA /* HTDataCellPlayerView.h */,
 				FEEABBF5214AA57600A585DA /* HTDataCellPlayerView.m */,
 				FEDAC96F214B86C7005E8B63 /* HTDataCellPlayerView.xib */,
-				FEDAC971214B9117005E8B63 /* HTDataHomeTeamCell.h */,
-				FEDAC972214B9117005E8B63 /* HTDataHomeTeamCell.m */,
-				FEDAC973214B9117005E8B63 /* HTDataHomeTeamCell.xib */,
 				FEDAC976214B9129005E8B63 /* HTDataCellTeamView.h */,
 				FEDAC977214B9129005E8B63 /* HTDataCellTeamView.m */,
 				FEDAC979214B9139005E8B63 /* HTDataCellTeamView.xib */,
+				FE706F05215006430078DF30 /* HTDataHomeHeaderCell.h */,
+				FE706F06215006430078DF30 /* HTDataHomeHeaderCell.m */,
+				FE706F07215006430078DF30 /* HTDataHomeHeaderCell.xib */,
+				FE81D15F2149716D0047A4A2 /* HTDataHomePlayerCell.h */,
+				FE81D1602149716D0047A4A2 /* HTDataHomePlayerCell.m */,
+				FE81D1612149716D0047A4A2 /* HTDataHomePlayerCell.xib */,
+				FEDAC971214B9117005E8B63 /* HTDataHomeTeamCell.h */,
+				FEDAC972214B9117005E8B63 /* HTDataHomeTeamCell.m */,
+				FEDAC973214B9117005E8B63 /* HTDataHomeTeamCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1106,6 +1114,7 @@
 				FE81D16E21497DDE0047A4A2 /* HTRankHomeCell.xib in Resources */,
 				FEC116FF2143DCAF002DB617 /* FilmHome.storyboard in Resources */,
 				FEDAC970214B86C7005E8B63 /* HTDataCellPlayerView.xib in Resources */,
+				FE706F09215006430078DF30 /* HTDataHomeHeaderCell.xib in Resources */,
 				FE706F04214FF3530078DF30 /* DataMore.storyboard in Resources */,
 				FE6BD0602144FED00090118A /* MatchWordLive.storyboard in Resources */,
 				FEDF8FC5214441C6005C7C4D /* HTMatchHomeCell.xib in Resources */,
@@ -1256,6 +1265,7 @@
 				FEC1161B2143D4A1002DB617 /* BJEmptyTableViewCell.m in Sources */,
 				FEC116112143D4A1002DB617 /* UIScrollView+AllowScreenEdgePanGestureRecognizer.m in Sources */,
 				FEC117102143DE50002DB617 /* HTFilmHomeViewController.m in Sources */,
+				FE706F08215006430078DF30 /* HTDataHomeHeaderCell.m in Sources */,
 				FE6BD05E2144FE550090118A /* HTMatchDashboardViewController.m in Sources */,
 				FE81D1462146B2680047A4A2 /* HTFilmHomeRequest.m in Sources */,
 				FEDF8FC821444610005C7C4D /* HTMatchHomeModel.m in Sources */,

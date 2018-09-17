@@ -37,16 +37,24 @@
     NSString *iframe = [[RX(@"<iframe(.*?)</iframe>") matches:content] firstObject];
     _news_type = @"新聞";
     if (iframe) {
-        NSInteger width = [[[RX(@"\\d+") matches:[[RX(@"width=\"\\d+\"") matches:iframe] firstObject]] firstObject] integerValue];
-        NSInteger height = [[[RX(@"\\d+") matches:[[RX(@"height=\"\\d+\"") matches:iframe] firstObject]] firstObject] integerValue];
+        _news_type = @"影片";
+        
+        NSString *widthStr = [[RX(@"width=\"\\d+\"") matches:iframe] firstObject];
+        NSInteger width = [[[RX(@"\\d+") matches:widthStr] firstObject] integerValue];
+        
+        NSString *heightStr = [[RX(@"height=\"\\d+\"") matches:iframe] firstObject];
+        NSInteger height = [[[RX(@"\\d+") matches:heightStr] firstObject] integerValue];
+        
         _iframe_height = SCREEN_WIDTH * height / width;
         CGFloat titleHeiht = [self.title jx_sizeWithFont:[UIFont systemFontOfSize:14] constrainedToWidth:SCREEN_WIDTH-30].height;
-        
-        NSString *iframe_content = [[[RX(@"src(.*?)>") matches:iframe] firstObject] stringByReplacingOccurrencesOfString:@">" withString:@""];
-        
-        _news_type = @"影片";
         _filmCellHeight = _iframe_height + titleHeiht + 75;
-        _iframe = [[HTHtmlLoadUtil sharedInstance] iframHtmlWithContent:iframe_content];
+        
+        iframe = [iframe stringByReplacingOccurrencesOfString:widthStr
+                                                   withString:[NSString stringWithFormat:@"width=%ld", (NSInteger)SCREEN_WIDTH]];
+        iframe = [iframe stringByReplacingOccurrencesOfString:heightStr
+                                                   withString:[NSString stringWithFormat:@"height=%ld", (NSInteger)_iframe_height]];
+        
+        _iframe = [[HTHtmlLoadUtil sharedInstance] iframHtmlWithContent:iframe];
     } 
 }
 

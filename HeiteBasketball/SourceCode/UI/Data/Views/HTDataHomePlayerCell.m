@@ -11,10 +11,6 @@
 
 @interface HTDataHomePlayerCell ()
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *arrowImageView;
-@property (weak, nonatomic) IBOutlet UIView *cellContentView;
-
 @property (nonatomic, strong) NSMutableArray *cells;
 
 @end
@@ -26,7 +22,6 @@
     
     self.selectionStyle = UITableViewCellSelectionStyleNone;
     self.clipsToBounds = YES;
-    self.arrowImageView.image = [self.arrowImageView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -35,17 +30,15 @@
     // Configure the view for the selected state
 }
 
-- (void)setupWithTitle:(NSString *)title datas:(NSArray<HTDataHomeModel *> *)datas {
+- (void)setupWithDatas:(NSArray<HTDataHomeModel *> *)datas {
     if (datas.count == 0) {
         return;
     }
     
-    self.titleLabel.text = title;
-    
     CGFloat width = SCREEN_WIDTH / datas.count;
     for (NSInteger i=self.cells.count; i<datas.count; i++) {
-        HTDataCellPlayerView *cell = [HTDataCellPlayerView dataCellViewWithFrame:CGRectMake(i*width, 0, width, self.cellContentView.jx_height)
-                                                           addToView:self.cellContentView];
+        HTDataCellPlayerView *cell = [HTDataCellPlayerView dataCellViewWithFrame:CGRectMake(i*width, 0, width, self.jx_height)
+                                                           addToView:self];
         [self.cells addObject:cell];
     }
     
@@ -53,12 +46,6 @@
         HTDataHomeModel *model = datas[i];
         HTDataCellPlayerView *cell = self.cells[i];
         [cell setupWithDataModel:model];
-    }
-}
-
-- (IBAction)onDetailButtonTapped:(UIButton *)sender {
-    if (self.showMoreBlock) {
-        self.showMoreBlock();
     }
 }
 

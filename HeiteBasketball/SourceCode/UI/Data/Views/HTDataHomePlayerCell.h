@@ -11,8 +11,6 @@
 
 @interface HTDataHomePlayerCell : UITableViewCell
 
-@property (nonatomic, copy) void (^showMoreBlock)(void);
-
-- (void)setupWithTitle:(NSString *)title datas:(NSArray<HTDataHomeModel *> *)datas;
+- (void)setupWithDatas:(NSArray<HTDataHomeModel *> *)datas;
 
 @end

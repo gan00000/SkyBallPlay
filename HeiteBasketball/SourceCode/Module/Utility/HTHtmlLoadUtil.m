@@ -44,7 +44,7 @@
 }
 
 - (NSString *)iframHtmlWithContent:(NSString *)iframe_content {
-    return [NSString stringWithFormat:self.iframeHtml, SCREEN_WIDTH, iframe_content];
+    return [NSString stringWithFormat:self.iframeHtml, iframe_content];
 }
 
 @end

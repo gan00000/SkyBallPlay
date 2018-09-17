@@ -17,7 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *viewCountLabel;
 
 @property (nonatomic, strong) WKWebView *webView;
-@property (nonatomic, weak) HTNewsModel *model;
 
 @end
 
@@ -41,7 +40,6 @@
     if (!newsModel) {
         return;
     }
-    self.model = newsModel;
     
     self.webView.frame = CGRectMake(0, 10, SCREEN_WIDTH, newsModel.iframe_height);
     [self.webView loadHTMLString:newsModel.iframe baseURL:nil];

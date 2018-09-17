@@ -10,4 +10,7 @@
 
 @interface HTDataMoreViewController : BJBaseViewController
 
+@property (nonatomic, assign) NSInteger type;
+@property (nonatomic, copy) NSString *subType;
+
 @end

@@ -11,6 +11,7 @@
 #import "HTDataHomeRequest.h"
 #import "HTDataHomePlayerCell.h"
 #import "HTDataHomeTeamCell.h"
+#import "HTDataHomeHeaderCell.h"
 
 @interface HTDataHomeSubViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -39,122 +40,72 @@
 }
 
 #pragma mark - UITableViewDataSource
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 6;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 2;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    HTDataHomeHeaderCell *headerCell;
     HTDataHomePlayerCell *playerCell;
     HTDataHomeTeamCell *teamCell;
-    if (self.type == 1) {
-        playerCell = [tableView dequeueReusableCellWithIdentifier:@"HTDataHomePlayerCell"];
+    
+    if (indexPath.row == 0) {
+        headerCell = [tableView dequeueReusableCellWithIdentifier:@"HTDataHomeHeaderCell"];
     } else {
-        teamCell = [tableView dequeueReusableCellWithIdentifier:@"HTDataHomeTeamCell"];
+        if (self.type == 1) {
+            playerCell = [tableView dequeueReusableCellWithIdentifier:@"HTDataHomePlayerCell"];
+        } else {
+            teamCell = [tableView dequeueReusableCellWithIdentifier:@"HTDataHomeTeamCell"];
+        }
     }
-    // TODO: 查看更多，点击回调
-    kWeakSelf
-    switch (indexPath.row) {
-            case 0: {
-                if (self.type == 1) {
-                    playerCell.showMoreBlock = ^{
-                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
-                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
-                    };
-                    [playerCell setupWithTitle:@"得分" datas:self.homeInfoModel.pts];
-                } else {
-                    teamCell.showMoreBlock = ^{
-                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
-                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
-                    };
-                    [teamCell setupWithTitle:@"得分" datas:self.homeInfoModel.pts];
-                }
-            } break;
+    
+    switch (indexPath.section) {
+        case 0: {
+            headerCell.title = @"得分";
+            [playerCell setupWithDatas:self.homeInfoModel.pts];
+            [teamCell setupWithDatas:self.homeInfoModel.pts];
+        } break;
             
-            case 1: {
-                if (self.type == 1) {
-                    playerCell.showMoreBlock = ^{
-                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
-                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
-                    };
-                    [playerCell setupWithTitle:@"得分" datas:self.homeInfoModel.reb];
-                } else {
-                    teamCell.showMoreBlock = ^{
-                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
-                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
-                    };
-                    [teamCell setupWithTitle:@"得分" datas:self.homeInfoModel.reb];
-                }
-            } break;
+        case 1: {
+            headerCell.title = @"籃板";
+            [playerCell setupWithDatas:self.homeInfoModel.reb];
+            [teamCell setupWithDatas:self.homeInfoModel.reb];
+        } break;
             
-            case 2: {
-                if (self.type == 1) {
-                    playerCell.showMoreBlock = ^{
-                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
-                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
-                    };
-                    [playerCell setupWithTitle:@"得分" datas:self.homeInfoModel.ast];
-                } else {
-                    teamCell.showMoreBlock = ^{
-                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
-                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
-                    };
-                    [teamCell setupWithTitle:@"得分" datas:self.homeInfoModel.ast];
-                }
-            } break;
+        case 2: {
+            headerCell.title = @"助攻";
+            [playerCell setupWithDatas:self.homeInfoModel.ast];
+            [teamCell setupWithDatas:self.homeInfoModel.ast];
+        } break;
             
-            case 3: {
-                if (self.type == 1) {
-                    playerCell.showMoreBlock = ^{
-                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
-                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
-                    };
-                    [playerCell setupWithTitle:@"得分" datas:self.homeInfoModel.stl];
-                } else {
-                    teamCell.showMoreBlock = ^{
-                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
-                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
-                    };
-                    [teamCell setupWithTitle:@"得分" datas:self.homeInfoModel.stl];
-                }
-            } break;
+        case 3: {
+            headerCell.title = @"搶斷";
+            [playerCell setupWithDatas:self.homeInfoModel.stl];
+            [teamCell setupWithDatas:self.homeInfoModel.stl];
+        } break;
             
-            case 4: {
-                if (self.type == 1) {
-                    playerCell.showMoreBlock = ^{
-                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
-                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
-                    };
-                    [playerCell setupWithTitle:@"得分" datas:self.homeInfoModel.blk];
-                } else {
-                    teamCell.showMoreBlock = ^{
-                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
-                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
-                    };
-                    [teamCell setupWithTitle:@"得分" datas:self.homeInfoModel.blk];
-                }
-            } break;
+        case 4: {
+            headerCell.title = @"蓋帽";
+            [playerCell setupWithDatas:self.homeInfoModel.blk];
+            [teamCell setupWithDatas:self.homeInfoModel.blk];
+        } break;
             
-            case 5: {
-                if (self.type == 1) {
-                    playerCell.showMoreBlock = ^{
-                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
-                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
-                    };
-                    [playerCell setupWithTitle:@"得分" datas:self.homeInfoModel.turnover];
-                } else {
-                    teamCell.showMoreBlock = ^{
-                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
-                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
-                    };
-                    [teamCell setupWithTitle:@"得分" datas:self.homeInfoModel.turnover];
-                }
-            } break;
+        case 5: {
+            headerCell.title = @"失誤";
+            [playerCell setupWithDatas:self.homeInfoModel.turnover];
+            [teamCell setupWithDatas:self.homeInfoModel.turnover];
+        } break;
             
         default:
             break;
     }
-    if (self.type == 1) {
+    if (headerCell) {
+        return headerCell;
+    } else if (playerCell) {
         return playerCell;
     } else {
         return teamCell;
@@ -163,43 +114,53 @@
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger count = 0;
-    switch (indexPath.row) {
+    if (indexPath.row == 0) {
+        return 40;
+    }
+    
+    if (self.type == 1) { // 队员
+        return (SCREEN_WIDTH/5-30) * 3 / 2 + 105;
+    } else {
+        return SCREEN_WIDTH/5 + 48;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row > 0) {
+        return;
+    }
+    
+    HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
+    moreVc.type = self.type;
+    switch (indexPath.section) {
         case 0: {
-            count = self.homeInfoModel.pts.count;
+            moreVc.subType = @"pts";
         } break;
             
         case 1: {
-            count = self.homeInfoModel.reb.count;
+            moreVc.subType = @"reb";
         } break;
             
         case 2: {
-            count = self.homeInfoModel.ast.count;
+            moreVc.subType = @"ast";
         } break;
             
         case 3: {
-            count = self.homeInfoModel.stl.count;
+            moreVc.subType = @"stl";
         } break;
             
         case 4: {
-            count = self.homeInfoModel.blk.count;
+            moreVc.subType = @"blk";
         } break;
             
         case 5: {
-            count = self.homeInfoModel.turnover.count;
+           moreVc.subType = @"turnover";
         } break;
             
         default:
             break;
     }
-    if (count) {
-        if (self.type == 1) { // 队员
-            return (SCREEN_WIDTH/count-30) * 3 / 2 + 145;
-        } else {
-            return SCREEN_WIDTH / count + 88;
-        }
-    }
-    return 0.000001;
+    [self.navigationController pushViewController:moreVc animated:YES];
 }
 
 #pragma mark - private
@@ -216,6 +177,8 @@
         [self.tableView registerNib:[UINib nibWithNibName:@"HTDataHomeTeamCell" bundle:nil]
              forCellReuseIdentifier:@"HTDataHomeTeamCell"];
     }
+    [self.tableView registerNib:[UINib nibWithNibName:@"HTDataHomeHeaderCell" bundle:nil]
+         forCellReuseIdentifier:@"HTDataHomeHeaderCell"];
     
     kWeakSelf
     self.tableView.mj_header = [MJRefreshGenerator bj_headerWithRefreshingBlock:^{
