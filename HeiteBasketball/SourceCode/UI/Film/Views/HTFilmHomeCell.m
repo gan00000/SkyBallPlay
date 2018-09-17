@@ -9,15 +9,15 @@
 #import "HTFilmHomeCell.h"
 #import <WebKit/WebKit.h>
 
-@interface HTFilmHomeCell () <UIWebViewDelegate>
+@interface HTFilmHomeCell () <WKNavigationDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *webContentView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *kindLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *viewCountLabel;
 
-@property (nonatomic, strong) UIWebView *webView;
+@property (nonatomic, strong) WKWebView *webView;
+@property (nonatomic, weak) HTNewsModel *model;
 
 @end
 
@@ -26,12 +26,9 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    [self.webContentView addSubview:self.webView];
-    [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.bottom.right.mas_offset(0);
-    }];
-    
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    [self addSubview:self.webView];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -41,30 +38,38 @@
 }
 
 - (void)setupWithNewsModel:(HTNewsModel *)newsModel {
+    if (!newsModel) {
+        return;
+    }
+    self.model = newsModel;
+    
+    self.webView.frame = CGRectMake(0, 10, SCREEN_WIDTH, newsModel.iframe_height);
     [self.webView loadHTMLString:newsModel.iframe baseURL:nil];
+    [self.webView showLoadingView];
+    
     self.titleLabel.text = newsModel.title;
     self.kindLabel.text = newsModel.news_type;
     self.timeLabel.text = newsModel.time;
     self.viewCountLabel.text = newsModel.view_count;
 }
 
-- (UIWebView *)webView {
+#pragma mark - WKNavigationDelegate
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation {
+    [self.webView hideLoadingView];
+}
+
+#pragma mark - lazy load
+- (WKWebView *)webView {
     if (!_webView) {
-        _webView = [[UIWebView alloc] init];
+        _webView = [[WKWebView alloc] init];
+        _webView.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"f4f4f4"];
         _webView.scrollView.scrollEnabled = NO;
-        _webView.delegate = self;
+        _webView.navigationDelegate = self;
         _webView.clearsContextBeforeDrawing = YES;
         _webView.clipsToBounds = YES;
     }
     return _webView;
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    NSLog(@"加载完成");
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    NSLog(@"加载失败 -- %@", error);
-}
 
 @end

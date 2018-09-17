@@ -10,6 +10,7 @@
 #import "HTNewsDetailViewController.h"
 #import "HTFilmHomeRequest.h"
 #import "HTFilmHomeCell.h"
+#import "HTNewsHomeCell.h"
 
 @interface HTFilmHomeViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -45,6 +46,13 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    HTNewsModel *model = self.filmList[indexPath.row];
+    if ([model.news_type isEqualToString:@"新聞"]) {
+        HTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsHomeCell"];
+        [cell setupWithNewsModel:model];
+        return cell;
+    }
+    
     HTFilmHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTFilmHomeCell"];
     [cell setupWithNewsModel:self.filmList[indexPath.row]];
     return cell;
@@ -53,6 +61,9 @@
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     HTNewsModel *model = self.filmList[indexPath.row];
+    if ([model.news_type isEqualToString:@"新聞"]) {
+        return 90;
+    }
     return model.filmCellHeight;
 }
 
@@ -73,6 +84,8 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"HTFilmHomeCell" bundle:nil]
          forCellReuseIdentifier:@"HTFilmHomeCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"HTNewsHomeCell" bundle:nil]
+         forCellReuseIdentifier:@"HTNewsHomeCell"];
     
     kWeakSelf
     self.tableView.mj_header = [MJRefreshGenerator bj_headerWithRefreshingBlock:^{

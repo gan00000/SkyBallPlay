@@ -19,10 +19,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="259.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NuH-Af-hCB">
-                        <rect key="frame" x="0.0" y="15" width="375" height="167.5"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTr-0I-WbP">
                         <rect key="frame" x="15" y="197" width="345" height="17"/>
                         <constraints>
@@ -81,15 +77,12 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="lTr-0I-WbP" firstAttribute="top" secondItem="NuH-Af-hCB" secondAttribute="bottom" constant="15" id="6Ck-G0-jtQ"/>
                     <constraint firstAttribute="trailing" secondItem="Jvl-Uy-aHS" secondAttribute="trailing" id="CTZ-Wz-C3j"/>
                     <constraint firstItem="czP-TZ-ySG" firstAttribute="leading" secondItem="Bcb-3E-rfr" secondAttribute="trailing" constant="5" id="FEU-gc-EZo"/>
-                    <constraint firstAttribute="trailing" secondItem="NuH-Af-hCB" secondAttribute="trailing" id="GVQ-tt-K6C"/>
                     <constraint firstItem="vc1-UD-eXl" firstAttribute="leading" secondItem="czP-TZ-ySG" secondAttribute="trailing" constant="20" id="HHT-lX-Noy"/>
                     <constraint firstItem="vc1-UD-eXl" firstAttribute="centerY" secondItem="czP-TZ-ySG" secondAttribute="centerY" id="IVX-jF-8qn"/>
                     <constraint firstItem="L4k-8c-Iq3" firstAttribute="centerY" secondItem="vc1-UD-eXl" secondAttribute="centerY" id="K3N-pL-t4k"/>
                     <constraint firstItem="itZ-4i-GUV" firstAttribute="centerY" secondItem="ZgI-Yn-5bj" secondAttribute="centerY" id="NTk-eu-xaJ"/>
-                    <constraint firstItem="NuH-Af-hCB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="OIQ-01-rfC"/>
                     <constraint firstItem="ZgI-Yn-5bj" firstAttribute="leading" secondItem="L4k-8c-Iq3" secondAttribute="trailing" constant="20" id="Pdn-JU-e9g"/>
                     <constraint firstItem="Jvl-Uy-aHS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Qkt-t0-Pgf"/>
                     <constraint firstItem="Bcb-3E-rfr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Whc-DP-5Kh"/>
@@ -102,7 +95,6 @@
                     <constraint firstItem="L4k-8c-Iq3" firstAttribute="leading" secondItem="vc1-UD-eXl" secondAttribute="trailing" constant="5" id="l8o-Gj-dFf"/>
                     <constraint firstItem="itZ-4i-GUV" firstAttribute="leading" secondItem="ZgI-Yn-5bj" secondAttribute="trailing" constant="5" id="vH8-us-uRg"/>
                     <constraint firstItem="czP-TZ-ySG" firstAttribute="centerY" secondItem="Bcb-3E-rfr" secondAttribute="centerY" id="wMI-p5-D6V"/>
-                    <constraint firstItem="NuH-Af-hCB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wzU-2R-HXJ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
@@ -111,7 +103,6 @@
                 <outlet property="timeLabel" destination="L4k-8c-Iq3" id="QuZ-Gp-LU9"/>
                 <outlet property="titleLabel" destination="lTr-0I-WbP" id="grq-A3-Fwa"/>
                 <outlet property="viewCountLabel" destination="itZ-4i-GUV" id="Anr-Su-T9z"/>
-                <outlet property="webContentView" destination="NuH-Af-hCB" id="CcC-km-Ej9"/>
             </connections>
         </tableViewCell>
     </objects>
