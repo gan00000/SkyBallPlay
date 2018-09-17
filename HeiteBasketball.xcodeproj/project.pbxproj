@@ -35,6 +35,8 @@
 		FE6BD08F21457FEC0090118A /* HTNewsTopRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6BD08E21457FEC0090118A /* HTNewsTopRequest.m */; };
 		FE6BD092214584C30090118A /* HTNewsTopHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6BD091214584C30090118A /* HTNewsTopHeaderView.m */; };
 		FE6BD094214584DA0090118A /* HTNewsTopHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE6BD093214584DA0090118A /* HTNewsTopHeaderView.xib */; };
+		FE706F02214FF3430078DF30 /* HTDataMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE706F01214FF3430078DF30 /* HTDataMoreViewController.m */; };
+		FE706F04214FF3530078DF30 /* DataMore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE706F03214FF3530078DF30 /* DataMore.storyboard */; };
 		FE81D1462146B2680047A4A2 /* HTFilmHomeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D1452146B2680047A4A2 /* HTFilmHomeRequest.m */; };
 		FE81D14A2146B3090047A4A2 /* HTFilmHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D1482146B3090047A4A2 /* HTFilmHomeCell.m */; };
 		FE81D14B2146B3090047A4A2 /* HTFilmHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE81D1492146B3090047A4A2 /* HTFilmHomeCell.xib */; };
@@ -186,6 +188,9 @@
 		FE6BD090214584C30090118A /* HTNewsTopHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTNewsTopHeaderView.h; sourceTree = "<group>"; };
 		FE6BD091214584C30090118A /* HTNewsTopHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTNewsTopHeaderView.m; sourceTree = "<group>"; };
 		FE6BD093214584DA0090118A /* HTNewsTopHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTNewsTopHeaderView.xib; sourceTree = "<group>"; };
+		FE706F00214FF3430078DF30 /* HTDataMoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataMoreViewController.h; sourceTree = "<group>"; };
+		FE706F01214FF3430078DF30 /* HTDataMoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataMoreViewController.m; sourceTree = "<group>"; };
+		FE706F03214FF3530078DF30 /* DataMore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DataMore.storyboard; sourceTree = "<group>"; };
 		FE81D1442146B2680047A4A2 /* HTFilmHomeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTFilmHomeRequest.h; sourceTree = "<group>"; };
 		FE81D1452146B2680047A4A2 /* HTFilmHomeRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTFilmHomeRequest.m; sourceTree = "<group>"; };
 		FE81D1472146B3090047A4A2 /* HTFilmHomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTFilmHomeCell.h; sourceTree = "<group>"; };
@@ -757,6 +762,7 @@
 				FEC117132143DE69002DB617 /* Controllers */,
 				FEC1171A2143DEAD002DB617 /* DataHome.storyboard */,
 				FE81D15A2149613B0047A4A2 /* DataHomeSub.storyboard */,
+				FE706F03214FF3530078DF30 /* DataMore.storyboard */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -893,6 +899,8 @@
 				FEC117182143DEA0002DB617 /* HTDataHomeViewController.m */,
 				FE81D157214819FA0047A4A2 /* HTDataHomeSubViewController.h */,
 				FE81D158214819FA0047A4A2 /* HTDataHomeSubViewController.m */,
+				FE706F00214FF3430078DF30 /* HTDataMoreViewController.h */,
+				FE706F01214FF3430078DF30 /* HTDataMoreViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1098,6 +1106,7 @@
 				FE81D16E21497DDE0047A4A2 /* HTRankHomeCell.xib in Resources */,
 				FEC116FF2143DCAF002DB617 /* FilmHome.storyboard in Resources */,
 				FEDAC970214B86C7005E8B63 /* HTDataCellPlayerView.xib in Resources */,
+				FE706F04214FF3530078DF30 /* DataMore.storyboard in Resources */,
 				FE6BD0602144FED00090118A /* MatchWordLive.storyboard in Resources */,
 				FEDF8FC5214441C6005C7C4D /* HTMatchHomeCell.xib in Resources */,
 				FE81D14D2146CA1F0047A4A2 /* logo_load.html in Resources */,
@@ -1256,6 +1265,7 @@
 				FEC116122143D4A1002DB617 /* LJTabBar.m in Sources */,
 				FE6BD05B2144FDFD0090118A /* HTMatchWordLiveViewController.m in Sources */,
 				FEC116132143D4A1002DB617 /* LJViewPager.m in Sources */,
+				FE706F02214FF3430078DF30 /* HTDataMoreViewController.m in Sources */,
 				FEC116C22143D4A1002DB617 /* UIView+ViewController.m in Sources */,
 				FE6BD067214512EC0090118A /* HTNewsHomeRequest.m in Sources */,
 				FE6BD06A2145136F0090118A /* HTNewsModel.m in Sources */,
@@ -1403,7 +1413,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 46UN65B23Q;
+				DEVELOPMENT_TEAM = MSFG5PN83S;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HeiteBasketball/HeiteBasketball.pch";
 				INFOPLIST_FILE = HeiteBasketball/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1424,7 +1434,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 46UN65B23Q;
+				DEVELOPMENT_TEAM = MSFG5PN83S;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HeiteBasketball/HeiteBasketball.pch";
 				INFOPLIST_FILE = HeiteBasketball/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

@@ -7,6 +7,7 @@
 //
 
 #import "HTDataHomeSubViewController.h"
+#import "HTDataMoreViewController.h"
 #import "HTDataHomeRequest.h"
 #import "HTDataHomePlayerCell.h"
 #import "HTDataHomeTeamCell.h"
@@ -52,16 +53,19 @@
         teamCell = [tableView dequeueReusableCellWithIdentifier:@"HTDataHomeTeamCell"];
     }
     // TODO: 查看更多，点击回调
+    kWeakSelf
     switch (indexPath.row) {
             case 0: {
                 if (self.type == 1) {
                     playerCell.showMoreBlock = ^{
-                        
+                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
+                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
                     };
                     [playerCell setupWithTitle:@"得分" datas:self.homeInfoModel.pts];
                 } else {
                     teamCell.showMoreBlock = ^{
-                        
+                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
+                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
                     };
                     [teamCell setupWithTitle:@"得分" datas:self.homeInfoModel.pts];
                 }
@@ -70,12 +74,14 @@
             case 1: {
                 if (self.type == 1) {
                     playerCell.showMoreBlock = ^{
-                        
+                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
+                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
                     };
                     [playerCell setupWithTitle:@"得分" datas:self.homeInfoModel.reb];
                 } else {
                     teamCell.showMoreBlock = ^{
-                        
+                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
+                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
                     };
                     [teamCell setupWithTitle:@"得分" datas:self.homeInfoModel.reb];
                 }
@@ -84,12 +90,14 @@
             case 2: {
                 if (self.type == 1) {
                     playerCell.showMoreBlock = ^{
-                        
+                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
+                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
                     };
                     [playerCell setupWithTitle:@"得分" datas:self.homeInfoModel.ast];
                 } else {
                     teamCell.showMoreBlock = ^{
-                        
+                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
+                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
                     };
                     [teamCell setupWithTitle:@"得分" datas:self.homeInfoModel.ast];
                 }
@@ -98,12 +106,14 @@
             case 3: {
                 if (self.type == 1) {
                     playerCell.showMoreBlock = ^{
-                        
+                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
+                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
                     };
                     [playerCell setupWithTitle:@"得分" datas:self.homeInfoModel.stl];
                 } else {
                     teamCell.showMoreBlock = ^{
-                        
+                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
+                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
                     };
                     [teamCell setupWithTitle:@"得分" datas:self.homeInfoModel.stl];
                 }
@@ -112,12 +122,14 @@
             case 4: {
                 if (self.type == 1) {
                     playerCell.showMoreBlock = ^{
-                        
+                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
+                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
                     };
                     [playerCell setupWithTitle:@"得分" datas:self.homeInfoModel.blk];
                 } else {
                     teamCell.showMoreBlock = ^{
-                        
+                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
+                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
                     };
                     [teamCell setupWithTitle:@"得分" datas:self.homeInfoModel.blk];
                 }
@@ -126,12 +138,14 @@
             case 5: {
                 if (self.type == 1) {
                     playerCell.showMoreBlock = ^{
-                        
+                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
+                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
                     };
                     [playerCell setupWithTitle:@"得分" datas:self.homeInfoModel.turnover];
                 } else {
                     teamCell.showMoreBlock = ^{
-                        
+                        HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
+                        [weakSelf.navigationController pushViewController:moreVc animated:YES];
                     };
                     [teamCell setupWithTitle:@"得分" datas:self.homeInfoModel.turnover];
                 }
