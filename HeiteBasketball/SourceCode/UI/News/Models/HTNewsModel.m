@@ -39,13 +39,13 @@
     if (iframe) {
         NSInteger width = [[[RX(@"\\d+") matches:[[RX(@"width=\"\\d+\"") matches:iframe] firstObject]] firstObject] integerValue];
         NSInteger height = [[[RX(@"\\d+") matches:[[RX(@"height=\"\\d+\"") matches:iframe] firstObject]] firstObject] integerValue];
-        CGFloat iframeHeight = SCREEN_WIDTH * height / width;
+        _iframe_height = SCREEN_WIDTH * height / width;
         CGFloat titleHeiht = [self.title jx_sizeWithFont:[UIFont systemFontOfSize:14] constrainedToWidth:SCREEN_WIDTH-30].height;
         
         NSString *iframe_content = [[[RX(@"src(.*?)>") matches:iframe] firstObject] stringByReplacingOccurrencesOfString:@">" withString:@""];
         
         _news_type = @"影片";
-        _filmCellHeight = iframeHeight + titleHeiht + 75;
+        _filmCellHeight = _iframe_height + titleHeiht + 75;
         _iframe = [[HTHtmlLoadUtil sharedInstance] iframHtmlWithContent:iframe_content];
     } 
 }
