@@ -38,28 +38,3 @@
 
 @end
 
-
-/*
- "id": "12425",
- "scheduleStatus": "Final",
- "originalDate": "",
- "originalTime": "",
- "delayedOrPostponedReason": "",
- "gametime": "07:00AM",
- "date": "2018-04-27",
- "time": "07:00PM",
- "awayTeam": "10",
- "homeTeam": "1",
- "location": "",
- "season_name": "2018POST",
- "game_status": "1",
- "homeLogo": "https://upload.wikimedia.org/wikipedia/en/0/02/Washington_Wizards_logo.svg",
- "homeName": "巫師",
- "awayName": "暴龍",
- "awayLogo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/36/Toronto_Raptors_logo.svg/200px-Toronto_Raptors_logo.svg.png",
- "homeAbbr": "",
- "awayAbbr": "",
- "away_pts": "102",
- "home_pts": "92",
- "gamedate": "2018-04-28"
- */

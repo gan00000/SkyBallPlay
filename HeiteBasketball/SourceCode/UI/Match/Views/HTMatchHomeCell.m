@@ -99,13 +99,20 @@
     
     self.timeLabel.text = matchModel.gametime;
     self.timeLabel.hidden = NO;
-    if (matchModel.game_status == 0) {
-        self.matchStatusLabel.text = @"未開始";
-    } else if (matchModel.game_status == 1) {
+    if (matchModel.game_status == 1) {
         self.matchStatusLabel.text = @"已結束";
         self.timeLabel.hidden = YES;
-    } else if (matchModel.game_status == 2) {
+    } else if ([matchModel.scheduleStatus isEqualToString:@"Final"]) {
+        self.matchStatusLabel.text = @"已結束";
+        self.timeLabel.hidden = YES;
+    } else if ([matchModel.scheduleStatus isEqualToString:@"InProgress"]) {
         self.matchStatusLabel.text = @"進行中";
+    } else if ([matchModel.scheduleStatus isEqualToString:@"Canceled"]) {
+        self.matchStatusLabel.text = @"已取消";
+    } else if ([matchModel.scheduleStatus isEqualToString:@"Postponed"]) {
+        self.matchStatusLabel.text = @"未開始";
+    } else {
+        self.matchStatusLabel.text = @"未開始";
     }
 }
 

@@ -8,6 +8,8 @@
 
 #import "HTMatchWordLiveViewController.h"
 
+#import "HTMatchLiveFeedRequest.h"
+
 @interface HTMatchWordLiveViewController ()
 
 @end

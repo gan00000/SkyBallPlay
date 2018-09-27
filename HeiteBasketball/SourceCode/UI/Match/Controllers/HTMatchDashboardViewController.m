@@ -7,6 +7,7 @@
 //
 
 #import "HTMatchDashboardViewController.h"
+#import "HTMatchSummaryRequest.h"
 
 @interface HTMatchDashboardViewController ()
 

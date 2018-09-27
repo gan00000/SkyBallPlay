@@ -7,7 +7,10 @@
 //
 
 #import "BJBaseViewController.h"
+#import "HTMatchLiveFeedModel.h"
 
 @interface HTMatchWordLiveViewController : BJBaseViewController
+
+
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "HTMatchCompareViewController.h"
+#import "HTMatchSummaryRequest.h"
 
 @interface HTMatchCompareViewController ()
 

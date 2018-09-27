@@ -11,6 +11,6 @@
 
 @interface HTMatchDetailViewController : BJBaseViewController
 
-@property (nonatomic, weak) HTMatchHomeModel *matchModel;
+@property (nonatomic, strong) HTMatchHomeModel *matchModel;
 
 @end

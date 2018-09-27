@@ -32,11 +32,10 @@
     
     [self initData];
     [self setupUI];
-    [self segmentedValueChangedHandle:self.currentIndex];
+    [self segmentedValueChangedHandle:0];
 }
 
-#pragma mark -- method
-
+#pragma mark - private
 - (void)initData {
     self.currentIndex = 0;
     for (NSInteger i = 0; i < 2; i++) {
@@ -64,8 +63,6 @@
 
 - (void)loadChildViewControllerByIndex:(NSInteger)index {
     if ([self.loadedFlagArray[index] boolValue]) {
-        HTDataHomeSubViewController *vc = self.loadedControllersArray[index];
-        vc.type = index + 1;
         return;
     }
     
@@ -89,8 +86,7 @@
 
 #pragma mark ---- UI
 - (void)setupUI {
-    self.title = @"专栏";
-    self.currentIndex = 0;
+    self.title = @"數據";
     
     [self.view addSubview:self.segmentControl];
     [self.segmentControl mas_makeConstraints:^(MASConstraintMaker *make) {

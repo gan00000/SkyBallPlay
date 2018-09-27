@@ -55,6 +55,9 @@
 		FE81D16921497DB60047A4A2 /* HTRankHomeInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D16821497DB60047A4A2 /* HTRankHomeInfoModel.m */; };
 		FE81D16D21497DDE0047A4A2 /* HTRankHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D16B21497DDE0047A4A2 /* HTRankHomeCell.m */; };
 		FE81D16E21497DDE0047A4A2 /* HTRankHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE81D16C21497DDE0047A4A2 /* HTRankHomeCell.xib */; };
+		FE8EB0D3215603C500CA20F0 /* HTMatchLiveFeedRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8EB0D2215603C500CA20F0 /* HTMatchLiveFeedRequest.m */; };
+		FE8EB0D6215606B400CA20F0 /* HTMatchSummaryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8EB0D5215606B400CA20F0 /* HTMatchSummaryRequest.m */; };
+		FEB46C822157903B00E482CE /* HTMatchLiveFeedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB46C812157903B00E482CE /* HTMatchLiveFeedModel.m */; };
 		FEC112622143D058002DB617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC112612143D058002DB617 /* Assets.xcassets */; };
 		FEC112682143D058002DB617 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC112672143D058002DB617 /* main.m */; };
 		FEC115BD2143D4A0002DB617 /* BJLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113132143D4A0002DB617 /* BJLaunchViewController.m */; };
@@ -223,6 +226,12 @@
 		FE81D16A21497DDE0047A4A2 /* HTRankHomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTRankHomeCell.h; sourceTree = "<group>"; };
 		FE81D16B21497DDE0047A4A2 /* HTRankHomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTRankHomeCell.m; sourceTree = "<group>"; };
 		FE81D16C21497DDE0047A4A2 /* HTRankHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTRankHomeCell.xib; sourceTree = "<group>"; };
+		FE8EB0D1215603C500CA20F0 /* HTMatchLiveFeedRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchLiveFeedRequest.h; sourceTree = "<group>"; };
+		FE8EB0D2215603C500CA20F0 /* HTMatchLiveFeedRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchLiveFeedRequest.m; sourceTree = "<group>"; };
+		FE8EB0D4215606B400CA20F0 /* HTMatchSummaryRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchSummaryRequest.h; sourceTree = "<group>"; };
+		FE8EB0D5215606B400CA20F0 /* HTMatchSummaryRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchSummaryRequest.m; sourceTree = "<group>"; };
+		FEB46C802157903B00E482CE /* HTMatchLiveFeedModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchLiveFeedModel.h; sourceTree = "<group>"; };
+		FEB46C812157903B00E482CE /* HTMatchLiveFeedModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchLiveFeedModel.m; sourceTree = "<group>"; };
 		FEC112552143D057002DB617 /* HeiteBasketball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeiteBasketball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC112612143D058002DB617 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEC112662143D058002DB617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1012,6 +1021,8 @@
 				FEDF8FC721444610005C7C4D /* HTMatchHomeModel.m */,
 				FEDF8FD82144B2BF005C7C4D /* HTMatchHomeGroupModel.h */,
 				FEDF8FD92144B2BF005C7C4D /* HTMatchHomeGroupModel.m */,
+				FEB46C802157903B00E482CE /* HTMatchLiveFeedModel.h */,
+				FEB46C812157903B00E482CE /* HTMatchLiveFeedModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1021,6 +1032,10 @@
 			children = (
 				FEDF8FD52144B1CC005C7C4D /* HTMatchHomeRequest.h */,
 				FEDF8FD62144B1CC005C7C4D /* HTMatchHomeRequest.m */,
+				FE8EB0D1215603C500CA20F0 /* HTMatchLiveFeedRequest.h */,
+				FE8EB0D2215603C500CA20F0 /* HTMatchLiveFeedRequest.m */,
+				FE8EB0D4215606B400CA20F0 /* HTMatchSummaryRequest.h */,
+				FE8EB0D5215606B400CA20F0 /* HTMatchSummaryRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1208,6 +1223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE8EB0D6215606B400CA20F0 /* HTMatchSummaryRequest.m in Sources */,
 				FEDAC97D214BBD28005E8B63 /* HTDatePickerView.m in Sources */,
 				FEC116B72143D4A1002DB617 /* BJBaseTabBarController.m in Sources */,
 				FE81D16921497DB60047A4A2 /* HTRankHomeInfoModel.m in Sources */,
@@ -1256,6 +1272,7 @@
 				FEC1167A2143D4A1002DB617 /* BJWebViewCacheHelper.m in Sources */,
 				FEC116142143D4A1002DB617 /* BJUnPasteTextField.m in Sources */,
 				FE81D1502146CA920047A4A2 /* HTHtmlLoadUtil.m in Sources */,
+				FEB46C822157903B00E482CE /* HTMatchLiveFeedModel.m in Sources */,
 				FE6BD0502144FC190090118A /* HTMatchDetailViewController.m in Sources */,
 				FE81D14A2146B3090047A4A2 /* HTFilmHomeCell.m in Sources */,
 				FEC116D22143D4A1002DB617 /* BJUtility.m in Sources */,
@@ -1263,6 +1280,7 @@
 				FEC116CA2143D4A1002DB617 /* NSString+MessageDigest.m in Sources */,
 				FEC117092143DDEE002DB617 /* HTNewsHomeViewController.m in Sources */,
 				FEC1161B2143D4A1002DB617 /* BJEmptyTableViewCell.m in Sources */,
+				FE8EB0D3215603C500CA20F0 /* HTMatchLiveFeedRequest.m in Sources */,
 				FEC116112143D4A1002DB617 /* UIScrollView+AllowScreenEdgePanGestureRecognizer.m in Sources */,
 				FEC117102143DE50002DB617 /* HTFilmHomeViewController.m in Sources */,
 				FE706F08215006430078DF30 /* HTDataHomeHeaderCell.m in Sources */,
@@ -1309,7 +1327,7 @@
 		FEC112692143D058002DB617 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1367,7 +1385,7 @@
 		FEC1126A2143D058002DB617 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1420,10 +1438,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 608E0284ECCB1F2C8732AAA8 /* Pods-HeiteBasketball.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MSFG5PN83S;
+				DEVELOPMENT_TEAM = 46UN65B23Q;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HeiteBasketball/HeiteBasketball.pch";
 				INFOPLIST_FILE = HeiteBasketball/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1441,10 +1460,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 72321527951E473E782564AC /* Pods-HeiteBasketball.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MSFG5PN83S;
+				DEVELOPMENT_TEAM = 46UN65B23Q;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HeiteBasketball/HeiteBasketball.pch";
 				INFOPLIST_FILE = HeiteBasketball/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
