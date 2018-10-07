@@ -13,6 +13,7 @@
 
 #pragma mark - 比賽
 #define API_MATCH_HOME                  @"api/get_game_schedule"
+#define API_MATCH_PROGRESS              @"api/get_match_progress"
 #define API_MATCH_LIVE_FEED             @"api/get_live_feed"
 #define API_MATCH_SUMMARY               @"api/get_match_summary"
 

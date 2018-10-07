@@ -45,4 +45,18 @@
     } errorBlock:errorBlock];
 }
 
++ (void)requestMatchProgressWithGameId:(NSString *)game_id
+                          successBlock:(void(^)(NSString *game_id, NSString *quarter, NSString *time))successBlock
+                            errorBlock:(BJServiceErrorBlock)errorBlock {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"game_id"] = game_id;
+    
+    [BJHTTPServiceEngine getRequestWithFunctionPath:API_MATCH_PROGRESS params:params successBlock:^(id responseData) {
+        if (successBlock) {
+            NSDictionary *match_progress = responseData[@"match_progress"];
+            successBlock(match_progress[@"game_id"], match_progress[@"quarter"], match_progress[@"time"]);
+        }
+    } errorBlock:errorBlock];
+}
+
 @end

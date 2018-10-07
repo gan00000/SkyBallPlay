@@ -27,6 +27,7 @@
 @property (nonatomic, strong) NSDate *endDate;
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, assign) BOOL requesting;
+@property (nonatomic, strong) NSMutableDictionary *inProgressMatchs;
 
 @end
 
@@ -143,12 +144,33 @@
     self.startDate = [NSDate date];
     [self refreshTimeTitle];
     [self.view showLoadingView];
+}
+
+- (void)refreshUI {
+    [self.tableView.mj_header endRefreshing];
+    [self.view hideLoadingView];
+    [BJLoadingHud hideHUDInView:self.view];
     
+    [self refreshTimeTitle];
+    [self.tableView reloadData];
+    
+    self.requesting = NO;
+}
+
+- (void)startTimer {
+    if (self.timer) {
+        return;
+    }
     self.timer = [NSTimer scheduledTimerWithTimeInterval:10.0
                                                   target:self
                                                 selector:@selector(loadData)
                                                 userInfo:nil
                                                  repeats:YES];
+}
+
+- (void)stopTimer {
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 - (void)loadData {
@@ -164,21 +186,37 @@
                                      endDate:[self ymdWithDate:self.endDate]
                                 successBlock:^(NSArray<HTMatchHomeGroupModel *> *matchList) {
                                     self.matchList = matchList;
-                                    [self.tableView reloadData];
                                     
                                     if (matchList.count == 0) {
                                         [self.tableView showEmptyView];
+                                        [self refreshUI];
                                     } else {                                        
                                         [self.tableView hideEmptyView];
+                                        for (HTMatchHomeGroupModel *groupModel in matchList) {
+                                            for (HTMatchHomeModel *model in groupModel.matchList) {
+                                                if ([model.scheduleStatus isEqualToString:@"InProgress"]) {
+                                                    [self.inProgressMatchs setObject:model forKey:model.game_id];
+                                                }
+                                            }                                            
+                                        }
+                                        if (self.inProgressMatchs.count == 0) {
+                                            [self refreshUI];
+                                            [self stopTimer];
+                                        } else {
+                                            [self startTimer];
+                                            for (HTMatchHomeModel *model in self.inProgressMatchs.allValues) {
+                                                [HTMatchHomeRequest requestMatchProgressWithGameId:model.game_id successBlock:^(NSString *game_id, NSString *quarter, NSString *time) {
+                                                    HTMatchHomeModel *matchModel = [self.inProgressMatchs objectForKey:game_id];
+                                                    matchModel.quarter = [NSString stringWithFormat:@"第%@節", quarter];
+                                                    matchModel.quarter_time = time;
+                                                    [self.inProgressMatchs removeObjectForKey:matchModel.game_id];
+                                                    if (self.inProgressMatchs.count == 0) {
+                                                        [self refreshUI];
+                                                    }
+                                                } errorBlock:nil];
+                                            }
+                                        }
                                     }
-                                    
-                                    [self.tableView.mj_header endRefreshing];
-                                    [self.view hideLoadingView];
-                                    [BJLoadingHud hideHUDInView:self.view];
-                                    
-                                    [self refreshTimeTitle];
-                                    
-                                    self.requesting = NO;
                                 } errorBlock:^(BJError *error) {
                                     [self.view hideLoadingView];
                                     [self.view showToast:error.msg];
@@ -210,6 +248,13 @@
 
 - (void)refreshTimeTitle {
     self.timeTitleLabel.text = [NSString stringWithFormat:@"%@至%@", [self mdWithDate:self.startDate], [self mdWithDate:self.endDate]];
+}
+
+- (NSMutableDictionary *)inProgressMatchs {
+    if (!_inProgressMatchs) {
+        _inProgressMatchs = [NSMutableDictionary dictionary];
+    }
+    return _inProgressMatchs;
 }
 
 

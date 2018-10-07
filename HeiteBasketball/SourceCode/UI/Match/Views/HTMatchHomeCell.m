@@ -106,7 +106,12 @@
         self.matchStatusLabel.text = @"已結束";
         self.timeLabel.hidden = YES;
     } else if ([matchModel.scheduleStatus isEqualToString:@"InProgress"]) {
-        self.matchStatusLabel.text = @"進行中";
+        if (matchModel.quarter.length > 0) {
+            self.matchStatusLabel.text = matchModel.quarter;
+        }
+        if (matchModel.quarter_time.length > 0) {
+            self.timeLabel.text = matchModel.quarter_time;
+        }        
     } else if ([matchModel.scheduleStatus isEqualToString:@"Canceled"]) {
         self.matchStatusLabel.text = @"已取消";
     } else if ([matchModel.scheduleStatus isEqualToString:@"Postponed"]) {

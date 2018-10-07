@@ -35,6 +35,8 @@
 
 @property (nonatomic, copy) NSString *img_home_logo;
 @property (nonatomic, copy) NSString *img_away_logo;
+@property (nonatomic, copy) NSString *quarter;
+@property (nonatomic, copy) NSString *quarter_time;
 
 @end
 

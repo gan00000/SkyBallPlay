@@ -11,6 +11,8 @@
 
 @interface HTMatchWordLiveViewController : BJBaseViewController
 
+@property (nonatomic, copy) void (^onTableHeaderRefreshBlock)(void);
 
+- (void)refreshWithLiveFeedList:(NSArray<HTMatchLiveFeedModel *> *)liveFeedList;
 
 @end

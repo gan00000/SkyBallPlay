@@ -17,4 +17,8 @@
                 successBlock:(void(^)(NSArray<HTMatchHomeGroupModel *> *matchList))successBlock
                   errorBlock:(BJServiceErrorBlock)errorBlock;
 
++ (void)requestMatchProgressWithGameId:(NSString *)game_id
+                          successBlock:(void(^)(NSString *game_id, NSString *quarter, NSString *time))successBlock
+                            errorBlock:(BJServiceErrorBlock)errorBlock;
+
 @end
