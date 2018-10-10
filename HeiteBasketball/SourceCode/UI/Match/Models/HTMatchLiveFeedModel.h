@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface HTMatchLiveFeedModel : NSObject
 
 @property (nonatomic, copy) NSString *feed_id; // id
@@ -28,6 +26,4 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *time;
 
 @end
-
-NS_ASSUME_NONNULL_END
 

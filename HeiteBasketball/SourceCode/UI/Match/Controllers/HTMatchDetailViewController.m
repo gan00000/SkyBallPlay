@@ -13,6 +13,8 @@
 
 #import <HMSegmentedControl/HMSegmentedControl.h>
 #import <WebKit/WebKit.h>
+#import "HTMatchLiveFeedRequest.h"
+#import "HTMatchSummaryRequest.h"
 
 @interface HTMatchDetailViewController () <UIScrollViewDelegate>
 
@@ -33,6 +35,9 @@
 @property (nonatomic, strong) NSMutableArray *loadedFlagArray;
 @property (nonatomic, assign) NSInteger currentIndex;
 
+@property (nonatomic, strong) NSArray<HTMatchLiveFeedModel *> *liveFeedList;
+
+
 @end
 
 @implementation HTMatchDetailViewController
@@ -46,67 +51,19 @@
     
     [self setupUI];
     [self initData];
+    [self loadData];
     [self segmentedValueChangedHandle:0];
+    
+    [HTMatchLiveFeedRequest requestLiveFeedWithGameId:self.matchModel.game_id successBlock:^(NSArray<HTMatchLiveFeedModel *> *feedList) {
+        NSLog(@"%ld", feedList.count);
+    } errorBlock:nil];
+    
+    [HTMatchSummaryRequest requestSummaryWithGameId:self.matchModel.game_id successBlock:^(HTMatchSummaryModel *summaryModel, HTMatchCompareModel *compareModel) {
+        NSLog(@"falkdjlfa");
+    } errorBlock:nil];
 }
 
 #pragma mark - private
-- (void)initData {
-    self.currentIndex = 0;
-    for (NSInteger i = 0; i < 3; i++) {
-        [self.loadedFlagArray addObject:@(NO)];
-        [self.loadedControllersArray addObject:@(NO)];
-    }
-}
-
-#pragma mark - UIScrollViewDelegate
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    CGPoint offset = scrollView.contentOffset;
-    NSInteger page = offset.x / SCREEN_WIDTH;
-    self.currentIndex = page;
-    [self loadChildViewControllerByIndex:page];
-    [self.segmentControl setSelectedSegmentIndex:page animated:YES];
-}
-
-#pragma mark -- HMSegmentedControl Action
-- (void)segmentedValueChangedHandle:(NSInteger)index {
-    self.currentIndex = index;
-    [self loadChildViewControllerByIndex:index];
-    [self.containerView setContentOffset:CGPointMake(index * SCREEN_WIDTH, 0) animated:YES];
-}
-
-- (void)loadChildViewControllerByIndex:(NSInteger)index {
-    if ([self.loadedFlagArray[index] boolValue]) {
-        return;
-    }
-    
-    UIViewController *vc;
-    if (index == 0) {
-        HTMatchWordLiveViewController *wordVc = [HTMatchWordLiveViewController viewController];
-        vc = wordVc;
-    } else if (index == 1) {
-        HTMatchCompareViewController *compareVc = [HTMatchCompareViewController viewController];
-        vc = compareVc;
-    } else {
-        HTMatchDashboardViewController *dashboardVc = [HTMatchDashboardViewController viewController];
-        vc = dashboardVc;
-    }
-    [self addChildViewController:vc];
-    [self.containerView addSubview:vc.view];
-    [self.loadedFlagArray replaceObjectAtIndex:index withObject:@(YES)];
-    [self.loadedControllersArray replaceObjectAtIndex:index withObject:vc];
-    [self setChildViewFrame:vc.view byIndex:index];
-}
-
-- (void)setChildViewFrame:(UIView *)childView byIndex:(NSInteger)index {
-    [childView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.containerView);
-        make.width.equalTo(self.containerView);
-        make.height.equalTo(self.containerView);
-        make.left.equalTo(self.containerView).offset(index * SCREEN_WIDTH);
-    }];
-}
-
-#pragma mark ---- UI
 - (void)setupUI {
     self.title = [NSString stringWithFormat:@"%@vs%@", self.matchModel.homeName, self.matchModel.awayName];
     
@@ -174,6 +131,66 @@
     } else {
         self.statusLabel.text = @"未開始";
     }
+}
+
+- (void)initData {
+    self.currentIndex = 0;
+    for (NSInteger i = 0; i < 3; i++) {
+        [self.loadedFlagArray addObject:@(NO)];
+        [self.loadedControllersArray addObject:@(NO)];
+    }
+}
+
+- (void)loadData {
+    
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    CGPoint offset = scrollView.contentOffset;
+    NSInteger page = offset.x / SCREEN_WIDTH;
+    self.currentIndex = page;
+    [self loadChildViewControllerByIndex:page];
+    [self.segmentControl setSelectedSegmentIndex:page animated:YES];
+}
+
+#pragma mark -- HMSegmentedControl Action
+- (void)segmentedValueChangedHandle:(NSInteger)index {
+    self.currentIndex = index;
+    [self loadChildViewControllerByIndex:index];
+    [self.containerView setContentOffset:CGPointMake(index * SCREEN_WIDTH, 0) animated:YES];
+}
+
+- (void)loadChildViewControllerByIndex:(NSInteger)index {
+    if ([self.loadedFlagArray[index] boolValue]) {
+        return;
+    }
+    
+    UIViewController *vc;
+    if (index == 0) {
+        HTMatchWordLiveViewController *wordVc = [HTMatchWordLiveViewController viewController];
+        vc = wordVc;
+    } else if (index == 1) {
+        HTMatchCompareViewController *compareVc = [HTMatchCompareViewController viewController];
+        vc = compareVc;
+    } else {
+        HTMatchDashboardViewController *dashboardVc = [HTMatchDashboardViewController viewController];
+        vc = dashboardVc;
+    }
+    [self addChildViewController:vc];
+    [self.containerView addSubview:vc.view];
+    [self.loadedFlagArray replaceObjectAtIndex:index withObject:@(YES)];
+    [self.loadedControllersArray replaceObjectAtIndex:index withObject:vc];
+    [self setChildViewFrame:vc.view byIndex:index];
+}
+
+- (void)setChildViewFrame:(UIView *)childView byIndex:(NSInteger)index {
+    [childView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.containerView);
+        make.width.equalTo(self.containerView);
+        make.height.equalTo(self.containerView);
+        make.left.equalTo(self.containerView).offset(index * SCREEN_WIDTH);
+    }];
 }
 
 #pragma mark -- lazy load

@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "BJHTTPServiceEngine.h"
+#import "HTMatchSummaryModel.h"
+#import "HTMatchCompareModel.h"
 
 @interface HTMatchSummaryRequest : NSObject
 
 + (void)requestSummaryWithGameId:(NSString *)game_id
-                    successBlock:(void(^)(void))successBlock
+                    successBlock:(void(^)(HTMatchSummaryModel *summaryModel, HTMatchCompareModel *compareModel))successBlock
                       errorBlock:(BJServiceErrorBlock)errorBlock;
 
 @end
