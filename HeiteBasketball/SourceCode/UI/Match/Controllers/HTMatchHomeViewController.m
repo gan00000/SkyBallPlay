@@ -187,11 +187,11 @@
                                 successBlock:^(NSArray<HTMatchHomeGroupModel *> *matchList) {
                                     self.matchList = matchList;
                                     
+                                    [self.tableView hideEmptyView];
                                     if (matchList.count == 0) {
                                         [self.tableView showEmptyView];
                                         [self refreshUI];
-                                    } else {                                        
-                                        [self.tableView hideEmptyView];
+                                    } else {
                                         for (HTMatchHomeGroupModel *groupModel in matchList) {
                                             for (HTMatchHomeModel *model in groupModel.matchList) {
                                                 if ([model.scheduleStatus isEqualToString:@"InProgress"]) {

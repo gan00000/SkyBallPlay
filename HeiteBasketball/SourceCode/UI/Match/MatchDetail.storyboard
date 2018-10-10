@@ -47,12 +47,6 @@
                                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已結束" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDr-Pe-Uad">
-                                        <rect key="frame" x="167.66666666666666" y="64" width="40" height="16"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="122" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlU-Fl-4PM">
                                         <rect key="frame" x="155.66666666666666" y="15" width="28" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -71,11 +65,24 @@
                                         <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已結束" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDr-Pe-Uad">
+                                        <rect key="frame" x="167.66666666666666" y="59" width="40" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fv7-sR-Nbt">
+                                        <rect key="frame" x="172.66666666666666" y="80" width="30" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="dDr-Pe-Uad" secondAttribute="bottom" constant="20" id="1BV-Qt-kBU"/>
+                                    <constraint firstAttribute="bottom" secondItem="dDr-Pe-Uad" secondAttribute="bottom" constant="25" id="1BV-Qt-kBU"/>
                                     <constraint firstItem="MfH-WP-ASL" firstAttribute="leading" secondItem="xmg-Lz-THf" secondAttribute="trailing" id="5Zk-aC-6LQ"/>
+                                    <constraint firstItem="Fv7-sR-Nbt" firstAttribute="centerX" secondItem="dDr-Pe-Uad" secondAttribute="centerX" id="5tc-ib-Ufq"/>
                                     <constraint firstItem="owa-ip-yuo" firstAttribute="centerY" secondItem="pRr-N4-RH1" secondAttribute="centerY" id="6Us-8V-VWO"/>
                                     <constraint firstAttribute="height" constant="100" id="8iP-7d-R9s"/>
                                     <constraint firstItem="z0h-xf-9rZ" firstAttribute="top" secondItem="WcA-4R-DjX" secondAttribute="top" constant="20" id="Knb-Cx-BWq"/>
@@ -83,6 +90,7 @@
                                     <constraint firstItem="dDr-Pe-Uad" firstAttribute="centerX" secondItem="WcA-4R-DjX" secondAttribute="centerX" id="SnK-xy-WLL"/>
                                     <constraint firstItem="6Dc-fD-Z62" firstAttribute="centerY" secondItem="z0h-xf-9rZ" secondAttribute="centerY" id="YWS-H0-845"/>
                                     <constraint firstAttribute="trailing" secondItem="pRr-N4-RH1" secondAttribute="trailing" constant="20" id="gGu-B6-RQe"/>
+                                    <constraint firstItem="Fv7-sR-Nbt" firstAttribute="top" secondItem="dDr-Pe-Uad" secondAttribute="bottom" constant="5" id="ggd-Up-9zs"/>
                                     <constraint firstItem="mlU-Fl-4PM" firstAttribute="centerY" secondItem="xmg-Lz-THf" secondAttribute="centerY" id="hRu-5r-2Cc"/>
                                     <constraint firstItem="pRr-N4-RH1" firstAttribute="leading" secondItem="owa-ip-yuo" secondAttribute="trailing" constant="5" id="iNR-9X-prj"/>
                                     <constraint firstItem="pRr-N4-RH1" firstAttribute="top" secondItem="WcA-4R-DjX" secondAttribute="top" constant="20" id="lVV-tM-3mY"/>
@@ -116,6 +124,7 @@
                         <outlet property="homeTeamLogo" destination="z0h-xf-9rZ" id="Yfn-Ad-tru"/>
                         <outlet property="homeTeamPtsLabel" destination="mlU-Fl-4PM" id="0b1-ph-IaE"/>
                         <outlet property="statusLabel" destination="dDr-Pe-Uad" id="dvA-2y-nq0"/>
+                        <outlet property="timeLabel" destination="Fv7-sR-Nbt" id="XQo-dE-cTb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bPH-Lb-lgI" userLabel="First Responder" sceneMemberID="firstResponder"/>

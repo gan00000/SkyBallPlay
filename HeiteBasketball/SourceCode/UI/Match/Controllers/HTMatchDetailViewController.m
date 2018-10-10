@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *homeTeamLogo;
 @property (weak, nonatomic) IBOutlet UIImageView *awayTeamLogo;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *homeTeamPtsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *awayTeamPtsLabel;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
@@ -36,7 +37,14 @@
 @property (nonatomic, assign) NSInteger currentIndex;
 
 @property (nonatomic, strong) NSArray<HTMatchLiveFeedModel *> *liveFeedList;
+@property (nonatomic, strong) HTMatchSummaryModel *matchSummaryModel;
+@property (nonatomic, strong) HTMatchCompareModel *matchCompareModel;
 
+@property (nonatomic, assign) BOOL feedLoaded;
+@property (nonatomic, assign) BOOL summaryLoaded;
+@property (nonatomic, strong) BJError *error;
+@property (nonatomic, copy) dispatch_block_t loadedBlock;
+@property (nonatomic, strong) NSTimer *timer;
 
 @end
 
@@ -49,23 +57,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setupUI];
     [self initData];
+    [self setupUI];
     [self loadData];
-    [self segmentedValueChangedHandle:0];
-    
-    [HTMatchLiveFeedRequest requestLiveFeedWithGameId:self.matchModel.game_id successBlock:^(NSArray<HTMatchLiveFeedModel *> *feedList) {
-        NSLog(@"%ld", feedList.count);
-    } errorBlock:nil];
-    
-    [HTMatchSummaryRequest requestSummaryWithGameId:self.matchModel.game_id successBlock:^(HTMatchSummaryModel *summaryModel, HTMatchCompareModel *compareModel) {
-        NSLog(@"falkdjlfa");
-    } errorBlock:nil];
 }
 
 #pragma mark - private
 - (void)setupUI {
-    self.title = [NSString stringWithFormat:@"%@vs%@", self.matchModel.homeName, self.matchModel.awayName];
+    self.title = [NSString stringWithFormat:@"%@ VS %@", self.matchModel.homeName, self.matchModel.awayName];
     
     [self.contentView addSubview:self.segmentControl];
     [self.segmentControl mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -95,54 +94,135 @@
         make.right.equalTo(self.awayTeamLogo);
     }];
     
+    [self segmentedValueChangedHandle:0];
+    [self.view showLoadingView];
+}
+
+- (void)initData {
+    for (NSInteger i = 0; i < 3; i++) {
+        [self.loadedFlagArray addObject:@(NO)];
+        [self.loadedControllersArray addObject:@(NO)];
+    }
+    
+    self.feedLoaded = YES;
+    self.summaryLoaded = YES;
+}
+
+- (void)loadData {
+    if (!self.feedLoaded || !self.summaryLoaded) {
+        return;
+    }
+    
+    self.feedLoaded = NO;
+    self.summaryLoaded = NO;
+    self.error = nil;
+    
+    [HTMatchLiveFeedRequest requestLiveFeedWithGameId:self.matchModel.game_id successBlock:^(NSArray<HTMatchLiveFeedModel *> *feedList) {
+        self.liveFeedList = feedList;
+        self.feedLoaded = YES;
+        [self refreshUI];
+    } errorBlock:^(BJError *error) {
+        self.error = error;
+        self.feedLoaded = YES;
+        [self refreshUI];
+    }];
+    
+    [HTMatchSummaryRequest requestSummaryWithGameId:self.matchModel.game_id successBlock:^(HTMatchSummaryModel *summaryModel, HTMatchCompareModel *compareModel) {
+        self.matchSummaryModel = summaryModel;
+        self.matchCompareModel = compareModel;
+        self.summaryLoaded = YES;
+        [self refreshUI];
+    } errorBlock:^(BJError *error) {
+        self.error = error;
+        self.summaryLoaded = YES;
+        [self refreshUI];
+    }];
+}
+
+- (void)refreshUI {
+    if (!self.feedLoaded || !self.summaryLoaded) {
+        return;
+    }
+    
+    [self.view hideLoadingView];
+    
+    if (self.error) {
+        if (!self.liveFeedList || !self.matchSummaryModel) {
+            kWeakSelf
+            [self.view showEmptyViewWithTitle:@"加載失敗，點擊重試" tapBlock:^{
+                [weakSelf.view hideEmptyView];
+                [weakSelf.view showLoadingView];
+                [weakSelf loadData];
+            }];
+        }
+        [self.view showToast:self.error.msg];
+    }
+    
     self.homeTeamLogo.hidden = YES;
     self.homeTeamLogoWeb.hidden = YES;
     self.awayTeamLogo.hidden = YES;
     self.awayTeamLogoWeb.hidden = YES;
     
-    if (self.matchModel.img_home_logo) {
+    if (self.matchSummaryModel.img_home_logo) {
         self.homeTeamLogoWeb.hidden = NO;
-        [self.homeTeamLogoWeb loadHTMLString:self.matchModel.img_home_logo baseURL:nil];
+        [self.homeTeamLogoWeb loadHTMLString:self.matchSummaryModel.img_home_logo baseURL:nil];
     } else {
         self.homeTeamLogo.hidden = NO;
-        [self.homeTeamLogo sd_setImageWithURL:[NSURL URLWithString:self.matchModel.homeLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
+        [self.homeTeamLogo sd_setImageWithURL:[NSURL URLWithString:self.matchSummaryModel.homeLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
     }
-    self.homeTeamPtsLabel.text = self.matchModel.home_pts;
+    self.homeTeamPtsLabel.text = self.matchSummaryModel.home_pts;
     
-    if (self.matchModel.img_away_logo) {
+    if (self.matchSummaryModel.img_away_logo) {
         self.awayTeamLogoWeb.hidden = NO;
-        [self.awayTeamLogoWeb loadHTMLString:self.matchModel.img_away_logo baseURL:nil];
+        [self.awayTeamLogoWeb loadHTMLString:self.matchSummaryModel.img_away_logo baseURL:nil];
     } else {
         self.awayTeamLogo.hidden = NO;
-        [self.awayTeamLogo sd_setImageWithURL:[NSURL URLWithString:self.matchModel.awayLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
+        [self.awayTeamLogo sd_setImageWithURL:[NSURL URLWithString:self.matchSummaryModel.awayLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
     }
-    self.awayTeamPtsLabel.text = self.matchModel.away_pts;
+    self.awayTeamPtsLabel.text = self.matchSummaryModel.away_pts;
     
-    if (self.matchModel.game_status == 1) {
+    self.timeLabel.hidden = YES;
+    if (self.matchSummaryModel.game_status == 1) {
         self.statusLabel.text = @"已結束";
-    } else if ([self.matchModel.scheduleStatus isEqualToString:@"Final"]) {
+        [self stopTimer];
+    } else if ([self.matchSummaryModel.scheduleStatus isEqualToString:@"Final"]) {
         self.statusLabel.text = @"已結束";
-    } else if ([self.matchModel.scheduleStatus isEqualToString:@"InProgress"]) {
-        self.statusLabel.text = @"進行中";
-    } else if ([self.matchModel.scheduleStatus isEqualToString:@"Canceled"]) {
+        [self stopTimer];
+    } else if ([self.matchSummaryModel.scheduleStatus isEqualToString:@"InProgress"]) {
+        self.statusLabel.text = [NSString stringWithFormat:@"第%@節", self.matchSummaryModel.quarter];
+        if ([self.matchSummaryModel.quarter isEqualToString:@"OT"]) {
+            self.statusLabel.text = self.matchSummaryModel.quarter;
+        }
+        self.timeLabel.text = self.matchSummaryModel.time;
+        [self startTimer];
+    } else if ([self.matchSummaryModel.scheduleStatus isEqualToString:@"Canceled"]) {
         self.statusLabel.text = @"已取消";
-    } else if ([self.matchModel.scheduleStatus isEqualToString:@"Postponed"]) {
+    } else if ([self.matchSummaryModel.scheduleStatus isEqualToString:@"Postponed"]) {
         self.statusLabel.text = @"未開始";
     } else {
         self.statusLabel.text = @"未開始";
     }
-}
-
-- (void)initData {
-    self.currentIndex = 0;
-    for (NSInteger i = 0; i < 3; i++) {
-        [self.loadedFlagArray addObject:@(NO)];
-        [self.loadedControllersArray addObject:@(NO)];
+    
+    [self segmentedValueChangedHandle:self.currentIndex];
+    if (self.loadedBlock) {
+        self.loadedBlock();
     }
 }
 
-- (void)loadData {
-    
+- (void)startTimer {
+    if (self.timer) {
+        return;
+    }
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:10.0
+                                                  target:self
+                                                selector:@selector(loadData)
+                                                userInfo:nil
+                                                 repeats:YES];
+}
+
+- (void)stopTimer {
+    [self.timer invalidate];
+    self.timer = nil;
 }
 
 #pragma mark - UIScrollViewDelegate
