@@ -55,6 +55,8 @@
 		FE81D16921497DB60047A4A2 /* HTRankHomeInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D16821497DB60047A4A2 /* HTRankHomeInfoModel.m */; };
 		FE81D16D21497DDE0047A4A2 /* HTRankHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D16B21497DDE0047A4A2 /* HTRankHomeCell.m */; };
 		FE81D16E21497DDE0047A4A2 /* HTRankHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE81D16C21497DDE0047A4A2 /* HTRankHomeCell.xib */; };
+		FE82A483216E42680070FFC0 /* HTMatchLiveFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE82A481216E42680070FFC0 /* HTMatchLiveFeedCell.m */; };
+		FE82A484216E42680070FFC0 /* HTMatchLiveFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE82A482216E42680070FFC0 /* HTMatchLiveFeedCell.xib */; };
 		FE8EB0D3215603C500CA20F0 /* HTMatchLiveFeedRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8EB0D2215603C500CA20F0 /* HTMatchLiveFeedRequest.m */; };
 		FE8EB0D6215606B400CA20F0 /* HTMatchSummaryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8EB0D5215606B400CA20F0 /* HTMatchSummaryRequest.m */; };
 		FEA104F6216CB0F0000DBE63 /* HTMatchSummaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA104F5216CB0F0000DBE63 /* HTMatchSummaryModel.m */; };
@@ -229,6 +231,9 @@
 		FE81D16A21497DDE0047A4A2 /* HTRankHomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTRankHomeCell.h; sourceTree = "<group>"; };
 		FE81D16B21497DDE0047A4A2 /* HTRankHomeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTRankHomeCell.m; sourceTree = "<group>"; };
 		FE81D16C21497DDE0047A4A2 /* HTRankHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTRankHomeCell.xib; sourceTree = "<group>"; };
+		FE82A480216E42680070FFC0 /* HTMatchLiveFeedCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchLiveFeedCell.h; sourceTree = "<group>"; };
+		FE82A481216E42680070FFC0 /* HTMatchLiveFeedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchLiveFeedCell.m; sourceTree = "<group>"; };
+		FE82A482216E42680070FFC0 /* HTMatchLiveFeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMatchLiveFeedCell.xib; sourceTree = "<group>"; };
 		FE8EB0D1215603C500CA20F0 /* HTMatchLiveFeedRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchLiveFeedRequest.h; sourceTree = "<group>"; };
 		FE8EB0D2215603C500CA20F0 /* HTMatchLiveFeedRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchLiveFeedRequest.m; sourceTree = "<group>"; };
 		FE8EB0D4215606B400CA20F0 /* HTMatchSummaryRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchSummaryRequest.h; sourceTree = "<group>"; };
@@ -1019,6 +1024,9 @@
 				FEDAC97B214BBD28005E8B63 /* HTDatePickerView.h */,
 				FEDAC97C214BBD28005E8B63 /* HTDatePickerView.m */,
 				FEDAC97E214BBD37005E8B63 /* HTDatePickerView.xib */,
+				FE82A480216E42680070FFC0 /* HTMatchLiveFeedCell.h */,
+				FE82A481216E42680070FFC0 /* HTMatchLiveFeedCell.m */,
+				FE82A482216E42680070FFC0 /* HTMatchLiveFeedCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1123,6 +1131,7 @@
 				FEDAC97A214B9139005E8B63 /* HTDataCellTeamView.xib in Resources */,
 				FEDF8FE02144D05C005C7C4D /* HTMatchHomeGroupHeaderView.xib in Resources */,
 				FEC116042143D4A1002DB617 /* XJLoadingView.xib in Resources */,
+				FE82A484216E42680070FFC0 /* HTMatchLiveFeedCell.xib in Resources */,
 				FE6BD0522144FC270090118A /* MatchDetail.storyboard in Resources */,
 				FEC1162A2143D4A1002DB617 /* BJHUDView.xib in Resources */,
 				FEDAC975214B9117005E8B63 /* HTDataHomeTeamCell.xib in Resources */,
@@ -1321,6 +1330,7 @@
 				FEDF8FDA2144B2BF005C7C4D /* HTMatchHomeGroupModel.m in Sources */,
 				FEC116062143D4A1002DB617 /* XJToastImageView.m in Sources */,
 				FEC116C52143D4A1002DB617 /* UIView+BlockGesture.m in Sources */,
+				FE82A483216E42680070FFC0 /* HTMatchLiveFeedCell.m in Sources */,
 				FEC116F22143D91D002DB617 /* HTMatchHomeViewController.m in Sources */,
 				FEC1168C2143D4A1002DB617 /* BJServiceConfigurator.m in Sources */,
 				FEC116C92143D4A1002DB617 /* NSObject+nextresponder.m in Sources */,
