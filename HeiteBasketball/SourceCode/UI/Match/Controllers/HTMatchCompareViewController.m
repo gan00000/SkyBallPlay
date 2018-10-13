@@ -7,9 +7,15 @@
 //
 
 #import "HTMatchCompareViewController.h"
-#import "HTMatchSummaryRequest.h"
+#import "HTMatchQuarterCell.h"
+#import "HTMatchPtsCompareCell.h"
+#import "HTMatchBestPlayerCell.h"
 
-@interface HTMatchCompareViewController ()
+@interface HTMatchCompareViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic, weak) HTMatchSummaryModel *summaryModel;
 
 @end
 
@@ -21,7 +27,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self setupViews];
+}
+
+- (void)dealloc {
+    NSLog(@"%@ dealloc", NSStringFromClass(self.class));
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,14 +40,79 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)refreshWithMatchSummaryModel:(HTMatchSummaryModel *)summaryModel {
+    [self.tableView.mj_header endRefreshing];
+    self.summaryModel = summaryModel;
+    [self.tableView reloadData];
 }
-*/
+
+- (void)setupViews {
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    self.tableView.rowHeight = 40;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HTMatchQuarterCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([HTMatchQuarterCell class])];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HTMatchPtsCompareCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([HTMatchPtsCompareCell class])];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HTMatchBestPlayerCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([HTMatchBestPlayerCell class])];
+    
+    kWeakSelf
+    self.tableView.mj_header = [MJRefreshGenerator bj_headerWithRefreshingBlock:^{
+        if (weakSelf.onTableHeaderRefreshBlock) {
+            weakSelf.onTableHeaderRefreshBlock();
+        }
+    }];
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 3;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        HTMatchQuarterCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTMatchQuarterCell class])];
+        [cell setupWithMatchSummaryModel:self.summaryModel];
+        return cell;
+    }
+    if (indexPath.section == 1) {
+        HTMatchPtsCompareCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTMatchPtsCompareCell class])];
+        return cell;
+    }
+    HTMatchBestPlayerCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTMatchBestPlayerCell class])];
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return 105;
+    }
+    if (indexPath.section == 1) {
+        return 320;
+    }
+    return 260;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section > 0) {
+        return 10;
+    }
+    return 0.0001;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.0001;
+}
 
 @end

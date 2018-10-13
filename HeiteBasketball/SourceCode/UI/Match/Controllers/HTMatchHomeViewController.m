@@ -124,7 +124,12 @@
     self.tableView.delegate = self;
     self.tableView.rowHeight = 130;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.tableFooterView = [[UIView alloc] init];
+    
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     
     [self.tableView registerNib:[UINib nibWithNibName:@"HTMatchHomeCell" bundle:nil]
          forCellReuseIdentifier:@"HTMatchHomeCell"];
@@ -134,12 +139,6 @@
     self.tableView.mj_header = [MJRefreshGenerator bj_headerWithRefreshingBlock:^{
         [weakSelf loadData];
     }];
-    
-    if (@available(iOS 11.0, *)) {
-        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    } else {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
     
     self.startDate = [NSDate date];
     [self refreshTimeTitle];

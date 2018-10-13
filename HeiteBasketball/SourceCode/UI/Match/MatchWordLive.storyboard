@@ -54,22 +54,22 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="事件" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMX-21-v9W">
-                                        <rect key="frame" x="111" y="0.0" width="208.5" height="45"/>
+                                        <rect key="frame" x="111" y="0.0" width="198.5" height="45"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T5r-aq-Z4D" userLabel="Line">
-                                        <rect key="frame" x="319.5" y="0.0" width="0.5" height="45"/>
+                                        <rect key="frame" x="309.5" y="0.0" width="0.5" height="45"/>
                                         <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="0.5" id="hU5-Fq-8NG"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="比分" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WkC-6y-VYa">
-                                        <rect key="frame" x="320" y="0.0" width="55" height="45"/>
+                                        <rect key="frame" x="310" y="0.0" width="65" height="45"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="55" id="FhY-Sx-NyM"/>
+                                            <constraint firstAttribute="width" constant="65" id="FhY-Sx-NyM"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>

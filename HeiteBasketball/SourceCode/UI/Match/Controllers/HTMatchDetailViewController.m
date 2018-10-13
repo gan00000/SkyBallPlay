@@ -62,6 +62,16 @@
     [self loadData];
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self stopTimer];
+}
+
+- (void)dealloc {
+    NSLog(@"%@ dealloc", NSStringFromClass(self.class));
+}
+
 #pragma mark - private
 - (void)setupUI {
     self.title = [NSString stringWithFormat:@"%@ VS %@", self.matchModel.homeName, self.matchModel.awayName];
@@ -243,18 +253,40 @@
 
 - (void)loadChildViewControllerByIndex:(NSInteger)index {
     if ([self.loadedFlagArray[index] boolValue]) {
+        if (index == 0) {
+            HTMatchWordLiveViewController *wordVc = self.loadedControllersArray[index];
+            [wordVc refreshWithLiveFeedList:self.liveFeedList];
+        } else if (index == 1) {
+            HTMatchCompareViewController *compareVc = self.loadedControllersArray[index];
+            [compareVc refreshWithMatchSummaryModel:self.matchSummaryModel];
+        } else {
+            HTMatchDashboardViewController *dashbdVc = self.loadedControllersArray[index];
+            [dashbdVc refreshWithMatchCompareModel:self.matchCompareModel];
+        }
         return;
     }
     
+    kWeakSelf
     UIViewController *vc;
     if (index == 0) {
         HTMatchWordLiveViewController *wordVc = [HTMatchWordLiveViewController viewController];
+        wordVc.onTableHeaderRefreshBlock = ^{
+            [weakSelf loadData];
+        };
         vc = wordVc;
     } else if (index == 1) {
         HTMatchCompareViewController *compareVc = [HTMatchCompareViewController viewController];
+        [compareVc refreshWithMatchSummaryModel:self.matchSummaryModel];
+        compareVc.onTableHeaderRefreshBlock = ^{
+            [weakSelf loadData];
+        };
         vc = compareVc;
     } else {
         HTMatchDashboardViewController *dashboardVc = [HTMatchDashboardViewController viewController];
+        [dashboardVc refreshWithMatchCompareModel:self.matchCompareModel];
+        dashboardVc.onTableHeaderRefreshBlock = ^{
+            [weakSelf loadData];
+        };
         vc = dashboardVc;
     }
     [self addChildViewController:vc];
@@ -337,10 +369,6 @@
         _awayTeamLogoWeb.backgroundColor = [UIColor clearColor];
     }
     return _awayTeamLogoWeb;
-}
-
-- (void)dealloc {
-    BJLog(@"\n---- %@ is dealloc!!\n-",[self class]);
 }
 
 

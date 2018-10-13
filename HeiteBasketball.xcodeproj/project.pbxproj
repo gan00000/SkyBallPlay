@@ -134,6 +134,12 @@
 		FEC1172B2143E43A002DB617 /* Launch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC1172A2143E43A002DB617 /* Launch.xcassets */; };
 		FEC1172E2143EAA3002DB617 /* BJError.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1172D2143EAA3002DB617 /* BJError.m */; };
 		FEC117312143EAC2002DB617 /* BJBaseResponceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1172F2143EAC2002DB617 /* BJBaseResponceModel.m */; };
+		FEDABE482171BC3A008C8AFD /* HTMatchQuarterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDABE462171BC3A008C8AFD /* HTMatchQuarterCell.m */; };
+		FEDABE492171BC3A008C8AFD /* HTMatchQuarterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDABE472171BC3A008C8AFD /* HTMatchQuarterCell.xib */; };
+		FEDABE4D2171BCEE008C8AFD /* HTMatchPtsCompareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDABE4B2171BCEE008C8AFD /* HTMatchPtsCompareCell.m */; };
+		FEDABE4E2171BCEE008C8AFD /* HTMatchPtsCompareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDABE4C2171BCEE008C8AFD /* HTMatchPtsCompareCell.xib */; };
+		FEDABE522171BD0C008C8AFD /* HTMatchBestPlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDABE502171BD0C008C8AFD /* HTMatchBestPlayerCell.m */; };
+		FEDABE532171BD0C008C8AFD /* HTMatchBestPlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDABE512171BD0C008C8AFD /* HTMatchBestPlayerCell.xib */; };
 		FEDAC970214B86C7005E8B63 /* HTDataCellPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDAC96F214B86C7005E8B63 /* HTDataCellPlayerView.xib */; };
 		FEDAC974214B9117005E8B63 /* HTDataHomeTeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDAC972214B9117005E8B63 /* HTDataHomeTeamCell.m */; };
 		FEDAC975214B9117005E8B63 /* HTDataHomeTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDAC973214B9117005E8B63 /* HTDataHomeTeamCell.xib */; };
@@ -375,6 +381,15 @@
 		FEC1172D2143EAA3002DB617 /* BJError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJError.m; sourceTree = "<group>"; };
 		FEC1172F2143EAC2002DB617 /* BJBaseResponceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJBaseResponceModel.m; sourceTree = "<group>"; };
 		FEC117302143EAC2002DB617 /* BJBaseResponceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJBaseResponceModel.h; sourceTree = "<group>"; };
+		FEDABE452171BC3A008C8AFD /* HTMatchQuarterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchQuarterCell.h; sourceTree = "<group>"; };
+		FEDABE462171BC3A008C8AFD /* HTMatchQuarterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchQuarterCell.m; sourceTree = "<group>"; };
+		FEDABE472171BC3A008C8AFD /* HTMatchQuarterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMatchQuarterCell.xib; sourceTree = "<group>"; };
+		FEDABE4A2171BCEE008C8AFD /* HTMatchPtsCompareCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchPtsCompareCell.h; sourceTree = "<group>"; };
+		FEDABE4B2171BCEE008C8AFD /* HTMatchPtsCompareCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchPtsCompareCell.m; sourceTree = "<group>"; };
+		FEDABE4C2171BCEE008C8AFD /* HTMatchPtsCompareCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMatchPtsCompareCell.xib; sourceTree = "<group>"; };
+		FEDABE4F2171BD0C008C8AFD /* HTMatchBestPlayerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchBestPlayerCell.h; sourceTree = "<group>"; };
+		FEDABE502171BD0C008C8AFD /* HTMatchBestPlayerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchBestPlayerCell.m; sourceTree = "<group>"; };
+		FEDABE512171BD0C008C8AFD /* HTMatchBestPlayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMatchBestPlayerCell.xib; sourceTree = "<group>"; };
 		FEDAC96F214B86C7005E8B63 /* HTDataCellPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDataCellPlayerView.xib; sourceTree = "<group>"; };
 		FEDAC971214B9117005E8B63 /* HTDataHomeTeamCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataHomeTeamCell.h; sourceTree = "<group>"; };
 		FEDAC972214B9117005E8B63 /* HTDataHomeTeamCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataHomeTeamCell.m; sourceTree = "<group>"; };
@@ -1027,6 +1042,15 @@
 				FE82A480216E42680070FFC0 /* HTMatchLiveFeedCell.h */,
 				FE82A481216E42680070FFC0 /* HTMatchLiveFeedCell.m */,
 				FE82A482216E42680070FFC0 /* HTMatchLiveFeedCell.xib */,
+				FEDABE452171BC3A008C8AFD /* HTMatchQuarterCell.h */,
+				FEDABE462171BC3A008C8AFD /* HTMatchQuarterCell.m */,
+				FEDABE472171BC3A008C8AFD /* HTMatchQuarterCell.xib */,
+				FEDABE4A2171BCEE008C8AFD /* HTMatchPtsCompareCell.h */,
+				FEDABE4B2171BCEE008C8AFD /* HTMatchPtsCompareCell.m */,
+				FEDABE4C2171BCEE008C8AFD /* HTMatchPtsCompareCell.xib */,
+				FEDABE4F2171BD0C008C8AFD /* HTMatchBestPlayerCell.h */,
+				FEDABE502171BD0C008C8AFD /* HTMatchBestPlayerCell.m */,
+				FEDABE512171BD0C008C8AFD /* HTMatchBestPlayerCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1123,6 +1147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEDABE492171BC3A008C8AFD /* HTMatchQuarterCell.xib in Resources */,
 				FE6BD08421457D7E0090118A /* HTNewsHeaderCell.xib in Resources */,
 				FEC1160D2143D4A1002DB617 /* XJEmptyView.xib in Resources */,
 				FE6BD07A21452B570090118A /* HTNewsHomeBannerCell.xib in Resources */,
@@ -1142,6 +1167,7 @@
 				FE6BD04B2144FA3C0090118A /* HUD.xcassets in Resources */,
 				FEC1171B2143DEAD002DB617 /* DataHome.storyboard in Resources */,
 				FE81D1632149716D0047A4A2 /* HTDataHomePlayerCell.xib in Resources */,
+				FEDABE4E2171BCEE008C8AFD /* HTMatchPtsCompareCell.xib in Resources */,
 				FEC116072143D4A1002DB617 /* XJToastView.xib in Resources */,
 				FE6BD07F21457BBC0090118A /* NewsDetail.storyboard in Resources */,
 				FEC1172B2143E43A002DB617 /* Launch.xcassets in Resources */,
@@ -1163,6 +1189,7 @@
 				FE81D15B2149613B0047A4A2 /* DataHomeSub.storyboard in Resources */,
 				FEC116DD2143D877002DB617 /* Match.xcassets in Resources */,
 				FEC116792143D4A1002DB617 /* BJWKWebViewPostJS.html in Resources */,
+				FEDABE532171BD0C008C8AFD /* HTMatchBestPlayerCell.xib in Resources */,
 				FE6BD0622144FEF90090118A /* MatchCompare.storyboard in Resources */,
 				FEEABBE72149F90800A585DA /* iframe_load.html in Resources */,
 				FEC112622143D058002DB617 /* Assets.xcassets in Resources */,
@@ -1319,6 +1346,7 @@
 				FEC116122143D4A1002DB617 /* LJTabBar.m in Sources */,
 				FE6BD05B2144FDFD0090118A /* HTMatchWordLiveViewController.m in Sources */,
 				FEC116132143D4A1002DB617 /* LJViewPager.m in Sources */,
+				FEDABE482171BC3A008C8AFD /* HTMatchQuarterCell.m in Sources */,
 				FE706F02214FF3430078DF30 /* HTDataMoreViewController.m in Sources */,
 				FEC116C22143D4A1002DB617 /* UIView+ViewController.m in Sources */,
 				FE6BD067214512EC0090118A /* HTNewsHomeRequest.m in Sources */,
@@ -1341,8 +1369,10 @@
 				FE81D16D21497DDE0047A4A2 /* HTRankHomeCell.m in Sources */,
 				FEC116C02143D4A1002DB617 /* UIImage+Generator.m in Sources */,
 				FEDAC978214B9129005E8B63 /* HTDataCellTeamView.m in Sources */,
+				FEDABE4D2171BCEE008C8AFD /* HTMatchPtsCompareCell.m in Sources */,
 				FEC116292143D4A1002DB617 /* BJHUDView.m in Sources */,
 				FEC1167C2143D4A1002DB617 /* BJWebViewJSBridge.m in Sources */,
+				FEDABE522171BD0C008C8AFD /* HTMatchBestPlayerCell.m in Sources */,
 				FE6BD074214526980090118A /* HTNewsHomeCell.m in Sources */,
 				FEC116C82143D4A1002DB617 /* NSDate+Core.m in Sources */,
 				FEA104F9216CB10C000DBE63 /* HTMatchCompareModel.m in Sources */,

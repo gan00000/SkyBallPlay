@@ -7,7 +7,12 @@
 //
 
 #import "BJBaseViewController.h"
+#import "HTMatchCompareModel.h"
 
 @interface HTMatchDashboardViewController : BJBaseViewController
+
+@property (nonatomic, copy) void (^onTableHeaderRefreshBlock)(void);
+
+- (void)refreshWithMatchCompareModel:(HTMatchCompareModel *)compareModel;
 
 @end

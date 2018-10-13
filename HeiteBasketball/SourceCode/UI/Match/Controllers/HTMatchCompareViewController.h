@@ -7,12 +7,13 @@
 //
 
 #import "BJBaseViewController.h"
+#import "HTMatchSummaryModel.h"
 
 
 @interface HTMatchCompareViewController : BJBaseViewController
 
-//@property (nonatomic, copy) void (^onTableHeaderRefreshBlock)(void);
-//
-//- (void)refreshWithLiveFeedList:(NSArray<HTMatchLiveFeedModel *> *)liveFeedList;
+@property (nonatomic, copy) void (^onTableHeaderRefreshBlock)(void);
+
+- (void)refreshWithMatchSummaryModel:(HTMatchSummaryModel *)summaryModel;
 
 @end
