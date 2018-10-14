@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HTRankModel.h"
 
 @interface HTRankHomeCell : UITableViewCell
+
+- (void)setupWithTitle:(NSString *)title rankList:(NSArray<HTRankModel *> *)rankList;
 
 @end

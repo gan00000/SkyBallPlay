@@ -72,7 +72,32 @@
         HTMatchDetailsModel *away_team_reb_most = nil;
         
         for (HTMatchDetailsModel *model in detailList) {
-            if ([model.teamId isEqualToString:summaryModel.homeTeam]) {
+            if ([model.teamId isEqualToString:summaryModel.awayTeam]) {
+                [awayTeamDetails addObject:model];
+                
+                away_team_reb += model.reb.integerValue;
+                away_team_ast += model.ast.integerValue;
+                away_team_blk += model.blk.integerValue;
+                away_team_stl += model.stl.integerValue;
+                away_team_fgatt += model.fgatt.integerValue;
+                away_team_fgmade += model.fgmade.integerValue;
+                away_team_fg3ptatt += model.fg3ptatt.integerValue;
+                away_team_fg3ptmade += model.fg3ptmade.integerValue;
+                away_team_ftatt += model.ftatt.integerValue;
+                away_team_ftmade += model.ftmade.integerValue;
+                
+                if (model.pts.integerValue > away_team_pts_most.pts.integerValue) {
+                    away_team_pts_most = model;
+                }
+                
+                if (model.ast.integerValue > away_team_ast_most.ast.integerValue) {
+                    away_team_ast_most = model;
+                }
+                
+                if (model.reb.integerValue > away_team_reb_most.reb.integerValue) {
+                    away_team_reb_most = model;
+                }
+            } else {
                 [homeTeamDetails addObject:model];
                 
                 home_team_reb += model.reb.integerValue;
@@ -98,31 +123,6 @@
                     home_team_reb_most = model;
                 }
                 
-            } else if ([model.teamId isEqualToString:summaryModel.awayTeam]) {
-                [awayTeamDetails addObject:model];
-                
-                away_team_reb += model.reb.integerValue;
-                away_team_ast += model.ast.integerValue;
-                away_team_blk += model.blk.integerValue;
-                away_team_stl += model.stl.integerValue;
-                away_team_fgatt += model.fgatt.integerValue;
-                away_team_fgmade += model.fgmade.integerValue;
-                away_team_fg3ptatt += model.fg3ptatt.integerValue;
-                away_team_fg3ptmade += model.fg3ptmade.integerValue;
-                away_team_ftatt += model.ftatt.integerValue;
-                away_team_ftmade += model.ftmade.integerValue;
-                
-                if (model.pts.integerValue > away_team_pts_most.pts.integerValue) {
-                    away_team_pts_most = model;
-                }
-                
-                if (model.ast.integerValue > away_team_ast_most.ast.integerValue) {
-                    away_team_ast_most = model;
-                }
-                
-                if (model.reb.integerValue > away_team_reb_most.reb.integerValue) {
-                    away_team_reb_most = model;
-                }
             }
         }
         summaryModel.home_team_reb = [NSString stringWithFormat:@"%ld", home_team_reb];
@@ -143,6 +143,9 @@
         summaryModel.home_team_pts_most = home_team_pts_most;
         summaryModel.home_team_ast_most = home_team_ast_most;
         summaryModel.home_team_reb_most = home_team_reb_most;
+        summaryModel.away_team_pts_most = away_team_pts_most;
+        summaryModel.away_team_ast_most = away_team_ast_most;
+        summaryModel.away_team_reb_most = away_team_reb_most;
         if (successBlock) {
             successBlock(summaryModel, compareModel);
         }

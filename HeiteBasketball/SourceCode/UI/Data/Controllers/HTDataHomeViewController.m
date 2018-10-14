@@ -32,7 +32,6 @@
     
     [self initData];
     [self setupUI];
-    [self segmentedValueChangedHandle:0];
 }
 
 #pragma mark - private
@@ -43,6 +42,23 @@
         [self.loadedControllersArray addObject:@(NO)];
     }
 }
+- (void)setupUI {
+    self.title = @"數據";
+    
+    [self.view addSubview:self.segmentControl];
+    [self.segmentControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.mas_offset(0);
+        make.height.mas_equalTo(40);
+    }];
+    
+    [self.view addSubview:self.containerView];
+    [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.mas_offset(0);
+        make.top.mas_equalTo(self.segmentControl.mas_bottom).mas_offset(1);
+    }];
+    
+    [self segmentedValueChangedHandle:0];
+}
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
@@ -52,7 +68,6 @@
     [self loadChildViewControllerByIndex:page];
     [self.segmentControl setSelectedSegmentIndex:page animated:YES];
 }
-
 
 #pragma mark -- HMSegmentedControl Action
 - (void)segmentedValueChangedHandle:(NSInteger)index {
@@ -81,23 +96,6 @@
         make.width.equalTo(self.containerView);
         make.height.equalTo(self.containerView);
         make.left.equalTo(self.containerView).offset(index * SCREEN_WIDTH);
-    }];
-}
-
-#pragma mark ---- UI
-- (void)setupUI {
-    self.title = @"數據";
-    
-    [self.view addSubview:self.segmentControl];
-    [self.segmentControl mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.mas_offset(0);
-        make.height.mas_equalTo(40);
-    }];
-    
-    [self.view addSubview:self.containerView];
-    [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.mas_offset(0);
-        make.top.mas_equalTo(self.segmentControl.mas_bottom).mas_offset(1);
     }];
 }
 
@@ -141,10 +139,10 @@
         _containerView.showsVerticalScrollIndicator = NO;
         _containerView.showsHorizontalScrollIndicator = NO;
         _containerView.delegate = self;
-        _containerView.backgroundColor = self.view.backgroundColor;
         _containerView.pagingEnabled = YES;
         _containerView.autoresizingMask = UIViewAutoresizingNone;
         _containerView.contentSize = CGSizeMake(SCREEN_WIDTH * 2, SCREEN_HEIGHT - 64 - SCREEN_HEIGHT - 1);
+        _containerView.bounces = NO;
     }
     return _containerView;
 }

@@ -29,6 +29,10 @@
 #pragma mark - 数据
 #define API_DATA_HOME                   @"api/index.php"
 
+#pragma mark - 排行
+#define API_RANK_EAST_WEST              @"api/get_east_west_rank"
+#define API_RANK_ZONE                   @"api/get_zone_rank"
+
 #endif
 
 

@@ -345,10 +345,10 @@
         _containerView.showsVerticalScrollIndicator = NO;
         _containerView.showsHorizontalScrollIndicator = NO;
         _containerView.delegate = self;
-        _containerView.backgroundColor = self.view.backgroundColor;
         _containerView.pagingEnabled = YES;
         _containerView.autoresizingMask = UIViewAutoresizingNone;
         _containerView.contentSize = CGSizeMake(SCREEN_WIDTH * 3, SCREEN_HEIGHT - 64 - SCREEN_HEIGHT - 1);
+        _containerView.bounces = NO;
     }
     return _containerView;
 }

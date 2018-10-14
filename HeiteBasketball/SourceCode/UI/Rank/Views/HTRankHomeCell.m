@@ -8,6 +8,13 @@
 
 #import "HTRankHomeCell.h"
 
+@interface HTRankHomeCell ()
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIView *customContentView;
+
+@end
+
 @implementation HTRankHomeCell
 
 - (void)awakeFromNib {
@@ -19,6 +26,11 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setupWithTitle:(NSString *)title rankList:(NSArray<HTRankModel *> *)rankList {
+    self.titleLabel.text = title;
+    
 }
 
 @end

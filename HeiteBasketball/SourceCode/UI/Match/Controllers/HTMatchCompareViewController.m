@@ -87,9 +87,11 @@
     }
     if (indexPath.section == 1) {
         HTMatchPtsCompareCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTMatchPtsCompareCell class])];
+        [cell setupWithMatchSummaryModel:self.summaryModel];
         return cell;
     }
     HTMatchBestPlayerCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTMatchBestPlayerCell class])];
+    [cell setupWithMatchSummaryModel:self.summaryModel];
     return cell;
 }
 

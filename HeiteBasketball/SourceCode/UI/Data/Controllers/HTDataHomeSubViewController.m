@@ -170,6 +170,12 @@
     self.tableView.tableFooterView = [[UIView alloc] init];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    
     if (self.type == 1) {
         [self.tableView registerNib:[UINib nibWithNibName:@"HTDataHomePlayerCell" bundle:nil]
              forCellReuseIdentifier:@"HTDataHomePlayerCell"];
@@ -184,12 +190,6 @@
     self.tableView.mj_header = [MJRefreshGenerator bj_headerWithRefreshingBlock:^{
         [weakSelf loadData];
     }];
-    
-    if (@available(iOS 11.0, *)) {
-        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    } else {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
     
     self.error = nil;
     

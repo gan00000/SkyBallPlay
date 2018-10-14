@@ -343,6 +343,24 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="away3FgmadeLabel" destination="QBb-K3-gML" id="rCM-VH-ns7"/>
+                <outlet property="awayAstLabel" destination="YeP-GQ-lwp" id="cXv-sb-oDU"/>
+                <outlet property="awayBlkLabel" destination="5MN-DM-x92" id="5NI-bM-8EU"/>
+                <outlet property="awayFgmadeLabel" destination="Rwy-NU-BKL" id="4Tm-1E-LbA"/>
+                <outlet property="awayFtmadeLabel" destination="Yax-az-C2X" id="dNh-AV-LHS"/>
+                <outlet property="awayPtsLabel" destination="noA-Qv-rE0" id="bJY-gk-NcB"/>
+                <outlet property="awayRebLabel" destination="OcT-2K-skT" id="Ipb-uv-GBI"/>
+                <outlet property="awayStlLabel" destination="Y2v-Wf-b9f" id="BQi-KB-JuD"/>
+                <outlet property="home3FgmadeLabel" destination="Rq2-Mc-jYz" id="HWZ-d3-Vor"/>
+                <outlet property="homeAstLabel" destination="pkL-4G-6ZC" id="ku5-bf-R5y"/>
+                <outlet property="homeBlkLabel" destination="K8R-Mo-9lj" id="0Wb-A3-5RI"/>
+                <outlet property="homeFgmadeLabel" destination="vdD-77-SCU" id="TNA-d1-IpZ"/>
+                <outlet property="homeFtmadeLabel" destination="oke-Rb-0Xd" id="onz-Is-hol"/>
+                <outlet property="homePtsLabel" destination="yVz-N4-WvJ" id="5jj-OG-JUU"/>
+                <outlet property="homeRebLabel" destination="V2h-Cj-UGb" id="jdl-dL-w1p"/>
+                <outlet property="homeStlLabel" destination="Z6s-Ro-exD" id="S8x-6A-HMY"/>
+            </connections>
             <point key="canvasLocation" x="138.40000000000001" y="153.82308845577214"/>
         </tableViewCell>
     </objects>

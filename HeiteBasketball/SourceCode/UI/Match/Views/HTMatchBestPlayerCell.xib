@@ -317,6 +317,26 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="awayAstLabel" destination="Dcy-Cl-X8L" id="7mH-1Y-Iof"/>
+                <outlet property="awayAstPlaceLabel" destination="X7G-io-e7p" id="3BD-4e-XwZ"/>
+                <outlet property="awayAstPlayerLabel" destination="yQy-nY-n19" id="MzS-Gg-PDf"/>
+                <outlet property="awayPtsLabel" destination="m6M-FS-wW5" id="8On-19-Vrd"/>
+                <outlet property="awayPtsPlaceLabel" destination="d2b-Qo-5Ie" id="FNI-Q2-ob5"/>
+                <outlet property="awayPtsPlayerLabel" destination="rGw-Qh-ia4" id="vfP-kj-QtC"/>
+                <outlet property="awayRebLabel" destination="QMb-6x-2X6" id="buI-oD-eOx"/>
+                <outlet property="awayRebPlaceLabel" destination="NDe-yB-fC0" id="fro-1I-bEm"/>
+                <outlet property="awayRebPlayerLabel" destination="0qt-Uy-T4k" id="Jjz-OS-Goc"/>
+                <outlet property="homeAstLabel" destination="Eun-YK-2Yp" id="raS-Ng-cvj"/>
+                <outlet property="homeAstPlaceLabel" destination="aZ9-mL-JPP" id="uP2-84-eBj"/>
+                <outlet property="homeAstPlayerLabel" destination="wkL-YJ-rf4" id="eqB-9Y-gqs"/>
+                <outlet property="homePtsLabel" destination="HXs-wg-8XI" id="cTA-hp-HaA"/>
+                <outlet property="homePtsPlaceLabel" destination="Xe0-Vf-2Oa" id="h6H-6y-Wo7"/>
+                <outlet property="homePtsPlayerLabel" destination="nVe-mj-K7G" id="9Yc-wT-0MB"/>
+                <outlet property="homeRebLabel" destination="edM-IO-4qN" id="Jfp-QX-xOS"/>
+                <outlet property="homeRebPlaceLabel" destination="yyG-Pf-NjC" id="ZZL-3a-ISl"/>
+                <outlet property="homeRebPlayerLabel" destination="ZeK-0p-Nrb" id="eFc-v6-eHe"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>
