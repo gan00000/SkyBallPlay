@@ -130,36 +130,46 @@
         return;
     }
     
+    NSMutableString *title = [NSMutableString stringWithString:self.type==1?@"球員":@"球隊"];
+    
     HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
     moreVc.type = self.type;
     switch (indexPath.section) {
         case 0: {
             moreVc.subType = @"pts";
+            [title appendString:@"得分"];
         } break;
             
         case 1: {
             moreVc.subType = @"reb";
+            [title appendString:@"籃板"];
         } break;
             
         case 2: {
             moreVc.subType = @"ast";
+            [title appendString:@"助攻"];
         } break;
             
         case 3: {
             moreVc.subType = @"stl";
+            [title appendString:@"搶斷"];
         } break;
             
         case 4: {
             moreVc.subType = @"blk";
+            [title appendString:@"蓋帽"];
         } break;
             
         case 5: {
-           moreVc.subType = @"turnover";
+            moreVc.subType = @"turnover";
+            [title appendString:@"失誤"];
         } break;
             
         default:
             break;
     }
+    [title appendString:@"排行"];
+    moreVc.title = title;
     [self.navigationController pushViewController:moreVc animated:YES];
 }
 
