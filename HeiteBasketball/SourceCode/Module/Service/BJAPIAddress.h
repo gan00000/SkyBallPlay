@@ -27,7 +27,10 @@
 #define API_FILM_HOME                   @"highlight"
 
 #pragma mark - 数据
-#define API_DATA_HOME                   @"api/index.php"
+#define API_PLAYER_RANK                 @"api/get_player_rank"
+#define API_PLAYER_RANK_ALL             @"api/get_player_rank_all"
+#define API_TEAM_RANK                   @"api/get_team_rank"
+#define API_TEAM_RANK_ALL               @"api/get_team_rank_all"
 
 #pragma mark - 排行
 #define API_RANK_EAST_WEST              @"api/get_east_west_rank"

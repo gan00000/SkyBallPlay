@@ -11,12 +11,10 @@
 @implementation HTDataHomeRequest
 
 + (void)requestWithType:(NSInteger)type successBlock:(void(^)(HTDataHomeInfoModel *infoModel))successBlock errorBlock:(BJServiceErrorBlock)errorBlock {
-    NSDictionary *params = @{
-                             @"fun": type==1?@"get_player_rank":@"get_team_rank"
-                             };
-    [BJHTTPServiceEngine postRequestWithFunctionPath:API_DATA_HOME params:params successBlock:^(id responseData) {
+    [BJHTTPServiceEngine getRequestWithFunctionPath:type==1?API_PLAYER_RANK:API_TEAM_RANK params:nil successBlock:^(id responseData) {
         if (successBlock) {
-            HTDataHomeInfoModel *infoModel = [HTDataHomeInfoModel yy_modelWithJSON:responseData];
+            NSString *key = type==1?@"players":@"teams";
+            HTDataHomeInfoModel *infoModel = [HTDataHomeInfoModel yy_modelWithJSON:responseData[key]];
             successBlock(infoModel);
         }
     } errorBlock:errorBlock];
@@ -27,13 +25,13 @@
                    successBlock:(void (^)(NSArray<HTDataHomeModel *> *rankList))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock {
     NSDictionary *params = @{
-                             @"fun": type==1?@"get_player_rank_all":@"get_team_rank_all",
                              @"type": subType,
-                             @"sort": @"desc"
+                             @"sort_by": @"desc"
                              };
-    [BJHTTPServiceEngine postRequestWithFunctionPath:API_DATA_HOME params:params successBlock:^(id responseData) {
+    [BJHTTPServiceEngine getRequestWithFunctionPath:type==1?API_PLAYER_RANK_ALL:API_TEAM_RANK_ALL params:params successBlock:^(id responseData) {
         if (successBlock) {
-            NSArray<HTDataHomeModel *> *rankList = [NSArray yy_modelArrayWithClass:[HTDataHomeModel class] json:responseData];
+            NSString *key = type==1?@"players_rank":@"teams_rank";
+            NSArray<HTDataHomeModel *> *rankList = [NSArray yy_modelArrayWithClass:[HTDataHomeModel class] json:responseData[key]];
             successBlock(rankList);
         }
     } errorBlock:errorBlock];

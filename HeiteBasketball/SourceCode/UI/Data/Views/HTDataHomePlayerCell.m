@@ -35,7 +35,7 @@
         return;
     }
     
-    CGFloat width = SCREEN_WIDTH / datas.count;
+    CGFloat width = SCREEN_WIDTH / 5;
     for (NSInteger i=self.cells.count; i<datas.count; i++) {
         HTDataCellPlayerView *cell = [HTDataCellPlayerView dataCellViewWithFrame:CGRectMake(i*width, 0, width, self.jx_height)
                                                            addToView:self];
