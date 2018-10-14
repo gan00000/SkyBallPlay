@@ -147,6 +147,8 @@
 		FEDABE68217336BA008C8AFD /* HTRankZoneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDABE67217336BA008C8AFD /* HTRankZoneViewController.m */; };
 		FEDABE6C217336D6008C8AFD /* RankZone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEDABE6B217336D6008C8AFD /* RankZone.storyboard */; };
 		FEDABE6E21734A53008C8AFD /* RankEastWest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEDABE6D21734A53008C8AFD /* RankEastWest.storyboard */; };
+		FEDABE70217385F4008C8AFD /* MatchSubDsbd.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEDABE6F217385F4008C8AFD /* MatchSubDsbd.storyboard */; };
+		FEDABE7321738618008C8AFD /* HTMatchSubDsbdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDABE7221738618008C8AFD /* HTMatchSubDsbdViewController.m */; };
 		FEDAC970214B86C7005E8B63 /* HTDataCellPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDAC96F214B86C7005E8B63 /* HTDataCellPlayerView.xib */; };
 		FEDAC974214B9117005E8B63 /* HTDataHomeTeamCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDAC972214B9117005E8B63 /* HTDataHomeTeamCell.m */; };
 		FEDAC975214B9117005E8B63 /* HTDataHomeTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDAC973214B9117005E8B63 /* HTDataHomeTeamCell.xib */; };
@@ -409,6 +411,9 @@
 		FEDABE67217336BA008C8AFD /* HTRankZoneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTRankZoneViewController.m; sourceTree = "<group>"; };
 		FEDABE6B217336D6008C8AFD /* RankZone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RankZone.storyboard; sourceTree = "<group>"; };
 		FEDABE6D21734A53008C8AFD /* RankEastWest.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RankEastWest.storyboard; sourceTree = "<group>"; };
+		FEDABE6F217385F4008C8AFD /* MatchSubDsbd.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MatchSubDsbd.storyboard; sourceTree = "<group>"; };
+		FEDABE7121738618008C8AFD /* HTMatchSubDsbdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchSubDsbdViewController.h; sourceTree = "<group>"; };
+		FEDABE7221738618008C8AFD /* HTMatchSubDsbdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchSubDsbdViewController.m; sourceTree = "<group>"; };
 		FEDAC96F214B86C7005E8B63 /* HTDataCellPlayerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDataCellPlayerView.xib; sourceTree = "<group>"; };
 		FEDAC971214B9117005E8B63 /* HTDataHomeTeamCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataHomeTeamCell.h; sourceTree = "<group>"; };
 		FEDAC972214B9117005E8B63 /* HTDataHomeTeamCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataHomeTeamCell.m; sourceTree = "<group>"; };
@@ -799,6 +804,7 @@
 				FE6BD05F2144FED00090118A /* MatchWordLive.storyboard */,
 				FE6BD0612144FEF90090118A /* MatchCompare.storyboard */,
 				FE6BD0632144FF1F0090118A /* MatchDashboard.storyboard */,
+				FEDABE6F217385F4008C8AFD /* MatchSubDsbd.storyboard */,
 			);
 			path = Match;
 			sourceTree = "<group>";
@@ -869,6 +875,8 @@
 				FE6BD0572144FDE10090118A /* HTMatchCompareViewController.m */,
 				FE6BD05C2144FE550090118A /* HTMatchDashboardViewController.h */,
 				FE6BD05D2144FE550090118A /* HTMatchDashboardViewController.m */,
+				FEDABE7121738618008C8AFD /* HTMatchSubDsbdViewController.h */,
+				FEDABE7221738618008C8AFD /* HTMatchSubDsbdViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1196,6 +1204,7 @@
 				FEC116F82143DC57002DB617 /* NewsHome.storyboard in Resources */,
 				FEC117262143DF33002DB617 /* RankHome.storyboard in Resources */,
 				FEC116092143D4A1002DB617 /* XJToastImageView.xib in Resources */,
+				FEDABE70217385F4008C8AFD /* MatchSubDsbd.storyboard in Resources */,
 				FE6BD04B2144FA3C0090118A /* HUD.xcassets in Resources */,
 				FEC1171B2143DEAD002DB617 /* DataHome.storyboard in Resources */,
 				FE81D1632149716D0047A4A2 /* HTDataHomePlayerCell.xib in Resources */,
@@ -1311,6 +1320,7 @@
 				FEDAC97D214BBD28005E8B63 /* HTDatePickerView.m in Sources */,
 				FEC116B72143D4A1002DB617 /* BJBaseTabBarController.m in Sources */,
 				FEC112682143D058002DB617 /* main.m in Sources */,
+				FEDABE7321738618008C8AFD /* HTMatchSubDsbdViewController.m in Sources */,
 				FEC116762143D4A1002DB617 /* BJURINavigator.m in Sources */,
 				FEC116492143D4A1002DB617 /* BJMainViewController.m in Sources */,
 				FEDABE6521733693008C8AFD /* HTRankEastWestViewController.m in Sources */,

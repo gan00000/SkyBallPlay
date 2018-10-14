@@ -11,8 +11,6 @@
 
 @interface HTMatchDashboardViewController : BJBaseViewController
 
-@property (nonatomic, copy) void (^onTableHeaderRefreshBlock)(void);
-
 - (void)refreshWithMatchCompareModel:(HTMatchCompareModel *)compareModel;
 
 @end

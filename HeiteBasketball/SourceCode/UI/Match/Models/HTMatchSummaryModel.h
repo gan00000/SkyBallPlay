@@ -9,28 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "HTMatchDetailsModel.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
-/*
- "homeLogo": "https://upload.wikimedia.org/wikipedia/en/5/5d/Oklahoma_City_Thunder.svg",
- "homeName": "雷霆",
- "awayName": "雄鹿",
- "awayLogo": "https://upload.wikimedia.org/wikipedia/en/4/4a/Milwaukee_Bucks_logo.svg",
- "homeTeam": "18",
- "awayTeam": "15",
- "date": "2018-10-09",
- "scheduleStatus": "F/OT",
- "away_pts": "115",
- "home_pts": "119",
- "away_quarter_scores": "30,18,24,35,8",
- "home_quarter_scores": "27,28,24,28,12",
- "game_status": "1",
- "quarter": "OT",
- "minutes": "0",
- "seconds": "59",
- "time": "00:59"
- */
-
 @interface HTMatchSummaryModel : NSObject
 
 @property (nonatomic, copy) NSString *homeLogo;
@@ -97,5 +75,3 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) HTMatchDetailsModel *away_team_reb_most;
 
 @end
-
-NS_ASSUME_NONNULL_END

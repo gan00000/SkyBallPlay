@@ -8,47 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
-/*
- "gameId": "13755",
- "playerId": "20001822",
- "teamId": "8",
- "fgatt": "16",  // 投籃次數
- "pts": "19",
- "fg3ptmade": "3",
- "fg3ptatt": "5",
- "minseconds": "2393",
- "fgmade": "8",
- "ast": "4",
- "reb": "5",
- "ftatt": "0",
- "ftmade": "0",
- "offreb": "5",
- "defreb": "0",
- "fouls": "4",
- "blk": "1",
- "stl": "1",
- "blkagainst": "2",
- "plusminus": "10",
- "id": "20001822",
- "lastname": "Diallo",
- "firstname": "Hamidou",
- "jerseynumber": "",
- "position": "SG",
- "height": "77",
- "weight": "197",
- "birthdate": "1998-07-31T00:00:00",
- "age": "",
- "birthcity": "",
- "birthcountry": "",
- "isrookie": "",
- "isroster": null,
- "isactive": null,
- "officialImagesrc": "https://s3-us-west-2.amazonaws.com/static.fantasydata.com/headshots/nba/low-res/0.png",
- "isStarter": "1"
- */
-
 @interface HTMatchDetailsModel : NSObject
 
 @property (nonatomic, copy) NSString *gameId;
@@ -101,5 +60,3 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @end
-
-NS_ASSUME_NONNULL_END

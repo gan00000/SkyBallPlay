@@ -284,9 +284,6 @@
     } else {
         HTMatchDashboardViewController *dashboardVc = [HTMatchDashboardViewController viewController];
         [dashboardVc refreshWithMatchCompareModel:self.matchCompareModel];
-        dashboardVc.onTableHeaderRefreshBlock = ^{
-            [weakSelf loadData];
-        };
         vc = dashboardVc;
     }
     [self addChildViewController:vc];

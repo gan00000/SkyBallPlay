@@ -147,8 +147,4 @@
     return _containerView;
 }
 
-- (void)dealloc {
-    BJLog(@"\n---- %@ is dealloc!!\n-",[self class]);
-}
-
 @end
