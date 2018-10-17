@@ -46,7 +46,8 @@
 - (void)setupViews {
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = 40;
+    self.tableView.estimatedRowHeight = 40;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     if (@available(iOS 11.0, *)) {

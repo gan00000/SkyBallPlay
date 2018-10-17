@@ -39,11 +39,22 @@
     if (iframe) {
         _news_type = @"影片";
         
-        NSString *widthStr = [[RX(@"width=\"\\d+\"") matches:iframe] firstObject];
-        NSInteger width = [[[RX(@"\\d+") matches:widthStr] firstObject] integerValue];
+        NSInteger width = 0;
+        NSString *widthStr = [[RX(@"width\\s*=\\s*\"\\d+\"|width\\s*:\\s*\\d+px") matches:iframe] firstObject];
+        if (widthStr) {
+            width = [[[RX(@"\\d+") matches:widthStr] firstObject] integerValue];
+        }
         
-        NSString *heightStr = [[RX(@"height=\"\\d+\"") matches:iframe] firstObject];
-        NSInteger height = [[[RX(@"\\d+") matches:heightStr] firstObject] integerValue];
+        NSInteger height = 0;
+        NSString *heightStr = [[RX(@"height\\s*=\\s*\"\\d+\"|height\\s*:\\s*\\d+px") matches:iframe] firstObject];
+        if (heightStr) {
+            height = [[[RX(@"\\d+") matches:heightStr] firstObject] integerValue];
+        }
+        
+        if (height == 0 || width == 0) {
+            height = 2;
+            width = 3;
+        }
         
         _iframe_height = SCREEN_WIDTH * height / width;
         CGFloat titleHeiht = [self.title jx_sizeWithFont:[UIFont systemFontOfSize:14] constrainedToWidth:SCREEN_WIDTH-30].height;

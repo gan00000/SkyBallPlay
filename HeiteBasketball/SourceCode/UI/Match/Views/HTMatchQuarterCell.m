@@ -55,7 +55,7 @@
     NSArray *h = [summaryModel.home_quarter_scores componentsSeparatedByString:@","];
     NSArray *a = [summaryModel.away_quarter_scores componentsSeparatedByString:@","];
     NSInteger index = 0;
-    CGFloat width = (SCREEN_WIDTH - 110) / h.count;
+    CGFloat width = (SCREEN_WIDTH - 130) / h.count;
     
     for (; index <h.count; index++) {
         UILabel *label = [self getLabelAtIndex:index quarterCount:h.count labelWidth:width];

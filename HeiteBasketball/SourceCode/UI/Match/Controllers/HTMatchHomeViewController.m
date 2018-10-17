@@ -218,11 +218,12 @@
                                     }
                                 } errorBlock:^(BJError *error) {
                                     [self.view hideLoadingView];
+                                    [BJLoadingHud hideHUDInView:self.view];
                                     [self.view showToast:error.msg];
                                     
                                     if (self.matchList.count == 0) {
                                         kWeakSelf
-                                        [self.view showEmptyViewWithTitle:@"獲取失敗，點擊重試" tapBlock:^{
+                                        [self.tableView showEmptyViewWithTitle:@"獲取失敗，點擊重試" tapBlock:^{
                                             [weakSelf loadData];
                                             [weakSelf.tableView hideEmptyView];
                                             [weakSelf.view showLoadingView];

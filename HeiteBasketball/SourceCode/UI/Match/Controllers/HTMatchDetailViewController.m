@@ -85,7 +85,7 @@
     [self.contentView addSubview:self.containerView];
     [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.mas_offset(0);
-        make.top.mas_equalTo(self.segmentControl.mas_bottom).mas_offset(0.5);
+        make.top.mas_equalTo(self.segmentControl.mas_bottom).mas_offset(1);
     }];
     
     [self.view addSubview:self.homeTeamLogoWeb];

@@ -18,21 +18,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Mc-zd-9iO">
-                                <rect key="frame" x="0.0" y="20" width="100" height="647"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6Mc-zd-9iO">
+                                <rect key="frame" x="0.0" y="20" width="140" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="euB-Ma-sjE"/>
+                                    <constraint firstAttribute="width" constant="140" id="euB-Ma-sjE"/>
                                 </constraints>
                             </tableView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PeF-H9-Hhy">
-                                <rect key="frame" x="100" y="20" width="275" height="647"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeF-H9-Hhy">
+                                <rect key="frame" x="141" y="20" width="234" height="647"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="kjK-BX-Wlp" firstAttribute="bottom" secondItem="PeF-H9-Hhy" secondAttribute="bottom" id="5n5-T6-nrF"/>
-                            <constraint firstItem="PeF-H9-Hhy" firstAttribute="leading" secondItem="6Mc-zd-9iO" secondAttribute="trailing" id="CEs-bE-FOX"/>
+                            <constraint firstItem="PeF-H9-Hhy" firstAttribute="leading" secondItem="6Mc-zd-9iO" secondAttribute="trailing" constant="1" id="CEs-bE-FOX"/>
                             <constraint firstItem="6Mc-zd-9iO" firstAttribute="leading" secondItem="kjK-BX-Wlp" secondAttribute="leading" id="EVS-y6-A8Z"/>
                             <constraint firstItem="kjK-BX-Wlp" firstAttribute="bottom" secondItem="6Mc-zd-9iO" secondAttribute="bottom" id="Hwt-bs-TEf"/>
                             <constraint firstItem="6Mc-zd-9iO" firstAttribute="top" secondItem="kjK-BX-Wlp" secondAttribute="top" id="jlG-Zr-N1s"/>

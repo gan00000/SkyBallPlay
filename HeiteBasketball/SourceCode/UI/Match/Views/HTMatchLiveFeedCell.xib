@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="width" constant="45" id="fcw-KF-Dmb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0h-lt-HQR" userLabel="Line">
@@ -39,25 +39,28 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="球隊" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THk-nA-C7O">
-                                <rect key="frame" x="60.5" y="0.0" width="45" height="39.5"/>
+                                <rect key="frame" x="60.5" y="0.0" width="70" height="39.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="x0y-gr-eXr"/>
+                                    <constraint firstAttribute="width" constant="70" id="x0y-gr-eXr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LdV-le-egt" userLabel="Line">
-                                <rect key="frame" x="110.5" y="0.0" width="0.5" height="39.5"/>
+                                <rect key="frame" x="135.5" y="0.0" width="0.5" height="39.5"/>
                                 <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="0.5" id="Tgv-mc-zDT"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tyler Zeller  和 Steven Adams 跳球（Dennis Schroder獲得球權）" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNA-7u-Wtw">
-                                <rect key="frame" x="116" y="0.0" width="188.5" height="39.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" text="Tyler Zeller  和 Steven Adams 跳球（Dennis Schroder獲得球權）" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNA-7u-Wtw">
+                                <rect key="frame" x="141" y="5" width="163.5" height="29.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="29.5" id="Y9L-Lk-eLm"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Exw-AR-Mu8" userLabel="Line">
@@ -73,7 +76,7 @@
                                     <constraint firstAttribute="width" constant="55" id="nMS-y4-ymS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OQq-9u-z9B" userLabel="Line">
@@ -89,7 +92,7 @@
                             <constraint firstItem="soL-s7-F8n" firstAttribute="leading" secondItem="Exw-AR-Mu8" secondAttribute="trailing" constant="5" id="2YA-FC-yqR"/>
                             <constraint firstItem="Exw-AR-Mu8" firstAttribute="top" secondItem="o7a-D1-orK" secondAttribute="top" id="3hI-1N-mpK"/>
                             <constraint firstItem="LdV-le-egt" firstAttribute="leading" secondItem="THk-nA-C7O" secondAttribute="trailing" constant="5" id="6ao-JK-6ot"/>
-                            <constraint firstItem="GNA-7u-Wtw" firstAttribute="top" secondItem="o7a-D1-orK" secondAttribute="top" id="Bra-7A-rzC"/>
+                            <constraint firstItem="GNA-7u-Wtw" firstAttribute="top" secondItem="o7a-D1-orK" secondAttribute="top" constant="5" id="Bra-7A-rzC"/>
                             <constraint firstItem="LdV-le-egt" firstAttribute="top" secondItem="o7a-D1-orK" secondAttribute="top" id="HJO-aM-OCR"/>
                             <constraint firstItem="soL-s7-F8n" firstAttribute="top" secondItem="o7a-D1-orK" secondAttribute="top" id="Iw8-M9-Zpg"/>
                             <constraint firstAttribute="bottom" secondItem="g0h-lt-HQR" secondAttribute="bottom" id="J8N-D5-CJV"/>
@@ -100,7 +103,7 @@
                             <constraint firstItem="Exw-AR-Mu8" firstAttribute="leading" secondItem="GNA-7u-Wtw" secondAttribute="trailing" constant="5" id="Tf6-cw-Iem"/>
                             <constraint firstAttribute="bottom" secondItem="THk-nA-C7O" secondAttribute="bottom" id="V94-xx-G1d"/>
                             <constraint firstItem="g0h-lt-HQR" firstAttribute="top" secondItem="o7a-D1-orK" secondAttribute="top" id="Wg8-wN-Wi1"/>
-                            <constraint firstAttribute="bottom" secondItem="GNA-7u-Wtw" secondAttribute="bottom" id="aAy-9f-4Ho"/>
+                            <constraint firstAttribute="bottom" secondItem="GNA-7u-Wtw" secondAttribute="bottom" constant="5" id="aAy-9f-4Ho"/>
                             <constraint firstAttribute="bottom" secondItem="VqH-gq-GhN" secondAttribute="bottom" id="chm-2r-XvC"/>
                             <constraint firstAttribute="bottom" secondItem="Exw-AR-Mu8" secondAttribute="bottom" id="hHI-w1-uUB"/>
                             <constraint firstAttribute="trailing" secondItem="OQq-9u-z9B" secondAttribute="trailing" id="jLl-mt-5Ur"/>

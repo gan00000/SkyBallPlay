@@ -55,7 +55,7 @@
     [self.view addSubview:self.containerView];
     [self.containerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.mas_offset(0);
-        make.top.mas_equalTo(self.segmentControl.mas_bottom).mas_offset(1);
+        make.top.mas_equalTo(self.segmentControl.mas_bottom);
     }];
     
     [self segmentedValueChangedHandle:0];

@@ -55,6 +55,10 @@
 		FE81D16E21497DDE0047A4A2 /* HTRankHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE81D16C21497DDE0047A4A2 /* HTRankHomeCell.xib */; };
 		FE82A483216E42680070FFC0 /* HTMatchLiveFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE82A481216E42680070FFC0 /* HTMatchLiveFeedCell.m */; };
 		FE82A484216E42680070FFC0 /* HTMatchLiveFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE82A482216E42680070FFC0 /* HTMatchLiveFeedCell.xib */; };
+		FE83FE4C21778341006C714C /* HTMatchDataLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE83FE4A21778341006C714C /* HTMatchDataLeftCell.m */; };
+		FE83FE4D21778341006C714C /* HTMatchDataLeftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE83FE4B21778341006C714C /* HTMatchDataLeftCell.xib */; };
+		FE83FE542177838F006C714C /* HTMatchDataRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE83FE522177838F006C714C /* HTMatchDataRightCell.m */; };
+		FE83FE552177838F006C714C /* HTMatchDataRightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE83FE532177838F006C714C /* HTMatchDataRightCell.xib */; };
 		FE8EB0D3215603C500CA20F0 /* HTMatchLiveFeedRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8EB0D2215603C500CA20F0 /* HTMatchLiveFeedRequest.m */; };
 		FE8EB0D6215606B400CA20F0 /* HTMatchSummaryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8EB0D5215606B400CA20F0 /* HTMatchSummaryRequest.m */; };
 		FEA104F6216CB0F0000DBE63 /* HTMatchSummaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA104F5216CB0F0000DBE63 /* HTMatchSummaryModel.m */; };
@@ -245,6 +249,12 @@
 		FE82A480216E42680070FFC0 /* HTMatchLiveFeedCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchLiveFeedCell.h; sourceTree = "<group>"; };
 		FE82A481216E42680070FFC0 /* HTMatchLiveFeedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchLiveFeedCell.m; sourceTree = "<group>"; };
 		FE82A482216E42680070FFC0 /* HTMatchLiveFeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMatchLiveFeedCell.xib; sourceTree = "<group>"; };
+		FE83FE4921778341006C714C /* HTMatchDataLeftCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchDataLeftCell.h; sourceTree = "<group>"; };
+		FE83FE4A21778341006C714C /* HTMatchDataLeftCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchDataLeftCell.m; sourceTree = "<group>"; };
+		FE83FE4B21778341006C714C /* HTMatchDataLeftCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMatchDataLeftCell.xib; sourceTree = "<group>"; };
+		FE83FE512177838F006C714C /* HTMatchDataRightCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchDataRightCell.h; sourceTree = "<group>"; };
+		FE83FE522177838F006C714C /* HTMatchDataRightCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchDataRightCell.m; sourceTree = "<group>"; };
+		FE83FE532177838F006C714C /* HTMatchDataRightCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMatchDataRightCell.xib; sourceTree = "<group>"; };
 		FE8EB0D1215603C500CA20F0 /* HTMatchLiveFeedRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchLiveFeedRequest.h; sourceTree = "<group>"; };
 		FE8EB0D2215603C500CA20F0 /* HTMatchLiveFeedRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchLiveFeedRequest.m; sourceTree = "<group>"; };
 		FE8EB0D4215606B400CA20F0 /* HTMatchSummaryRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchSummaryRequest.h; sourceTree = "<group>"; };
@@ -1090,6 +1100,12 @@
 				FEDABE4F2171BD0C008C8AFD /* HTMatchBestPlayerCell.h */,
 				FEDABE502171BD0C008C8AFD /* HTMatchBestPlayerCell.m */,
 				FEDABE512171BD0C008C8AFD /* HTMatchBestPlayerCell.xib */,
+				FE83FE4921778341006C714C /* HTMatchDataLeftCell.h */,
+				FE83FE4A21778341006C714C /* HTMatchDataLeftCell.m */,
+				FE83FE4B21778341006C714C /* HTMatchDataLeftCell.xib */,
+				FE83FE512177838F006C714C /* HTMatchDataRightCell.h */,
+				FE83FE522177838F006C714C /* HTMatchDataRightCell.m */,
+				FE83FE532177838F006C714C /* HTMatchDataRightCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1217,6 +1233,7 @@
 				FE6BD094214584DA0090118A /* HTNewsTopHeaderView.xib in Resources */,
 				FEDAC97F214BBD37005E8B63 /* HTDatePickerView.xib in Resources */,
 				FE6BD04D2144FAF60090118A /* ViewStatus.xcassets in Resources */,
+				FE83FE552177838F006C714C /* HTMatchDataRightCell.xib in Resources */,
 				FE81D16E21497DDE0047A4A2 /* HTRankHomeCell.xib in Resources */,
 				FEC116FF2143DCAF002DB617 /* FilmHome.storyboard in Resources */,
 				FEDAC970214B86C7005E8B63 /* HTDataCellPlayerView.xib in Resources */,
@@ -1230,6 +1247,7 @@
 				FE81D15B2149613B0047A4A2 /* DataHomeSub.storyboard in Resources */,
 				FEC116DD2143D877002DB617 /* Match.xcassets in Resources */,
 				FEDABE6E21734A53008C8AFD /* RankEastWest.storyboard in Resources */,
+				FE83FE4D21778341006C714C /* HTMatchDataLeftCell.xib in Resources */,
 				FEC116792143D4A1002DB617 /* BJWKWebViewPostJS.html in Resources */,
 				FEDABE532171BD0C008C8AFD /* HTMatchBestPlayerCell.xib in Resources */,
 				FE6BD0622144FEF90090118A /* MatchCompare.storyboard in Resources */,
@@ -1247,7 +1265,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FDStackView/FDStackView.framework",
@@ -1288,7 +1306,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BF9D3AFDF9A356103E352831 /* [CP] Check Pods Manifest.lock */ = {
@@ -1358,6 +1376,7 @@
 				FEAB2108216DD731002A05AB /* HTMatchDetailsModel.m in Sources */,
 				FE81D15E21496B380047A4A2 /* HTDataHomeInfoModel.m in Sources */,
 				FE81D1622149716D0047A4A2 /* HTDataHomePlayerCell.m in Sources */,
+				FE83FE542177838F006C714C /* HTMatchDataRightCell.m in Sources */,
 				FEDABE562173277D008C8AFD /* HTRankEastWestRequest.m in Sources */,
 				FEC116CB2143D4A1002DB617 /* UITextField+MQCustom.m in Sources */,
 				FE6BD08F21457FEC0090118A /* HTNewsTopRequest.m in Sources */,
@@ -1405,6 +1424,7 @@
 				FE6BD08821457D920090118A /* HTNewsWebCell.m in Sources */,
 				FEDF8FDA2144B2BF005C7C4D /* HTMatchHomeGroupModel.m in Sources */,
 				FEC116062143D4A1002DB617 /* XJToastImageView.m in Sources */,
+				FE83FE4C21778341006C714C /* HTMatchDataLeftCell.m in Sources */,
 				FEC116C52143D4A1002DB617 /* UIView+BlockGesture.m in Sources */,
 				FE82A483216E42680070FFC0 /* HTMatchLiveFeedCell.m in Sources */,
 				FEC116F22143D91D002DB617 /* HTMatchHomeViewController.m in Sources */,
