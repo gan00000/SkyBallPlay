@@ -115,6 +115,11 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([HTRankHomeCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([HTRankHomeCell class])];
     
+    kWeakSelf
+    self.tableView.mj_header = [MJRefreshGenerator bj_headerWithRefreshingBlock:^{
+        [weakSelf loadData];
+    }];
+    
     [self.view showLoadingView];
 }
 

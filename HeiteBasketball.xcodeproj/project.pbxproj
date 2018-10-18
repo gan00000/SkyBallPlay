@@ -61,6 +61,10 @@
 		FE83FE552177838F006C714C /* HTMatchDataRightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE83FE532177838F006C714C /* HTMatchDataRightCell.xib */; };
 		FE8EB0D3215603C500CA20F0 /* HTMatchLiveFeedRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8EB0D2215603C500CA20F0 /* HTMatchLiveFeedRequest.m */; };
 		FE8EB0D6215606B400CA20F0 /* HTMatchSummaryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8EB0D5215606B400CA20F0 /* HTMatchSummaryRequest.m */; };
+		FE9B32B7217895990055B611 /* HTRankLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9B32B5217895990055B611 /* HTRankLeftCell.m */; };
+		FE9B32B8217895990055B611 /* HTRankLeftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE9B32B6217895990055B611 /* HTRankLeftCell.xib */; };
+		FE9B32BC217896350055B611 /* HTRankRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9B32BA217896350055B611 /* HTRankRightCell.m */; };
+		FE9B32BD217896350055B611 /* HTRankRightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE9B32BB217896350055B611 /* HTRankRightCell.xib */; };
 		FEA104F6216CB0F0000DBE63 /* HTMatchSummaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA104F5216CB0F0000DBE63 /* HTMatchSummaryModel.m */; };
 		FEA104F9216CB10C000DBE63 /* HTMatchCompareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA104F8216CB10C000DBE63 /* HTMatchCompareModel.m */; };
 		FEAB2108216DD731002A05AB /* HTMatchDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAB2107216DD731002A05AB /* HTMatchDetailsModel.m */; };
@@ -259,6 +263,12 @@
 		FE8EB0D2215603C500CA20F0 /* HTMatchLiveFeedRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchLiveFeedRequest.m; sourceTree = "<group>"; };
 		FE8EB0D4215606B400CA20F0 /* HTMatchSummaryRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchSummaryRequest.h; sourceTree = "<group>"; };
 		FE8EB0D5215606B400CA20F0 /* HTMatchSummaryRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchSummaryRequest.m; sourceTree = "<group>"; };
+		FE9B32B4217895990055B611 /* HTRankLeftCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTRankLeftCell.h; sourceTree = "<group>"; };
+		FE9B32B5217895990055B611 /* HTRankLeftCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTRankLeftCell.m; sourceTree = "<group>"; };
+		FE9B32B6217895990055B611 /* HTRankLeftCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTRankLeftCell.xib; sourceTree = "<group>"; };
+		FE9B32B9217896350055B611 /* HTRankRightCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTRankRightCell.h; sourceTree = "<group>"; };
+		FE9B32BA217896350055B611 /* HTRankRightCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTRankRightCell.m; sourceTree = "<group>"; };
+		FE9B32BB217896350055B611 /* HTRankRightCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTRankRightCell.xib; sourceTree = "<group>"; };
 		FEA104F4216CB0F0000DBE63 /* HTMatchSummaryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchSummaryModel.h; sourceTree = "<group>"; };
 		FEA104F5216CB0F0000DBE63 /* HTMatchSummaryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchSummaryModel.m; sourceTree = "<group>"; };
 		FEA104F7216CB10C000DBE63 /* HTMatchCompareModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchCompareModel.h; sourceTree = "<group>"; };
@@ -1048,6 +1058,12 @@
 				FE81D16A21497DDE0047A4A2 /* HTRankHomeCell.h */,
 				FE81D16B21497DDE0047A4A2 /* HTRankHomeCell.m */,
 				FE81D16C21497DDE0047A4A2 /* HTRankHomeCell.xib */,
+				FE9B32B4217895990055B611 /* HTRankLeftCell.h */,
+				FE9B32B5217895990055B611 /* HTRankLeftCell.m */,
+				FE9B32B6217895990055B611 /* HTRankLeftCell.xib */,
+				FE9B32B9217896350055B611 /* HTRankRightCell.h */,
+				FE9B32BA217896350055B611 /* HTRankRightCell.m */,
+				FE9B32BB217896350055B611 /* HTRankRightCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1202,6 +1218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE9B32BD217896350055B611 /* HTRankRightCell.xib in Resources */,
 				FEDABE492171BC3A008C8AFD /* HTMatchQuarterCell.xib in Resources */,
 				FE6BD08421457D7E0090118A /* HTNewsHeaderCell.xib in Resources */,
 				FEDABE6C217336D6008C8AFD /* RankZone.storyboard in Resources */,
@@ -1232,6 +1249,7 @@
 				FEC116EF2143D8C9002DB617 /* MatchHome.storyboard in Resources */,
 				FE6BD094214584DA0090118A /* HTNewsTopHeaderView.xib in Resources */,
 				FEDAC97F214BBD37005E8B63 /* HTDatePickerView.xib in Resources */,
+				FE9B32B8217895990055B611 /* HTRankLeftCell.xib in Resources */,
 				FE6BD04D2144FAF60090118A /* ViewStatus.xcassets in Resources */,
 				FE83FE552177838F006C714C /* HTMatchDataRightCell.xib in Resources */,
 				FE81D16E21497DDE0047A4A2 /* HTRankHomeCell.xib in Resources */,
@@ -1343,6 +1361,7 @@
 				FEC116492143D4A1002DB617 /* BJMainViewController.m in Sources */,
 				FEDABE6521733693008C8AFD /* HTRankEastWestViewController.m in Sources */,
 				FEDAC974214B9117005E8B63 /* HTDataHomeTeamCell.m in Sources */,
+				FE9B32B7217895990055B611 /* HTRankLeftCell.m in Sources */,
 				FEC117242143DF12002DB617 /* HTRankHomeViewController.m in Sources */,
 				FEC1164B2143D4A1002DB617 /* BJBaseViewController.m in Sources */,
 				FEC116052143D4A1002DB617 /* XJLoadingView.m in Sources */,
@@ -1399,6 +1418,7 @@
 				FEC117092143DDEE002DB617 /* HTNewsHomeViewController.m in Sources */,
 				FEC1161B2143D4A1002DB617 /* BJEmptyTableViewCell.m in Sources */,
 				FEDABE5C2173284E008C8AFD /* HTRankModel.m in Sources */,
+				FE9B32BC217896350055B611 /* HTRankRightCell.m in Sources */,
 				FE8EB0D3215603C500CA20F0 /* HTMatchLiveFeedRequest.m in Sources */,
 				FEC116112143D4A1002DB617 /* UIScrollView+AllowScreenEdgePanGestureRecognizer.m in Sources */,
 				FEC117102143DE50002DB617 /* HTFilmHomeViewController.m in Sources */,

@@ -14,15 +14,22 @@
 @property (nonatomic, copy) NSString *playerId;
 @property (nonatomic, copy) NSString *teamId;
 @property (nonatomic, copy) NSString *pts;
-@property (nonatomic, copy) NSString *minseconds;
+@property (nonatomic, assign) NSInteger minseconds;
 @property (nonatomic, copy) NSString *ast;
 @property (nonatomic, copy) NSString *reb;
+/// 前场
 @property (nonatomic, copy) NSString *offreb;
+/// 后场
 @property (nonatomic, copy) NSString *defreb;
+/// 犯规
 @property (nonatomic, copy) NSString *fouls;
+/// 盖帽
 @property (nonatomic, copy) NSString *blk;
+/// 抢断
 @property (nonatomic, copy) NSString *stl;
+/// 失误
 @property (nonatomic, copy) NSString *blkagainst;
+/// +/-
 @property (nonatomic, copy) NSString *plusminus;
 @property (nonatomic, copy) NSString *detail_id;
 @property (nonatomic, copy) NSString *lastname;
@@ -57,6 +64,9 @@
 /// 發球
 @property (nonatomic, copy) NSString *ftmade_show;
 @property (nonatomic, copy) NSString *name;
+
+/// 上场时间
+@property (nonatomic, copy) NSString *time;
 
 
 @end

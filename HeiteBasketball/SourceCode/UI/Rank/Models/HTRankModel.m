@@ -16,4 +16,15 @@
              };
 }
 
+- (CGFloat)winRate {
+    if (_winRate == 0) {
+        if (self.Losses) {
+            _winRate = 100.0 * self.wins.integerValue / (self.wins.integerValue + self.Losses.integerValue);
+        } else {
+            _winRate = 100.0 * self.wins.integerValue / (self.wins.integerValue + self.losses.integerValue);
+        }        
+    }
+    return _winRate;
+}
+
 @end
