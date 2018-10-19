@@ -20,21 +20,4 @@
     } errorBlock:errorBlock];
 }
 
-+ (void)requestMoreDataWithType:(NSInteger)type
-                        subType:(NSString *)subType
-                   successBlock:(void (^)(NSArray<HTDataHomeModel *> *rankList))successBlock
-                     errorBlock:(BJServiceErrorBlock)errorBlock {
-    NSDictionary *params = @{
-                             @"type": subType,
-                             @"sort_by": @"desc"
-                             };
-    [BJHTTPServiceEngine getRequestWithFunctionPath:type==1?API_PLAYER_RANK_ALL:API_TEAM_RANK_ALL params:params successBlock:^(id responseData) {
-        if (successBlock) {
-            NSString *key = type==1?@"players_rank":@"teams_rank";
-            NSArray<HTDataHomeModel *> *rankList = [NSArray yy_modelArrayWithClass:[HTDataHomeModel class] json:responseData[key]];
-            successBlock(rankList);
-        }
-    } errorBlock:errorBlock];
-}
-
 @end

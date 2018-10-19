@@ -27,11 +27,11 @@
         HTRankModel *model2 = obj2;
         
         if (model1.winRate > model2.winRate) {
-            return NSOrderedDescending;
+            return NSOrderedAscending;
         } else if (model1.winRate == model2.winRate) {
             return NSOrderedSame;
         }
-        return NSOrderedAscending;
+        return NSOrderedDescending;
     }];
 }
 

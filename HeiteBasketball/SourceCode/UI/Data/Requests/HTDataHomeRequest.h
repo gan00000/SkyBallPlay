@@ -14,10 +14,6 @@
 
 + (void)requestWithType:(NSInteger)type successBlock:(void(^)(HTDataHomeInfoModel *infoModel))successBlock errorBlock:(BJServiceErrorBlock)errorBlock;
 
-/// type 1:队员 2:球队
-+ (void)requestMoreDataWithType:(NSInteger)type
-                        subType:(NSString *)subType
-                   successBlock:(void (^)(NSArray<HTDataHomeModel *> *rankList))successBlock
-                     errorBlock:(BJServiceErrorBlock)errorBlock;
+
 
 @end
