@@ -10,7 +10,7 @@
 
 @interface HTDataHomeSubViewController : BJBaseViewController
 
-// 1. 队员  2. 球队
+/// 1. 队员  2. 球队
 @property (nonatomic, assign) NSInteger type;
 
 @end

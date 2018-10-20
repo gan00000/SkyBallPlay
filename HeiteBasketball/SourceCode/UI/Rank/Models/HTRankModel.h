@@ -65,8 +65,11 @@
 @property (nonatomic, copy) NSString *pts;
 @property (nonatomic, copy) NSString *wins;
 @property (nonatomic, copy) NSString *Losses;
+@property (nonatomic, copy) NSString *losses;
 @property (nonatomic, copy) NSString *PtsAgainst;
+@property (nonatomic, copy) NSString *ptsagainst;
 @property (nonatomic, copy) NSString *GamesPlayed;
+@property (nonatomic, copy) NSString *gamesplayed;
 @property (nonatomic, copy) NSString *season_name;
 @property (nonatomic, copy) NSString *rank_id;
 @property (nonatomic, copy) NSString *name;
@@ -81,5 +84,7 @@
 @property (nonatomic, copy) NSString *homelose;
 @property (nonatomic, copy) NSString *awaywin;
 @property (nonatomic, copy) NSString *awaylose;
+
+@property (nonatomic, assign) CGFloat winRate;
 
 @end

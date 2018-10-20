@@ -55,12 +55,27 @@
 		FE81D16E21497DDE0047A4A2 /* HTRankHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE81D16C21497DDE0047A4A2 /* HTRankHomeCell.xib */; };
 		FE82A483216E42680070FFC0 /* HTMatchLiveFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE82A481216E42680070FFC0 /* HTMatchLiveFeedCell.m */; };
 		FE82A484216E42680070FFC0 /* HTMatchLiveFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE82A482216E42680070FFC0 /* HTMatchLiveFeedCell.xib */; };
+		FE82BB372179B6C500C52C51 /* HTDataPlayerLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE82BB352179B6C500C52C51 /* HTDataPlayerLeftCell.m */; };
+		FE82BB382179B6C500C52C51 /* HTDataPlayerLeftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE82BB362179B6C500C52C51 /* HTDataPlayerLeftCell.xib */; };
+		FE82BB3C2179B6DF00C52C51 /* HTDataPlayerRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE82BB3A2179B6DF00C52C51 /* HTDataPlayerRightCell.m */; };
+		FE82BB3D2179B6DF00C52C51 /* HTDataPlayerRightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE82BB3B2179B6DF00C52C51 /* HTDataPlayerRightCell.xib */; };
+		FE82BB412179B77200C52C51 /* HTDataTeamLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE82BB3F2179B77200C52C51 /* HTDataTeamLeftCell.m */; };
+		FE82BB422179B77200C52C51 /* HTDataTeamLeftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE82BB402179B77200C52C51 /* HTDataTeamLeftCell.xib */; };
+		FE82BB462179B78700C52C51 /* HTDataTeamRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE82BB442179B78700C52C51 /* HTDataTeamRightCell.m */; };
+		FE82BB472179B78700C52C51 /* HTDataTeamRightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE82BB452179B78700C52C51 /* HTDataTeamRightCell.xib */; };
+		FE82BB4A2179B7E300C52C51 /* HTDataTeamRankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE82BB492179B7E300C52C51 /* HTDataTeamRankModel.m */; };
+		FE82BB4D2179B7F100C52C51 /* HTDataPlayerRankModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE82BB4C2179B7F100C52C51 /* HTDataPlayerRankModel.m */; };
+		FE82BB502179B99800C52C51 /* HTDataAllRankRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE82BB4F2179B99800C52C51 /* HTDataAllRankRequest.m */; };
 		FE83FE4C21778341006C714C /* HTMatchDataLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE83FE4A21778341006C714C /* HTMatchDataLeftCell.m */; };
 		FE83FE4D21778341006C714C /* HTMatchDataLeftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE83FE4B21778341006C714C /* HTMatchDataLeftCell.xib */; };
 		FE83FE542177838F006C714C /* HTMatchDataRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE83FE522177838F006C714C /* HTMatchDataRightCell.m */; };
 		FE83FE552177838F006C714C /* HTMatchDataRightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE83FE532177838F006C714C /* HTMatchDataRightCell.xib */; };
 		FE8EB0D3215603C500CA20F0 /* HTMatchLiveFeedRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8EB0D2215603C500CA20F0 /* HTMatchLiveFeedRequest.m */; };
 		FE8EB0D6215606B400CA20F0 /* HTMatchSummaryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8EB0D5215606B400CA20F0 /* HTMatchSummaryRequest.m */; };
+		FE9B32B7217895990055B611 /* HTRankLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9B32B5217895990055B611 /* HTRankLeftCell.m */; };
+		FE9B32B8217895990055B611 /* HTRankLeftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE9B32B6217895990055B611 /* HTRankLeftCell.xib */; };
+		FE9B32BC217896350055B611 /* HTRankRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9B32BA217896350055B611 /* HTRankRightCell.m */; };
+		FE9B32BD217896350055B611 /* HTRankRightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE9B32BB217896350055B611 /* HTRankRightCell.xib */; };
 		FEA104F6216CB0F0000DBE63 /* HTMatchSummaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA104F5216CB0F0000DBE63 /* HTMatchSummaryModel.m */; };
 		FEA104F9216CB10C000DBE63 /* HTMatchCompareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA104F8216CB10C000DBE63 /* HTMatchCompareModel.m */; };
 		FEAB2108216DD731002A05AB /* HTMatchDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAB2107216DD731002A05AB /* HTMatchDetailsModel.m */; };
@@ -249,6 +264,24 @@
 		FE82A480216E42680070FFC0 /* HTMatchLiveFeedCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchLiveFeedCell.h; sourceTree = "<group>"; };
 		FE82A481216E42680070FFC0 /* HTMatchLiveFeedCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchLiveFeedCell.m; sourceTree = "<group>"; };
 		FE82A482216E42680070FFC0 /* HTMatchLiveFeedCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMatchLiveFeedCell.xib; sourceTree = "<group>"; };
+		FE82BB342179B6C500C52C51 /* HTDataPlayerLeftCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataPlayerLeftCell.h; sourceTree = "<group>"; };
+		FE82BB352179B6C500C52C51 /* HTDataPlayerLeftCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataPlayerLeftCell.m; sourceTree = "<group>"; };
+		FE82BB362179B6C500C52C51 /* HTDataPlayerLeftCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDataPlayerLeftCell.xib; sourceTree = "<group>"; };
+		FE82BB392179B6DF00C52C51 /* HTDataPlayerRightCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataPlayerRightCell.h; sourceTree = "<group>"; };
+		FE82BB3A2179B6DF00C52C51 /* HTDataPlayerRightCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataPlayerRightCell.m; sourceTree = "<group>"; };
+		FE82BB3B2179B6DF00C52C51 /* HTDataPlayerRightCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDataPlayerRightCell.xib; sourceTree = "<group>"; };
+		FE82BB3E2179B77200C52C51 /* HTDataTeamLeftCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataTeamLeftCell.h; sourceTree = "<group>"; };
+		FE82BB3F2179B77200C52C51 /* HTDataTeamLeftCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataTeamLeftCell.m; sourceTree = "<group>"; };
+		FE82BB402179B77200C52C51 /* HTDataTeamLeftCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDataTeamLeftCell.xib; sourceTree = "<group>"; };
+		FE82BB432179B78700C52C51 /* HTDataTeamRightCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataTeamRightCell.h; sourceTree = "<group>"; };
+		FE82BB442179B78700C52C51 /* HTDataTeamRightCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataTeamRightCell.m; sourceTree = "<group>"; };
+		FE82BB452179B78700C52C51 /* HTDataTeamRightCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDataTeamRightCell.xib; sourceTree = "<group>"; };
+		FE82BB482179B7E300C52C51 /* HTDataTeamRankModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataTeamRankModel.h; sourceTree = "<group>"; };
+		FE82BB492179B7E300C52C51 /* HTDataTeamRankModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataTeamRankModel.m; sourceTree = "<group>"; };
+		FE82BB4B2179B7F100C52C51 /* HTDataPlayerRankModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataPlayerRankModel.h; sourceTree = "<group>"; };
+		FE82BB4C2179B7F100C52C51 /* HTDataPlayerRankModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataPlayerRankModel.m; sourceTree = "<group>"; };
+		FE82BB4E2179B99800C52C51 /* HTDataAllRankRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataAllRankRequest.h; sourceTree = "<group>"; };
+		FE82BB4F2179B99800C52C51 /* HTDataAllRankRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataAllRankRequest.m; sourceTree = "<group>"; };
 		FE83FE4921778341006C714C /* HTMatchDataLeftCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchDataLeftCell.h; sourceTree = "<group>"; };
 		FE83FE4A21778341006C714C /* HTMatchDataLeftCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchDataLeftCell.m; sourceTree = "<group>"; };
 		FE83FE4B21778341006C714C /* HTMatchDataLeftCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMatchDataLeftCell.xib; sourceTree = "<group>"; };
@@ -259,6 +292,12 @@
 		FE8EB0D2215603C500CA20F0 /* HTMatchLiveFeedRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchLiveFeedRequest.m; sourceTree = "<group>"; };
 		FE8EB0D4215606B400CA20F0 /* HTMatchSummaryRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchSummaryRequest.h; sourceTree = "<group>"; };
 		FE8EB0D5215606B400CA20F0 /* HTMatchSummaryRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchSummaryRequest.m; sourceTree = "<group>"; };
+		FE9B32B4217895990055B611 /* HTRankLeftCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTRankLeftCell.h; sourceTree = "<group>"; };
+		FE9B32B5217895990055B611 /* HTRankLeftCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTRankLeftCell.m; sourceTree = "<group>"; };
+		FE9B32B6217895990055B611 /* HTRankLeftCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTRankLeftCell.xib; sourceTree = "<group>"; };
+		FE9B32B9217896350055B611 /* HTRankRightCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTRankRightCell.h; sourceTree = "<group>"; };
+		FE9B32BA217896350055B611 /* HTRankRightCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTRankRightCell.m; sourceTree = "<group>"; };
+		FE9B32BB217896350055B611 /* HTRankRightCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTRankRightCell.xib; sourceTree = "<group>"; };
 		FEA104F4216CB0F0000DBE63 /* HTMatchSummaryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchSummaryModel.h; sourceTree = "<group>"; };
 		FEA104F5216CB0F0000DBE63 /* HTMatchSummaryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchSummaryModel.m; sourceTree = "<group>"; };
 		FEA104F7216CB10C000DBE63 /* HTMatchCompareModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchCompareModel.h; sourceTree = "<group>"; };
@@ -1005,6 +1044,18 @@
 				FEDAC971214B9117005E8B63 /* HTDataHomeTeamCell.h */,
 				FEDAC972214B9117005E8B63 /* HTDataHomeTeamCell.m */,
 				FEDAC973214B9117005E8B63 /* HTDataHomeTeamCell.xib */,
+				FE82BB342179B6C500C52C51 /* HTDataPlayerLeftCell.h */,
+				FE82BB352179B6C500C52C51 /* HTDataPlayerLeftCell.m */,
+				FE82BB362179B6C500C52C51 /* HTDataPlayerLeftCell.xib */,
+				FE82BB392179B6DF00C52C51 /* HTDataPlayerRightCell.h */,
+				FE82BB3A2179B6DF00C52C51 /* HTDataPlayerRightCell.m */,
+				FE82BB3B2179B6DF00C52C51 /* HTDataPlayerRightCell.xib */,
+				FE82BB3E2179B77200C52C51 /* HTDataTeamLeftCell.h */,
+				FE82BB3F2179B77200C52C51 /* HTDataTeamLeftCell.m */,
+				FE82BB402179B77200C52C51 /* HTDataTeamLeftCell.xib */,
+				FE82BB432179B78700C52C51 /* HTDataTeamRightCell.h */,
+				FE82BB442179B78700C52C51 /* HTDataTeamRightCell.m */,
+				FE82BB452179B78700C52C51 /* HTDataTeamRightCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1016,6 +1067,10 @@
 				FE81D155214816710047A4A2 /* HTDataHomeModel.m */,
 				FE81D15C21496B380047A4A2 /* HTDataHomeInfoModel.h */,
 				FE81D15D21496B380047A4A2 /* HTDataHomeInfoModel.m */,
+				FE82BB482179B7E300C52C51 /* HTDataTeamRankModel.h */,
+				FE82BB492179B7E300C52C51 /* HTDataTeamRankModel.m */,
+				FE82BB4B2179B7F100C52C51 /* HTDataPlayerRankModel.h */,
+				FE82BB4C2179B7F100C52C51 /* HTDataPlayerRankModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1025,6 +1080,8 @@
 			children = (
 				FE81D151214815DC0047A4A2 /* HTDataHomeRequest.h */,
 				FE81D152214815DC0047A4A2 /* HTDataHomeRequest.m */,
+				FE82BB4E2179B99800C52C51 /* HTDataAllRankRequest.h */,
+				FE82BB4F2179B99800C52C51 /* HTDataAllRankRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1048,6 +1105,12 @@
 				FE81D16A21497DDE0047A4A2 /* HTRankHomeCell.h */,
 				FE81D16B21497DDE0047A4A2 /* HTRankHomeCell.m */,
 				FE81D16C21497DDE0047A4A2 /* HTRankHomeCell.xib */,
+				FE9B32B4217895990055B611 /* HTRankLeftCell.h */,
+				FE9B32B5217895990055B611 /* HTRankLeftCell.m */,
+				FE9B32B6217895990055B611 /* HTRankLeftCell.xib */,
+				FE9B32B9217896350055B611 /* HTRankRightCell.h */,
+				FE9B32BA217896350055B611 /* HTRankRightCell.m */,
+				FE9B32BB217896350055B611 /* HTRankRightCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1202,6 +1265,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE9B32BD217896350055B611 /* HTRankRightCell.xib in Resources */,
 				FEDABE492171BC3A008C8AFD /* HTMatchQuarterCell.xib in Resources */,
 				FE6BD08421457D7E0090118A /* HTNewsHeaderCell.xib in Resources */,
 				FEDABE6C217336D6008C8AFD /* RankZone.storyboard in Resources */,
@@ -1212,6 +1276,7 @@
 				FEDAC97A214B9139005E8B63 /* HTDataCellTeamView.xib in Resources */,
 				FEDF8FE02144D05C005C7C4D /* HTMatchHomeGroupHeaderView.xib in Resources */,
 				FEC116042143D4A1002DB617 /* XJLoadingView.xib in Resources */,
+				FE82BB382179B6C500C52C51 /* HTDataPlayerLeftCell.xib in Resources */,
 				FE82A484216E42680070FFC0 /* HTMatchLiveFeedCell.xib in Resources */,
 				FE6BD0522144FC270090118A /* MatchDetail.storyboard in Resources */,
 				FEC1162A2143D4A1002DB617 /* BJHUDView.xib in Resources */,
@@ -1231,7 +1296,9 @@
 				FEC1161C2143D4A1002DB617 /* BJTabBarView.xib in Resources */,
 				FEC116EF2143D8C9002DB617 /* MatchHome.storyboard in Resources */,
 				FE6BD094214584DA0090118A /* HTNewsTopHeaderView.xib in Resources */,
+				FE82BB422179B77200C52C51 /* HTDataTeamLeftCell.xib in Resources */,
 				FEDAC97F214BBD37005E8B63 /* HTDatePickerView.xib in Resources */,
+				FE9B32B8217895990055B611 /* HTRankLeftCell.xib in Resources */,
 				FE6BD04D2144FAF60090118A /* ViewStatus.xcassets in Resources */,
 				FE83FE552177838F006C714C /* HTMatchDataRightCell.xib in Resources */,
 				FE81D16E21497DDE0047A4A2 /* HTRankHomeCell.xib in Resources */,
@@ -1246,10 +1313,12 @@
 				FE6BD08921457D920090118A /* HTNewsWebCell.xib in Resources */,
 				FE81D15B2149613B0047A4A2 /* DataHomeSub.storyboard in Resources */,
 				FEC116DD2143D877002DB617 /* Match.xcassets in Resources */,
+				FE82BB3D2179B6DF00C52C51 /* HTDataPlayerRightCell.xib in Resources */,
 				FEDABE6E21734A53008C8AFD /* RankEastWest.storyboard in Resources */,
 				FE83FE4D21778341006C714C /* HTMatchDataLeftCell.xib in Resources */,
 				FEC116792143D4A1002DB617 /* BJWKWebViewPostJS.html in Resources */,
 				FEDABE532171BD0C008C8AFD /* HTMatchBestPlayerCell.xib in Resources */,
+				FE82BB472179B78700C52C51 /* HTDataTeamRightCell.xib in Resources */,
 				FE6BD0622144FEF90090118A /* MatchCompare.storyboard in Resources */,
 				FEEABBE72149F90800A585DA /* iframe_load.html in Resources */,
 				FEC112622143D058002DB617 /* Assets.xcassets in Resources */,
@@ -1342,11 +1411,14 @@
 				FEC116762143D4A1002DB617 /* BJURINavigator.m in Sources */,
 				FEC116492143D4A1002DB617 /* BJMainViewController.m in Sources */,
 				FEDABE6521733693008C8AFD /* HTRankEastWestViewController.m in Sources */,
+				FE82BB372179B6C500C52C51 /* HTDataPlayerLeftCell.m in Sources */,
 				FEDAC974214B9117005E8B63 /* HTDataHomeTeamCell.m in Sources */,
+				FE9B32B7217895990055B611 /* HTRankLeftCell.m in Sources */,
 				FEC117242143DF12002DB617 /* HTRankHomeViewController.m in Sources */,
 				FEC1164B2143D4A1002DB617 /* BJBaseViewController.m in Sources */,
 				FEC116052143D4A1002DB617 /* XJLoadingView.m in Sources */,
 				FEC1160E2143D4A1002DB617 /* UIView+Toast.m in Sources */,
+				FE82BB502179B99800C52C51 /* HTDataAllRankRequest.m in Sources */,
 				FE6BD0582144FDE10090118A /* HTMatchCompareViewController.m in Sources */,
 				FEC116CD2143D4A1002DB617 /* UIImage+Resize.m in Sources */,
 				FEDF8FDE2144D04B005C7C4D /* HTMatchHomeGroupHeaderView.m in Sources */,
@@ -1367,6 +1439,7 @@
 				FEC117192143DEA0002DB617 /* HTDataHomeViewController.m in Sources */,
 				FE6BD06D214520E00090118A /* HTNewsBannerRequest.m in Sources */,
 				FEC1172E2143EAA3002DB617 /* BJError.m in Sources */,
+				FE82BB462179B78700C52C51 /* HTDataTeamRightCell.m in Sources */,
 				FEDF8FC4214441C6005C7C4D /* HTMatchHomeCell.m in Sources */,
 				FEC116BF2143D4A1002DB617 /* BJDateFormatUtility.m in Sources */,
 				FE81D159214819FA0047A4A2 /* HTDataHomeSubViewController.m in Sources */,
@@ -1385,6 +1458,7 @@
 				FEC1160B2143D4A1002DB617 /* UIView+Loading.m in Sources */,
 				FEC116152143D4A1002DB617 /* MJRefreshGenerator.m in Sources */,
 				FEC1160C2143D4A1002DB617 /* XJEmptyView.m in Sources */,
+				FE82BB4D2179B7F100C52C51 /* HTDataPlayerRankModel.m in Sources */,
 				FEC116832143D4A1002DB617 /* AppDelegate.m in Sources */,
 				FEC1167A2143D4A1002DB617 /* BJWebViewCacheHelper.m in Sources */,
 				FEC116142143D4A1002DB617 /* BJUnPasteTextField.m in Sources */,
@@ -1393,12 +1467,14 @@
 				FE6BD0502144FC190090118A /* HTMatchDetailViewController.m in Sources */,
 				FE81D14A2146B3090047A4A2 /* HTFilmHomeCell.m in Sources */,
 				FEC116D22143D4A1002DB617 /* BJUtility.m in Sources */,
+				FE82BB3C2179B6DF00C52C51 /* HTDataPlayerRightCell.m in Sources */,
 				FE81D156214816710047A4A2 /* HTDataHomeModel.m in Sources */,
 				FEC116CA2143D4A1002DB617 /* NSString+MessageDigest.m in Sources */,
 				FEDABE68217336BA008C8AFD /* HTRankZoneViewController.m in Sources */,
 				FEC117092143DDEE002DB617 /* HTNewsHomeViewController.m in Sources */,
 				FEC1161B2143D4A1002DB617 /* BJEmptyTableViewCell.m in Sources */,
 				FEDABE5C2173284E008C8AFD /* HTRankModel.m in Sources */,
+				FE9B32BC217896350055B611 /* HTRankRightCell.m in Sources */,
 				FE8EB0D3215603C500CA20F0 /* HTMatchLiveFeedRequest.m in Sources */,
 				FEC116112143D4A1002DB617 /* UIScrollView+AllowScreenEdgePanGestureRecognizer.m in Sources */,
 				FEC117102143DE50002DB617 /* HTFilmHomeViewController.m in Sources */,
@@ -1414,8 +1490,10 @@
 				FEC116132143D4A1002DB617 /* LJViewPager.m in Sources */,
 				FEDABE482171BC3A008C8AFD /* HTMatchQuarterCell.m in Sources */,
 				FE706F02214FF3430078DF30 /* HTDataMoreViewController.m in Sources */,
+				FE82BB412179B77200C52C51 /* HTDataTeamLeftCell.m in Sources */,
 				FEDABE592173279F008C8AFD /* HTRankZoneRequest.m in Sources */,
 				FEC116C22143D4A1002DB617 /* UIView+ViewController.m in Sources */,
+				FE82BB4A2179B7E300C52C51 /* HTDataTeamRankModel.m in Sources */,
 				FE6BD067214512EC0090118A /* HTNewsHomeRequest.m in Sources */,
 				FE6BD06A2145136F0090118A /* HTNewsModel.m in Sources */,
 				FE6BD08321457D7E0090118A /* HTNewsHeaderCell.m in Sources */,
@@ -1568,7 +1646,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 46UN65B23Q;
+				DEVELOPMENT_TEAM = MSFG5PN83S;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HeiteBasketball/HeiteBasketball.pch";
 				INFOPLIST_FILE = HeiteBasketball/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1590,7 +1668,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 46UN65B23Q;
+				DEVELOPMENT_TEAM = MSFG5PN83S;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HeiteBasketball/HeiteBasketball.pch";
 				INFOPLIST_FILE = HeiteBasketball/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

@@ -85,7 +85,7 @@ static void * kEmptyViewKey;
     if ([AFNetworkReachabilityManager sharedManager].networkReachabilityStatus == AFNetworkReachabilityStatusNotReachable) {
         //emptyView.contentLabel.text = STRING_REQUEST_NO_NETWORK;
         emptyView.imageView.image = [UIImage imageNamed:@"status_icon_no_network"];
-        emptyView.contentLabel.text = @"网络无法连接，请检查网络配置";
+        emptyView.contentLabel.text = @"網絡無法連接，請檢查網絡配置";
     }
     
     [self addSubview:emptyView];

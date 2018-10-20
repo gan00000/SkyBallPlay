@@ -17,4 +17,32 @@
              };
 }
 
+- (void)setEastern:(NSArray<HTRankModel *> *)Eastern {
+    _Eastern = [Eastern sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        HTRankModel *model1 = obj1;
+        HTRankModel *model2 = obj2;
+        
+        if (model1.winRate > model2.winRate) {
+            return NSOrderedAscending;
+        } else if (model1.winRate == model2.winRate) {
+            return NSOrderedSame;
+        }
+        return NSOrderedDescending;
+    }];
+}
+
+- (void)setWestern:(NSArray<HTRankModel *> *)Western {
+    _Western = [Western sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        HTRankModel *model1 = obj1;
+        HTRankModel *model2 = obj2;
+        
+        if (model1.winRate > model2.winRate) {
+            return NSOrderedAscending;
+        } else if (model1.winRate == model2.winRate) {
+            return NSOrderedSame;
+        }
+        return NSOrderedDescending;
+    }];
+}
+
 @end
