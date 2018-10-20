@@ -40,13 +40,13 @@
         _news_type = @"影片";
         
         NSInteger width = 0;
-        NSString *widthStr = [[RX(@"width\\s*=\\s*\"\\d+\"|width\\s*:\\s*\\d+px") matches:iframe] firstObject];
+        NSString *widthStr = [[RX(@"width\\s*=\\s*\"(.*?)\"|width\\s*:\\s*\\d+") matches:iframe] firstObject];
         if (widthStr) {
             width = [[[RX(@"\\d+") matches:widthStr] firstObject] integerValue];
         }
         
         NSInteger height = 0;
-        NSString *heightStr = [[RX(@"height\\s*=\\s*\"\\d+\"|height\\s*:\\s*\\d+px") matches:iframe] firstObject];
+        NSString *heightStr = [[RX(@"height\\s*=\\s*\"(.*?)\"|height\\s*:\\s*\\d+") matches:iframe] firstObject];
         if (heightStr) {
             height = [[[RX(@"\\d+") matches:heightStr] firstObject] integerValue];
         }
