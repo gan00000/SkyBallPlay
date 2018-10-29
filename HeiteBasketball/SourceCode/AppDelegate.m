@@ -7,15 +7,19 @@
 //
 
 #import "AppDelegate.h"
+#import <UMCommon/UMCommon.h>
 
 #import "AFNetworkReachabilityManager.h"
 #import "BJLaunchViewController.h"
 #import "UIView+Toast.h"
 
+#define UM_APP_KEY @"5bd67116f1f556f834000081"
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [UMConfigure initWithAppkey:UM_APP_KEY channel:@"App Store"];
     [self sdk_setUpNetworkReachability];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

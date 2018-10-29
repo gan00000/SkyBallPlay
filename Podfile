@@ -21,4 +21,13 @@ pod 'LTNavigationBar', :git => 'https://github.com/JeasonL/LTNavigationBar.git'
 pod 'FDStackView', :git => 'https://github.com/forkingdog/FDStackView.git'
 pod 'JXExtension'
 
+# 友盟组建
+pod 'UMCCommon'
+pod 'UMCSecurityPlugins'
+pod 'UMCAnalytics'
+pod 'UMCShare/Social/Facebook'
+pod 'UMCShare/Social/Line'
+pod 'UMCShare/UI'
+pod 'UMCCommonLog'
+
 end

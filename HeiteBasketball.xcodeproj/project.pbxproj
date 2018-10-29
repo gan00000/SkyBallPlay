@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3A7BB61B7CF3D5542ED6EC2A /* Pods_HeiteBasketball.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96ED51AF657F6A6678FAF42 /* Pods_HeiteBasketball.framework */; };
+		FE0C270C2186BCE8001C9B8C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C270B2186BCE7001C9B8C /* libz.tbd */; };
+		FE0C270E2186BCF6001C9B8C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C270D2186BCF6001C9B8C /* libsqlite3.tbd */; };
+		FE0C27102186BD05001C9B8C /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C270F2186BD05001C9B8C /* CoreTelephony.framework */; };
+		FE0C27122186BD0D001C9B8C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C27112186BD0D001C9B8C /* SystemConfiguration.framework */; };
 		FE6BD0492144EB660090118A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE6BD0482144EB660090118A /* ImageIO.framework */; };
 		FE6BD04B2144FA3C0090118A /* HUD.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE6BD04A2144FA3C0090118A /* HUD.xcassets */; };
 		FE6BD04D2144FAF60090118A /* ViewStatus.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE6BD04C2144FAF60090118A /* ViewStatus.xcassets */; };
@@ -191,6 +195,10 @@
 		608E0284ECCB1F2C8732AAA8 /* Pods-HeiteBasketball.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeiteBasketball.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball.debug.xcconfig"; sourceTree = "<group>"; };
 		72321527951E473E782564AC /* Pods-HeiteBasketball.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeiteBasketball.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball.release.xcconfig"; sourceTree = "<group>"; };
 		C96ED51AF657F6A6678FAF42 /* Pods_HeiteBasketball.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeiteBasketball.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE0C270B2186BCE7001C9B8C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		FE0C270D2186BCF6001C9B8C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		FE0C270F2186BD05001C9B8C /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		FE0C27112186BD0D001C9B8C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FE6BD0482144EB660090118A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		FE6BD04A2144FA3C0090118A /* HUD.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = HUD.xcassets; sourceTree = "<group>"; };
 		FE6BD04C2144FAF60090118A /* ViewStatus.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ViewStatus.xcassets; sourceTree = "<group>"; };
@@ -497,6 +505,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE0C27122186BD0D001C9B8C /* SystemConfiguration.framework in Frameworks */,
+				FE0C27102186BD05001C9B8C /* CoreTelephony.framework in Frameworks */,
+				FE0C270E2186BCF6001C9B8C /* libsqlite3.tbd in Frameworks */,
+				FE0C270C2186BCE8001C9B8C /* libz.tbd in Frameworks */,
 				FE6BD0492144EB660090118A /* ImageIO.framework in Frameworks */,
 				3A7BB61B7CF3D5542ED6EC2A /* Pods_HeiteBasketball.framework in Frameworks */,
 			);
@@ -508,6 +520,10 @@
 		CB747A826453EE017B9DDDC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FE0C27112186BD0D001C9B8C /* SystemConfiguration.framework */,
+				FE0C270F2186BD05001C9B8C /* CoreTelephony.framework */,
+				FE0C270D2186BCF6001C9B8C /* libsqlite3.tbd */,
+				FE0C270B2186BCE7001C9B8C /* libz.tbd */,
 				FE6BD0482144EB660090118A /* ImageIO.framework */,
 				C96ED51AF657F6A6678FAF42 /* Pods_HeiteBasketball.framework */,
 			);
@@ -1217,6 +1233,7 @@
 				FEC112522143D057002DB617 /* Frameworks */,
 				FEC112532143D057002DB617 /* Resources */,
 				476199E34738CDA5C2954A44 /* [CP] Embed Pods Frameworks */,
+				C5D0E721C5A57C203DACF04F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1334,7 +1351,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FDStackView/FDStackView.framework",
@@ -1375,7 +1392,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BF9D3AFDF9A356103E352831 /* [CP] Check Pods Manifest.lock */ = {
@@ -1394,6 +1411,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5D0E721C5A57C203DACF04F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball-resources.sh",
+				"${PODS_ROOT}/UMCCommonLog/UMCommonLog/UMCommonLog.bundle",
+				"${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMCommonLog.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
