@@ -344,22 +344,22 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
-                <outlet property="away3FgmadeLabel" destination="QBb-K3-gML" id="rCM-VH-ns7"/>
-                <outlet property="awayAstLabel" destination="YeP-GQ-lwp" id="cXv-sb-oDU"/>
-                <outlet property="awayBlkLabel" destination="5MN-DM-x92" id="5NI-bM-8EU"/>
-                <outlet property="awayFgmadeLabel" destination="Rwy-NU-BKL" id="4Tm-1E-LbA"/>
-                <outlet property="awayFtmadeLabel" destination="Yax-az-C2X" id="dNh-AV-LHS"/>
-                <outlet property="awayPtsLabel" destination="noA-Qv-rE0" id="bJY-gk-NcB"/>
-                <outlet property="awayRebLabel" destination="OcT-2K-skT" id="Ipb-uv-GBI"/>
-                <outlet property="awayStlLabel" destination="Y2v-Wf-b9f" id="BQi-KB-JuD"/>
-                <outlet property="home3FgmadeLabel" destination="Rq2-Mc-jYz" id="HWZ-d3-Vor"/>
-                <outlet property="homeAstLabel" destination="pkL-4G-6ZC" id="ku5-bf-R5y"/>
-                <outlet property="homeBlkLabel" destination="K8R-Mo-9lj" id="0Wb-A3-5RI"/>
-                <outlet property="homeFgmadeLabel" destination="vdD-77-SCU" id="TNA-d1-IpZ"/>
-                <outlet property="homeFtmadeLabel" destination="oke-Rb-0Xd" id="onz-Is-hol"/>
-                <outlet property="homePtsLabel" destination="yVz-N4-WvJ" id="5jj-OG-JUU"/>
-                <outlet property="homeRebLabel" destination="V2h-Cj-UGb" id="jdl-dL-w1p"/>
-                <outlet property="homeStlLabel" destination="Z6s-Ro-exD" id="S8x-6A-HMY"/>
+                <outlet property="away3FgmadeLabel" destination="Rq2-Mc-jYz" id="Qgk-ON-G3b"/>
+                <outlet property="awayAstLabel" destination="pkL-4G-6ZC" id="cVF-xY-nqa"/>
+                <outlet property="awayBlkLabel" destination="K8R-Mo-9lj" id="Ulx-P2-dRm"/>
+                <outlet property="awayFgmadeLabel" destination="vdD-77-SCU" id="vUG-hV-Tda"/>
+                <outlet property="awayFtmadeLabel" destination="oke-Rb-0Xd" id="k9N-eG-ZBf"/>
+                <outlet property="awayPtsLabel" destination="yVz-N4-WvJ" id="5op-dI-ppb"/>
+                <outlet property="awayRebLabel" destination="V2h-Cj-UGb" id="Vxk-kL-xMy"/>
+                <outlet property="awayStlLabel" destination="Z6s-Ro-exD" id="2jb-2n-mEt"/>
+                <outlet property="home3FgmadeLabel" destination="QBb-K3-gML" id="J6r-g9-AjK"/>
+                <outlet property="homeAstLabel" destination="YeP-GQ-lwp" id="guy-oA-11U"/>
+                <outlet property="homeBlkLabel" destination="5MN-DM-x92" id="uqq-qn-tFc"/>
+                <outlet property="homeFgmadeLabel" destination="Rwy-NU-BKL" id="cDN-Jd-aMU"/>
+                <outlet property="homeFtmadeLabel" destination="Yax-az-C2X" id="QB7-LL-Mgu"/>
+                <outlet property="homePtsLabel" destination="noA-Qv-rE0" id="kv5-gn-zHV"/>
+                <outlet property="homeRebLabel" destination="OcT-2K-skT" id="yDv-xh-gCo"/>
+                <outlet property="homeStlLabel" destination="Y2v-Wf-b9f" id="XsM-x2-AE6"/>
             </connections>
             <point key="canvasLocation" x="138.40000000000001" y="153.82308845577214"/>
         </tableViewCell>

@@ -137,12 +137,12 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
-                <outlet property="awayPtsLabel" destination="76X-Zh-r6M" id="J25-wv-29V"/>
-                <outlet property="awayQuarterPtsContentView" destination="Ebs-o9-cZ1" id="cni-k6-5rp"/>
-                <outlet property="awayTeamLabel" destination="LdP-Vu-WJF" id="46r-7k-MZN"/>
-                <outlet property="homePtsLabel" destination="h9g-E7-1d4" id="Haj-6d-dkA"/>
-                <outlet property="homeQuarterPtsContentView" destination="8g1-fK-CMR" id="3OX-Xw-e4K"/>
-                <outlet property="homeTeamLabel" destination="F5R-By-HQl" id="mTK-C2-uD5"/>
+                <outlet property="awayPtsLabel" destination="h9g-E7-1d4" id="PM8-Xv-2Pp"/>
+                <outlet property="awayQuarterPtsContentView" destination="8g1-fK-CMR" id="NgI-wb-jvc"/>
+                <outlet property="awayTeamLabel" destination="F5R-By-HQl" id="Lzp-jT-wv5"/>
+                <outlet property="homePtsLabel" destination="76X-Zh-r6M" id="OUE-rg-H69"/>
+                <outlet property="homeQuarterPtsContentView" destination="Ebs-o9-cZ1" id="GP7-Fw-tad"/>
+                <outlet property="homeTeamLabel" destination="LdP-Vu-WJF" id="dIn-1O-VsZ"/>
                 <outlet property="quarterItemContentView" destination="h2l-19-meG" id="xk5-yp-vWu"/>
             </connections>
             <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>

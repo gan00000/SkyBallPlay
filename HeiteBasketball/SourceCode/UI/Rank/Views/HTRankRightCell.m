@@ -37,21 +37,15 @@
 
 - (void)refreshWithRankModel:(HTRankModel *)rankModel row:(NSInteger)row {
     
-    self.winLabel.text = rankModel.wins;
-    self.loseLabel.text = rankModel.losses?:rankModel.Losses;
-    self.winRateLabel.text = [NSString stringWithFormat:@"%.1f%%", rankModel.winRate];
-    self.homeLabel.text = [NSString stringWithFormat:@"%@-%@", rankModel.homewin, rankModel.homelose];
-    self.awayLabel.text = [NSString stringWithFormat:@"%@-%@", rankModel.awaywin, rankModel.awaylose];
-    self.areaLabel.text = [NSString stringWithFormat:@"%ld-%ld", rankModel.homewin.integerValue + rankModel.awaywin.integerValue, rankModel.homelose.integerValue + rankModel.awaylose.integerValue];
-    if (rankModel.GamesPlayed) {
-        self.ptsLabel.text = [NSString stringWithFormat:@"%.1f", 1.0 * rankModel.pts.integerValue / rankModel.GamesPlayed.integerValue];
-        self.losePtsLabel.text = [NSString stringWithFormat:@"%.1f", 1.0 * rankModel.PtsAgainst.integerValue / rankModel.GamesPlayed.integerValue];
-    } else {
-        self.ptsLabel.text = [NSString stringWithFormat:@"%.1f", 1.0 * rankModel.pts.integerValue / rankModel.gamesplayed.integerValue];
-        self.losePtsLabel.text = [NSString stringWithFormat:@"%.1f", 1.0 * rankModel.ptsagainst.integerValue / rankModel.gamesplayed.integerValue];
-    }
-    
-    
+    self.winLabel.text = rankModel.win;
+    self.loseLabel.text = rankModel.loss;
+    self.winRateLabel.text = rankModel.winRate;
+    self.homeLabel.text = rankModel.home_matches;
+    self.awayLabel.text = rankModel.away_matches;
+    self.areaLabel.text = rankModel.area_matches;
+    self.ptsLabel.text = rankModel.avg_pts;
+    self.losePtsLabel.text = rankModel.avg_against_pts;
+        
     self.contentView.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"FFFFFF"];
     if (row % 2 == 1) {
         self.contentView.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"f4f7f0"];

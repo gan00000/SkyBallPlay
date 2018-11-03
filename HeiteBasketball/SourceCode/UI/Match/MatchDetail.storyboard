@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sv3-UW-Fso">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="Sv3-UW-Fso" customClass="HTMatchDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="DBo-1C-urc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WcA-4R-DjX">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z0h-xf-9rZ">
                                         <rect key="frame" x="20" y="20" width="60" height="60"/>
@@ -29,50 +29,50 @@
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pRr-N4-RH1">
-                                        <rect key="frame" x="295" y="20" width="60" height="60"/>
+                                        <rect key="frame" x="334" y="20" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="7CP-Vu-8KR"/>
                                             <constraint firstAttribute="width" constant="60" id="j93-W7-HJW"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(主隊)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Dc-fD-Z62">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(客隊)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Dc-fD-Z62" userLabel="(客隊)">
                                         <rect key="frame" x="85" y="42.666666666666664" width="34" height="15"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(客隊)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owa-ip-yuo">
-                                        <rect key="frame" x="256" y="42.666666666666664" width="34" height="15"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(主隊)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owa-ip-yuo">
+                                        <rect key="frame" x="295" y="42.666666666666664" width="34" height="15"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="122" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mlU-Fl-4PM">
-                                        <rect key="frame" x="155.66666666666666" y="15" width="28" height="21"/>
+                                        <rect key="frame" x="175" y="15" width="28" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmg-Lz-THf">
-                                        <rect key="frame" x="183.66666666666666" y="15" width="8" height="21"/>
+                                        <rect key="frame" x="203" y="15" width="8" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="103" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MfH-WP-ASL">
-                                        <rect key="frame" x="191.66666666666666" y="15" width="29" height="21"/>
+                                        <rect key="frame" x="211" y="15" width="29" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已結束" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDr-Pe-Uad">
-                                        <rect key="frame" x="167.66666666666666" y="59" width="40" height="16"/>
+                                        <rect key="frame" x="187" y="59" width="40" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fv7-sR-Nbt">
-                                        <rect key="frame" x="172.66666666666666" y="80" width="30" height="17"/>
+                                        <rect key="frame" x="192" y="80" width="30" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -102,7 +102,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ne-jd-wY3">
-                                <rect key="frame" x="0.0" y="101" width="375" height="677"/>
+                                <rect key="frame" x="0.0" y="101" width="414" height="635"/>
                                 <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
@@ -119,11 +119,11 @@
                         <viewLayoutGuide key="safeArea" id="WoZ-cF-NaX"/>
                     </view>
                     <connections>
-                        <outlet property="awayTeamLogo" destination="pRr-N4-RH1" id="Rds-dD-Zzi"/>
-                        <outlet property="awayTeamPtsLabel" destination="MfH-WP-ASL" id="26m-SS-BYN"/>
+                        <outlet property="awayTeamLogo" destination="z0h-xf-9rZ" id="4Ek-Gd-l4U"/>
+                        <outlet property="awayTeamPtsLabel" destination="mlU-Fl-4PM" id="e1p-Eb-rHt"/>
                         <outlet property="contentView" destination="3Ne-jd-wY3" id="QoH-jy-AQ8"/>
-                        <outlet property="homeTeamLogo" destination="z0h-xf-9rZ" id="Yfn-Ad-tru"/>
-                        <outlet property="homeTeamPtsLabel" destination="mlU-Fl-4PM" id="0b1-ph-IaE"/>
+                        <outlet property="homeTeamLogo" destination="pRr-N4-RH1" id="sQm-2y-gVq"/>
+                        <outlet property="homeTeamPtsLabel" destination="MfH-WP-ASL" id="RXi-gW-FO5"/>
                         <outlet property="statusLabel" destination="dDr-Pe-Uad" id="dvA-2y-nq0"/>
                         <outlet property="timeLabel" destination="Fv7-sR-Nbt" id="XQo-dE-cTb"/>
                     </connections>

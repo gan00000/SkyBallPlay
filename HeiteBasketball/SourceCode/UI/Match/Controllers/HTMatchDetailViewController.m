@@ -74,7 +74,7 @@
 
 #pragma mark - private
 - (void)setupUI {
-    self.title = [NSString stringWithFormat:@"%@ VS %@", self.matchModel.homeName, self.matchModel.awayName];
+    self.title = [NSString stringWithFormat:@"%@ VS %@", self.matchModel.awayName, self.matchModel.homeName];
     
     [self.contentView addSubview:self.segmentControl];
     [self.segmentControl mas_makeConstraints:^(MASConstraintMaker *make) {

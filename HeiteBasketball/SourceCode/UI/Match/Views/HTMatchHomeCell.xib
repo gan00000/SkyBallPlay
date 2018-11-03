@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -110,12 +109,12 @@
             <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
-                <outlet property="awayTeamLogo" destination="Ver-ec-BOK" id="Vx3-jk-9IZ"/>
-                <outlet property="awayTeamNameLabel" destination="ZHp-h7-aFJ" id="3SJ-jF-uBq"/>
-                <outlet property="awayTeamPtsLabel" destination="Mla-r3-DgM" id="SbC-nY-zZ5"/>
-                <outlet property="homeTeamLogo" destination="Jem-2g-OtG" id="uxQ-Oe-2Kn"/>
-                <outlet property="homeTeamNameLabel" destination="nev-06-B5k" id="C0T-ue-WZr"/>
-                <outlet property="homeTeamPtsLabel" destination="rXw-v9-UOv" id="ksa-BK-g9i"/>
+                <outlet property="awayTeamLogo" destination="Jem-2g-OtG" id="q2A-jJ-f6v"/>
+                <outlet property="awayTeamNameLabel" destination="nev-06-B5k" id="g6r-ae-aFi"/>
+                <outlet property="awayTeamPtsLabel" destination="rXw-v9-UOv" id="OT1-NF-wxZ"/>
+                <outlet property="homeTeamLogo" destination="Ver-ec-BOK" id="Jhq-L0-3Tf"/>
+                <outlet property="homeTeamNameLabel" destination="ZHp-h7-aFJ" id="wgR-5W-FJE"/>
+                <outlet property="homeTeamPtsLabel" destination="Mla-r3-DgM" id="BDi-IY-DJU"/>
                 <outlet property="matchStatusLabel" destination="xSU-Cj-0Co" id="dKY-y0-IqK"/>
                 <outlet property="timeLabel" destination="9dK-Rl-I3S" id="ItZ-uZ-mtN"/>
             </connections>

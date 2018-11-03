@@ -44,7 +44,7 @@
 }
 
 - (void)setupWithDataModel:(HTDataHomeModel *)dataModel {
-    self.scoreLabel.text = [NSString stringWithFormat:@"%.1f", dataModel.score];
+    self.scoreLabel.text = [NSString stringWithFormat:@"%.1f", dataModel.pts];
     self.teamNameLabel.text = dataModel.teamName;
     
     [dataModel imageUrlFixWithWidth:self.width-30];

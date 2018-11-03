@@ -81,18 +81,18 @@
     if ([self.loadedFlagArray[index] boolValue]) {
         HTMatchSubDsbdViewController *vc = self.loadedControllersArray[index];
         if (index == 0) {
-            [vc refreshWithDetailList:self.compareModel.homeTeamDetails];
-        } else if (index == 1) {
             [vc refreshWithDetailList:self.compareModel.awayTeamDetails];
+        } else if (index == 1) {
+            [vc refreshWithDetailList:self.compareModel.homeTeamDetails];
         }
         return;
     }
     
     HTMatchSubDsbdViewController *vc = [HTMatchSubDsbdViewController viewController];
     if (index == 0) {
-        [vc refreshWithDetailList:self.compareModel.homeTeamDetails];
-    } else if (index == 1) {
         [vc refreshWithDetailList:self.compareModel.awayTeamDetails];
+    } else if (index == 1) {
+        [vc refreshWithDetailList:self.compareModel.homeTeamDetails];
     }
     [self addChildViewController:vc];
     [self.containerView addSubview:vc.view];
@@ -127,7 +127,7 @@
 
 - (HMSegmentedControl *)segmentControl {
     if (!_segmentControl) {
-        _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"主隊", @"客隊"]];
+        _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"客隊", @"主隊"]];
         _segmentControl.selectionIndicatorColor = [UIColor blueColor];
         _segmentControl.selectionIndicatorHeight = 3.0f;
         _segmentControl.selectionIndicatorEdgeInsets = UIEdgeInsetsMake(0, -8, 0, -18);

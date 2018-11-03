@@ -62,14 +62,14 @@
 @property (nonatomic, copy) NSString *division;
 @property (nonatomic, copy) NSString *teamId;
 @property (nonatomic, copy) NSString *rank;
-@property (nonatomic, copy) NSString *pts;
-@property (nonatomic, copy) NSString *wins;
-@property (nonatomic, copy) NSString *Losses;
-@property (nonatomic, copy) NSString *losses;
-@property (nonatomic, copy) NSString *PtsAgainst;
-@property (nonatomic, copy) NSString *ptsagainst;
-@property (nonatomic, copy) NSString *GamesPlayed;
-@property (nonatomic, copy) NSString *gamesplayed;
+@property (nonatomic, assign) CGFloat pts;
+@property (nonatomic, assign) NSInteger wins;
+@property (nonatomic, assign) NSInteger Losses;
+@property (nonatomic, assign) NSInteger losses;
+@property (nonatomic, assign) CGFloat PtsAgainst;
+@property (nonatomic, assign) CGFloat ptsagainst;
+@property (nonatomic, assign) NSInteger GamesPlayed;
+@property (nonatomic, assign) NSInteger gamesplayed;
 @property (nonatomic, copy) NSString *season_name;
 @property (nonatomic, copy) NSString *rank_id;
 @property (nonatomic, copy) NSString *name;
@@ -80,11 +80,21 @@
 @property (nonatomic, copy) NSString *abbreviation;
 @property (nonatomic, copy) NSString *team_logo;
 @property (nonatomic, copy) NSString *teamName;
-@property (nonatomic, copy) NSString *homewin;
-@property (nonatomic, copy) NSString *homelose;
-@property (nonatomic, copy) NSString *awaywin;
-@property (nonatomic, copy) NSString *awaylose;
+@property (nonatomic, assign) NSInteger homewin;
+@property (nonatomic, assign) NSInteger homelose;
+@property (nonatomic, assign) NSInteger awaywin;
+@property (nonatomic, assign) NSInteger awaylose;
 
-@property (nonatomic, assign) CGFloat winRate;
+@property (nonatomic, copy) NSString *win;
+@property (nonatomic, copy) NSString *loss;
+@property (nonatomic, copy) NSString *winRate;
+@property (nonatomic, copy) NSString *home_matches;
+@property (nonatomic, copy) NSString *away_matches;
+@property (nonatomic, copy) NSString *area_matches;
+@property (nonatomic, copy) NSString *avg_pts;
+@property (nonatomic, copy) NSString *avg_against_pts;
+@property (nonatomic, assign) NSInteger matches;
+@property (nonatomic, assign) CGFloat against_pts;
+
 
 @end

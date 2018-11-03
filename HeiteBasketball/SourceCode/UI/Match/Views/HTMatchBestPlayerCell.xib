@@ -318,24 +318,24 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
-                <outlet property="awayAstLabel" destination="Dcy-Cl-X8L" id="7mH-1Y-Iof"/>
-                <outlet property="awayAstPlaceLabel" destination="X7G-io-e7p" id="3BD-4e-XwZ"/>
-                <outlet property="awayAstPlayerLabel" destination="yQy-nY-n19" id="MzS-Gg-PDf"/>
-                <outlet property="awayPtsLabel" destination="m6M-FS-wW5" id="8On-19-Vrd"/>
-                <outlet property="awayPtsPlaceLabel" destination="d2b-Qo-5Ie" id="FNI-Q2-ob5"/>
-                <outlet property="awayPtsPlayerLabel" destination="rGw-Qh-ia4" id="vfP-kj-QtC"/>
-                <outlet property="awayRebLabel" destination="QMb-6x-2X6" id="buI-oD-eOx"/>
-                <outlet property="awayRebPlaceLabel" destination="NDe-yB-fC0" id="fro-1I-bEm"/>
-                <outlet property="awayRebPlayerLabel" destination="0qt-Uy-T4k" id="Jjz-OS-Goc"/>
-                <outlet property="homeAstLabel" destination="Eun-YK-2Yp" id="raS-Ng-cvj"/>
-                <outlet property="homeAstPlaceLabel" destination="aZ9-mL-JPP" id="uP2-84-eBj"/>
-                <outlet property="homeAstPlayerLabel" destination="wkL-YJ-rf4" id="eqB-9Y-gqs"/>
-                <outlet property="homePtsLabel" destination="HXs-wg-8XI" id="cTA-hp-HaA"/>
-                <outlet property="homePtsPlaceLabel" destination="Xe0-Vf-2Oa" id="h6H-6y-Wo7"/>
-                <outlet property="homePtsPlayerLabel" destination="nVe-mj-K7G" id="9Yc-wT-0MB"/>
-                <outlet property="homeRebLabel" destination="edM-IO-4qN" id="Jfp-QX-xOS"/>
-                <outlet property="homeRebPlaceLabel" destination="yyG-Pf-NjC" id="ZZL-3a-ISl"/>
-                <outlet property="homeRebPlayerLabel" destination="ZeK-0p-Nrb" id="eFc-v6-eHe"/>
+                <outlet property="awayAstLabel" destination="Eun-YK-2Yp" id="3PZ-sE-EWd"/>
+                <outlet property="awayAstPlaceLabel" destination="aZ9-mL-JPP" id="NCn-qG-gcz"/>
+                <outlet property="awayAstPlayerLabel" destination="wkL-YJ-rf4" id="Cd0-QX-KdC"/>
+                <outlet property="awayPtsLabel" destination="HXs-wg-8XI" id="uoS-OP-93d"/>
+                <outlet property="awayPtsPlaceLabel" destination="Xe0-Vf-2Oa" id="6VG-wD-4G2"/>
+                <outlet property="awayPtsPlayerLabel" destination="nVe-mj-K7G" id="0j9-L5-5Eb"/>
+                <outlet property="awayRebLabel" destination="edM-IO-4qN" id="V2i-lS-MjE"/>
+                <outlet property="awayRebPlaceLabel" destination="yyG-Pf-NjC" id="eaj-8o-dZn"/>
+                <outlet property="awayRebPlayerLabel" destination="ZeK-0p-Nrb" id="Ptc-1e-h0I"/>
+                <outlet property="homeAstLabel" destination="Dcy-Cl-X8L" id="ycS-rL-1pI"/>
+                <outlet property="homeAstPlaceLabel" destination="X7G-io-e7p" id="2eO-xM-PUF"/>
+                <outlet property="homeAstPlayerLabel" destination="yQy-nY-n19" id="Zv8-ye-YG2"/>
+                <outlet property="homePtsLabel" destination="m6M-FS-wW5" id="rKr-K3-3HB"/>
+                <outlet property="homePtsPlaceLabel" destination="d2b-Qo-5Ie" id="A7H-1b-HmQ"/>
+                <outlet property="homePtsPlayerLabel" destination="rGw-Qh-ia4" id="B0d-8t-Xqi"/>
+                <outlet property="homeRebLabel" destination="QMb-6x-2X6" id="Zfo-Nb-75q"/>
+                <outlet property="homeRebPlaceLabel" destination="NDe-yB-fC0" id="Q3h-iQ-zox"/>
+                <outlet property="homeRebPlayerLabel" destination="0qt-Uy-T4k" id="CHH-Ja-JM8"/>
             </connections>
         </tableViewCell>
     </objects>
