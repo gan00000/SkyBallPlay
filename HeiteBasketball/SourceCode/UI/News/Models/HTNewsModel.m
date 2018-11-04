@@ -56,12 +56,13 @@
             width = 3;
         }
         
-        _iframe_height = SCREEN_WIDTH * height / width;
-        CGFloat titleHeiht = [self.title jx_sizeWithFont:[UIFont systemFontOfSize:14] constrainedToWidth:SCREEN_WIDTH-30].height;
+        CGFloat ifram_width = SCREEN_WIDTH - 30;
+        _iframe_height = ifram_width * height / width;
+        CGFloat titleHeiht = [self.title jx_sizeWithFont:[UIFont systemFontOfSize:14] constrainedToWidth:ifram_width].height;
         _filmCellHeight = _iframe_height + titleHeiht + 75;
         
         iframe = [iframe stringByReplacingOccurrencesOfString:widthStr
-                                                   withString:[NSString stringWithFormat:@"width=%ld", (NSInteger)SCREEN_WIDTH]];
+                                                   withString:[NSString stringWithFormat:@"width=%ld", (NSInteger)ifram_width]];
         iframe = [iframe stringByReplacingOccurrencesOfString:heightStr
                                                    withString:[NSString stringWithFormat:@"height=%ld", (NSInteger)_iframe_height]];
         

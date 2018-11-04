@@ -76,6 +76,7 @@
 		FE83FE552177838F006C714C /* HTMatchDataRightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE83FE532177838F006C714C /* HTMatchDataRightCell.xib */; };
 		FE8EB0D3215603C500CA20F0 /* HTMatchLiveFeedRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8EB0D2215603C500CA20F0 /* HTMatchLiveFeedRequest.m */; };
 		FE8EB0D6215606B400CA20F0 /* HTMatchSummaryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8EB0D5215606B400CA20F0 /* HTMatchSummaryRequest.m */; };
+		FE91974B218F60A100439CDD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE91974A218F60A100439CDD /* CoreGraphics.framework */; };
 		FE9B32B7217895990055B611 /* HTRankLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9B32B5217895990055B611 /* HTRankLeftCell.m */; };
 		FE9B32B8217895990055B611 /* HTRankLeftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE9B32B6217895990055B611 /* HTRankLeftCell.xib */; };
 		FE9B32BC217896350055B611 /* HTRankRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9B32BA217896350055B611 /* HTRankRightCell.m */; };
@@ -300,6 +301,7 @@
 		FE8EB0D2215603C500CA20F0 /* HTMatchLiveFeedRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchLiveFeedRequest.m; sourceTree = "<group>"; };
 		FE8EB0D4215606B400CA20F0 /* HTMatchSummaryRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchSummaryRequest.h; sourceTree = "<group>"; };
 		FE8EB0D5215606B400CA20F0 /* HTMatchSummaryRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchSummaryRequest.m; sourceTree = "<group>"; };
+		FE91974A218F60A100439CDD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FE9B32B4217895990055B611 /* HTRankLeftCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTRankLeftCell.h; sourceTree = "<group>"; };
 		FE9B32B5217895990055B611 /* HTRankLeftCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTRankLeftCell.m; sourceTree = "<group>"; };
 		FE9B32B6217895990055B611 /* HTRankLeftCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTRankLeftCell.xib; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE91974B218F60A100439CDD /* CoreGraphics.framework in Frameworks */,
 				FE0C27122186BD0D001C9B8C /* SystemConfiguration.framework in Frameworks */,
 				FE0C27102186BD05001C9B8C /* CoreTelephony.framework in Frameworks */,
 				FE0C270E2186BCF6001C9B8C /* libsqlite3.tbd in Frameworks */,
@@ -520,6 +523,7 @@
 		CB747A826453EE017B9DDDC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FE91974A218F60A100439CDD /* CoreGraphics.framework */,
 				FE0C27112186BD0D001C9B8C /* SystemConfiguration.framework */,
 				FE0C270F2186BD05001C9B8C /* CoreTelephony.framework */,
 				FE0C270D2186BCF6001C9B8C /* libsqlite3.tbd */,

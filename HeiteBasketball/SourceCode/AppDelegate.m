@@ -8,18 +8,27 @@
 
 #import "AppDelegate.h"
 #import <UMCommon/UMCommon.h>
+#import <UMShare/UMShare.h>
 
 #import "AFNetworkReachabilityManager.h"
 #import "BJLaunchViewController.h"
 #import "UIView+Toast.h"
 
 #define UM_APP_KEY @"5bd67116f1f556f834000081"
+#define FB_APP_ID  @"870028679758666"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [UMConfigure initWithAppkey:UM_APP_KEY channel:@"App Store"];
+    [UMConfigure setLogEnabled:YES];
+    [[UMSocialManager defaultManager] openLog:YES];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Facebook
+                                          appKey:FB_APP_ID
+                                       appSecret:nil
+                                     redirectURL:@"http://www.ballgametime.com"];
+    
     [self sdk_setUpNetworkReachability];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -74,6 +83,34 @@
     if (status == AFNetworkReachabilityStatusNotReachable) {
         [self.window showToast:@"未连接到网络！" duration:3];
     }
+}
+
+#pragma mark - share
+// 支持所有iOS系统
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+    if (!result) {
+        // 其他如支付等SDK的回调
+    }
+    return result;
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
+    //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
+    BOOL result = [[UMSocialManager defaultManager]  handleOpenURL:url options:options];
+    if (!result) {
+        // 其他如支付等SDK的回调
+    }
+    return result;
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
+    if (!result) {
+        // 其他如支付等SDK的回调
+    }
+    return result;
 }
 
 @end
