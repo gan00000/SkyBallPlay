@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -24,23 +24,9 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kSg-zP-e8Q">
                         <rect key="frame" x="0.0" y="209.5" width="375" height="40"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Cl-V1-3TB">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Cl-V1-3TB">
                                 <rect key="frame" x="10" y="0.0" width="340" height="40"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHS-eJ-hJN">
-                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="FHS-eJ-hJN" firstAttribute="leading" secondItem="9Cl-V1-3TB" secondAttribute="leading" id="GcS-yd-weW"/>
-                                    <constraint firstItem="FHS-eJ-hJN" firstAttribute="top" secondItem="9Cl-V1-3TB" secondAttribute="top" id="IOg-6f-55n"/>
-                                    <constraint firstAttribute="bottom" secondItem="FHS-eJ-hJN" secondAttribute="bottom" id="Jux-Ka-iWK"/>
-                                    <constraint firstAttribute="trailing" secondItem="FHS-eJ-hJN" secondAttribute="trailing" id="vFs-xg-s0c"/>
-                                    <constraint firstItem="FHS-eJ-hJN" firstAttribute="centerY" secondItem="9Cl-V1-3TB" secondAttribute="centerY" id="zWY-I8-UzY"/>
-                                </constraints>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" hidesForSinglePage="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nie-we-DNQ">
                                 <rect key="frame" x="365" y="1.5" width="0.0" height="37"/>
@@ -74,7 +60,6 @@
             <connections>
                 <outlet property="pageControl" destination="Nie-we-DNQ" id="e1s-wg-BQQ"/>
                 <outlet property="scrollView" destination="JR2-J4-wXQ" id="5xs-uH-ID5"/>
-                <outlet property="titleLabel" destination="FHS-eJ-hJN" id="AoJ-a8-3vQ"/>
                 <outlet property="titleScrollView" destination="9Cl-V1-3TB" id="hSb-IW-c2l"/>
             </connections>
             <point key="canvasLocation" x="-333" y="-191"/>

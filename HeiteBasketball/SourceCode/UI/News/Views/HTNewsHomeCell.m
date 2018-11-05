@@ -53,7 +53,7 @@
     [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
         UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
         //创建网页内容对象
-        UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:weakSelf.newsModel.title descr:nil thumImage:weakSelf.newsModel.img_url];
+        UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:weakSelf.newsModel.title descr:nil thumImage:weakSelf.newsModel.share_thub];
         //设置网页地址
         shareObject.webpageUrl = weakSelf.newsModel.url;
         //分享消息对象设置分享内容对象

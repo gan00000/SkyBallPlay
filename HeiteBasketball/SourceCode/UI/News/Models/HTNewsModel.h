@@ -26,6 +26,7 @@
 @property (nonatomic, copy) NSString *iframe;
 @property (nonatomic, assign) CGFloat iframe_height;
 @property (nonatomic, assign) CGFloat filmCellHeight;
+@property (nonatomic, strong) id share_thub;
 
 /// 新闻详情页使用
 - (void)getClearContentWithBlock:(void(^)(BOOL success, NSString *content))block;

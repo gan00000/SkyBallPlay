@@ -32,6 +32,10 @@
     NSString *firstImg = [[RX(@"<img(.*?)src=\"(.*?)\"") matches:content] firstObject];
     if (firstImg) {
         _img_url = [[[firstImg componentsSeparatedByString:@"src=\""] lastObject] stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+        _share_thub = [UIImage imageNamed:@"image_app_icon"];
+        if (_img_url.length > 0) {
+            _share_thub = _img_url;
+        }
     }
     
     NSString *iframe = [[RX(@"<iframe(.*?)</iframe>") matches:content] firstObject];

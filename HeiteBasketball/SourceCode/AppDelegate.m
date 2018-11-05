@@ -28,6 +28,7 @@
                                           appKey:FB_APP_ID
                                        appSecret:nil
                                      redirectURL:@"http://www.ballgametime.com"];
+//    [[UMSocialManager defaultManager] removePlatformProviderWithPlatformType:UMSocialPlatformType_FaceBookMessenger];
     
     [self sdk_setUpNetworkReachability];
     

@@ -13,10 +13,11 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (weak, nonatomic) IBOutlet UIScrollView *titleScrollView;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @property (nonatomic, strong) NSArray *bannerList;
 @property (nonatomic, strong) NSTimer *scrollTimer;
+@property (nonatomic, strong) NSTimer *titleTimer;
+@property (nonatomic, assign) CGFloat pageWidth;
 
 @end
 
@@ -113,19 +114,31 @@
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    if (scrollView == self.titleScrollView) {
+        return;
+    }
     [self stopScrollTimer];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if (scrollView == self.titleScrollView) {
+        return;
+    }
     [self startScrollTimer];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if (scrollView == self.titleScrollView) {
+        return;
+    }
     [self p_setupTitle];
     [self p_fixScrollOffset];
 }
 
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+    if (scrollView == self.titleScrollView) {
+        return;
+    }
     if (scrollView.contentOffset.x != (NSInteger)(self.scrollView.contentOffset.x/SCREEN_WIDTH)*SCREEN_WIDTH) {
         [scrollView setContentOffset:CGPointMake(((NSInteger)(self.scrollView.contentOffset.x/SCREEN_WIDTH)+1)*SCREEN_WIDTH, 0)
                             animated:YES];
@@ -161,7 +174,7 @@
     } else {
         nextModel = self.bannerList[0];
     }
-    self.titleLabel.text = nextModel.title;
+    [self p_fitWithTitle:nextModel.title];
 }
 
 #pragma mark - private
@@ -190,7 +203,53 @@
         index = 0;
     }
     HTNewsModel *currentModel = self.bannerList[index];
-    self.titleLabel.text = currentModel.title;
+    [self p_fitWithTitle:currentModel.title];
+}
+
+- (void)p_fitWithTitle:(NSString *)title {
+    for (UIView *view in self.titleScrollView.subviews) {
+        [view removeFromSuperview];
+    }
+    
+    [self stopTitleTimer];
+    CGFloat width = [title jx_sizeWithFont:[UIFont systemFontOfSize:14] constrainedToHeight:15].width;
+    [self addLableAtX:0 width:width text:title];
+    if (width > self.titleScrollView.jx_width) {
+        self.pageWidth = width + 30;
+        [self addLableAtX:self.pageWidth width:width text:title];
+        [self startTitleTimer];
+    }
+    [self.titleScrollView setContentOffset:CGPointMake(0, 0)];
+}
+
+- (void)addLableAtX:(CGFloat)x width:(CGFloat)width text:(NSString *)text {
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(x, 0, width, self.titleScrollView.jx_height)];
+    label.font = [UIFont systemFontOfSize:14];
+    label.textColor = [UIColor whiteColor];
+    label.text = text;
+    [self.titleScrollView addSubview:label];
+    [self.titleScrollView setContentSize:CGSizeMake(x+width, self.titleScrollView.jx_height)];
+}
+
+- (void)startTitleTimer {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (!self.titleTimer) {
+            self.titleTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(scrollTitle) userInfo:nil repeats:YES];
+            [[NSRunLoop currentRunLoop] addTimer:self.titleTimer forMode:NSRunLoopCommonModes];
+        }
+    });
+}
+
+- (void)stopTitleTimer {
+    [self.titleTimer invalidate];
+    self.titleTimer = nil;
+}
+
+- (void)scrollTitle {
+    [self.titleScrollView setContentOffset:CGPointMake(self.titleScrollView.contentOffset.x+5, 0)];
+    if (self.titleScrollView.contentOffset.x >= self.pageWidth) {
+        [self.titleScrollView setContentOffset:CGPointMake(self.titleScrollView.contentOffset.x-self.pageWidth, 0)];
+    }
 }
 
 @end
