@@ -27,19 +27,21 @@
 			<string>facebook</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb870028679758666</string>
+				<string>fb479868032525276</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>FacebookAppID</key>
-	<string>870028679758666</string>
+	<string>479868032525276</string>
 	<key>FacebookDisplayName</key>
 	<string>黑特篮球</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>line</string>
+        <string>lineauth</string>
+        <string>line3rdp.$(APP_IDENTIFIER)</string>
 		<string>fbapi</string>
 		<string>fb-messenger-api</string>
 		<string>fb-messenger-share-api</string>

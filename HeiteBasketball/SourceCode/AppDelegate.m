@@ -15,7 +15,7 @@
 #import "UIView+Toast.h"
 
 #define UM_APP_KEY @"5bd67116f1f556f834000081"
-#define FB_APP_ID  @"870028679758666"
+#define FB_APP_ID  @"479868032525276"
 
 @implementation AppDelegate
 
@@ -28,7 +28,10 @@
                                           appKey:FB_APP_ID
                                        appSecret:nil
                                      redirectURL:@"http://www.ballgametime.com"];
-//    [[UMSocialManager defaultManager] removePlatformProviderWithPlatformType:UMSocialPlatformType_FaceBookMessenger];
+    
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Line
+                                          appKey:nil appSecret:nil
+                                     redirectURL:@"http://www.ballgametime.com"];
     
     [self sdk_setUpNetworkReachability];
     

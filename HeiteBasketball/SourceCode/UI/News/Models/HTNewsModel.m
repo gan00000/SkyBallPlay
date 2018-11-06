@@ -119,6 +119,7 @@
         }
         
         NSString *html = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSLog(@"before = %@", html);
         
         html = [html stringByReplacingOccurrencesOfString:@"class=\"onelist\""
                                                withString:@" style=\" display: none\""];
@@ -175,6 +176,7 @@
                                                withString:@"app_ad_hidden"];
         
         self.clearContent = html;
+        NSLog(@"after = %@", html);
         block(YES, self.clearContent);
         
     }];
