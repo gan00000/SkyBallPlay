@@ -51,14 +51,16 @@
             return;
         }
         [self.webView evaluateJavaScript:@"document.body.offsetHeight" completionHandler:^(id _Nullable result, NSError * _Nullable error) {
-            CGFloat height = [result doubleValue];
-            weakSelf.webView.frame = CGRectMake(0, 0, SCREEN_WIDTH, height);
-            weakSelf.webContentView.frame = CGRectMake(0, 0, SCREEN_WIDTH, height);
-            weakSelf.webContentView.contentSize =CGSizeMake(SCREEN_WIDTH, height);
-            
-            if (weakSelf.onContentHeightUpdateBlock) {
-                weakSelf.onContentHeightUpdateBlock(height);
-            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                CGFloat height = [result doubleValue];
+                weakSelf.webView.frame = CGRectMake(0, 0, SCREEN_WIDTH, height);
+                weakSelf.webContentView.frame = CGRectMake(0, 0, SCREEN_WIDTH, height);
+                weakSelf.webContentView.contentSize =CGSizeMake(SCREEN_WIDTH, height);
+                
+                if (weakSelf.onContentHeightUpdateBlock) {
+                    weakSelf.onContentHeightUpdateBlock(height);
+                }
+            });            
         }];
     }
 }
