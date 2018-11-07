@@ -10,6 +10,9 @@
 #import "BJDateFormatUtility.h"
 #import "BJHTTPServiceEngine.h"
 #import "HTHtmlLoadUtil.h"
+#import <UShareUI/UShareUI.h>
+#import <SDWebImage/SDWebImageManager.h>
+#import "BJViewControllerCenter.h"
 
 @interface HTNewsModel () <NSURLConnectionDelegate>
 
@@ -65,12 +68,17 @@
         CGFloat titleHeiht = [self.title jx_sizeWithFont:[UIFont systemFontOfSize:14] constrainedToWidth:ifram_width].height;
         _filmCellHeight = _iframe_height + titleHeiht + 75;
         
-        iframe = [iframe stringByReplacingOccurrencesOfString:widthStr
-                                                   withString:[NSString stringWithFormat:@"width=%ld", (NSInteger)ifram_width]];
-        iframe = [iframe stringByReplacingOccurrencesOfString:heightStr
-                                                   withString:[NSString stringWithFormat:@"height=%ld", (NSInteger)_iframe_height]];
+        NSString *newWidhtStr = [RX(@"\\d+") stringByReplacingMatchesInString:widthStr options:kNilOptions range:NSMakeRange(0, widthStr.length) withTemplate:[NSString stringWithFormat:@"%ld", (NSInteger)ifram_width]];
+        NSString *newHeightStr = [RX(@"\\d+") stringByReplacingMatchesInString:heightStr options:kNilOptions range:NSMakeRange(0, heightStr.length) withTemplate:[NSString stringWithFormat:@"%ld", (NSInteger)_iframe_height]];
         
+        iframe = [iframe stringByReplacingOccurrencesOfString:widthStr
+                                                   withString:newWidhtStr];
+        iframe = [iframe stringByReplacingOccurrencesOfString:heightStr
+                                                   withString:newHeightStr];
+        
+        NSLog(@"iframe = %@", iframe);
         _iframe = [[HTHtmlLoadUtil sharedInstance] iframHtmlWithContent:iframe];
+        NSLog(@"iframe = %@", _iframe);
     } 
 }
 
@@ -180,9 +188,57 @@
         });
     }];
     [task resume];
+}
 
++ (BOOL)canShare {
+    return ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Facebook] && [[UMSocialManager defaultManager] isSupport:UMSocialPlatformType_Facebook]) ||
+    ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_FaceBookMessenger] && [[UMSocialManager defaultManager] isSupport:UMSocialPlatformType_FaceBookMessenger]) ||
+    ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Line] && [[UMSocialManager defaultManager] isSupport:UMSocialPlatformType_Line]);
+}
 
+- (void)share {
+    kWeakSelf
+    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+        UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+        if (platformType == UMSocialPlatformType_Line) {
+            //设置文本
+            messageObject.text = [NSString stringWithFormat:@"%@\n链接：%@", weakSelf.title, weakSelf.url];
+            if (weakSelf.img_url) {
+                [BJLoadingHud showHUDInView:[BJViewControllerCenter currentViewController].view];
+                [[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:weakSelf.img_url] options:0 progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
+                    if (image) {
+                        //创建图片内容对象
+                        UMShareImageObject *shareObject = [[UMShareImageObject alloc] init];
+                        //如果有缩略图，则设置缩略图
+                        [shareObject setShareImage:image];
+                        //分享消息对象设置分享内容对象
+                        messageObject.shareObject = shareObject;
+                        [weakSelf doShareToPlatform:platformType withMessage:messageObject];
+                    } else {
+                        [weakSelf doShareToPlatform:platformType withMessage:messageObject];
+                    }
+                    [BJLoadingHud hideHUDInView:[BJViewControllerCenter currentViewController].view];
+                }];
+            } else {
+                [weakSelf doShareToPlatform:platformType withMessage:messageObject];
+            }
+        } else {
+            //创建网页内容对象
+            UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:weakSelf.title descr:nil thumImage:weakSelf.share_thub];
+            //设置网页地址
+            shareObject.webpageUrl = weakSelf.url;
+            //分享消息对象设置分享内容对象
+            messageObject.shareObject = shareObject;
+            
+            [self doShareToPlatform:platformType withMessage:messageObject];
+        }
+    }];
+}
 
+- (void)doShareToPlatform:(UMSocialPlatformType)platformType withMessage:(UMSocialMessageObject *)messageObject {
+    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:[BJViewControllerCenter currentViewController] completion:^(id result, NSError *error) {
+        BJLog(@"result = %@", error);
+    }];
 }
 
 

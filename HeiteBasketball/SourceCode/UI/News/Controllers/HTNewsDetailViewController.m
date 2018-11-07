@@ -12,7 +12,6 @@
 #import "HTNewsWebCell.h"
 #import "HTNewsHomeCell.h"
 #import "HTNewsTopHeaderView.h"
-#import <UShareUI/UShareUI.h>
 
 @interface HTNewsDetailViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -142,7 +141,7 @@
     
     [self.view showLoadingView];
     
-    if ([self isCanShare]) {
+    if ([HTNewsModel canShare]) {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"nav_icon_share"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonTapped:)];
     }
 }
@@ -177,24 +176,7 @@
 }
 
 - (void)onShareButtonTapped:(id)sender {
-    kWeakSelf
-    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
-        UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
-        //创建网页内容对象
-        UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:weakSelf.newsModel.title descr:nil thumImage:weakSelf.newsModel.share_thub];
-        //设置网页地址
-        shareObject.webpageUrl = weakSelf.newsModel.url;
-        //分享消息对象设置分享内容对象
-        messageObject.shareObject = shareObject;
-        [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:weakSelf completion:^(id result, NSError *error) {
-            NSLog(@"result = %@", result);
-        }];
-    }];
-}
-
-- (BOOL)isCanShare {
-    return ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Facebook] && [[UMSocialManager defaultManager] isSupport:UMSocialPlatformType_Facebook]) ||
-    ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Line] && [[UMSocialManager defaultManager] isSupport:UMSocialPlatformType_Line]);
+    [self.newsModel share];
 }
 
 @end

@@ -28,10 +28,18 @@
                                           appKey:FB_APP_ID
                                        appSecret:nil
                                      redirectURL:@"http://www.ballgametime.com"];
+    if (![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_FaceBookMessenger]) {
+        [[UMSocialManager defaultManager] removePlatformProviderWithPlatformType:UMSocialPlatformType_FaceBookMessenger];
+    }
+    if (![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Facebook]) {
+        [[UMSocialManager defaultManager] removePlatformProviderWithPlatformType:UMSocialPlatformType_Facebook];
+    }
     
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Line
-                                          appKey:nil appSecret:nil
-                                     redirectURL:@"http://www.ballgametime.com"];
+    if ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Line]) {
+        [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Line
+                                              appKey:nil appSecret:nil
+                                         redirectURL:@"http://www.ballgametime.com"];
+    }
     
     [self sdk_setUpNetworkReachability];
     

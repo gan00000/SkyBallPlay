@@ -31,4 +31,7 @@
 /// 新闻详情页使用
 - (void)getClearContentWithBlock:(void(^)(BOOL success, NSString *content))block;
 
++ (BOOL)canShare;
+- (void)share;
+
 @end

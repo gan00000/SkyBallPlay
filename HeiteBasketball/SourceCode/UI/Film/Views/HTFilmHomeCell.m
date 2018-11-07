@@ -8,8 +8,6 @@
 
 #import "HTFilmHomeCell.h"
 #import <WebKit/WebKit.h>
-#import <UShareUI/UShareUI.h>
-#import "BJViewControllerCenter.h"
 
 @interface HTFilmHomeCell () <WKNavigationDelegate>
 
@@ -38,7 +36,7 @@
         make.top.left.bottom.right.mas_equalTo(0);
     }];
     
-    if ([self isCanShare]) {
+    if ([HTNewsModel canShare]) {
         self.shareButtonContentView.hidden = NO;
     }
 }
@@ -65,19 +63,7 @@
 }
 
 - (IBAction)onShareButtonTapped:(id)sender {
-    kWeakSelf
-    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
-        UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
-        //创建网页内容对象
-        UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:weakSelf.newsModel.title descr:nil thumImage:weakSelf.newsModel.share_thub];
-        //设置网页地址
-        shareObject.webpageUrl = weakSelf.newsModel.url;
-        //分享消息对象设置分享内容对象
-        messageObject.shareObject = shareObject;
-        [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:[BJViewControllerCenter currentViewController] completion:^(id result, NSError *error) {
-            NSLog(@"result = %@", result);
-        }];
-    }];
+    [self.newsModel share];
 }
 
 #pragma mark - WKNavigationDelegate
@@ -96,11 +82,6 @@
         _webView.clipsToBounds = YES;
     }
     return _webView;
-}
-
-- (BOOL)isCanShare {
-    return ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Facebook] && [[UMSocialManager defaultManager] isSupport:UMSocialPlatformType_Facebook]) ||
-    ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Line] && [[UMSocialManager defaultManager] isSupport:UMSocialPlatformType_Line]);
 }
 
 
