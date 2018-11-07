@@ -35,7 +35,7 @@
     self.timeLabel.text = feedModel.time;
     self.teamLabel.text = feedModel.teamName;
     self.eventLabel.text = feedModel.desc;
-    self.ptsCompareLabel.text = [NSString stringWithFormat:@"%@ - %@", feedModel.homePts, feedModel.awayPts];
+    self.ptsCompareLabel.text = [NSString stringWithFormat:@"%@ - %@", feedModel.awayPts, feedModel.homePts];
 }
 
 @end
