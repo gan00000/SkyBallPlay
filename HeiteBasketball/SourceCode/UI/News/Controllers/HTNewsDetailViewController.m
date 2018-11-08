@@ -12,8 +12,9 @@
 #import "HTNewsWebCell.h"
 #import "HTNewsHomeCell.h"
 #import "HTNewsTopHeaderView.h"
+#import "BJNavigationController.h"
 
-@interface HTNewsDetailViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface HTNewsDetailViewController () <UITableViewDelegate, UITableViewDataSource, BJNavigationDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *topNewsList;
@@ -177,6 +178,15 @@
 
 - (void)onShareButtonTapped:(id)sender {
     [self.newsModel share];
+}
+
+#pragma mark - BJNavigationDelegate
+- (BOOL)bj_shouldHandlePopActionMySelf {
+    return YES;
+}
+
+- (void)bj_handlePopActionMySelf {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

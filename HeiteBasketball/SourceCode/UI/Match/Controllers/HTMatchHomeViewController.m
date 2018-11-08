@@ -29,6 +29,8 @@
 @property (nonatomic, assign) BOOL requesting;
 @property (nonatomic, strong) NSMutableDictionary *inProgressMatchs;
 
+@property (nonatomic, strong) NSCalendar *calendar;
+
 @end
 
 @implementation HTMatchHomeViewController
@@ -41,7 +43,6 @@
     [super viewDidLoad];
     
     [self setupViews];
-    [self loadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,13 +53,11 @@
 - (IBAction)onPreviousButtonTapped:(UIButton *)sender {
     self.startDate = [self.startDate dateBySubtractingDays:8];
     [BJLoadingHud showHUDInView:self.view];
-    [self loadData];
 }
 
 - (IBAction)onNextButtonTappd:(UIButton *)sender {
     self.startDate = [self.startDate dateByAddingDays:8];
     [BJLoadingHud showHUDInView:self.view];
-    [self loadData];
 }
 
 - (IBAction)onSelectDateButtonTapped:(id)sender {
@@ -66,7 +65,6 @@
     [HTDatePickerView showWithWithDate:self.startDate didTapEnterBlock:^BOOL(NSDate *date) {
         weakSelf.startDate = date;
         [BJLoadingHud showHUDInView:weakSelf.view];
-        [weakSelf loadData];
         return YES;
     }];
 }
@@ -156,7 +154,20 @@
     self.requesting = NO;
 }
 
+- (void)setStartDate:(NSDate *)startDate {
+    _startDate = startDate;
+    _endDate = [self date:_startDate addingDays:7];
+    
+    [self startTimer];
+    [self loadData];
+}
+
 - (void)startTimer {
+    if ([self notContainToday]) {
+        [self stopTimer];
+        return;
+    }
+    
     if (self.timer) {
         return;
     }
@@ -172,15 +183,43 @@
     self.timer = nil;
 }
 
+- (BOOL)notContainToday {
+    NSInteger days = [self numbersOfDayFromDate:self.startDate toDate:[NSDate date]] >= 7;
+    if (days >= 7 || days <= -1) { // 显示内容不包含今天
+        return YES;
+    }
+    return NO;
+}
+
+- (NSDate *)midnightWithDate:(NSDate *)date {
+    NSDateComponents *cmp = [self.calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay) fromDate:date];
+    [cmp setHour:0];
+    [cmp setMinute:0];
+    [cmp setSecond:0];
+    return [self.calendar dateFromComponents:cmp];
+}
+
+- (NSInteger)numbersOfDayFromDate:(NSDate *)fromDate toDate:(NSDate *)toDate {
+    NSDateComponents *cmp = [self.calendar components:NSCalendarUnitDay
+                                             fromDate:[self midnightWithDate:fromDate]
+                                               toDate:[self midnightWithDate:toDate]
+                                              options:0];
+    return cmp.day;
+}
+
+- (NSDate *)date:(NSDate *)date addingDays:(NSInteger)dDays {
+    NSDateComponents *dateComponents = [[NSDateComponents alloc] init];
+    [dateComponents setDay:dDays];
+    NSDate *newDate = [self.calendar dateByAddingComponents:dateComponents toDate:date options:0];
+    return newDate;
+}
+
 - (void)loadData {
     if (self.requesting) {
         return;
     }
     
     self.requesting = YES;
-    
-    self.endDate = [self.startDate dateByAddingDays:7];
-    
     [HTMatchHomeRequest requestWithStartDate:[self ymdWithDate:self.startDate]
                                      endDate:[self ymdWithDate:self.endDate]
                                 successBlock:^(NSArray<HTMatchHomeGroupModel *> *matchList) {
@@ -200,9 +239,7 @@
                                         }
                                         if (self.inProgressMatchs.count == 0) {
                                             [self refreshUI];
-                                            [self stopTimer];
                                         } else {
-                                            [self startTimer];
                                             for (HTMatchHomeModel *model in self.inProgressMatchs.allValues) {
                                                 [HTMatchHomeRequest requestMatchProgressWithGameId:model.game_id successBlock:^(NSString *game_id, NSString *quarter, NSString *time) {
                                                     HTMatchHomeModel *matchModel = [self.inProgressMatchs objectForKey:game_id];
@@ -257,5 +294,11 @@
     return _inProgressMatchs;
 }
 
+- (NSCalendar *)calendar {
+    if (!_calendar) {
+        _calendar = [NSCalendar currentCalendar];
+    }
+    return _calendar;
+}
 
 @end
