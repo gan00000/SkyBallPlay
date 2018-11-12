@@ -29,5 +29,6 @@ pod 'UMCShare/Social/Facebook'
 pod 'UMCShare/Social/Line'
 pod 'UMCShare/UI'
 pod 'UMCCommonLog'
+pod 'UMCPush'
 
 end

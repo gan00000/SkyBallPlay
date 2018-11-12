@@ -84,6 +84,12 @@
 		FEA104F6216CB0F0000DBE63 /* HTMatchSummaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA104F5216CB0F0000DBE63 /* HTMatchSummaryModel.m */; };
 		FEA104F9216CB10C000DBE63 /* HTMatchCompareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA104F8216CB10C000DBE63 /* HTMatchCompareModel.m */; };
 		FEAB2108216DD731002A05AB /* HTMatchDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAB2107216DD731002A05AB /* HTMatchDetailsModel.m */; };
+		FEAC9F272199D92900159AE9 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEAC9F262199D92900159AE9 /* UserNotifications.framework */; };
+		FEAC9F2E2199E25F00159AE9 /* HTSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAC9F2D2199E25F00159AE9 /* HTSettingViewController.m */; };
+		FEAC9F302199E28800159AE9 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEAC9F2F2199E28800159AE9 /* Setting.storyboard */; };
+		FEAC9F322199E81A00159AE9 /* Setting.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEAC9F312199E81A00159AE9 /* Setting.xcassets */; };
+		FEAC9F352199EA2300159AE9 /* HTContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAC9F342199EA2300159AE9 /* HTContactUsViewController.m */; };
+		FEAC9F382199EA3A00159AE9 /* HTAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAC9F372199EA3A00159AE9 /* HTAboutUsViewController.m */; };
 		FEB46C822157903B00E482CE /* HTMatchLiveFeedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB46C812157903B00E482CE /* HTMatchLiveFeedModel.m */; };
 		FEC112622143D058002DB617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC112612143D058002DB617 /* Assets.xcassets */; };
 		FEC112682143D058002DB617 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC112672143D058002DB617 /* main.m */; };
@@ -314,6 +320,16 @@
 		FEA104F8216CB10C000DBE63 /* HTMatchCompareModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchCompareModel.m; sourceTree = "<group>"; };
 		FEAB2106216DD731002A05AB /* HTMatchDetailsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchDetailsModel.h; sourceTree = "<group>"; };
 		FEAB2107216DD731002A05AB /* HTMatchDetailsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchDetailsModel.m; sourceTree = "<group>"; };
+		FEAC9F262199D92900159AE9 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		FEAC9F282199D94500159AE9 /* HeiteBasketball.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HeiteBasketball.entitlements; sourceTree = "<group>"; };
+		FEAC9F2C2199E25F00159AE9 /* HTSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTSettingViewController.h; sourceTree = "<group>"; };
+		FEAC9F2D2199E25F00159AE9 /* HTSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTSettingViewController.m; sourceTree = "<group>"; };
+		FEAC9F2F2199E28800159AE9 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		FEAC9F312199E81A00159AE9 /* Setting.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Setting.xcassets; sourceTree = "<group>"; };
+		FEAC9F332199EA2300159AE9 /* HTContactUsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTContactUsViewController.h; sourceTree = "<group>"; };
+		FEAC9F342199EA2300159AE9 /* HTContactUsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTContactUsViewController.m; sourceTree = "<group>"; };
+		FEAC9F362199EA3A00159AE9 /* HTAboutUsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAboutUsViewController.h; sourceTree = "<group>"; };
+		FEAC9F372199EA3A00159AE9 /* HTAboutUsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAboutUsViewController.m; sourceTree = "<group>"; };
 		FEB46C802157903B00E482CE /* HTMatchLiveFeedModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchLiveFeedModel.h; sourceTree = "<group>"; };
 		FEB46C812157903B00E482CE /* HTMatchLiveFeedModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchLiveFeedModel.m; sourceTree = "<group>"; };
 		FEC112552143D057002DB617 /* HeiteBasketball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeiteBasketball.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -507,6 +523,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEAC9F272199D92900159AE9 /* UserNotifications.framework in Frameworks */,
 				FE91974B218F60A100439CDD /* CoreGraphics.framework in Frameworks */,
 				FE0C27122186BD0D001C9B8C /* SystemConfiguration.framework in Frameworks */,
 				FE0C27102186BD05001C9B8C /* CoreTelephony.framework in Frameworks */,
@@ -523,6 +540,7 @@
 		CB747A826453EE017B9DDDC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FEAC9F262199D92900159AE9 /* UserNotifications.framework */,
 				FE91974A218F60A100439CDD /* CoreGraphics.framework */,
 				FE0C27112186BD0D001C9B8C /* SystemConfiguration.framework */,
 				FE0C270F2186BD05001C9B8C /* CoreTelephony.framework */,
@@ -541,6 +559,21 @@
 				72321527951E473E782564AC /* Pods-HeiteBasketball.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FEAC9F2B2199E22700159AE9 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				FEAC9F2C2199E25F00159AE9 /* HTSettingViewController.h */,
+				FEAC9F2D2199E25F00159AE9 /* HTSettingViewController.m */,
+				FEAC9F332199EA2300159AE9 /* HTContactUsViewController.h */,
+				FEAC9F342199EA2300159AE9 /* HTContactUsViewController.m */,
+				FEAC9F362199EA3A00159AE9 /* HTAboutUsViewController.h */,
+				FEAC9F372199EA3A00159AE9 /* HTAboutUsViewController.m */,
+				FEAC9F2F2199E28800159AE9 /* Setting.storyboard */,
+				FEAC9F312199E81A00159AE9 /* Setting.xcassets */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		FEC1124C2143D057002DB617 = {
@@ -564,6 +597,7 @@
 		FEC112572143D057002DB617 /* HeiteBasketball */ = {
 			isa = PBXGroup;
 			children = (
+				FEAC9F282199D94500159AE9 /* HeiteBasketball.entitlements */,
 				FEC1126E2143D4A0002DB617 /* SourceCode */,
 				FEC112612143D058002DB617 /* Assets.xcassets */,
 				FEC112662143D058002DB617 /* Info.plist */,
@@ -595,6 +629,7 @@
 				FEC116D62143D7FD002DB617 /* Film */,
 				FEC116D52143D7F3002DB617 /* Data */,
 				FEC116D42143D7C0002DB617 /* Rank */,
+				FEAC9F2B2199E22700159AE9 /* Setting */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1260,6 +1295,14 @@
 				TargetAttributes = {
 					FEC112542143D057002DB617 = {
 						CreatedOnToolsVersion = 9.4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1331,6 +1374,7 @@
 				FEDF8FC5214441C6005C7C4D /* HTMatchHomeCell.xib in Resources */,
 				FE81D14D2146CA1F0047A4A2 /* logo_load.html in Resources */,
 				FE81D14B2146B3090047A4A2 /* HTFilmHomeCell.xib in Resources */,
+				FEAC9F322199E81A00159AE9 /* Setting.xcassets in Resources */,
 				FE6BD08921457D920090118A /* HTNewsWebCell.xib in Resources */,
 				FE81D15B2149613B0047A4A2 /* DataHomeSub.storyboard in Resources */,
 				FEC116DD2143D877002DB617 /* Match.xcassets in Resources */,
@@ -1341,6 +1385,7 @@
 				FEDABE532171BD0C008C8AFD /* HTMatchBestPlayerCell.xib in Resources */,
 				FE82BB472179B78700C52C51 /* HTDataTeamRightCell.xib in Resources */,
 				FE6BD0622144FEF90090118A /* MatchCompare.storyboard in Resources */,
+				FEAC9F302199E28800159AE9 /* Setting.storyboard in Resources */,
 				FEEABBE72149F90800A585DA /* iframe_load.html in Resources */,
 				FEC112622143D058002DB617 /* Assets.xcassets in Resources */,
 			);
@@ -1501,6 +1546,7 @@
 				FEDABE5F2173297B008C8AFD /* HTRankEastWestModel.m in Sources */,
 				FEC116CC2143D4A1002DB617 /* UIColor+Generator.m in Sources */,
 				FEC1160B2143D4A1002DB617 /* UIView+Loading.m in Sources */,
+				FEAC9F2E2199E25F00159AE9 /* HTSettingViewController.m in Sources */,
 				FEC116152143D4A1002DB617 /* MJRefreshGenerator.m in Sources */,
 				FEC1160C2143D4A1002DB617 /* XJEmptyView.m in Sources */,
 				FE82BB4D2179B7F100C52C51 /* HTDataPlayerRankModel.m in Sources */,
@@ -1539,11 +1585,13 @@
 				FEDABE592173279F008C8AFD /* HTRankZoneRequest.m in Sources */,
 				FEC116C22143D4A1002DB617 /* UIView+ViewController.m in Sources */,
 				FE82BB4A2179B7E300C52C51 /* HTDataTeamRankModel.m in Sources */,
+				FEAC9F382199EA3A00159AE9 /* HTAboutUsViewController.m in Sources */,
 				FE6BD067214512EC0090118A /* HTNewsHomeRequest.m in Sources */,
 				FE6BD06A2145136F0090118A /* HTNewsModel.m in Sources */,
 				FE6BD08321457D7E0090118A /* HTNewsHeaderCell.m in Sources */,
 				FEC115BD2143D4A0002DB617 /* BJLaunchViewController.m in Sources */,
 				FEC116772143D4A1002DB617 /* BJWebViewController.m in Sources */,
+				FEAC9F352199EA2300159AE9 /* HTContactUsViewController.m in Sources */,
 				FE6BD08821457D920090118A /* HTNewsWebCell.m in Sources */,
 				FEDF8FDA2144B2BF005C7C4D /* HTMatchHomeGroupModel.m in Sources */,
 				FEC116062143D4A1002DB617 /* XJToastImageView.m in Sources */,
@@ -1690,6 +1738,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = HeiteBasketball/HeiteBasketball.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MSFG5PN83S;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HeiteBasketball/HeiteBasketball.pch";
@@ -1712,6 +1761,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = HeiteBasketball/HeiteBasketball.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MSFG5PN83S;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HeiteBasketball/HeiteBasketball.pch";

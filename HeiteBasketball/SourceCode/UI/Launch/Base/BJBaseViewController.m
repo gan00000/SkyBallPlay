@@ -8,10 +8,9 @@
 
 #import "BJBaseViewController.h"
 #import <LTNavigationBar/UINavigationBar+Awesome.h>
+#import "HTSettingViewController.h"
 
 @interface BJBaseViewController ()
-
-@property (nonatomic, assign) BOOL isFristShow;
 
 @end
 
@@ -28,22 +27,16 @@
     
     [self.navigationController.navigationBar lt_setBackgroundColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
     if (self.navigationController.viewControllers.count == 1) {
-        self.title = self.navigationController.tabBarItem.title;
+        UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_icon_title"]];
+        self.navigationItem.titleView = titleView;
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_set"] style:UIBarButtonItemStylePlain target:self action:@selector(showSettingVc)];
     }
-    
-    self.isFristShow = YES;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    if (self.isFristShow) {
-        self.isFristShow = NO;
-        if (self.navigationController.viewControllers.count == 1) {
-            UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_icon_title"]];
-            self.navigationItem.titleView = titleView;
-        }
-    }
+- (void)showSettingVc {
+    HTSettingViewController *setvc = [HTSettingViewController viewController];
+    [self.navigationController pushViewController:setvc animated:YES];
 }
 
 - (BOOL)shouldAutorotate {
