@@ -26,9 +26,9 @@
         HTRankModel *model1 = obj1;
         HTRankModel *model2 = obj2;
         
-        if (model1.winRate > model2.winRate) {
+        if (model1.winRate.doubleValue > model2.winRate.doubleValue) {
             return NSOrderedAscending;
-        } else if (model1.winRate == model2.winRate) {
+        } else if (model1.winRate.doubleValue == model2.winRate.doubleValue) {
             return NSOrderedSame;
         }
         return NSOrderedDescending;
@@ -40,9 +40,9 @@
         HTRankModel *model1 = obj1;
         HTRankModel *model2 = obj2;
         
-        if (model1.winRate > model2.winRate) {
+        if (model1.winRate.doubleValue > model2.winRate.doubleValue) {
             return NSOrderedAscending;
-        } else if (model1.winRate == model2.winRate) {
+        } else if (model1.winRate.doubleValue == model2.winRate.doubleValue) {
             return NSOrderedSame;
         }
         return NSOrderedDescending;
@@ -54,9 +54,9 @@
         HTRankModel *model1 = obj1;
         HTRankModel *model2 = obj2;
         
-        if (model1.winRate > model2.winRate) {
+        if (model1.winRate.doubleValue > model2.winRate.doubleValue) {
             return NSOrderedAscending;
-        } else if (model1.winRate == model2.winRate) {
+        } else if (model1.winRate.doubleValue == model2.winRate.doubleValue) {
             return NSOrderedSame;
         }
         return NSOrderedDescending;
@@ -68,9 +68,9 @@
         HTRankModel *model1 = obj1;
         HTRankModel *model2 = obj2;
         
-        if (model1.winRate > model2.winRate) {
+        if (model1.winRate.doubleValue > model2.winRate.doubleValue) {
             return NSOrderedAscending;
-        } else if (model1.winRate == model2.winRate) {
+        } else if (model1.winRate.doubleValue == model2.winRate.doubleValue) {
             return NSOrderedSame;
         }
         return NSOrderedDescending;
@@ -82,9 +82,9 @@
         HTRankModel *model1 = obj1;
         HTRankModel *model2 = obj2;
         
-        if (model1.winRate > model2.winRate) {
+        if (model1.winRate.doubleValue > model2.winRate.doubleValue) {
             return NSOrderedAscending;
-        } else if (model1.winRate == model2.winRate) {
+        } else if (model1.winRate.doubleValue == model2.winRate.doubleValue) {
             return NSOrderedSame;
         }
         return NSOrderedDescending;
@@ -96,9 +96,9 @@
         HTRankModel *model1 = obj1;
         HTRankModel *model2 = obj2;
         
-        if (model1.winRate > model2.winRate) {
+        if (model1.winRate.doubleValue > model2.winRate.doubleValue) {
             return NSOrderedAscending;
-        } else if (model1.winRate == model2.winRate) {
+        } else if (model1.winRate.doubleValue == model2.winRate.doubleValue) {
             return NSOrderedSame;
         }
         return NSOrderedDescending;
