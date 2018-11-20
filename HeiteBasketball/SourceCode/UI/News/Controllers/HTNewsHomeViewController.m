@@ -50,6 +50,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (!self.bannerRequestDone || !self.newsRequestDone) {
+        return 0;
+    }
     if (section == 0) {
         return 1;
     }

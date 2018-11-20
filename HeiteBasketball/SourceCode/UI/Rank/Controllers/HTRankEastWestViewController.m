@@ -35,6 +35,9 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (!self.eastWestModel) {
+        return 0;
+    }
     return 2;
 }
 

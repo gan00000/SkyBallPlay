@@ -19,7 +19,6 @@
 
 @property (nonatomic, strong) UITableView *rightTableView;
 @property (nonatomic, weak) NSArray<HTRankModel *> *rankList;
-@property (nonatomic, assign) BOOL firstLoad;
 
 @end
 
@@ -28,8 +27,10 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    self.firstLoad = YES;
     self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    [self setupLeftTableView];
+    [self setupRightTableView];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -38,14 +39,11 @@
     // Configure the view for the selected state
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
+- (void)drawRect:(CGRect)rect {
+    [super drawRect:rect];
     
-    if (self.firstLoad) {
-        self.firstLoad = NO;
-        [self setupLeftTableView];
-        [self setupRightTableView];
-    }
+    [self.scrollContentView setContentSize:CGSizeMake(560, self.leftTableView.jx_height)];
+    self.rightTableView.frame = CGRectMake(0, 0, 560, self.leftTableView.jx_height);
 }
 
 - (void)setupWithTitle:(NSString *)title rankList:(NSArray<HTRankModel *> *)rankList {

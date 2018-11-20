@@ -36,44 +36,48 @@
                             params:(NSDictionary *)params
                       successBlock:(BJHTTPSuccessBlock)successBlock
                         errorBlock:(BJHTTPFailureBlock)errorBlock {
-    
-    [self.sessionManager GET:path parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+    @try {
+        [self.sessionManager GET:path parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            
+            if (successBlock) {
+                successBlock(task, responseObject);
+            }
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            
+            if (errorBlock) {
+                errorBlock(task, error);
+            }
+        }];
+    } @catch (NSException *exception) {
         
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        if (successBlock) {
-            successBlock(task, responseObject);
-        }
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-        if (errorBlock) {
-            errorBlock(task, error);
-        }
-    }];
-    
+    };
 }
 
 - (void)postRequestWithFunctionPath:(NSString *)path
                              params:(NSDictionary *)params
                        successBlock:(BJHTTPSuccessBlock)successBlock
                          errorBlock:(BJHTTPFailureBlock)errorBlock {
-    
-    [self.sessionManager POST:path parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+    @try {
+        [self.sessionManager POST:path parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            
+            if (successBlock) {
+                successBlock(task, responseObject);
+            }
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            
+            if (errorBlock) {
+                errorBlock(task, error);
+            }
+        }];
+    } @catch (NSException *exception) {
         
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        
-        if (successBlock) {
-            successBlock(task, responseObject);
-        }
-        
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-        if (errorBlock) {
-            errorBlock(task, error);
-        }
-    }];
-    
+    };
 }
 
 - (void)fileUploadWithFunctionPath:(NSString *)functionPath

@@ -45,6 +45,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (!self.homeInfoModel) {
+        return 0;
+    }
     return 2;
 }
 
