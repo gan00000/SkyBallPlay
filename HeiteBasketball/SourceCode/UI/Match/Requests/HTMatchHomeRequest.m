@@ -25,11 +25,11 @@
         NSString *groupName = @"";
         
         for (HTMatchHomeModel *matchModel in allMatchList) {
-            if (![matchModel.date isEqualToString:groupName]) {
+            if (![matchModel.gamedate isEqualToString:groupName]) {
                 matchList = [NSMutableArray array];
                 
                 HTMatchHomeGroupModel *groupModel = [[HTMatchHomeGroupModel alloc] init];
-                groupModel.groupName = matchModel.date;
+                groupModel.groupName = matchModel.gamedate;
                 groupModel.matchList = matchList;
                 [groupedMatchList addObject:groupModel];
                 
