@@ -45,10 +45,14 @@
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    if (!self.topRequestDone || !self.htmlLoadDone) {
+        return 0;
+    }
     return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     if (section == 2) {
         return self.topNewsList.count;
     }
