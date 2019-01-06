@@ -1,16 +1,27 @@
+//
+//  MFMessageComposeViewController+BlocksKit.m
+//  BlocksKit
+//
+
 #import "A2DynamicDelegate.h"
 #import "MFMessageComposeViewController+BlocksKit.h"
 #import "NSObject+A2BlockDelegate.h"
+
 #pragma mark Custom delegate
+
 @interface A2DynamicMFMessageComposeViewControllerDelegate : A2DynamicDelegate <MFMessageComposeViewControllerDelegate>
+
 @end
+
 @implementation A2DynamicMFMessageComposeViewControllerDelegate
+
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
 {
 	id realDelegate = self.realDelegate;
 	BOOL shouldDismiss = (realDelegate && [realDelegate respondsToSelector:@selector(messageComposeViewController:didFinishWithResult:)]);
 	if (shouldDismiss)
 		[realDelegate messageComposeViewController:controller didFinishWithResult:result];
+
 	void (^block)(MFMessageComposeViewController *, MessageComposeResult) = [self blockImplementationForMethod:_cmd];
 	if (shouldDismiss) {
 		if (block) block(controller, result);
@@ -39,10 +50,15 @@
 #endif
 	}
 }
+
 @end
+
 #pragma mark - Category
+
 @implementation MFMessageComposeViewController (BlocksKit)
+
 @dynamic bk_completionBlock;
+
 + (void)load
 {
 	@autoreleasepool {
@@ -50,4 +66,5 @@
 		[self bk_linkDelegateMethods:@{ @"bk_completionBlock": @"messageComposeViewController:didFinishWithResult:" }];
 	}
 }
+
 @end

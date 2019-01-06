@@ -1,11 +1,23 @@
+//
+//  UIAlertController+JXExtension.m
+//  JXExtension
+//
+//  Created by Jeason on 2017/8/19.
+//  Copyright © 2017年 Jeason.Lee. All rights reserved.
+//
+
 #import "UIAlertController+JXExtension.h"
 #import <objc/runtime.h>
+
 @implementation UIAlertController (JXExtension)
+
 @dynamic titleColor;
 @dynamic titleFont;
 @dynamic messageColor;
 @dynamic messageFont;
+
 #pragma mark - Property Method
+
 - (UIColor *)titleColor {
     UIColor *titleColor = objc_getAssociatedObject(self, @selector(titleColor));
     if (titleColor == nil) {
@@ -14,6 +26,7 @@
     }
     return titleColor;
 }
+
 - (void)setTitleColor:(UIColor *)titleColor {
     objc_setAssociatedObject(self, @selector(titleColor), titleColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (self.title.length) {
@@ -22,6 +35,7 @@
         [self setValue:attributed forKey:@"attributedTitle"];
     }
 }
+
 - (UIFont *)titleFont {
     UIFont *titleFont = objc_getAssociatedObject(self, @selector(titleFont));
     if (titleFont == nil) {
@@ -30,6 +44,7 @@
     }
     return titleFont;
 }
+
 - (void)setTitleFont:(UIFont *)titleFont {
     objc_setAssociatedObject(self, @selector(titleFont), titleFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (self.title.length) {
@@ -38,6 +53,7 @@
         [self setValue:attributed forKey:@"attributedTitle"];
     }
 }
+
 - (UIColor *)messageColor {
     UIColor *messageColor = objc_getAssociatedObject(self, @selector(messageColor));
     if (messageColor == nil) {
@@ -46,6 +62,7 @@
     }
     return messageColor;
 }
+
 - (void)setMessageColor:(UIColor *)messageColor {
     objc_setAssociatedObject(self, @selector(messageColor), messageColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (self.message.length) {
@@ -54,6 +71,7 @@
         [self setValue:attributed forKey:@"attributedMessage"];
     }
 }
+
 - (UIFont *)messageFont {
     UIFont *messageFont = objc_getAssociatedObject(self, @selector(messageFont));
     if (messageFont == nil) {
@@ -62,6 +80,7 @@
     }
     return messageFont;
 }
+
 - (void)setMessageFont:(UIFont *)messageFont {
     objc_setAssociatedObject(self, @selector(messageFont), messageFont, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     if (self.message.length) {
@@ -70,7 +89,9 @@
         [self setValue:attributed forKey:@"attributedMessage"];
     }
 }
+
 #pragma mark - Private Method
+
 - (NSAttributedString *)titleAttributedString {
     NSAttributedString *attributed = [self valueForKey:@"attributedTitle"];
     if (attributed == nil) {
@@ -78,6 +99,7 @@
     }
     return attributed;
 }
+
 - (NSAttributedString *)messageAttributedString {
     NSAttributedString *attributed = [self valueForKey:@"attributedMessage"];
     if (attributed == nil) {
@@ -85,4 +107,5 @@
     }
     return attributed;
 }
+
 @end
