@@ -9,7 +9,6 @@
 #import "HTMatchDashboardViewController.h"
 #import "HTMatchSubDsbdViewController.h"
 #import <HMSegmentedControl/HMSegmentedControl.h>
-#import <HexColors/HexColors.h>
 
 @interface HTMatchDashboardViewController () <UIScrollViewDelegate>
 

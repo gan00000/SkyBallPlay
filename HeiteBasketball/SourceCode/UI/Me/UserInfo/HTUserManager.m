@@ -8,6 +8,12 @@
 
 #import "HTUserManager.h"
 
+const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
+
 @implementation HTUserManager
+
++ (BOOL)isUserLogin {
+    return YES;
+}
 
 @end

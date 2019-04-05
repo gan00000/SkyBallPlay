@@ -11,6 +11,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+extern const NSString * kUserLogStatusChagneNotice;
+
 @interface HTUserManager : NSObject
 
 @property (nonatomic, strong) HTUserInfoModel *userInfo;

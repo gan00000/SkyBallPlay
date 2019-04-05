@@ -18,6 +18,7 @@
 #import <RegExCategories/RegExCategories.h>
 #import <HMSegmentedControl/HMSegmentedControl.h>
 #import <JXExtension/JXExtension.h>
+#import <LTNavigationBar/UINavigationBar+Awesome.h>
 
 #import "MJRefreshGenerator.h"
 #import "UIView+Toast.h"

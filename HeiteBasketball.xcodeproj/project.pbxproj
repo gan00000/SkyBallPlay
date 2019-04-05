@@ -48,6 +48,7 @@
 		FE706F04214FF3530078DF30 /* DataMore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE706F03214FF3530078DF30 /* DataMore.storyboard */; };
 		FE706F08215006430078DF30 /* HTDataHomeHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE706F06215006430078DF30 /* HTDataHomeHeaderCell.m */; };
 		FE706F09215006430078DF30 /* HTDataHomeHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE706F07215006430078DF30 /* HTDataHomeHeaderCell.xib */; };
+		FE787B11225773AB00696927 /* 192927@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FE787B10225773AB00696927 /* 192927@2x.png */; };
 		FE81D1462146B2680047A4A2 /* HTFilmHomeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D1452146B2680047A4A2 /* HTFilmHomeRequest.m */; };
 		FE81D14A2146B3090047A4A2 /* HTFilmHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D1482146B3090047A4A2 /* HTFilmHomeCell.m */; };
 		FE81D14B2146B3090047A4A2 /* HTFilmHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE81D1492146B3090047A4A2 /* HTFilmHomeCell.xib */; };
@@ -266,6 +267,7 @@
 		FE706F05215006430078DF30 /* HTDataHomeHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataHomeHeaderCell.h; sourceTree = "<group>"; };
 		FE706F06215006430078DF30 /* HTDataHomeHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataHomeHeaderCell.m; sourceTree = "<group>"; };
 		FE706F07215006430078DF30 /* HTDataHomeHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDataHomeHeaderCell.xib; sourceTree = "<group>"; };
+		FE787B10225773AB00696927 /* 192927@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "192927@2x.png"; sourceTree = "<group>"; };
 		FE81D1442146B2680047A4A2 /* HTFilmHomeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTFilmHomeRequest.h; sourceTree = "<group>"; };
 		FE81D1452146B2680047A4A2 /* HTFilmHomeRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTFilmHomeRequest.m; sourceTree = "<group>"; };
 		FE81D1472146B3090047A4A2 /* HTFilmHomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTFilmHomeCell.h; sourceTree = "<group>"; };
@@ -635,6 +637,7 @@
 			isa = PBXGroup;
 			children = (
 				FEAC9F282199D94500159AE9 /* HeiteBasketball.entitlements */,
+				FE787B10225773AB00696927 /* 192927@2x.png */,
 				FEC1126E2143D4A0002DB617 /* SourceCode */,
 				FEC112612143D058002DB617 /* Assets.xcassets */,
 				FEC112662143D058002DB617 /* Info.plist */,
@@ -1412,6 +1415,7 @@
 				FE6BD0602144FED00090118A /* MatchWordLive.storyboard in Resources */,
 				FEDF8FC5214441C6005C7C4D /* HTMatchHomeCell.xib in Resources */,
 				FE81D14D2146CA1F0047A4A2 /* logo_load.html in Resources */,
+				FE787B11225773AB00696927 /* 192927@2x.png in Resources */,
 				FE81D14B2146B3090047A4A2 /* HTFilmHomeCell.xib in Resources */,
 				FEAC9F322199E81A00159AE9 /* Setting.xcassets in Resources */,
 				FE6BD08921457D920090118A /* HTNewsWebCell.xib in Resources */,
