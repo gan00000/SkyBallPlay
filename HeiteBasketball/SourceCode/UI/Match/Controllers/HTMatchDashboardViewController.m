@@ -9,6 +9,7 @@
 #import "HTMatchDashboardViewController.h"
 #import "HTMatchSubDsbdViewController.h"
 #import <HMSegmentedControl/HMSegmentedControl.h>
+#import <HexColors/HexColors.h>
 
 @interface HTMatchDashboardViewController () <UIScrollViewDelegate>
 
@@ -128,11 +129,13 @@
 - (HMSegmentedControl *)segmentControl {
     if (!_segmentControl) {
         _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"客隊", @"主隊"]];
-        _segmentControl.selectionIndicatorColor = [UIColor blueColor];
+        _segmentControl.selectionIndicatorColor = [UIColor hx_colorWithHexRGBAString:@"4E8BFF"];
         _segmentControl.selectionIndicatorHeight = 3.0f;
         _segmentControl.selectionIndicatorEdgeInsets = UIEdgeInsetsMake(0, -8, 0, -18);
-        _segmentControl.titleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:15 weight:UIFontWeightMedium],NSForegroundColorAttributeName:[UIColor hx_colorWithHexRGBAString:@"666666"]};
-        _segmentControl.selectedTitleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:15 weight:UIFontWeightMedium],NSForegroundColorAttributeName:[UIColor blueColor]};
+        _segmentControl.titleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:15 weight:UIFontWeightMedium],
+                                                NSForegroundColorAttributeName:[UIColor hx_colorWithHexRGBAString:@"666666"]};
+        _segmentControl.selectedTitleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:15 weight:UIFontWeightMedium],
+                                                        NSForegroundColorAttributeName:[UIColor hx_colorWithHexRGBAString:@"4E8BFF"]};
         _segmentControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
         _segmentControl.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleWidth;
         

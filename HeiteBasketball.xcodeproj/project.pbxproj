@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3A7BB61B7CF3D5542ED6EC2A /* Pods_HeiteBasketball.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96ED51AF657F6A6678FAF42 /* Pods_HeiteBasketball.framework */; };
+		FE08C5C422504F0C000175CB /* Me.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE08C5C322504F0C000175CB /* Me.xcassets */; };
+		FE08C5C82250506A000175CB /* HTMeHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08C5C62250506A000175CB /* HTMeHomeViewController.m */; };
+		FE08C5C92250506A000175CB /* HTMeHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE08C5C72250506A000175CB /* HTMeHomeViewController.xib */; };
+		FE08C5CC22505268000175CB /* HTUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08C5CB22505268000175CB /* HTUserInfoModel.m */; };
+		FE08C5D022505284000175CB /* HTUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08C5CF22505284000175CB /* HTUserManager.m */; };
 		FE0C270C2186BCE8001C9B8C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C270B2186BCE7001C9B8C /* libz.tbd */; };
 		FE0C270E2186BCF6001C9B8C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C270D2186BCF6001C9B8C /* libsqlite3.tbd */; };
 		FE0C27102186BD05001C9B8C /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C270F2186BD05001C9B8C /* CoreTelephony.framework */; };
@@ -202,6 +207,14 @@
 		608E0284ECCB1F2C8732AAA8 /* Pods-HeiteBasketball.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeiteBasketball.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball.debug.xcconfig"; sourceTree = "<group>"; };
 		72321527951E473E782564AC /* Pods-HeiteBasketball.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeiteBasketball.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball.release.xcconfig"; sourceTree = "<group>"; };
 		C96ED51AF657F6A6678FAF42 /* Pods_HeiteBasketball.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeiteBasketball.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE08C5C322504F0C000175CB /* Me.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Me.xcassets; sourceTree = "<group>"; };
+		FE08C5C52250506A000175CB /* HTMeHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMeHomeViewController.h; sourceTree = "<group>"; };
+		FE08C5C62250506A000175CB /* HTMeHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMeHomeViewController.m; sourceTree = "<group>"; };
+		FE08C5C72250506A000175CB /* HTMeHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMeHomeViewController.xib; sourceTree = "<group>"; };
+		FE08C5CA22505268000175CB /* HTUserInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTUserInfoModel.h; sourceTree = "<group>"; };
+		FE08C5CB22505268000175CB /* HTUserInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTUserInfoModel.m; sourceTree = "<group>"; };
+		FE08C5CE22505284000175CB /* HTUserManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTUserManager.h; sourceTree = "<group>"; };
+		FE08C5CF22505284000175CB /* HTUserManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTUserManager.m; sourceTree = "<group>"; };
 		FE0C270B2186BCE7001C9B8C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		FE0C270D2186BCF6001C9B8C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		FE0C270F2186BD05001C9B8C /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -561,6 +574,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FE08C5CD22505274000175CB /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				FE08C5CA22505268000175CB /* HTUserInfoModel.h */,
+				FE08C5CB22505268000175CB /* HTUserInfoModel.m */,
+				FE08C5CE22505284000175CB /* HTUserManager.h */,
+				FE08C5CF22505284000175CB /* HTUserManager.m */,
+			);
+			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		FE2DDB0421F41AEA006D824A /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				FE08C5C52250506A000175CB /* HTMeHomeViewController.h */,
+				FE08C5C62250506A000175CB /* HTMeHomeViewController.m */,
+				FE08C5C72250506A000175CB /* HTMeHomeViewController.xib */,
+				FE08C5CD22505274000175CB /* UserInfo */,
+				FEAC9F2B2199E22700159AE9 /* Setting */,
+				FE08C5C322504F0C000175CB /* Me.xcassets */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
 		FEAC9F2B2199E22700159AE9 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -624,12 +661,12 @@
 			isa = PBXGroup;
 			children = (
 				FEC113102143D4A0002DB617 /* Launch */,
+				FE2DDB0421F41AEA006D824A /* Me */,
 				FEC116D32143D799002DB617 /* Match */,
 				FEC116D72143D80A002DB617 /* News */,
 				FEC116D62143D7FD002DB617 /* Film */,
 				FEC116D52143D7F3002DB617 /* Data */,
 				FEC116D42143D7C0002DB617 /* Rank */,
-				FEAC9F2B2199E22700159AE9 /* Setting */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -789,19 +826,19 @@
 		FEC114802143D4A0002DB617 /* WebAppBridge */ = {
 			isa = PBXGroup;
 			children = (
-				FEC114812143D4A0002DB617 /* BJWebViewController.h */,
 				FEC114822143D4A0002DB617 /* BJURINavHelper.h */,
-				FEC114832143D4A0002DB617 /* BJWebViewCacheHelper.h */,
-				FEC114842143D4A0002DB617 /* BJWebViewJSBridge.h */,
-				FEC114852143D4A0002DB617 /* BJURINavigator.m */,
-				FEC114862143D4A0002DB617 /* BJWebViewInitializer.h */,
-				FEC114872143D4A0002DB617 /* BJWebViewController.m */,
 				FEC114882143D4A0002DB617 /* BJURINavHelper.m */,
-				FEC114892143D4A0002DB617 /* BJWKWebViewPostJS.html */,
-				FEC1148A2143D4A0002DB617 /* BJWebViewCacheHelper.m */,
-				FEC1148B2143D4A0002DB617 /* BJWebViewInitializer.m */,
 				FEC1148C2143D4A0002DB617 /* BJURINavigator.h */,
+				FEC114852143D4A0002DB617 /* BJURINavigator.m */,
+				FEC114832143D4A0002DB617 /* BJWebViewCacheHelper.h */,
+				FEC1148A2143D4A0002DB617 /* BJWebViewCacheHelper.m */,
+				FEC114812143D4A0002DB617 /* BJWebViewController.h */,
+				FEC114872143D4A0002DB617 /* BJWebViewController.m */,
+				FEC114862143D4A0002DB617 /* BJWebViewInitializer.h */,
+				FEC1148B2143D4A0002DB617 /* BJWebViewInitializer.m */,
+				FEC114842143D4A0002DB617 /* BJWebViewJSBridge.h */,
 				FEC1148D2143D4A0002DB617 /* BJWebViewJSBridge.m */,
+				FEC114892143D4A0002DB617 /* BJWKWebViewPostJS.html */,
 			);
 			path = WebAppBridge;
 			sourceTree = "<group>";
@@ -1337,6 +1374,7 @@
 				FE6BD07A21452B570090118A /* HTNewsHomeBannerCell.xib in Resources */,
 				FE6BD075214526980090118A /* HTNewsHomeCell.xib in Resources */,
 				FEC116FA2143DC72002DB617 /* News.xcassets in Resources */,
+				FE08C5C92250506A000175CB /* HTMeHomeViewController.xib in Resources */,
 				FEDAC97A214B9139005E8B63 /* HTDataCellTeamView.xib in Resources */,
 				FEDF8FE02144D05C005C7C4D /* HTMatchHomeGroupHeaderView.xib in Resources */,
 				FEC116042143D4A1002DB617 /* XJLoadingView.xib in Resources */,
@@ -1358,6 +1396,7 @@
 				FE6BD07F21457BBC0090118A /* NewsDetail.storyboard in Resources */,
 				FEC1172B2143E43A002DB617 /* Launch.xcassets in Resources */,
 				FEC1161C2143D4A1002DB617 /* BJTabBarView.xib in Resources */,
+				FE08C5C422504F0C000175CB /* Me.xcassets in Resources */,
 				FEC116EF2143D8C9002DB617 /* MatchHome.storyboard in Resources */,
 				FE6BD094214584DA0090118A /* HTNewsTopHeaderView.xib in Resources */,
 				FE82BB422179B77200C52C51 /* HTDataTeamLeftCell.xib in Resources */,
@@ -1515,6 +1554,7 @@
 				FEEABBF6214AA57600A585DA /* HTDataCellPlayerView.m in Sources */,
 				FEC1162B2143D4A1002DB617 /* BJLoadingHud.m in Sources */,
 				FEC116C42143D4A1002DB617 /* UITableView+EstimatedHeight.m in Sources */,
+				FE08C5C82250506A000175CB /* HTMeHomeViewController.m in Sources */,
 				FEC1164C2143D4A1002DB617 /* BJViewControllerCenter.m in Sources */,
 				FE6BD07D21457BAF0090118A /* HTNewsDetailViewController.m in Sources */,
 				FEC1164A2143D4A1002DB617 /* BJNavigationController.m in Sources */,
@@ -1563,6 +1603,7 @@
 				FEC116CA2143D4A1002DB617 /* NSString+MessageDigest.m in Sources */,
 				FEDABE68217336BA008C8AFD /* HTRankZoneViewController.m in Sources */,
 				FEC117092143DDEE002DB617 /* HTNewsHomeViewController.m in Sources */,
+				FE08C5D022505284000175CB /* HTUserManager.m in Sources */,
 				FEC1161B2143D4A1002DB617 /* BJEmptyTableViewCell.m in Sources */,
 				FEDABE5C2173284E008C8AFD /* HTRankModel.m in Sources */,
 				FE9B32BC217896350055B611 /* HTRankRightCell.m in Sources */,
@@ -1580,6 +1621,7 @@
 				FE6BD05B2144FDFD0090118A /* HTMatchWordLiveViewController.m in Sources */,
 				FEC116132143D4A1002DB617 /* LJViewPager.m in Sources */,
 				FEDABE482171BC3A008C8AFD /* HTMatchQuarterCell.m in Sources */,
+				FE08C5CC22505268000175CB /* HTUserInfoModel.m in Sources */,
 				FE706F02214FF3430078DF30 /* HTDataMoreViewController.m in Sources */,
 				FE82BB412179B77200C52C51 /* HTDataTeamLeftCell.m in Sources */,
 				FEDABE592173279F008C8AFD /* HTRankZoneRequest.m in Sources */,

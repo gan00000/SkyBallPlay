@@ -39,7 +39,7 @@
 
 - (NSString *)name {
     if (!_name) {
-        _name = [NSString stringWithFormat:@"%@ %@", self.firstname, self.lastname];
+        _name = [NSString stringWithFormat:@"%@.%@", [self.firstname substringToIndex:1], self.lastname];
     }
     return _name;
 }

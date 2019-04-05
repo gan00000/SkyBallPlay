@@ -117,7 +117,7 @@
     UMessageRegisterEntity * entity = [[UMessageRegisterEntity alloc] init];
     entity.types = UMessageAuthorizationOptionBadge|UMessageAuthorizationOptionAlert|UMessageAuthorizationOptionSound;
     //如果你期望使用交互式(只有iOS 8.0及以上有)的通知，请参考下面注释部分的初始化代码
-    if (([[[UIDevice currentDevice] systemVersion]intValue]>=8)&&([[[UIDevice currentDevice] systemVersion]intValue]<10)) {
+    if (([[[UIDevice currentDevice] systemVersion]intValue]>=8) && ([[[UIDevice currentDevice] systemVersion]intValue] < 10)) {
         UIMutableUserNotificationAction *action1 = [[UIMutableUserNotificationAction alloc] init];
         action1.identifier = @"action1_identifier";
         action1.title=@"打开应用";
@@ -136,7 +136,7 @@
         entity.categories=categories;
     }
     //如果要在iOS10显示交互式的通知，必须注意实现以下代码
-    if ([[[UIDevice currentDevice] systemVersion]intValue]>=10) {
+    if ([[[UIDevice currentDevice] systemVersion]intValue] >= 10) {
         UNNotificationAction *action1_ios10 = [UNNotificationAction actionWithIdentifier:@"action1_identifier" title:@"打开应用" options:UNNotificationActionOptionForeground];
         UNNotificationAction *action2_ios10 = [UNNotificationAction actionWithIdentifier:@"action2_identifier" title:@"忽略" options:UNNotificationActionOptionForeground];
         

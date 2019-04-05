@@ -8,7 +8,7 @@
 
 #import "BJBaseViewController.h"
 #import <LTNavigationBar/UINavigationBar+Awesome.h>
-#import "HTSettingViewController.h"
+#import "HTMeHomeViewController.h"
 
 @interface BJBaseViewController ()
 
@@ -30,12 +30,12 @@
         UIImageView *titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"nav_icon_title"]];
         self.navigationItem.titleView = titleView;
         
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_set"] style:UIBarButtonItemStylePlain target:self action:@selector(showSettingVc)];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_set"] style:UIBarButtonItemStylePlain target:self action:@selector(showMeCenter)];
     }
 }
 
-- (void)showSettingVc {
-    HTSettingViewController *setvc = [HTSettingViewController viewController];
+- (void)showMeCenter {
+    HTMeHomeViewController *setvc = [HTMeHomeViewController viewController];
     [self.navigationController pushViewController:setvc animated:YES];
 }
 
