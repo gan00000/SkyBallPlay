@@ -38,8 +38,7 @@
     
     NSArray *windowSubviews = [topWindow subviews];
     
-    [windowSubviews enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:
-     ^(id obj, NSUInteger idx, BOOL *stop) {
+    [windowSubviews enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
          UIView *rootView = obj;
          
          if ([NSStringFromClass([rootView class]) isEqualToString:@"UITransitionView"]) {
