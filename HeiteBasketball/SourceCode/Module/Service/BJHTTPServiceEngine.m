@@ -44,9 +44,15 @@
                             params:(NSDictionary *)params
                       successBlock:(BJServiceSuccessBlock)successBlock
                         errorBlock:(BJServiceErrorBlock)errorBlock {
+    NSMutableDictionary *allParams = [NSMutableDictionary dictionary];
+    if ([HTUserManager isUserLogin]) {
+        allParams[@"token"] = [HTUserManager userToken];
+    }
+    if (params) {
+        [allParams addEntriesFromDictionary:params];
+    }
     
-    
-    [[BJHTTPServiceEngine sharedInstance].httpEngine getRequestWithFunctionPath:path params:params successBlock:^(NSURLSessionDataTask *task, id responseData) {
+    [[BJHTTPServiceEngine sharedInstance].httpEngine getRequestWithFunctionPath:path params:allParams successBlock:^(NSURLSessionDataTask *task, id responseData) {
         
 #if ENABLE_REQUEST_LOG
         BJLog(@"get: path = %@,requsetHeader = %@, params = %@, data = %@", task.originalRequest.URL,task.originalRequest.allHTTPHeaderFields,params, responseData);
@@ -82,8 +88,15 @@
                              params:(NSDictionary *)params
                        successBlock:(BJServiceSuccessBlock)successBlock
                          errorBlock:(BJServiceErrorBlock)errorBlock {
+    NSMutableDictionary *allParams = [NSMutableDictionary dictionary];
+    if ([HTUserManager isUserLogin]) {
+        allParams[@"token"] = [HTUserManager userToken];
+    }
+    if (params) {
+        [allParams addEntriesFromDictionary:params];
+    }
     
-    [[BJHTTPServiceEngine sharedInstance].httpEngine postRequestWithFunctionPath:path params:params successBlock:^(NSURLSessionDataTask *task, id responseData) {
+    [[BJHTTPServiceEngine sharedInstance].httpEngine postRequestWithFunctionPath:path params:allParams successBlock:^(NSURLSessionDataTask *task, id responseData) {
         
 #if ENABLE_REQUEST_LOG
         BJLog(@"post: path = %@,requsetHeader = %@,data = %@", task.originalRequest.URL,task.originalRequest.HTTPBody, responseData);

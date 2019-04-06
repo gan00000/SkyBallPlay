@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aea-6F-Zvh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aea-6F-Zvh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -162,6 +162,25 @@
                                     <constraint firstAttribute="height" constant="50" id="zkg-0p-GEE"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DV9-1V-UZs" customClass="JXButton">
+                                <rect key="frame" x="30" y="270" width="315" height="40"/>
+                                <color key="backgroundColor" red="0.98823529409999999" green="0.33725490200000002" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="sGb-9m-YeO"/>
+                                </constraints>
+                                <state key="normal" title="退出登錄">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logoutAction:" destination="aea-6F-Zvh" eventType="touchUpInside" id="6nU-PA-pzO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -169,13 +188,17 @@
                             <constraint firstItem="f5i-Ws-3Tw" firstAttribute="trailing" secondItem="LvI-Td-l8X" secondAttribute="trailing" id="7zm-tk-T0t"/>
                             <constraint firstItem="LvI-Td-l8X" firstAttribute="top" secondItem="TXE-P4-Uvs" secondAttribute="bottom" id="EA9-Ea-ROC"/>
                             <constraint firstItem="f5i-Ws-3Tw" firstAttribute="trailing" secondItem="uHf-Wh-lXL" secondAttribute="trailing" id="KdL-mY-bn6"/>
+                            <constraint firstItem="f5i-Ws-3Tw" firstAttribute="trailing" secondItem="DV9-1V-UZs" secondAttribute="trailing" constant="30" id="MTb-Ep-2kZ"/>
                             <constraint firstItem="uHf-Wh-lXL" firstAttribute="leading" secondItem="0af-ze-FEk" secondAttribute="leading" id="Ox1-Hx-3Y8"/>
                             <constraint firstItem="f5i-Ws-3Tw" firstAttribute="trailing" secondItem="KNI-RG-izC" secondAttribute="trailing" id="PAf-h7-g3C"/>
                             <constraint firstItem="TXE-P4-Uvs" firstAttribute="leading" secondItem="f5i-Ws-3Tw" secondAttribute="leading" id="V0n-hQ-71X"/>
                             <constraint firstItem="LvI-Td-l8X" firstAttribute="leading" secondItem="0af-ze-FEk" secondAttribute="leading" id="VtH-YC-7Pu"/>
+                            <constraint firstItem="DV9-1V-UZs" firstAttribute="centerX" secondItem="f5i-Ws-3Tw" secondAttribute="centerX" id="ap1-q2-Lr2"/>
                             <constraint firstItem="KNI-RG-izC" firstAttribute="leading" secondItem="0af-ze-FEk" secondAttribute="leading" id="f1U-Io-XVO"/>
                             <constraint firstItem="KNI-RG-izC" firstAttribute="top" secondItem="LvI-Td-l8X" secondAttribute="bottom" constant="10" id="kHP-I3-Yb5"/>
                             <constraint firstItem="TXE-P4-Uvs" firstAttribute="top" secondItem="f5i-Ws-3Tw" secondAttribute="top" constant="10" id="krA-Ih-uz8"/>
+                            <constraint firstItem="DV9-1V-UZs" firstAttribute="top" secondItem="uHf-Wh-lXL" secondAttribute="bottom" constant="30" id="rUY-ni-Jcn"/>
+                            <constraint firstItem="DV9-1V-UZs" firstAttribute="leading" secondItem="f5i-Ws-3Tw" secondAttribute="leading" constant="30" id="vBW-Js-PFa"/>
                             <constraint firstItem="f5i-Ws-3Tw" firstAttribute="trailing" secondItem="TXE-P4-Uvs" secondAttribute="trailing" id="wxL-lv-15f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f5i-Ws-3Tw"/>

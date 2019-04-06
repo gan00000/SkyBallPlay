@@ -9,7 +9,6 @@
 #import "BJBaseViewController.h"
 #import "HTMeHomeViewController.h"
 #import "BJNavigationController.h"
-#import "HTUserManager.h"
 
 @interface BJBaseViewController ()
 
@@ -55,8 +54,7 @@
 
 - (void)setupMeCenterButton {
     if ([HTUserManager isUserLogin]) {
-        UIImage *image = [UIImage imageNamed:@"192927"];
-        [self.meCenterButton setImage:[self fixImageSize:image] forState:UIControlStateNormal];
+        [self.meCenterButton setImage:[self fixImageSize:[HTUserManager userInfo].avatar] forState:UIControlStateNormal];
     } else {
         [self.meCenterButton setImage:[UIImage imageNamed:@"default_avatar"] forState:UIControlStateNormal];
     }

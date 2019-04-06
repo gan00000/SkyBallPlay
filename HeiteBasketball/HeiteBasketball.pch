@@ -28,6 +28,9 @@
 #import "NSDate+Core.h"
 #import "NSDateFormatter+DRExtension.h"
 
+#import "HTUserManager.h"
+#import "UITabBar+DRExtension.h"
+
 #endif
 
 #ifndef HeiteBasketball_pch
@@ -82,5 +85,7 @@
 // load storyboard
 #define kLoadStoryboardWithName(name) [UIStoryboard storyboardWithName:name bundle:nil].instantiateInitialViewController;
 #define kLoadXibWithName(name) [[[NSBundle mainBundle] loadNibNamed:name owner:self options:nil] lastObject];
+
+#define kDRWindow [UIApplication sharedApplication].keyWindow
 
 #endif

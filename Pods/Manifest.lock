@@ -82,6 +82,7 @@ PODS:
     - UMCShare/Core
   - WebViewJavascriptBridge (6.0.3)
   - YYModel (1.0.4)
+  - ZFLineSDK (4.1.1)
 
 DEPENDENCIES:
   - AFNetworking
@@ -108,6 +109,7 @@ DEPENDENCIES:
   - UMCShare/UI
   - WebViewJavascriptBridge
   - YYModel
+  - ZFLineSDK
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -132,6 +134,7 @@ SPEC REPOS:
     - UMCShare
     - WebViewJavascriptBridge
     - YYModel
+    - ZFLineSDK
 
 EXTERNAL SOURCES:
   FDStackView:
@@ -171,7 +174,8 @@ SPEC CHECKSUMS:
   UMCShare: aa233aecad67979930fe43f3a2f676023b669439
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  ZFLineSDK: fc1485f687bd9d6af5cb7e39ab2a8266680797dd
 
-PODFILE CHECKSUM: e328a43ba5bddfd7d6325a3e61dfb65186466848
+PODFILE CHECKSUM: 650c2d560ab53dff58a2a64d32c20e86da190925
 
 COCOAPODS: 1.6.0.beta.2

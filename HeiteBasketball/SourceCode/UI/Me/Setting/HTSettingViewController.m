@@ -77,5 +77,9 @@
     }];
 }
 
+- (IBAction)logoutAction:(id)sender {
+    [HTUserManager doUserLogout];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

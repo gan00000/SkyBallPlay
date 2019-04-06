@@ -198,6 +198,7 @@
 
 - (void)share {
     kWeakSelf
+    [UMSocialShareUIConfig shareInstance].shareTitleViewConfig.shareTitleViewTitleString = @"分享至";
     [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
         UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
         if (platformType == UMSocialPlatformType_Line) {
@@ -222,7 +223,7 @@
             } else {
                 [weakSelf doShareToPlatform:platformType withMessage:messageObject];
             }
-        } else {
+        } else if (platformType == UMSocialPlatformType_Facebook) {
             //创建网页内容对象
             UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:weakSelf.title descr:nil thumImage:weakSelf.share_thub];
             //设置网页地址

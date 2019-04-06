@@ -36,6 +36,10 @@
 #define API_RANK_EAST_WEST              @"api/get_east_west_rank"
 #define API_RANK_ZONE                   @"api/get_zone_rank"
 
+#pragma mark - 我的
+#define API_USER_LOGIN                  @"api/app_login"
+#define API_USER_INFO                   @"api/get_profile"
+
 #endif
 
 

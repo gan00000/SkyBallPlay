@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
+	<string>黑特籃球</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -28,8 +28,20 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb479868032525276</string>
+				<string>line3rdp.$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string></string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>haters.line1627163842</string>
+			</array>
+		</dict>
+		<dict/>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0.2</string>
@@ -39,6 +51,7 @@
 	<string>黑特篮球</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>lineauth2</string>
 		<string>line</string>
 		<string>lineauth</string>
 		<string>line3rdp.$(APP_IDENTIFIER)</string>
@@ -50,6 +63,11 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>LineSDKConfig</key>
+	<dict>
+		<key>ChannelID</key>
+		<string>1627163842</string>
+	</dict>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
@@ -60,7 +78,7 @@
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>“黑特籃球”想訪問您的相冊，用於保存圖片。</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>“黑特籃球”想訪問您的相冊，用於查看圖片。</string>
+	<string>“黑特籃球”想訪問您的相冊，用於上傳頭像。</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

@@ -30,5 +30,6 @@ pod 'UMCShare/Social/Line'
 pod 'UMCShare/UI'
 pod 'UMCCommonLog'
 pod 'UMCPush'
+pod 'ZFLineSDK'
 
 end
