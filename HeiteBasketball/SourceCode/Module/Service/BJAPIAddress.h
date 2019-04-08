@@ -39,6 +39,7 @@
 #pragma mark - 我的
 #define API_USER_LOGIN                  @"api/app_login"
 #define API_USER_INFO                   @"api/get_profile"
+#define API_USER_UPDATE                 @"api/change_profile"
 
 #endif
 

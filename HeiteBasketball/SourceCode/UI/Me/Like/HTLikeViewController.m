@@ -10,6 +10,8 @@
 
 @interface HTLikeViewController ()
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation HTLikeViewController
@@ -20,7 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.title = @"我的點讚";
 }
 
 /*

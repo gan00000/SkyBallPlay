@@ -195,6 +195,7 @@
                                   stringByReplacingOccurrencesOfString:@">" withString:@""]
                                  stringByReplacingOccurrencesOfString:@" " withString:@""];
     if (pushDeviceToken.length) {
+        BJLog(@"deviceToken: %@", pushDeviceToken);
         [HTUserManager saveDeviceToken:pushDeviceToken];
     }
 }

@@ -75,8 +75,10 @@
 	</dict>
 	<key>NSCalendarsUsageDescription</key>
 	<string>“黑特籃球”想訪問您的日曆，用於查看指定日期的球賽信息。</string>
+	<key>NSCameraUsageDescription</key>
+	<string>“黑特籃球”想使用您的相機，用於上傳頭像。</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>“黑特籃球”想訪問您的相冊，用於保存圖片。</string>
+	<string>“黑特籃球”想訪問您的相冊，用於保存頭像拍照圖片。</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>“黑特籃球”想訪問您的相冊，用於上傳頭像。</string>
 	<key>UIBackgroundModes</key>

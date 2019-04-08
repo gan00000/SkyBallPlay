@@ -36,4 +36,21 @@
     } errorBlock:failBlock];
 }
 
++ (void)updateUserInfoWithEmail:(NSString *)email
+                    displayName:(NSString *)displayName
+                           file:(NSString *)file
+                   successBlock:(void(^)(NSDictionary *userInfo))successBlock
+                      failBlock:(BJServiceErrorBlock)failBlock {
+    NSMutableDictionary *param = [NSMutableDictionary dictionary];
+    param[@"email"] = email;
+    param[@"display_name"] = displayName;
+    param[@"file"] = file;
+    
+    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_UPDATE params:param successBlock:^(id responseData) {
+        if (successBlock) {
+            successBlock(responseData[@"result"]);
+        }
+    } errorBlock:failBlock];
+}
+
 @end

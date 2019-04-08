@@ -30,6 +30,8 @@
 
 #import "HTUserManager.h"
 #import "UITabBar+DRExtension.h"
+#import "UIView+QuickFrame.h"
+#import "BJViewControllerCenter.h"
 
 #endif
 
@@ -85,7 +87,10 @@
 // load storyboard
 #define kLoadStoryboardWithName(name) [UIStoryboard storyboardWithName:name bundle:nil].instantiateInitialViewController;
 #define kLoadXibWithName(name) [[[NSBundle mainBundle] loadNibNamed:name owner:self options:nil] lastObject];
+#define kDefaultImage(imageName) [UIImage imageNamed:(imageName)]
 
 #define kDRWindow [UIApplication sharedApplication].keyWindow
+
+static const CGFloat DRGlobalAnimationDuration = 0.25;
 
 #endif

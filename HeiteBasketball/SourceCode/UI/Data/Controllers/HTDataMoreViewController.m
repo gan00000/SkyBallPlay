@@ -119,7 +119,7 @@
     if (self.type == 2) {
         width = 910;
     } else {
-        self.leftTabelWidth.constant = 190;
+        self.leftTabelWidth.constant = 170;
     }
     [self.scrollContentView setContentSize:CGSizeMake(width, self.leftTableView.jx_height)];
     self.rightTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, width, self.leftTableView.jx_height) style:UITableViewStylePlain];
@@ -192,17 +192,17 @@
 
 #pragma mark - UITableViewDelegate
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.jx_width, 40)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.leftTabelWidth.constant, 40)];
     view.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"f4f7f0"];
     
-    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 39, tableView.jx_width, 1)];
+    UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, 39, self.leftTabelWidth.constant, 1)];
     line.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"dddddd"];
     [view addSubview:line];
     
     if (tableView == self.leftTableView) {
         [self addLabelToView:view withFrame:CGRectMake(0, 0, 50, 40) text:@"排名"];
         if (self.type == 1) {
-            [self addLabelToView:view withFrame:CGRectMake(50, 0, 140, 40) text:@"球員"];
+            [self addLabelToView:view withFrame:CGRectMake(50, 0, 120, 40) text:@"球員"];
         } else {
             [self addLabelToView:view withFrame:CGRectMake(50, 0, 100, 40) text:@"球隊"];
         }

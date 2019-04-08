@@ -34,4 +34,17 @@
     }
 }
 
+- (void)setupBackground {
+    CALayer *layer = [CALayer layer];
+    layer.frame = self.bounds;
+    layer.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"].CGColor;
+    
+    UIGraphicsBeginImageContextWithOptions(layer.bounds.size, NO, 0);
+    [layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    [self setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+}
+
 @end

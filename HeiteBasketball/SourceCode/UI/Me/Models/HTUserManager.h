@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "HTUserInfoModel.h"
 
-NS_ASSUME_NONNULL_BEGIN
-
 extern const NSString * kUserLogStatusChagneNotice;
 
 @interface HTUserManager : NSObject
@@ -19,6 +17,7 @@ extern const NSString * kUserLogStatusChagneNotice;
 + (BOOL)isUserLogin;
 // 獲取用戶信息
 + (HTUserInfoModel *)userInfo;
+
 // token
 + (NSString *)userToken;
 // 推送deviceToken
@@ -28,8 +27,15 @@ extern const NSString * kUserLogStatusChagneNotice;
 // 执行用户登录
 + (void)doUserLogin;
 + (void)doUserLogout;
-+ (void)refreshUserInfo;
++ (void)refreshUserInfoWithSuccessBlock:(dispatch_block_t)block;
+
+// 媒體使用權限
++ (void)cameraDenied;
++ (void)photoAlbumDenied;
++ (void)showAlertWithTitle:(NSString *)title
+                   message:(NSString *)message
+              cancelButton:(NSString *)cancelButton
+             confirmButton:(NSString *)confirmButton
+              confirmBlock:(dispatch_block_t)confirmBlock;
 
 @end
-
-NS_ASSUME_NONNULL_END

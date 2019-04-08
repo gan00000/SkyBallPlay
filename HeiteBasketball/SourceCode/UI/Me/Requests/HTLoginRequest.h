@@ -21,6 +21,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)requestUserInfoWithSuccessBlock:(void(^)(NSDictionary *userInfo))successBlock
                               failBlock:(BJServiceErrorBlock)failBlock;
 
++ (void)updateUserInfoWithEmail:(NSString *)email
+                    displayName:(NSString *)displayName
+                           file:(NSString *)file
+                   successBlock:(void(^)(NSDictionary *userInfo))successBlock
+                      failBlock:(BJServiceErrorBlock)failBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

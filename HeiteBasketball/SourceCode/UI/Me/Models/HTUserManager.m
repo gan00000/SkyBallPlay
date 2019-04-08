@@ -53,6 +53,14 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
     return [HTUserManager manager].userInfoModel;
 }
 
++ (void)saveUserInfo:(NSDictionary *)userInfo {
+    HTUserManager *manager = [HTUserManager manager];
+    manager.userInfoModel = [HTUserInfoModel yy_modelWithJSON:userInfo];
+    NSData *data = [userInfo yy_modelToJSONData];
+    [data writeToFile:[HTUserManager userInfoPath] atomically:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kUserLogStatusChagneNotice object:nil];
+}
+
 // token
 + (NSString *)userToken {
     return [[NSUserDefaults standardUserDefaults] objectForKey:kUserTokenKey];
@@ -130,19 +138,18 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 - (void)doLoginRequesWithAccessToken:(NSString *)accessToken sns:(NSInteger)sns {
     [HTLoginRequest doLoginRequestWithAccessToken:accessToken sns:sns successBlock:^(NSString * _Nonnull userToken) {
         [HTUserManager saveUserToken:userToken];
-        [HTUserManager refreshUserInfo];
+        [HTUserManager refreshUserInfoWithSuccessBlock:nil];
     } failBlock:^(BJError *error) {
         BJLog(@"登錄失敗");
     }];
 }
 
-+ (void)refreshUserInfo {
++ (void)refreshUserInfoWithSuccessBlock:(dispatch_block_t)block {
     [HTLoginRequest requestUserInfoWithSuccessBlock:^(NSDictionary * _Nonnull userInfo) {
-        HTUserManager *manager = [HTUserManager manager];
-        manager.userInfoModel = [HTUserInfoModel yy_modelWithJSON:userInfo];
-        NSData *data = [userInfo yy_modelToJSONData];
-        [data writeToFile:[HTUserManager userInfoPath] atomically:YES];
-        [[NSNotificationCenter defaultCenter] postNotificationName:kUserLogStatusChagneNotice object:nil];
+        [self saveUserInfo:userInfo];
+        if (block) {
+            block();
+        }
     } failBlock:^(BJError *error) {
         BJLog(@"獲取用戶信息失敗");
     }];
@@ -151,6 +158,39 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 #pragma mark - util
 + (NSString *)userInfoPath {
     return [NSString stringWithFormat:@"%@/userInfo.json", [DRSandBoxManager getDocumentPath]];
+}
+
++ (void)cameraDenied {
+    [self showAlertWithTitle:@"相機權限未開啟" message:@"檢測到相機被禁用，無法拍照" cancelButton:@"取消" confirmButton:@"去開啟" confirmBlock:^{
+        [self goSystemSettingCenter];
+    }];
+}
+
++ (void)photoAlbumDenied {
+    [self showAlertWithTitle:@"相冊權限未開啟" message:@"檢測到相冊被禁用，無法查看照片" cancelButton:@"取消" confirmButton:@"去開啟" confirmBlock:^{
+        [self goSystemSettingCenter];
+    }];
+}
+
++ (void)showAlertWithTitle:(NSString *)title message:(NSString *)message cancelButton:(NSString *)cancelButton confirmButton:(NSString *)confirmButton confirmBlock:(dispatch_block_t)confirmBlock {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelButton style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:cancelAction];
+    
+    if (confirmButton) {
+        UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:confirmButton style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            if (confirmBlock) {
+                confirmBlock();
+            }
+        }];
+        [alert addAction:confirmAction];
+    }
+    [[BJViewControllerCenter currentViewController] presentViewController:alert animated:YES completion:nil];
+}
+
++ (void)goSystemSettingCenter {
+    NSURL *appSettings = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+    [[UIApplication sharedApplication] openURL:appSettings];
 }
 
 @end

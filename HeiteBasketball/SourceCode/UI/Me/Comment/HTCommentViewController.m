@@ -10,6 +10,8 @@
 
 @interface HTCommentViewController ()
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation HTCommentViewController
@@ -20,7 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.title = @"我的評論";
 }
 
 /*

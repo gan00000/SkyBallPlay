@@ -22,7 +22,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzy-Ux-E25">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="192927.png" translatesAutoresizingMaskIntoConstraints="NO" id="cuC-b2-3bA" customClass="JXImageView">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cuC-b2-3bA" customClass="JXImageView">
                                 <rect key="frame" x="15" y="15" width="69.5" height="69.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="cuC-b2-3bA" secondAttribute="height" multiplier="1:1" id="hp3-xE-ZmF"/>
@@ -98,7 +98,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="192927.png" width="200" height="200"/>
         <image name="icon_more" width="7.5" height="13"/>
     </resources>
 </document>

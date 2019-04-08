@@ -10,6 +10,8 @@
 
 @interface HTCollectionViewController ()
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @end
 
 @implementation HTCollectionViewController
@@ -20,6 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"我的收藏";
 }
 
 /*

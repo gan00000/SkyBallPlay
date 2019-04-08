@@ -41,16 +41,10 @@
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:self
                                                                             action:@selector(dismiss)];
-    [self setupNav];
+    [self.navigationController.navigationBar setupBackground];
     [self setupTableView];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserLogStatusChagne) name:kUserLogStatusChagneNotice object:nil];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    [self setupNav];
 }
 
 - (void)onUserLogStatusChagne {
@@ -59,19 +53,6 @@
 
 - (void)dismiss {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)setupNav {
-    CALayer *layer = [CALayer layer];
-    layer.frame = self.navigationController.navigationBar.bounds;
-    layer.backgroundColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"].CGColor;
-    
-    UIGraphicsBeginImageContextWithOptions(layer.bounds.size, NO, 0);
-    [layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)setupTableView {
