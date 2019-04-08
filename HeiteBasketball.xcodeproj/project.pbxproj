@@ -179,7 +179,7 @@
 		FECCA5292258C8D0009EF494 /* HTCommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FECCA4FB2258C8CF009EF494 /* HTCommentViewController.xib */; };
 		FECCA52E2258C8D0009EF494 /* HTCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA5062258C8CF009EF494 /* HTCollectionViewController.m */; };
 		FECCA52F2258C8D0009EF494 /* HTCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FECCA5072258C8CF009EF494 /* HTCollectionViewController.xib */; };
-		FECCA5302258C8D0009EF494 /* HTLoginRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA50B2258C8CF009EF494 /* HTLoginRequest.m */; };
+		FECCA5302258C8D0009EF494 /* HTUserRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA50B2258C8CF009EF494 /* HTUserRequest.m */; };
 		FECCA5312258C8D0009EF494 /* HTUserInfoEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FECCA50E2258C8CF009EF494 /* HTUserInfoEditViewController.xib */; };
 		FECCA5322258C8D0009EF494 /* HTUserInfoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA50F2258C8CF009EF494 /* HTUserInfoEditViewController.m */; };
 		FECCA5332258C8D0009EF494 /* HTUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA5132258C8D0009EF494 /* HTUserManager.m */; };
@@ -247,6 +247,7 @@
 		FEDF8FE02144D05C005C7C4D /* HTMatchHomeGroupHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDF8FDF2144D05C005C7C4D /* HTMatchHomeGroupHeaderView.xib */; };
 		FEEABBE72149F90800A585DA /* iframe_load.html in Resources */ = {isa = PBXBuildFile; fileRef = FEEABBE62149F90700A585DA /* iframe_load.html */; };
 		FEEABBF6214AA57600A585DA /* HTDataCellPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEABBF5214AA57600A585DA /* HTDataCellPlayerView.m */; };
+		FEF468C1225BA50800E4B5F7 /* HTNewsAdditionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FEF468C0225BA50800E4B5F7 /* HTNewsAdditionRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -537,8 +538,8 @@
 		FECCA5062258C8CF009EF494 /* HTCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTCollectionViewController.m; sourceTree = "<group>"; };
 		FECCA5072258C8CF009EF494 /* HTCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HTCollectionViewController.xib; sourceTree = "<group>"; };
 		FECCA5082258C8CF009EF494 /* HTCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTCollectionViewController.h; sourceTree = "<group>"; };
-		FECCA50A2258C8CF009EF494 /* HTLoginRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTLoginRequest.h; sourceTree = "<group>"; };
-		FECCA50B2258C8CF009EF494 /* HTLoginRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTLoginRequest.m; sourceTree = "<group>"; };
+		FECCA50A2258C8CF009EF494 /* HTUserRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTUserRequest.h; sourceTree = "<group>"; };
+		FECCA50B2258C8CF009EF494 /* HTUserRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTUserRequest.m; sourceTree = "<group>"; };
 		FECCA50D2258C8CF009EF494 /* HTUserInfoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTUserInfoEditViewController.h; sourceTree = "<group>"; };
 		FECCA50E2258C8CF009EF494 /* HTUserInfoEditViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HTUserInfoEditViewController.xib; sourceTree = "<group>"; };
 		FECCA50F2258C8CF009EF494 /* HTUserInfoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTUserInfoEditViewController.m; sourceTree = "<group>"; };
@@ -654,6 +655,8 @@
 		FEEABBE62149F90700A585DA /* iframe_load.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = iframe_load.html; sourceTree = "<group>"; };
 		FEEABBF4214AA57600A585DA /* HTDataCellPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataCellPlayerView.h; sourceTree = "<group>"; };
 		FEEABBF5214AA57600A585DA /* HTDataCellPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataCellPlayerView.m; sourceTree = "<group>"; };
+		FEF468BF225BA50800E4B5F7 /* HTNewsAdditionRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTNewsAdditionRequest.h; sourceTree = "<group>"; };
+		FEF468C0225BA50800E4B5F7 /* HTNewsAdditionRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTNewsAdditionRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1203,6 +1206,8 @@
 				FE6BD06C214520E00090118A /* HTNewsBannerRequest.m */,
 				FE6BD08D21457FEC0090118A /* HTNewsTopRequest.h */,
 				FE6BD08E21457FEC0090118A /* HTNewsTopRequest.m */,
+				FEF468BF225BA50800E4B5F7 /* HTNewsAdditionRequest.h */,
+				FEF468C0225BA50800E4B5F7 /* HTNewsAdditionRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1414,8 +1419,8 @@
 		FECCA5092258C8CF009EF494 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				FECCA50A2258C8CF009EF494 /* HTLoginRequest.h */,
-				FECCA50B2258C8CF009EF494 /* HTLoginRequest.m */,
+				FECCA50A2258C8CF009EF494 /* HTUserRequest.h */,
+				FECCA50B2258C8CF009EF494 /* HTUserRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1939,7 +1944,7 @@
 				FE81D156214816710047A4A2 /* HTDataHomeModel.m in Sources */,
 				FEC116CA2143D4A1002DB617 /* NSString+MessageDigest.m in Sources */,
 				FEDABE68217336BA008C8AFD /* HTRankZoneViewController.m in Sources */,
-				FECCA5302258C8D0009EF494 /* HTLoginRequest.m in Sources */,
+				FECCA5302258C8D0009EF494 /* HTUserRequest.m in Sources */,
 				FECCA56A22598013009EF494 /* TZProgressView.m in Sources */,
 				FEC117092143DDEE002DB617 /* HTNewsHomeViewController.m in Sources */,
 				FEC1161B2143D4A1002DB617 /* BJEmptyTableViewCell.m in Sources */,
@@ -1985,6 +1990,7 @@
 				FEC116F22143D91D002DB617 /* HTMatchHomeViewController.m in Sources */,
 				FECCA56522598013009EF494 /* TZAssetModel.m in Sources */,
 				FECCA53E2258C972009EF494 /* UINavigationBar+DRExtension.m in Sources */,
+				FEF468C1225BA50800E4B5F7 /* HTNewsAdditionRequest.m in Sources */,
 				FECCA51F2258C8D0009EF494 /* HTMeCenterItemsCell.m in Sources */,
 				FEDABE6221732A67008C8AFD /* HTRankZoneModel.m in Sources */,
 				FEC1168C2143D4A1002DB617 /* BJServiceConfigurator.m in Sources */,

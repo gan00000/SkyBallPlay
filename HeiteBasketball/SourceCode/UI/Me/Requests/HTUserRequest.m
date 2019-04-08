@@ -6,9 +6,9 @@
 //  Copyright © 2019 Dean_F. All rights reserved.
 //
 
-#import "HTLoginRequest.h"
+#import "HTUserRequest.h"
 
-@implementation HTLoginRequest
+@implementation HTUserRequest
 
 + (void)doLoginRequestWithAccessToken:(NSString *)accessToken
                                   sns:(NSInteger)sns
@@ -49,6 +49,22 @@
     [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_UPDATE params:param successBlock:^(id responseData) {
         if (successBlock) {
             successBlock(responseData[@"result"]);
+        }
+    } errorBlock:failBlock];
+}
+
++ (void)requestCollectionListWithOffset:(NSInteger)offset successBlock:(void(^)(NSArray <HTNewsModel *> *newsList))successBlock failBlock:(BJServiceErrorBlock)failBlock {
+    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_SAVE_LIST params:@{@"offset": @(offset)} successBlock:^(id responseData) {
+        if (successBlock) {
+            successBlock([NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"savedposts"][@"posts"]]);
+        }
+    } errorBlock:failBlock];
+}
+
++ (void)addCollectionWithNewsId:(NSString *)news_id successBlock:(dispatch_block_t)successBlock failBlock:(BJServiceErrorBlock)failBlock {
+    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_SAVE_ADD params:@{@"post_id": news_id} successBlock:^(id responseData) {
+        if (successBlock) {
+            successBlock();
         }
     } errorBlock:failBlock];
 }

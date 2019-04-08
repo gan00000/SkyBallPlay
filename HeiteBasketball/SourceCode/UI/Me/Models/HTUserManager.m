@@ -10,7 +10,7 @@
 #import <UMShare/UMShare.h>
 #import <LineSDK/LineSDK.h>
 #import "HTLoginAlertView.h"
-#import "HTLoginRequest.h"
+#import "HTUserRequest.h"
 #import "DRSandBoxManager.h"
 
 const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
@@ -136,7 +136,7 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 
 #pragma mark - request
 - (void)doLoginRequesWithAccessToken:(NSString *)accessToken sns:(NSInteger)sns {
-    [HTLoginRequest doLoginRequestWithAccessToken:accessToken sns:sns successBlock:^(NSString * _Nonnull userToken) {
+    [HTUserRequest doLoginRequestWithAccessToken:accessToken sns:sns successBlock:^(NSString * _Nonnull userToken) {
         [HTUserManager saveUserToken:userToken];
         [HTUserManager refreshUserInfoWithSuccessBlock:nil];
     } failBlock:^(BJError *error) {
@@ -145,7 +145,7 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 }
 
 + (void)refreshUserInfoWithSuccessBlock:(dispatch_block_t)block {
-    [HTLoginRequest requestUserInfoWithSuccessBlock:^(NSDictionary * _Nonnull userInfo) {
+    [HTUserRequest requestUserInfoWithSuccessBlock:^(NSDictionary * _Nonnull userInfo) {
         [self saveUserInfo:userInfo];
         if (block) {
             block();

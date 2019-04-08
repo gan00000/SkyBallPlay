@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "BJHTTPServiceEngine.h"
+#import "HTNewsModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HTLoginRequest : NSObject
+@interface HTUserRequest : NSObject
 
 + (void)doLoginRequestWithAccessToken:(NSString *)accessToken
                                   sns:(NSInteger)sns

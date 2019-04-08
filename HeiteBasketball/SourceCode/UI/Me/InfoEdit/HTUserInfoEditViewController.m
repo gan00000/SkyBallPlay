@@ -9,7 +9,7 @@
 #import "HTUserInfoEditViewController.h"
 #import <Photos/Photos.h>
 #import "TZImagePickerController.h"
-#import "HTLoginRequest.h"
+#import "HTUserRequest.h"
 #import "DRSandBoxManager.h"
 
 @interface HTUserInfoEditViewController ()
@@ -93,7 +93,7 @@
     }
     
     kWeakSelf
-    [HTLoginRequest updateUserInfoWithEmail:email displayName:userName file:base64Avatar successBlock:^(NSDictionary * _Nonnull userInfo) {
+    [HTUserRequest updateUserInfoWithEmail:email displayName:userName file:base64Avatar successBlock:^(NSDictionary * _Nonnull userInfo) {
         [HTUserManager refreshUserInfoWithSuccessBlock:^{
             [BJLoadingHud hideHUDInView:weakSelf.navigationController.view];
             [weakSelf.view showToast:@"保存成功"];
