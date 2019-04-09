@@ -10,7 +10,7 @@
 #import "BJDateFormatUtility.h"
 #import "BJHTTPServiceEngine.h"
 #import "HTHtmlLoadUtil.h"
-#import <UShareUI/UShareUI.h>
+#import <UMShare/UMShare.h>
 #import <SDWebImage/SDWebImageManager.h>
 #import "BJViewControllerCenter.h"
 #import "HTLoginAlertView.h"

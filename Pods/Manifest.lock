@@ -32,6 +32,7 @@ PODS:
   - FDStackView (1.0.1)
   - HexColors (4.0.0)
   - HMSegmentedControl (1.5.5)
+  - IQKeyboardManager (6.2.0)
   - JXExtension (0.3.22):
     - JXExtension/Category (= 0.3.22)
     - JXExtension/Manager (= 0.3.22)
@@ -69,15 +70,12 @@ PODS:
   - UMCPush (3.2.3):
     - UMCCommon
   - UMCSecurityPlugins (1.0.6)
-  - UMCShare/Core (6.9.4):
+  - UMCShare/Core (6.9.5):
     - UMCCommon
-  - UMCShare/Social/Facebook (6.9.4):
-    - UMCCommon
-    - UMCShare/Core
-  - UMCShare/Social/Line (6.9.4):
+  - UMCShare/Social/Facebook (6.9.5):
     - UMCCommon
     - UMCShare/Core
-  - UMCShare/UI (6.9.4):
+  - UMCShare/Social/Line (6.9.5):
     - UMCCommon
     - UMCShare/Core
   - WebViewJavascriptBridge (6.0.3)
@@ -90,6 +88,7 @@ DEPENDENCIES:
   - FDStackView (from `https://github.com/forkingdog/FDStackView.git`)
   - HexColors (= 4.0.0)
   - HMSegmentedControl
+  - IQKeyboardManager
   - JXExtension
   - LTNavigationBar (from `https://github.com/JeasonL/LTNavigationBar.git`)
   - Masonry
@@ -106,7 +105,6 @@ DEPENDENCIES:
   - UMCSecurityPlugins
   - UMCShare/Social/Facebook
   - UMCShare/Social/Line
-  - UMCShare/UI
   - WebViewJavascriptBridge
   - YYModel
   - ZFLineSDK
@@ -117,6 +115,7 @@ SPEC REPOS:
     - BlocksKit
     - HexColors
     - HMSegmentedControl
+    - IQKeyboardManager
     - JXExtension
     - Masonry
     - MBProgressHUD
@@ -156,6 +155,7 @@ SPEC CHECKSUMS:
   FDStackView: fc0697e5be2022c8af36ce66e9e2061006058ba8
   HexColors: 5f95843ef89aff6a72e1fd3a8ebabf205cc43379
   HMSegmentedControl: f514c6dad47aa3065e0ed2e8046b73efc71221b9
+  IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
   JXExtension: e2a9636c7e93a4d8f43f3855b2f6a3eb441c62a8
   LTNavigationBar: c278785bed344862e18146b5f06792932e4feacc
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -171,11 +171,11 @@ SPEC CHECKSUMS:
   UMCCommonLog: 05a2d5de21858e3d870551562cff405c1366d244
   UMCPush: 628b5c61be5a5036cb31eb9b3a3ab8dce7521691
   UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
-  UMCShare: aa233aecad67979930fe43f3a2f676023b669439
+  UMCShare: 552b29753f1b4da87b51d96545ed19e6263df397
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
   ZFLineSDK: fc1485f687bd9d6af5cb7e39ab2a8266680797dd
 
-PODFILE CHECKSUM: 650c2d560ab53dff58a2a64d32c20e86da190925
+PODFILE CHECKSUM: acac2da85b0061a5896f5e49c2e66ce2a51a4fe6
 
 COCOAPODS: 1.6.0.beta.2

@@ -106,6 +106,7 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
     kWeakSelf
     [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_Facebook currentViewController:nil completion:^(id result, NSError *error) {
         if (error) {
+            
         } else {
             UMSocialUserInfoResponse *resp = result;
             [weakSelf doLoginRequesWithAccessToken:resp.accessToken sns:1];

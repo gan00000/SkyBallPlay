@@ -11,6 +11,7 @@
 #import <UMShare/UMShare.h>
 #import <UMPush/UMessage.h>
 #import <LineSDK/LineSDK.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
 
 #import "AFNetworkReachabilityManager.h"
 #import "BJLaunchViewController.h"
@@ -50,6 +51,8 @@
     self.window.rootViewController = rootVc;
     
     [self setupPushWithLaunchOptions:launchOptions];
+    
+    [IQKeyboardManager sharedManager].toolbarBarTintColor = [UIColor whiteColor];
     
     return YES;
 }
