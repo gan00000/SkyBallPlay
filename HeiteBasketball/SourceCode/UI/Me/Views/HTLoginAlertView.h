@@ -19,6 +19,8 @@ typedef NS_ENUM(NSInteger, HTLoginPlatform) {
     
 + (void)showLoginAlertViewWithSelectBlock:(void(^)(HTLoginPlatform platform))block;
 
++ (void)showShareAlertViewWithSelectBlock:(void(^)(HTLoginPlatform platform))block;
+
 @end
 
 NS_ASSUME_NONNULL_END

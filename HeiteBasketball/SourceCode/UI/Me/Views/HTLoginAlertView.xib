@@ -143,6 +143,7 @@
                 <outlet property="containerViewBottom" destination="AMQ-8o-PZp" id="0fU-8A-LuP"/>
                 <outlet property="containerViewHeight" destination="EQp-3F-dn2" id="PPI-Bk-HzN"/>
                 <outlet property="safeBackView" destination="B7I-Vt-lgu" id="ISx-1o-Qnk"/>
+                <outlet property="titleLabel" destination="Pjn-eL-jzR" id="XVr-Wx-Lom"/>
             </connections>
         </view>
     </objects>

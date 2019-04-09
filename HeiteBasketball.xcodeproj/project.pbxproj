@@ -86,6 +86,8 @@
 		FE9B32BD217896350055B611 /* HTRankRightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE9B32BB217896350055B611 /* HTRankRightCell.xib */; };
 		FEA104F6216CB0F0000DBE63 /* HTMatchSummaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA104F5216CB0F0000DBE63 /* HTMatchSummaryModel.m */; };
 		FEA104F9216CB10C000DBE63 /* HTMatchCompareModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA104F8216CB10C000DBE63 /* HTMatchCompareModel.m */; };
+		FEA5D3FB225CD31E001AF0C9 /* HTMyMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA5D3FA225CD31E001AF0C9 /* HTMyMessageModel.m */; };
+		FEA5D3FE225CD506001AF0C9 /* HTCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA5D3FD225CD506001AF0C9 /* HTCommentModel.m */; };
 		FEAB2108216DD731002A05AB /* HTMatchDetailsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAB2107216DD731002A05AB /* HTMatchDetailsModel.m */; };
 		FEAC9F272199D92900159AE9 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEAC9F262199D92900159AE9 /* UserNotifications.framework */; };
 		FEAC9F2E2199E25F00159AE9 /* HTSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAC9F2D2199E25F00159AE9 /* HTSettingViewController.m */; };
@@ -374,6 +376,10 @@
 		FEA104F5216CB0F0000DBE63 /* HTMatchSummaryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchSummaryModel.m; sourceTree = "<group>"; };
 		FEA104F7216CB10C000DBE63 /* HTMatchCompareModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchCompareModel.h; sourceTree = "<group>"; };
 		FEA104F8216CB10C000DBE63 /* HTMatchCompareModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchCompareModel.m; sourceTree = "<group>"; };
+		FEA5D3F9225CD31E001AF0C9 /* HTMyMessageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMyMessageModel.h; sourceTree = "<group>"; };
+		FEA5D3FA225CD31E001AF0C9 /* HTMyMessageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMyMessageModel.m; sourceTree = "<group>"; };
+		FEA5D3FC225CD506001AF0C9 /* HTCommentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTCommentModel.h; sourceTree = "<group>"; };
+		FEA5D3FD225CD506001AF0C9 /* HTCommentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTCommentModel.m; sourceTree = "<group>"; };
 		FEAB2106216DD731002A05AB /* HTMatchDetailsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchDetailsModel.h; sourceTree = "<group>"; };
 		FEAB2107216DD731002A05AB /* HTMatchDetailsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchDetailsModel.m; sourceTree = "<group>"; };
 		FEAC9F262199D92900159AE9 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
@@ -1193,6 +1199,8 @@
 			children = (
 				FE6BD0682145136F0090118A /* HTNewsModel.h */,
 				FE6BD0692145136F0090118A /* HTNewsModel.m */,
+				FEA5D3FC225CD506001AF0C9 /* HTCommentModel.h */,
+				FEA5D3FD225CD506001AF0C9 /* HTCommentModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1380,18 +1388,18 @@
 		FECCA4EB2258C8CE009EF494 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FECCA4EC2258C8CE009EF494 /* HTMeCenterHeaderCell.h */,
-				FECCA4ED2258C8CE009EF494 /* HTMeCenterItemsCell.m */,
-				FECCA4EE2258C8CE009EF494 /* HTMeCenterHeaderCell.xib */,
 				FECCA4EF2258C8CE009EF494 /* HTLoginAlertView.h */,
-				FECCA4F02258C8CE009EF494 /* HTMeCenterNormalCell.xib */,
-				FECCA4F12258C8CE009EF494 /* HTMeCenterItemsCell.xib */,
-				FECCA4F22258C8CE009EF494 /* HTMeCenterNormalCell.m */,
-				FECCA4F32258C8CE009EF494 /* HTLoginAlertView.xib */,
-				FECCA4F42258C8CE009EF494 /* HTMeCenterItemsCell.h */,
-				FECCA4F52258C8CE009EF494 /* HTMeCenterHeaderCell.m */,
 				FECCA4F62258C8CF009EF494 /* HTLoginAlertView.m */,
+				FECCA4F32258C8CE009EF494 /* HTLoginAlertView.xib */,
+				FECCA4EC2258C8CE009EF494 /* HTMeCenterHeaderCell.h */,
+				FECCA4F52258C8CE009EF494 /* HTMeCenterHeaderCell.m */,
+				FECCA4EE2258C8CE009EF494 /* HTMeCenterHeaderCell.xib */,
+				FECCA4F42258C8CE009EF494 /* HTMeCenterItemsCell.h */,
+				FECCA4ED2258C8CE009EF494 /* HTMeCenterItemsCell.m */,
+				FECCA4F12258C8CE009EF494 /* HTMeCenterItemsCell.xib */,
 				FECCA4F72258C8CF009EF494 /* HTMeCenterNormalCell.h */,
+				FECCA4F22258C8CE009EF494 /* HTMeCenterNormalCell.m */,
+				FECCA4F02258C8CE009EF494 /* HTMeCenterNormalCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1444,6 +1452,8 @@
 				FECCA5132258C8D0009EF494 /* HTUserManager.m */,
 				FECCA5402258CC3D009EF494 /* DRSandBoxManager.h */,
 				FECCA53F2258CC3D009EF494 /* DRSandBoxManager.m */,
+				FEA5D3F9225CD31E001AF0C9 /* HTMyMessageModel.h */,
+				FEA5D3FA225CD31E001AF0C9 /* HTMyMessageModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1921,6 +1931,7 @@
 				FECCA56322598013009EF494 /* TZAssetCell.m in Sources */,
 				FECCA5382258C8D0009EF494 /* HTLikeViewController.m in Sources */,
 				FECCA56B22598013009EF494 /* TZImageManager.m in Sources */,
+				FEA5D3FB225CD31E001AF0C9 /* HTMyMessageModel.m in Sources */,
 				FEDABE5F2173297B008C8AFD /* HTRankEastWestModel.m in Sources */,
 				FEC116CC2143D4A1002DB617 /* UIColor+Generator.m in Sources */,
 				FEC1160B2143D4A1002DB617 /* UIView+Loading.m in Sources */,
@@ -1967,6 +1978,7 @@
 				FEC116132143D4A1002DB617 /* LJViewPager.m in Sources */,
 				FEDABE482171BC3A008C8AFD /* HTMatchQuarterCell.m in Sources */,
 				FE706F02214FF3430078DF30 /* HTDataMoreViewController.m in Sources */,
+				FEA5D3FE225CD506001AF0C9 /* HTCommentModel.m in Sources */,
 				FE82BB412179B77200C52C51 /* HTDataTeamLeftCell.m in Sources */,
 				FEDABE592173279F008C8AFD /* HTRankZoneRequest.m in Sources */,
 				FECCA56F22598013009EF494 /* TZLocationManager.m in Sources */,

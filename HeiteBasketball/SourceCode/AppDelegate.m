@@ -25,6 +25,7 @@
     
     [UMConfigure initWithAppkey:UM_APP_KEY channel:@"App Store"];
     [UMConfigure setLogEnabled:YES];
+    
     [[UMSocialManager defaultManager] openLog:YES];
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Facebook
                                           appKey:FB_APP_ID
@@ -35,13 +36,10 @@
     }
     if (![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Facebook]) {
         [[UMSocialManager defaultManager] removePlatformProviderWithPlatformType:UMSocialPlatformType_Facebook];
-    }
-    
-    if ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Line]) {
-        [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Line
-                                              appKey:nil appSecret:nil
-                                         redirectURL:@"http://www.ballgametime.com"];
-    }
+    }    
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Line
+                                          appKey:nil appSecret:nil
+                                     redirectURL:@"http://www.ballgametime.com"];
     
     [self sdk_setUpNetworkReachability];
     

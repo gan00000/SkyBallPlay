@@ -13,6 +13,7 @@
 #import <UShareUI/UShareUI.h>
 #import <SDWebImage/SDWebImageManager.h>
 #import "BJViewControllerCenter.h"
+#import "HTLoginAlertView.h"
 
 @interface HTNewsModel () <NSURLConnectionDelegate>
 
@@ -191,17 +192,27 @@
 }
 
 + (BOOL)canShare {
-    return ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Facebook] && [[UMSocialManager defaultManager] isSupport:UMSocialPlatformType_Facebook]) ||
-    ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_FaceBookMessenger] && [[UMSocialManager defaultManager] isSupport:UMSocialPlatformType_FaceBookMessenger]) ||
-    ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Line] && [[UMSocialManager defaultManager] isSupport:UMSocialPlatformType_Line]);
+    return YES;
 }
 
 - (void)share {
     kWeakSelf
-    [UMSocialShareUIConfig shareInstance].shareTitleViewConfig.shareTitleViewTitleString = @"分享至";
-    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+    [HTLoginAlertView showShareAlertViewWithSelectBlock:^(HTLoginPlatform platform) {
         UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
-        if (platformType == UMSocialPlatformType_Line) {
+        if (platform == HTLoginPlatformFB) {
+            //创建网页内容对象
+            UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:weakSelf.title descr:nil thumImage:weakSelf.share_thub];
+            //设置网页地址
+            shareObject.webpageUrl = weakSelf.url;
+            //分享消息对象设置分享内容对象
+            messageObject.shareObject = shareObject;
+            
+            [self doShareToPlatform:UMSocialPlatformType_Facebook withMessage:messageObject];
+        } else if (platform == HTLoginPlatformLine) {
+            if (![[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Line]) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://line.me/R/"]];
+                return;
+            }
             //设置文本
             messageObject.text = [NSString stringWithFormat:@"%@\n链接：%@", weakSelf.title, weakSelf.url];
             if (weakSelf.img_url) {
@@ -214,24 +225,15 @@
                         [shareObject setShareImage:image];
                         //分享消息对象设置分享内容对象
                         messageObject.shareObject = shareObject;
-                        [weakSelf doShareToPlatform:platformType withMessage:messageObject];
+                        [weakSelf doShareToPlatform:UMSocialPlatformType_Line withMessage:messageObject];
                     } else {
-                        [weakSelf doShareToPlatform:platformType withMessage:messageObject];
+                        [weakSelf doShareToPlatform:UMSocialPlatformType_Line withMessage:messageObject];
                     }
                     [BJLoadingHud hideHUDInView:[BJViewControllerCenter currentViewController].view];
                 }];
             } else {
-                [weakSelf doShareToPlatform:platformType withMessage:messageObject];
+                [weakSelf doShareToPlatform:UMSocialPlatformType_Line withMessage:messageObject];
             }
-        } else if (platformType == UMSocialPlatformType_Facebook) {
-            //创建网页内容对象
-            UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:weakSelf.title descr:nil thumImage:weakSelf.share_thub];
-            //设置网页地址
-            shareObject.webpageUrl = weakSelf.url;
-            //分享消息对象设置分享内容对象
-            messageObject.shareObject = shareObject;
-            
-            [self doShareToPlatform:platformType withMessage:messageObject];
         }
     }];
 }

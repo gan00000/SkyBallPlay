@@ -18,6 +18,10 @@
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, copy) NSString *time;
 @property (nonatomic, strong) NSDictionary *custom_fields;
+@property (nonatomic, assign) NSInteger total_comment;
+@property (nonatomic, assign) NSInteger total_like;
+@property (nonatomic, assign) NSInteger total_save;
+@property (nonatomic, assign) BOOL my_save; // 是否收藏
 
 @property (nonatomic, copy) NSString *img_url;
 @property (nonatomic, copy) NSString *view_count;

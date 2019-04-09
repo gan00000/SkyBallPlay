@@ -69,4 +69,60 @@
     } errorBlock:failBlock];
 }
 
++ (void)deleteCollectionWithNewsId:(NSString *)news_id successBlock:(dispatch_block_t)successBlock failBlock:(BJServiceErrorBlock)failBlock {
+    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_UNSAVE params:@{@"post_id": news_id} successBlock:^(id responseData) {
+        if (successBlock) {
+            successBlock();
+        }
+    } errorBlock:failBlock];
+}
+
++ (void)requestHistoryWithOffset:(NSInteger)offset successBlock:(void(^)(NSArray <HTNewsModel *> *newsList))successBlock failBlock:(BJServiceErrorBlock)failBlock {
+    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_HISTORY_LIST params:@{@"offset": @(offset)} successBlock:^(id responseData) {
+        if (successBlock) {
+            successBlock([NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"posts"]]);
+        }
+    } errorBlock:failBlock];
+}
+
++ (void)addHistoryWithNewsId:(NSString *)news_id successBlock:(dispatch_block_t)successBlock failBlock:(BJServiceErrorBlock)failBlock {
+    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_HISTORY_ADD params:@{@"post_id": news_id} successBlock:^(id responseData) {
+        if (successBlock) {
+            successBlock();
+        }
+    } errorBlock:failBlock];
+}
+
++ (void)requestMyCommentWithOffset:(NSInteger)offset successBlock:(void(^)(NSArray <HTNewsModel *> *newsList))successBlock failBlock:(BJServiceErrorBlock)failBlock {
+    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_MY_COMMENT params:@{@"offset": @(offset)} successBlock:^(id responseData) {
+        if (successBlock) {
+            successBlock([NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"posts"]]);
+        }
+    } errorBlock:failBlock];
+}
+
++ (void)requestMyLikeWithOffset:(NSInteger)offset successBlock:(void(^)(NSArray <HTNewsModel *> *newsList))successBlock failBlock:(BJServiceErrorBlock)failBlock {
+    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_MY_LIKE params:@{@"offset": @(offset)} successBlock:^(id responseData) {
+        if (successBlock) {
+            successBlock([NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"comments"]]);
+        }
+    } errorBlock:failBlock];
+}
+
++ (void)requestUnReadMessageCountWithSuccessBlock:(void(^)(NSInteger count))successBlock failBlock:(BJServiceErrorBlock)failBlock {
+    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_MESSAGE_COUNT params:nil successBlock:^(id responseData) {
+        if (successBlock) {
+            successBlock([(NSString *)responseData[@"result"][@"total_unread"] integerValue]);
+        }
+    } errorBlock:failBlock];
+}
+
++ (void)requestMyMessageWithOffset:(NSInteger)offset successBlock:(void(^)(NSArray <HTMyMessageModel *> *messageList))successBlock failBlock:(BJServiceErrorBlock)failBlock {
+    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_MESSAGE_LIST params:@{@"offset": @(offset)} successBlock:^(id responseData) {
+        if (successBlock) {
+            successBlock([NSArray yy_modelArrayWithClass:[HTMyMessageModel class] json:responseData[@"result"][@"notification"]]);
+        }
+    } errorBlock:failBlock];
+}
+
 @end

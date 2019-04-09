@@ -11,6 +11,7 @@
 @interface HTLoginAlertView ()
 
 @property (weak, nonatomic) IBOutlet UIView *safeBackView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *containerViewHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *containerViewBottom;
@@ -23,6 +24,13 @@
 
 + (void)showLoginAlertViewWithSelectBlock:(void(^)(HTLoginPlatform platform))block {
     HTLoginAlertView *alertView = kLoadXibWithName(NSStringFromClass([self class]));
+    alertView.onPlatformButtonTapped = block;
+    [alertView show];
+}
+
++ (void)showShareAlertViewWithSelectBlock:(void(^)(HTLoginPlatform platform))block {
+    HTLoginAlertView *alertView = kLoadXibWithName(NSStringFromClass([self class]));
+    alertView.titleLabel.text = @"分享至";
     alertView.onPlatformButtonTapped = block;
     [alertView show];
 }
