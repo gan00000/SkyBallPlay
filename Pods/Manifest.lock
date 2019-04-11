@@ -80,6 +80,7 @@ PODS:
     - UMCShare/Core
   - WebViewJavascriptBridge (6.0.3)
   - YYModel (1.0.4)
+  - YYText (1.0.7)
   - ZFLineSDK (4.1.1)
 
 DEPENDENCIES:
@@ -107,6 +108,7 @@ DEPENDENCIES:
   - UMCShare/Social/Line
   - WebViewJavascriptBridge
   - YYModel
+  - YYText
   - ZFLineSDK
 
 SPEC REPOS:
@@ -133,6 +135,7 @@ SPEC REPOS:
     - UMCShare
     - WebViewJavascriptBridge
     - YYModel
+    - YYText
     - ZFLineSDK
 
 EXTERNAL SOURCES:
@@ -174,8 +177,9 @@ SPEC CHECKSUMS:
   UMCShare: 552b29753f1b4da87b51d96545ed19e6263df397
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+  YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   ZFLineSDK: fc1485f687bd9d6af5cb7e39ab2a8266680797dd
 
-PODFILE CHECKSUM: acac2da85b0061a5896f5e49c2e66ce2a51a4fe6
+PODFILE CHECKSUM: 488c8494027562c9a7cc8b4ae80b783beb404f3c
 
 COCOAPODS: 1.6.0.beta.2

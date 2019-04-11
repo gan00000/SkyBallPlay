@@ -58,7 +58,7 @@
 
 - (void)setupMeCenterButton {
     if ([HTUserManager isUserLogin]) {
-        [self.meCenterButton setImage:[self fixImageSize:[HTUserManager userInfo].avatar] forState:UIControlStateNormal];
+        [self.meCenterButton setImage:[BJBaseViewController fixImageSize:[HTUserManager userInfo].avatar toSize:CGSizeMake(36, 36)] forState:UIControlStateNormal];
     } else {
         [self.meCenterButton setImage:[UIImage imageNamed:@"default_avatar"] forState:UIControlStateNormal];
     }
@@ -74,21 +74,21 @@
     return _meCenterButton;
 }
 
-- (UIImage *)fixImageSize:(UIImage *)image {
++ (UIImage *)fixImageSize:(UIImage *)image toSize:(CGSize)toSize {
     CGSize size = image.size;
     if (size.width == size.height) {
-        return [self yp_imageWithOriginalImage:image withScaleSize:CGSizeMake(36, 36)];
+        return [self yp_imageWithOriginalImage:image withScaleSize:toSize];
     } else {
         CGRect rect = CGRectMake(0, 0, size.width, size.height);
         CGFloat inset = (size.height - size.width) / 2;
         CGRect newRect = CGRectInset(rect, inset < 0? fabs(inset) : 0, inset > 0? inset : 0);
         UIImage *subImage = [self yp_imagecutWithOriginalImage:image withCutRect:newRect];
-        return [self yp_imageWithOriginalImage:subImage withScaleSize:CGSizeMake(36, 36)];
+        return [self yp_imageWithOriginalImage:subImage withScaleSize:toSize];
     }
 }
 
 
-- (UIImage *)yp_imagecutWithOriginalImage:(UIImage *)originalImage withCutRect:(CGRect)rect {
++ (UIImage *)yp_imagecutWithOriginalImage:(UIImage *)originalImage withCutRect:(CGRect)rect {
     CGImageRef subImageRef = CGImageCreateWithImageInRect(originalImage.CGImage, rect);
     CGRect smallRect = CGRectMake(0, 0, CGImageGetWidth(subImageRef), CGImageGetHeight(subImageRef));
     
@@ -104,7 +104,7 @@
     return image;
 }
 
-- (UIImage *)yp_imageWithOriginalImage:(UIImage *)originalImage withScaleSize:(CGSize)size {
++ (UIImage *)yp_imageWithOriginalImage:(UIImage *)originalImage withScaleSize:(CGSize)size {
     UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
     [originalImage drawInRect:CGRectMake(0, 0, size.width, size.height)];
     UIImage * image = UIGraphicsGetImageFromCurrentImageContext();

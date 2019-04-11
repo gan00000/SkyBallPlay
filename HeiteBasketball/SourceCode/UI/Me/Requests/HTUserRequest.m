@@ -77,8 +77,9 @@
     } errorBlock:failBlock];
 }
 
-+ (void)requestHistoryWithOffset:(NSInteger)offset successBlock:(void(^)(NSArray <HTNewsModel *> *newsList))successBlock failBlock:(BJServiceErrorBlock)failBlock {
-    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_HISTORY_LIST params:@{@"offset": @(offset)} successBlock:^(id responseData) {
++ (void)requestHistoryWithSuccessBlock:(void(^)(NSArray <HTNewsModel *> *newsList))successBlock
+                             failBlock:(BJServiceErrorBlock)failBlock {
+    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_HISTORY_LIST params:nil successBlock:^(id responseData) {
         if (successBlock) {
             successBlock([NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"posts"]]);
         }
@@ -121,6 +122,32 @@
     [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_MESSAGE_LIST params:@{@"offset": @(offset)} successBlock:^(id responseData) {
         if (successBlock) {
             successBlock([NSArray yy_modelArrayWithClass:[HTMyMessageModel class] json:responseData[@"result"][@"notification"]]);
+        }
+    } errorBlock:failBlock];
+}
+
++ (void)likePostWithPostId:(NSString *)post_id comment_id:(NSString *)comment_id like:(BOOL)like successBlock:(dispatch_block_t)successBlock failBlock:(BJServiceErrorBlock)failBlock {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"post_id"] = post_id;
+    params[@"comment_id"] = comment_id;
+    params[@"like"] = @(like);
+    
+    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_LIKE_ADD params:params successBlock:^(id responseData) {
+        if (successBlock) {
+            successBlock();
+        }
+    } errorBlock:failBlock];
+}
+
++ (void)postCommentWithComment_txt:(NSString *)comment_txt post_id:(NSString *)post_id reply_comment_id:(NSString *)reply_comment_id successBlock:(dispatch_block_t)successBlock failBlock:(BJServiceErrorBlock)failBlock {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"post_id"] = post_id;
+    params[@"comment_txt"] = comment_txt;
+    params[@"reply_comment_id"] = reply_comment_id;
+    
+    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_POST_COMMENT params:params successBlock:^(id responseData) {
+        if (successBlock) {
+            successBlock();
         }
     } errorBlock:failBlock];
 }

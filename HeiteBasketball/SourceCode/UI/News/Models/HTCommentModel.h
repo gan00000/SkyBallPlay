@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HTCommentModel : NSObject
 
+@property (nonatomic, copy) NSString *comment_id;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -28,24 +28,9 @@ NS_ASSUME_NONNULL_BEGIN
                           failBlock:(BJServiceErrorBlock)failBlock;
 
 // 獲取全部評論
-+ (void)requestAllCommentWithOffset:(NSInteger)offset
-                             newsId:(NSString *)newsId
-                       successBlock:(void(^)(NSArray <HTCommentModel *> *commentList))successBlock
++ (void)requestAllCommentWithPostId:(NSString *)postId
+                       successBlock:(void(^)(NSArray <HTCommentModel *> *commentList, NSArray<HTCommentModel *> *hotComments))successBlock
                           failBlock:(BJServiceErrorBlock)failBlock;
-
-// 點讚/取消點讚
-+ (void)likePostWithPostId:(NSString *)post_id
-                comment_id:(NSString *)comment_id
-                      like:(BOOL)like
-              successBlock:(dispatch_block_t)successBlock
-                 failBlock:(BJServiceErrorBlock)failBlock;
-
-// 發表評論
-+ (void)postCommentWithComment_txt:(NSString *)comment_txt
-                           post_id:(NSString *)post_id
-                  reply_comment_id:(NSString *)reply_comment_id
-                      successBlock:(dispatch_block_t)successBlock
-                         failBlock:(BJServiceErrorBlock)failBlock;
 
 @end
 

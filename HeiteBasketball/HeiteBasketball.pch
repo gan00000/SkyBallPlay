@@ -70,11 +70,10 @@
 #endif    // #if __has_feature(objc_arc)
 #endif    // #ifndef    weakify
 
-//Log
-#if BJ_DEBUG
-#define BJLog(format, ...) NSLog((@"\n>>>>>>>>>>>>> BJLog: %s [Line %d]\n>>>>>>>>>>>>> " format), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
-#else
-#define BJLog(format, ...)
+#ifdef DEBUG // 开发
+#define BJLog(format, ...) NSLog((@"\n[文件名:%s]\n" "[函数名:%s]\n" "[行号:%d]\n" @"[输出:" format@"]"@"\n\n"), __FILE__, __FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else // 发布
+#define BJLog(...);
 #endif
 
 // screen info

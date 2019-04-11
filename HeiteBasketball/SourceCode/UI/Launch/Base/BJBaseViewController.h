@@ -14,4 +14,6 @@
 /// 子类必须重写
 + (instancetype)viewController;
 
++ (UIImage *)fixImageSize:(UIImage *)image toSize:(CGSize)toSize;
+
 @end
