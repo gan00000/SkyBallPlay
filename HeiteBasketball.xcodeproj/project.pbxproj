@@ -2151,6 +2151,10 @@
 				CODE_SIGN_ENTITLEMENTS = HeiteBasketball/HeiteBasketball.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MSFG5PN83S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HeiteBasketball/SourceCode/Module/FacebookSDKs-iOS-4.40.0",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HeiteBasketball/HeiteBasketball.pch";
 				INFOPLIST_FILE = HeiteBasketball/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -2174,6 +2178,10 @@
 				CODE_SIGN_ENTITLEMENTS = HeiteBasketball/HeiteBasketball.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MSFG5PN83S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HeiteBasketball/SourceCode/Module/FacebookSDKs-iOS-4.40.0",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/HeiteBasketball/HeiteBasketball.pch";
 				INFOPLIST_FILE = HeiteBasketball/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

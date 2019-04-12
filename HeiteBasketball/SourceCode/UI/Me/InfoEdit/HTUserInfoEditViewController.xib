@@ -14,6 +14,8 @@
             <connections>
                 <outlet property="avatarImageView" destination="fpC-a3-IE2" id="4Id-6S-pok"/>
                 <outlet property="emailLabel" destination="Mu9-vH-E09" id="mXm-j3-laM"/>
+                <outlet property="emailLeft" destination="Dhk-on-c6a" id="IY5-fC-Djd"/>
+                <outlet property="emailRight" destination="N2n-aX-Vqu" id="l96-gr-zY9"/>
                 <outlet property="emailTextField" destination="YlO-yY-ZVy" id="4CF-zc-dEv"/>
                 <outlet property="tipView" destination="SK2-1c-mAb" id="ut2-1G-Kqv"/>
                 <outlet property="userNameContentHeight" destination="8Qm-gZ-xWf" id="wbQ-qd-a6H"/>
@@ -269,7 +271,7 @@
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="jkQ-nG-Vva" secondAttribute="trailing" id="vgm-e1-jQF"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>
+            <point key="canvasLocation" x="-417" y="48"/>
         </view>
     </objects>
     <resources>

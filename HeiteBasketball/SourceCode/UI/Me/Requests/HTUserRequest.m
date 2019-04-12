@@ -53,10 +53,10 @@
     } errorBlock:failBlock];
 }
 
-+ (void)requestCollectionListWithOffset:(NSInteger)offset successBlock:(void(^)(NSArray <HTNewsModel *> *newsList))successBlock failBlock:(BJServiceErrorBlock)failBlock {
++ (void)requestCollectionListWithOffset:(NSInteger)offset successBlock:(void(^)(NSArray <HTNewsModel *> *newsList, NSInteger pages))successBlock failBlock:(BJServiceErrorBlock)failBlock {
     [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_SAVE_LIST params:@{@"offset": @(offset)} successBlock:^(id responseData) {
         if (successBlock) {
-            successBlock([NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"savedposts"][@"posts"]]);
+            successBlock([NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"savedposts"][@"posts"]], [(NSNumber *)responseData[@"savedposts"][@"pages"] integerValue]);
         }
     } errorBlock:failBlock];
 }
@@ -81,7 +81,7 @@
                              failBlock:(BJServiceErrorBlock)failBlock {
     [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_HISTORY_LIST params:nil successBlock:^(id responseData) {
         if (successBlock) {
-            successBlock([NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"posts"]]);
+            successBlock([NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"historyposts"][@"posts"]]);
         }
     } errorBlock:failBlock];
 }

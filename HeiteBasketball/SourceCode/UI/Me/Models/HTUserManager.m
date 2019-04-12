@@ -7,8 +7,8 @@
 //
 
 #import "HTUserManager.h"
-#import <UMShare/UMShare.h>
 #import <LineSDK/LineSDK.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "HTLoginAlertView.h"
 #import "HTUserRequest.h"
 #import "DRSandBoxManager.h"
@@ -20,6 +20,7 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 @interface HTUserManager () <LineSDKLoginDelegate>
 
 @property (nonatomic, strong) HTUserInfoModel *userInfoModel;
+@property (nonatomic, strong) FBSDKLoginManager *fbLoginManager;
 
 @end
 
@@ -99,26 +100,20 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
         BJLog(@"用戶信息刪除 %d", success);
     }];
     [[NSNotificationCenter defaultCenter] postNotificationName:kUserLogStatusChagneNotice object:nil];
+    [[HTUserManager manager].fbLoginManager logOut];
 }
 
 #pragma mark - Facebook Authory
 - (void)getAuthWithUserInfoFromFacebook {
     kWeakSelf
-    [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_Facebook currentViewController:nil completion:^(id result, NSError *error) {
-        if (error) {
-            
-        } else {
-            UMSocialUserInfoResponse *resp = result;
-            [weakSelf doLoginRequesWithAccessToken:resp.accessToken sns:1];
-            // 授权信息
-            NSLog(@"Facebook uid: %@", resp.uid);
-            NSLog(@"Facebook accessToken: %@", resp.accessToken);
-            NSLog(@"Facebook expiration: %@", resp.expiration);
-            // 用户信息
-            NSLog(@"Facebook name: %@", resp.name);
-            // 第三方平台SDK源数据
-            NSLog(@"Facebook originalResponse: %@", resp.originalResponse);
-        }
+    [self.fbLoginManager logInWithReadPermissions: @[@"public_profile",@"email"] fromViewController:[BJViewControllerCenter currentViewController] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+         if (error) {
+             [kWindow showToast:@"登錄失敗"];
+         } else if (result.isCancelled) {
+             [kWindow showToast:@"取消登錄"];
+         } else {
+             [weakSelf doLoginRequesWithAccessToken:result.token.tokenString sns:1];
+         }
     }];
 }
 
@@ -192,6 +187,13 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 + (void)goSystemSettingCenter {
     NSURL *appSettings = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
     [[UIApplication sharedApplication] openURL:appSettings];
+}
+
+- (FBSDKLoginManager *)fbLoginManager {
+    if (!_fbLoginManager) {
+        _fbLoginManager = [[FBSDKLoginManager alloc] init];
+    }
+    return _fbLoginManager;
 }
 
 @end

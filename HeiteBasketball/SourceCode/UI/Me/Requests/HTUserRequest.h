@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 獲取我的收藏
 + (void)requestCollectionListWithOffset:(NSInteger)offset
-                           successBlock:(void(^)(NSArray <HTNewsModel *> *newsList))successBlock
+                           successBlock:(void(^)(NSArray <HTNewsModel *> *newsList, NSInteger pages))successBlock
                               failBlock:(BJServiceErrorBlock)failBlock;
 
 // 添加收藏

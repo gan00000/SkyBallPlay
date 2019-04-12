@@ -285,6 +285,11 @@
 }
 
 - (IBAction)onSaveAction:(UIButton *)sender {
+    if (![HTUserManager isUserLogin]) {
+        [HTUserManager doUserLogin];
+        [self.view showToast:@"請登錄"];
+        return;
+    }
     if (sender.selected) {
         [HTUserRequest deleteCollectionWithNewsId:self.newsModel.news_id successBlock:^{
             [self.view showToast:@"已取消收藏"];
@@ -332,6 +337,12 @@
 }
 
 - (void)onInputBegin {
+    if (![HTUserManager isUserLogin]) {
+        [self.view endEditing:YES];
+        [HTUserManager doUserLogin];
+        [self.view showToast:@"請登錄"];
+        return;
+    }
     self.buttonContentView.hidden = YES;
     self.sendButton.hidden = NO;
     [UIView animateWithDuration:0.25 animations:^{

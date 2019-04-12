@@ -12,6 +12,7 @@
 #import <UMPush/UMessage.h>
 #import <LineSDK/LineSDK.h>
 #import <IQKeyboardManager/IQKeyboardManager.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 #import "AFNetworkReachabilityManager.h"
 #import "BJLaunchViewController.h"
@@ -53,6 +54,8 @@
     [self setupPushWithLaunchOptions:launchOptions];
     
     [IQKeyboardManager sharedManager].toolbarBarTintColor = [UIColor whiteColor];
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
     
     return YES;
 }
@@ -104,9 +107,15 @@
 
 #pragma mark - share
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
-    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url options:options];
+    BOOL result = [[FBSDKApplicationDelegate sharedInstance] application:app
+                                                                  openURL:url
+                                                        sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                                               annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
     if (!result) {
         result = [[LineSDKLogin sharedInstance] handleOpenURL:url];
+    }
+    if (!result) {
+        result = [[UMSocialManager defaultManager] handleOpenURL:url options:options];
     }
     return result;
 }

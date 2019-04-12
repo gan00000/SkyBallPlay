@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UIView *tipView;
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *emailLeft;
+@property (weak, nonatomic) IBOutlet UILabel *emailRight;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *userNameContentHeight;
 
@@ -46,6 +48,13 @@
     self.userNameLabel.text = userInfoModel.display_name;
     self.avatarImageView.image = userInfoModel.avatar;
     self.emailLabel.text = userInfoModel.user_email;
+    if (userInfoModel.user_email.length) {
+        self.emailLeft.hidden = NO;
+        self.emailRight.hidden = NO;
+    } else {
+        self.emailLeft.hidden = YES;
+        self.emailRight.hidden = YES;
+    }
     
     if (userInfoModel.change_name) {
         self.tipView.hidden = YES;
@@ -133,6 +142,7 @@
         NSData *data = UIImageJPEGRepresentation(image, 0.6);
         weakSelf.avatarImageView.image = [UIImage imageWithData:data];
         weakSelf.selectedImageBase64 = [data base64EncodedStringWithOptions:0];
+        weakSelf.avatarChange = YES;
         BJLog(@"base64: %@", weakSelf.selectedImageBase64);
     }];
     [imagePickerViewController.navigationBar setupBackground];

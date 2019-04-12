@@ -77,6 +77,13 @@
     [HTRankEastWestRequest requestWithSuccessBlock:^(HTRankEastWestModel *eastWestModel) {
         self.eastWestModel = eastWestModel;
         [self refreshUI];
+        if (eastWestModel.Eastern.count == 0) {
+            [self.view showEmptyViewWithTitle:@"暫無數據，點擊刷新" tapBlock:^{
+                [self.view hideEmptyView];
+                [self.view showLoadingView];
+                [self loadData];
+            }];
+        }
     } errorBlock:^(BJError *error) {
         self.error = error;
         [self refreshUI];

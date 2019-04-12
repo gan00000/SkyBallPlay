@@ -31,7 +31,7 @@ pod 'UMCShare/Social/Line'
 pod 'UMCCommonLog'
 pod 'UMCPush'
 pod 'ZFLineSDK'
-#pod 'Facebook-iOS-SDK', '~> 4.38.0'
 pod 'YYText'
+#pod 'FBSDKLoginKit'
 
 end
