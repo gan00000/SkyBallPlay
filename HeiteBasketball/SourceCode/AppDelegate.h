@@ -12,7 +12,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (nonatomic, copy) NSString *post_id;
 
 @end
 

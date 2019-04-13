@@ -22,6 +22,7 @@
 #define API_NEWS_BANNER                 @"?json=get_app_index"
 #define API_NEWS_TOP                    @"api/get_top_posts"
 #define API_NEWS_CONTENT                @"news/%@.html"
+#define API_NEWS_DETAIL                 @"api/get_post"
 #define API_NEWS_COMMENTS               @"api/get_post_comments" // 留言列表 postt
 #define API_NEWS_HOT_COMMENT            @"api/get_post_hot_comments" // 获取热门留言
 #define API_NEWS_ALL_COMMENT            @"api/get_post_all_comments" // 获取全部留言

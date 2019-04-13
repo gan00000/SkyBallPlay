@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HTPushAlertView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新消息：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dg-i7-6lV">
+                    <rect key="frame" x="10" y="15" width="62" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="fSd-Bn-o3f"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="騎士拋贏太陽得第二" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NdE-zY-FHP">
+                    <rect key="frame" x="72" y="15.5" width="147" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Olv-K9-crF">
+                    <rect key="frame" x="10" y="45" width="355" height="50.5"/>
+                    <mutableString key="text">首先接收到推送消息的时候你的APP处于这三种状态中的一个：1.程序未启动，退出状态 ；2.程序在后台挂起 ；3:程序在前台运行 。启动APP分为两种：1.点击推送消息；2.点击应用图标。查看了一些应用，点击应用图标进入的基本上都没做什么人性化处理（这个基本上受限于苹果，开发者也没什么能做的），所以本文对点击应用图标进入APP未做深入研究，着重研究了点击推送消息进入。
+
+作者：进化中的程序猿
+链接：https://www.jianshu.com/p/efeba5d8a304
+来源：简书
+简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。</mutableString>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.89803921568627454" green="0.93333333333333335" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="NdE-zY-FHP" firstAttribute="centerY" secondItem="0dg-i7-6lV" secondAttribute="centerY" id="69I-DH-U2Q"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NdE-zY-FHP" secondAttribute="trailing" constant="10" id="7Xk-qn-VOL"/>
+                <constraint firstItem="NdE-zY-FHP" firstAttribute="leading" secondItem="0dg-i7-6lV" secondAttribute="trailing" id="DdN-6l-Rzc"/>
+                <constraint firstItem="Olv-K9-crF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="cYu-Gg-8Cf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Olv-K9-crF" secondAttribute="trailing" constant="10" id="ei6-s9-lEe"/>
+                <constraint firstItem="Olv-K9-crF" firstAttribute="top" secondItem="0dg-i7-6lV" secondAttribute="bottom" constant="10" id="fhK-Ru-bfH"/>
+                <constraint firstItem="0dg-i7-6lV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="jgK-u7-6ga"/>
+                <constraint firstItem="0dg-i7-6lV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="xOD-zr-4gX"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="subTitleLabel" destination="Olv-K9-crF" id="nlK-HC-YeX"/>
+                <outlet property="titleLabel" destination="NdE-zY-FHP" id="BhS-eW-vae"/>
+            </connections>
+            <point key="canvasLocation" x="-118" y="-287"/>
+        </view>
+    </objects>
+</document>

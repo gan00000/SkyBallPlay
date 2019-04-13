@@ -54,8 +54,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setupViews];
-    [self loadData];
+    [self.view showLoadingView];
+    if (self.newsModel) {
+        [self setupViews];
+        [self loadData];
+    } else if (self.post_id.length) {
+        [self loadDetail];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -176,8 +181,6 @@
     self.commentRequestDone = NO;
     self.commentOffset = 0;
     
-    [self.view showLoadingView];
-    
     if ([HTNewsModel canShare]) {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"nav_icon_share"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonTapped:)];
     }
@@ -213,6 +216,21 @@
     attr.yy_font = [UIFont systemFontOfSize:15];
     attr.yy_color = [UIColor hx_colorWithHexRGBAString:@"333333"];
     self.commentInputView.attributedText = attr;
+}
+
+- (void)loadDetail {
+    [HTNewsAdditionRequest requestDetailWithPostId:self.post_id successBlock:^(HTNewsModel * _Nonnull newsModel) {
+        self.newsModel = newsModel;
+        [self setupViews];
+        [self loadData];
+    } errorBlock:^(BJError *error) {
+        [self.view showToast:@"數據拉取失敗"];
+        [self.view showEmptyViewWithTitle:@"數據拉取失敗，點擊重試" tapBlock:^{
+            [self.view hideEmptyView];
+            [self.view showLoadingView];
+            [self loadDetail];
+        }];
+    }];
 }
 
 - (void)loadData {

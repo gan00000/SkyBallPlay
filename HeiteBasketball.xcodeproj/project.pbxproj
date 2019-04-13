@@ -15,6 +15,8 @@
 		FE0C270E2186BCF6001C9B8C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C270D2186BCF6001C9B8C /* libsqlite3.tbd */; };
 		FE0C27102186BD05001C9B8C /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C270F2186BD05001C9B8C /* CoreTelephony.framework */; };
 		FE0C27122186BD0D001C9B8C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C27112186BD0D001C9B8C /* SystemConfiguration.framework */; };
+		FE508A812261D31E00C79091 /* HTPushAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE508A802261D31E00C79091 /* HTPushAlertView.m */; };
+		FE508A842261D33900C79091 /* HTPushAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE508A832261D33900C79091 /* HTPushAlertView.xib */; };
 		FE6BD0492144EB660090118A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE6BD0482144EB660090118A /* ImageIO.framework */; };
 		FE6BD04B2144FA3C0090118A /* HUD.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE6BD04A2144FA3C0090118A /* HUD.xcassets */; };
 		FE6BD04D2144FAF60090118A /* ViewStatus.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE6BD04C2144FAF60090118A /* ViewStatus.xcassets */; };
@@ -264,6 +266,9 @@
 		FE0C270D2186BCF6001C9B8C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		FE0C270F2186BD05001C9B8C /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		FE0C27112186BD0D001C9B8C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FE508A7F2261D31E00C79091 /* HTPushAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTPushAlertView.h; sourceTree = "<group>"; };
+		FE508A802261D31E00C79091 /* HTPushAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTPushAlertView.m; sourceTree = "<group>"; };
+		FE508A832261D33900C79091 /* HTPushAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTPushAlertView.xib; sourceTree = "<group>"; };
 		FE6BD0482144EB660090118A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		FE6BD04A2144FA3C0090118A /* HUD.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = HUD.xcassets; sourceTree = "<group>"; };
 		FE6BD04C2144FAF60090118A /* ViewStatus.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ViewStatus.xcassets; sourceTree = "<group>"; };
@@ -731,6 +736,16 @@
 			path = Me;
 			sourceTree = "<group>";
 		};
+		FE508A822261D32500C79091 /* PushAlert */ = {
+			isa = PBXGroup;
+			children = (
+				FE508A7F2261D31E00C79091 /* HTPushAlertView.h */,
+				FE508A802261D31E00C79091 /* HTPushAlertView.m */,
+				FE508A832261D33900C79091 /* HTPushAlertView.xib */,
+			);
+			path = PushAlert;
+			sourceTree = "<group>";
+		};
 		FEAC9F2B2199E22700159AE9 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -828,6 +843,7 @@
 				FEC113B72143D4A0002DB617 /* LJViewPager */,
 				FEC113BF2143D4A0002DB617 /* MJRefreshGenerator */,
 				FEC1139D2143D4A0002DB617 /* ViewStatus */,
+				FE508A822261D32500C79091 /* PushAlert */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1717,6 +1733,7 @@
 				FEC1172B2143E43A002DB617 /* Launch.xcassets in Resources */,
 				FEC1161C2143D4A1002DB617 /* BJTabBarView.xib in Resources */,
 				FE08C5C422504F0C000175CB /* Me.xcassets in Resources */,
+				FE508A842261D33900C79091 /* HTPushAlertView.xib in Resources */,
 				FEC116EF2143D8C9002DB617 /* MatchHome.storyboard in Resources */,
 				FECCA51D2258C8D0009EF494 /* HTMessageViewController.xib in Resources */,
 				FECCA5242258C8D0009EF494 /* HTLoginAlertView.xib in Resources */,
@@ -1969,6 +1986,7 @@
 				FEC117102143DE50002DB617 /* HTFilmHomeViewController.m in Sources */,
 				FE706F08215006430078DF30 /* HTDataHomeHeaderCell.m in Sources */,
 				FE6BD05E2144FE550090118A /* HTMatchDashboardViewController.m in Sources */,
+				FE508A812261D31E00C79091 /* HTPushAlertView.m in Sources */,
 				FE81D1462146B2680047A4A2 /* HTFilmHomeRequest.m in Sources */,
 				FEDF8FC821444610005C7C4D /* HTMatchHomeModel.m in Sources */,
 				FEC1160A2143D4A1002DB617 /* UIView+EmptyView.m in Sources */,

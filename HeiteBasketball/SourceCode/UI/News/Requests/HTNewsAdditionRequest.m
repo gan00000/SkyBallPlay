@@ -38,5 +38,16 @@
     } errorBlock:failBlock];
 }
 
+// 新闻详情
++ (void)requestDetailWithPostId:(NSString *)post_id
+                   successBlock:(void(^)(HTNewsModel *newsModel))successBlock
+                     errorBlock:(BJServiceErrorBlock)errorBlock {
+    [BJHTTPServiceEngine postRequestWithFunctionPath:API_NEWS_DETAIL params:@{@"post_id": post_id} successBlock:^(id responseData) {
+        if (successBlock) {
+            successBlock([HTNewsModel yy_modelWithJSON:responseData[@"result"]]);
+        }
+    } errorBlock:errorBlock];
+}
+
 
 @end

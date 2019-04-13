@@ -32,6 +32,11 @@ NS_ASSUME_NONNULL_BEGIN
                        successBlock:(void(^)(NSArray <HTCommentModel *> *commentList, NSArray<HTCommentModel *> *hotComments))successBlock
                           failBlock:(BJServiceErrorBlock)failBlock;
 
+// 新闻详情
++ (void)requestDetailWithPostId:(NSString *)post_id
+                   successBlock:(void(^)(HTNewsModel *newsModel))successBlock
+                     errorBlock:(BJServiceErrorBlock)errorBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END
