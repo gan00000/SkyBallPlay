@@ -13,6 +13,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef void (^HTMyCommentBlock) (NSArray <HTNewsModel *> *newsList, NSInteger pages);
+
 @interface HTUserRequest : NSObject
 
 + (void)doLoginRequestWithAccessToken:(NSString *)accessToken
@@ -31,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 獲取我的收藏
 + (void)requestCollectionListWithOffset:(NSInteger)offset
-                           successBlock:(void(^)(NSArray <HTNewsModel *> *newsList, NSInteger pages))successBlock
+                           successBlock:(HTMyCommentBlock)successBlock
                               failBlock:(BJServiceErrorBlock)failBlock;
 
 // 添加收藏
@@ -45,8 +47,9 @@ NS_ASSUME_NONNULL_BEGIN
                          failBlock:(BJServiceErrorBlock)failBlock;
 
 // 獲取瀏覽歷史
-+ (void)requestHistoryWithSuccessBlock:(void(^)(NSArray <HTNewsModel *> *newsList))successBlock
-                             failBlock:(BJServiceErrorBlock)failBlock;
++ (void)requestHistoryWithOffset:(NSInteger)offset
+                    successBlock:(HTMyCommentBlock)successBlock
+                       failBlock:(BJServiceErrorBlock)failBlock;
 
 // 添加瀏覽歷史
 + (void)addHistoryWithNewsId:(NSString *)news_id
@@ -55,12 +58,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 獲取我的留言
 + (void)requestMyCommentWithOffset:(NSInteger)offset
-                      successBlock:(void(^)(NSArray <HTNewsModel *> *newsList))successBlock
+                      successBlock:(HTMyCommentBlock)successBlock
                          failBlock:(BJServiceErrorBlock)failBlock;
 
 // 獲取我的點讚
 + (void)requestMyLikeWithOffset:(NSInteger)offset
-                   successBlock:(void(^)(NSArray <HTNewsModel *> *newsList))successBlock
+                   successBlock:(HTMyCommentBlock)successBlock
                       failBlock:(BJServiceErrorBlock)failBlock;
 
 // 獲取未讀消息數
@@ -69,7 +72,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 獲取消息通知列表
 + (void)requestMyMessageWithOffset:(NSInteger)offset
-                      successBlock:(void(^)(NSArray <HTMyMessageModel *> *messageList))successBlock
+                      successBlock:(void(^)(NSArray <HTMyMessageModel *> *messageList, NSInteger pages))successBlock
                          failBlock:(BJServiceErrorBlock)failBlock;
 
 // 點讚/取消點讚

@@ -17,8 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableArray<HTCommentModel *> *normalComments;
 @property (nonatomic, assign) BOOL hasMore;
 
-- (void)doRequestWithCompleteBlock:(dispatch_block_t)commentBlock
-                         failBlock:(dispatch_block_t)failBlock;
+- (instancetype)initWithPostId:(NSString *)post_id;
+
+- (void)doRequestWithCompleteBlock:(dispatch_block_t)commentBlock;
+- (void)reset;
 
 @end
 

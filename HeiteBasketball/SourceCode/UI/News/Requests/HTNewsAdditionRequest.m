@@ -10,18 +10,24 @@
 
 @implementation HTNewsAdditionRequest
 
-+ (void)requestNormalCommentWithOffset:(NSInteger)offset newsId:(NSString *)newsId successBlock:(void(^)(NSArray <HTCommentModel *> *commentList))successBlock failBlock:(BJServiceErrorBlock)failBlock {
++ (void)requestNormalCommentWithOffset:(NSInteger)offset newsId:(NSString *)newsId successBlock:(void(^)(NSArray <HTCommentModel *> *commentList, NSInteger pages))successBlock failBlock:(BJServiceErrorBlock)failBlock {
     [BJHTTPServiceEngine postRequestWithFunctionPath:API_NEWS_COMMENTS params:@{@"offset": @(offset), @"post_id": newsId} successBlock:^(id responseData) {
         if (successBlock) {
-            successBlock([NSArray yy_modelArrayWithClass:[HTCommentModel class] json:responseData[@"result"][@"comments"]]);
+            NSArray *commentsData = responseData[@"result"][@"comments"];
+            NSArray<HTCommentModel *> *comments = [NSArray yy_modelArrayWithClass:[HTCommentModel class] json:commentsData];
+            NSInteger pages = [(NSNumber *)responseData[@"result"][@"pages"] integerValue];
+            successBlock(comments, pages);
         }
     } errorBlock:failBlock];
 }
 
-+ (void)requestHotCommentWithOffset:(NSInteger)offset newsId:(NSString *)newsId successBlock:(void(^)(NSArray <HTCommentModel *> *commentList))successBlock failBlock:(BJServiceErrorBlock)failBlock {
++ (void)requestHotCommentWithOffset:(NSInteger)offset newsId:(NSString *)newsId successBlock:(void(^)(NSArray <HTCommentModel *> *commentList, NSInteger pages))successBlock failBlock:(BJServiceErrorBlock)failBlock {
     [BJHTTPServiceEngine postRequestWithFunctionPath:API_NEWS_HOT_COMMENT params:@{@"offset": @(offset), @"post_id": newsId} successBlock:^(id responseData) {
         if (successBlock) {
-            successBlock([NSArray yy_modelArrayWithClass:[HTCommentModel class] json:responseData[@"result"][@"comments"]]);
+            NSArray *commentsData = responseData[@"result"][@"comments"];
+            NSArray<HTCommentModel *> *comments = [NSArray yy_modelArrayWithClass:[HTCommentModel class] json:commentsData];
+            NSInteger pages = [(NSNumber *)responseData[@"result"][@"pages"] integerValue];
+            successBlock(comments, pages);
         }
     } errorBlock:failBlock];
 }

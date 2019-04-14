@@ -47,6 +47,16 @@
 		FE706F04214FF3530078DF30 /* DataMore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE706F03214FF3530078DF30 /* DataMore.storyboard */; };
 		FE706F08215006430078DF30 /* HTDataHomeHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE706F06215006430078DF30 /* HTDataHomeHeaderCell.m */; };
 		FE706F09215006430078DF30 /* HTDataHomeHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE706F07215006430078DF30 /* HTDataHomeHeaderCell.xib */; };
+		FE7E6C9A2263CADB00B2973D /* HTMyMessaageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7E6C982263CADB00B2973D /* HTMyMessaageCell.m */; };
+		FE7E6C9B2263CADB00B2973D /* HTMyMessaageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE7E6C992263CADB00B2973D /* HTMyMessaageCell.xib */; };
+		FE800F642263692E00E575D5 /* HTNoCommentFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = FE800F632263692E00E575D5 /* HTNoCommentFooterView.m */; };
+		FE800F662263693A00E575D5 /* HTNoCommentFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE800F652263693A00E575D5 /* HTNoCommentFooterView.xib */; };
+		FE800F6A22636AFC00E575D5 /* HTNewsCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE800F6822636AFC00E575D5 /* HTNewsCommentCell.m */; };
+		FE800F6B22636AFC00E575D5 /* HTNewsCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE800F6922636AFC00E575D5 /* HTNewsCommentCell.xib */; };
+		FE800F6F22639DFD00E575D5 /* HTCommentExpendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE800F6D22639DFC00E575D5 /* HTCommentExpendCell.m */; };
+		FE800F7022639DFD00E575D5 /* HTCommentExpendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE800F6E22639DFC00E575D5 /* HTCommentExpendCell.xib */; };
+		FE800F742263BA1600E575D5 /* HTMyCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE800F722263BA1600E575D5 /* HTMyCommentCell.m */; };
+		FE800F752263BA1600E575D5 /* HTMyCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE800F732263BA1600E575D5 /* HTMyCommentCell.xib */; };
 		FE81D1462146B2680047A4A2 /* HTFilmHomeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D1452146B2680047A4A2 /* HTFilmHomeRequest.m */; };
 		FE81D14A2146B3090047A4A2 /* HTFilmHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FE81D1482146B3090047A4A2 /* HTFilmHomeCell.m */; };
 		FE81D14B2146B3090047A4A2 /* HTFilmHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE81D1492146B3090047A4A2 /* HTFilmHomeCell.xib */; };
@@ -215,7 +225,6 @@
 		FECCA57C2259824F009EF494 /* DRDeleteAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA5792259824F009EF494 /* DRDeleteAlertView.m */; };
 		FECCA57D2259824F009EF494 /* DRDeleteAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FECCA57A2259824F009EF494 /* DRDeleteAlertView.xib */; };
 		FECCA580225984B8009EF494 /* TZPhotoPickerController+DRExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA57F225984B8009EF494 /* TZPhotoPickerController+DRExtention.m */; };
-		FECCA5832259EA8C009EF494 /* HTMyMessageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = FECCA5822259EA8C009EF494 /* HTMyMessageRequest.m */; };
 		FEDABE482171BC3A008C8AFD /* HTMatchQuarterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDABE462171BC3A008C8AFD /* HTMatchQuarterCell.m */; };
 		FEDABE492171BC3A008C8AFD /* HTMatchQuarterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEDABE472171BC3A008C8AFD /* HTMatchQuarterCell.xib */; };
 		FEDABE4D2171BCEE008C8AFD /* HTMatchPtsCompareCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEDABE4B2171BCEE008C8AFD /* HTMatchPtsCompareCell.m */; };
@@ -314,6 +323,21 @@
 		FE706F05215006430078DF30 /* HTDataHomeHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTDataHomeHeaderCell.h; sourceTree = "<group>"; };
 		FE706F06215006430078DF30 /* HTDataHomeHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTDataHomeHeaderCell.m; sourceTree = "<group>"; };
 		FE706F07215006430078DF30 /* HTDataHomeHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTDataHomeHeaderCell.xib; sourceTree = "<group>"; };
+		FE7E6C972263CADB00B2973D /* HTMyMessaageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMyMessaageCell.h; sourceTree = "<group>"; };
+		FE7E6C982263CADB00B2973D /* HTMyMessaageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMyMessaageCell.m; sourceTree = "<group>"; };
+		FE7E6C992263CADB00B2973D /* HTMyMessaageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMyMessaageCell.xib; sourceTree = "<group>"; };
+		FE800F622263692E00E575D5 /* HTNoCommentFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTNoCommentFooterView.h; sourceTree = "<group>"; };
+		FE800F632263692E00E575D5 /* HTNoCommentFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTNoCommentFooterView.m; sourceTree = "<group>"; };
+		FE800F652263693A00E575D5 /* HTNoCommentFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTNoCommentFooterView.xib; sourceTree = "<group>"; };
+		FE800F6722636AFC00E575D5 /* HTNewsCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTNewsCommentCell.h; sourceTree = "<group>"; };
+		FE800F6822636AFC00E575D5 /* HTNewsCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTNewsCommentCell.m; sourceTree = "<group>"; };
+		FE800F6922636AFC00E575D5 /* HTNewsCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTNewsCommentCell.xib; sourceTree = "<group>"; };
+		FE800F6C22639DFC00E575D5 /* HTCommentExpendCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTCommentExpendCell.h; sourceTree = "<group>"; };
+		FE800F6D22639DFC00E575D5 /* HTCommentExpendCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTCommentExpendCell.m; sourceTree = "<group>"; };
+		FE800F6E22639DFC00E575D5 /* HTCommentExpendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTCommentExpendCell.xib; sourceTree = "<group>"; };
+		FE800F712263BA1600E575D5 /* HTMyCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMyCommentCell.h; sourceTree = "<group>"; };
+		FE800F722263BA1600E575D5 /* HTMyCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMyCommentCell.m; sourceTree = "<group>"; };
+		FE800F732263BA1600E575D5 /* HTMyCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMyCommentCell.xib; sourceTree = "<group>"; };
 		FE81D1442146B2680047A4A2 /* HTFilmHomeRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTFilmHomeRequest.h; sourceTree = "<group>"; };
 		FE81D1452146B2680047A4A2 /* HTFilmHomeRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTFilmHomeRequest.m; sourceTree = "<group>"; };
 		FE81D1472146B3090047A4A2 /* HTFilmHomeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTFilmHomeCell.h; sourceTree = "<group>"; };
@@ -607,8 +631,6 @@
 		FECCA57B2259824F009EF494 /* DRDeleteAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRDeleteAlertView.h; sourceTree = "<group>"; };
 		FECCA57E225984B8009EF494 /* TZPhotoPickerController+DRExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TZPhotoPickerController+DRExtention.h"; sourceTree = "<group>"; };
 		FECCA57F225984B8009EF494 /* TZPhotoPickerController+DRExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TZPhotoPickerController+DRExtention.m"; sourceTree = "<group>"; };
-		FECCA5812259EA8C009EF494 /* HTMyMessageRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMyMessageRequest.h; sourceTree = "<group>"; };
-		FECCA5822259EA8C009EF494 /* HTMyMessageRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMyMessageRequest.m; sourceTree = "<group>"; };
 		FEDABE452171BC3A008C8AFD /* HTMatchQuarterCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchQuarterCell.h; sourceTree = "<group>"; };
 		FEDABE462171BC3A008C8AFD /* HTMatchQuarterCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchQuarterCell.m; sourceTree = "<group>"; };
 		FEDABE472171BC3A008C8AFD /* HTMatchQuarterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMatchQuarterCell.xib; sourceTree = "<group>"; };
@@ -1193,6 +1215,15 @@
 				FE6BD090214584C30090118A /* HTNewsTopHeaderView.h */,
 				FE6BD091214584C30090118A /* HTNewsTopHeaderView.m */,
 				FE6BD093214584DA0090118A /* HTNewsTopHeaderView.xib */,
+				FE800F622263692E00E575D5 /* HTNoCommentFooterView.h */,
+				FE800F632263692E00E575D5 /* HTNoCommentFooterView.m */,
+				FE800F652263693A00E575D5 /* HTNoCommentFooterView.xib */,
+				FE800F6C22639DFC00E575D5 /* HTCommentExpendCell.h */,
+				FE800F6D22639DFC00E575D5 /* HTCommentExpendCell.m */,
+				FE800F6E22639DFC00E575D5 /* HTCommentExpendCell.xib */,
+				FE800F6722636AFC00E575D5 /* HTNewsCommentCell.h */,
+				FE800F6822636AFC00E575D5 /* HTNewsCommentCell.m */,
+				FE800F6922636AFC00E575D5 /* HTNewsCommentCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1204,8 +1235,6 @@
 				FE6BD0692145136F0090118A /* HTNewsModel.m */,
 				FEA5D3FC225CD506001AF0C9 /* HTCommentModel.h */,
 				FEA5D3FD225CD506001AF0C9 /* HTCommentModel.m */,
-				FE588BFA22620DFA00A44884 /* HTCommentGetter.h */,
-				FE588BFB22620DFA00A44884 /* HTCommentGetter.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1221,6 +1250,8 @@
 				FE6BD08E21457FEC0090118A /* HTNewsTopRequest.m */,
 				FEF468BF225BA50800E4B5F7 /* HTNewsAdditionRequest.h */,
 				FEF468C0225BA50800E4B5F7 /* HTNewsAdditionRequest.m */,
+				FE588BFA22620DFA00A44884 /* HTCommentGetter.h */,
+				FE588BFB22620DFA00A44884 /* HTCommentGetter.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -1385,7 +1416,9 @@
 				FECCA4E82258C8CE009EF494 /* HTMessageViewController.h */,
 				FECCA4EA2258C8CE009EF494 /* HTMessageViewController.m */,
 				FECCA4E92258C8CE009EF494 /* HTMessageViewController.xib */,
-				FECCA5842259EA92009EF494 /* Request */,
+				FE7E6C972263CADB00B2973D /* HTMyMessaageCell.h */,
+				FE7E6C982263CADB00B2973D /* HTMyMessaageCell.m */,
+				FE7E6C992263CADB00B2973D /* HTMyMessaageCell.xib */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -1415,6 +1448,9 @@
 				FECCA4FC2258C8CF009EF494 /* HTCommentViewController.h */,
 				FECCA4FA2258C8CF009EF494 /* HTCommentViewController.m */,
 				FECCA4FB2258C8CF009EF494 /* HTCommentViewController.xib */,
+				FE800F712263BA1600E575D5 /* HTMyCommentCell.h */,
+				FE800F722263BA1600E575D5 /* HTMyCommentCell.m */,
+				FE800F732263BA1600E575D5 /* HTMyCommentCell.xib */,
 			);
 			path = Comment;
 			sourceTree = "<group>";
@@ -1541,15 +1577,6 @@
 				FECCA57B2259824F009EF494 /* DRDeleteAlertView.h */,
 			);
 			path = DRDeleteAlertView;
-			sourceTree = "<group>";
-		};
-		FECCA5842259EA92009EF494 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				FECCA5812259EA8C009EF494 /* HTMyMessageRequest.h */,
-				FECCA5822259EA8C009EF494 /* HTMyMessageRequest.m */,
-			);
-			path = Request;
 			sourceTree = "<group>";
 		};
 		FEDF8FBB214434F8005C7C4D /* Views */ = {
@@ -1697,6 +1724,8 @@
 				FECCA5352258C8D0009EF494 /* HTHistoryViewController.xib in Resources */,
 				FE6BD07A21452B570090118A /* HTNewsHomeBannerCell.xib in Resources */,
 				FE6BD075214526980090118A /* HTNewsHomeCell.xib in Resources */,
+				FE800F6B22636AFC00E575D5 /* HTNewsCommentCell.xib in Resources */,
+				FE7E6C9B2263CADB00B2973D /* HTMyMessaageCell.xib in Resources */,
 				FEC116FA2143DC72002DB617 /* News.xcassets in Resources */,
 				FE08C5C92250506A000175CB /* HTMeHomeViewController.xib in Resources */,
 				FEDAC97A214B9139005E8B63 /* HTDataCellTeamView.xib in Resources */,
@@ -1704,9 +1733,11 @@
 				FEC116042143D4A1002DB617 /* XJLoadingView.xib in Resources */,
 				FE82BB382179B6C500C52C51 /* HTDataPlayerLeftCell.xib in Resources */,
 				FE82A484216E42680070FFC0 /* HTMatchLiveFeedCell.xib in Resources */,
+				FE800F752263BA1600E575D5 /* HTMyCommentCell.xib in Resources */,
 				FE6BD0522144FC270090118A /* MatchDetail.storyboard in Resources */,
 				FEC1162A2143D4A1002DB617 /* BJHUDView.xib in Resources */,
 				FEDAC975214B9117005E8B63 /* HTDataHomeTeamCell.xib in Resources */,
+				FE800F7022639DFD00E575D5 /* HTCommentExpendCell.xib in Resources */,
 				FE6BD0642144FF1F0090118A /* MatchDashboard.storyboard in Resources */,
 				FEC116F82143DC57002DB617 /* NewsHome.storyboard in Resources */,
 				FEC117262143DF33002DB617 /* RankHome.storyboard in Resources */,
@@ -1739,6 +1770,7 @@
 				FEC116FF2143DCAF002DB617 /* FilmHome.storyboard in Resources */,
 				FEDAC970214B86C7005E8B63 /* HTDataCellPlayerView.xib in Resources */,
 				FE706F09215006430078DF30 /* HTDataHomeHeaderCell.xib in Resources */,
+				FE800F662263693A00E575D5 /* HTNoCommentFooterView.xib in Resources */,
 				FECCA5372258C8D0009EF494 /* HTLikeViewController.xib in Resources */,
 				FE706F04214FF3530078DF30 /* DataMore.storyboard in Resources */,
 				FE6BD0602144FED00090118A /* MatchWordLive.storyboard in Resources */,
@@ -1887,6 +1919,7 @@
 				FE9B32B7217895990055B611 /* HTRankLeftCell.m in Sources */,
 				FEC117242143DF12002DB617 /* HTRankHomeViewController.m in Sources */,
 				FECCA52E2258C8D0009EF494 /* HTCollectionViewController.m in Sources */,
+				FE800F6A22636AFC00E575D5 /* HTNewsCommentCell.m in Sources */,
 				FEC1164B2143D4A1002DB617 /* BJBaseViewController.m in Sources */,
 				FECCA5332258C8D0009EF494 /* HTUserManager.m in Sources */,
 				FEC116052143D4A1002DB617 /* XJLoadingView.m in Sources */,
@@ -1914,7 +1947,6 @@
 				FEC116B82143D4A1002DB617 /* BJBaseNavigationController.m in Sources */,
 				FEDF8FCE21444A3E005C7C4D /* NSDateFormatter+DRExtension.m in Sources */,
 				FE6BD07921452B570090118A /* HTNewsHomeBannerCell.m in Sources */,
-				FECCA5832259EA8C009EF494 /* HTMyMessageRequest.m in Sources */,
 				FEC117192143DEA0002DB617 /* HTDataHomeViewController.m in Sources */,
 				FE6BD06D214520E00090118A /* HTNewsBannerRequest.m in Sources */,
 				FEC1172E2143EAA3002DB617 /* BJError.m in Sources */,
@@ -1950,6 +1982,7 @@
 				FECCA5252258C8D0009EF494 /* HTMeCenterHeaderCell.m in Sources */,
 				FEC116832143D4A1002DB617 /* AppDelegate.m in Sources */,
 				FEC1167A2143D4A1002DB617 /* BJWebViewCacheHelper.m in Sources */,
+				FE800F6F22639DFD00E575D5 /* HTCommentExpendCell.m in Sources */,
 				FEC116142143D4A1002DB617 /* BJUnPasteTextField.m in Sources */,
 				FECCA56622598013009EF494 /* NSBundle+TZImagePicker.m in Sources */,
 				FE81D1502146CA920047A4A2 /* HTHtmlLoadUtil.m in Sources */,
@@ -1971,6 +2004,7 @@
 				FE8EB0D3215603C500CA20F0 /* HTMatchLiveFeedRequest.m in Sources */,
 				FECCA56D22598013009EF494 /* TZPhotoPreviewCell.m in Sources */,
 				FEC116112143D4A1002DB617 /* UIScrollView+AllowScreenEdgePanGestureRecognizer.m in Sources */,
+				FE7E6C9A2263CADB00B2973D /* HTMyMessaageCell.m in Sources */,
 				FEC117102143DE50002DB617 /* HTFilmHomeViewController.m in Sources */,
 				FE706F08215006430078DF30 /* HTDataHomeHeaderCell.m in Sources */,
 				FE6BD05E2144FE550090118A /* HTMatchDashboardViewController.m in Sources */,
@@ -1999,8 +2033,10 @@
 				FECCA56C22598013009EF494 /* TZPhotoPickerController.m in Sources */,
 				FEC116772143D4A1002DB617 /* BJWebViewController.m in Sources */,
 				FEAC9F352199EA2300159AE9 /* HTContactUsViewController.m in Sources */,
+				FE800F642263692E00E575D5 /* HTNoCommentFooterView.m in Sources */,
 				FE6BD08821457D920090118A /* HTNewsWebCell.m in Sources */,
 				FEDF8FDA2144B2BF005C7C4D /* HTMatchHomeGroupModel.m in Sources */,
+				FE800F742263BA1600E575D5 /* HTMyCommentCell.m in Sources */,
 				FEC116062143D4A1002DB617 /* XJToastImageView.m in Sources */,
 				FECCA5412258CC3E009EF494 /* DRSandBoxManager.m in Sources */,
 				FE83FE4C21778341006C714C /* HTMatchDataLeftCell.m in Sources */,

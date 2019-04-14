@@ -9,12 +9,14 @@
 #import "HTHistoryViewController.h"
 #import "HTUserRequest.h"
 #import "HTNewsHomeCell.h"
+#import "HTNewsDetailViewController.h"
 
 @interface HTHistoryViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (nonatomic, strong) NSArray<HTNewsModel *> *dataSource;
+@property (nonatomic, strong) NSMutableArray<HTNewsModel *> *dataSource;
+@property (nonatomic, assign) NSInteger offset;
 
 @end
 
@@ -28,19 +30,29 @@
     [super viewDidLoad];
     
     self.title = @"瀏覽歷史";
+    self.dataSource = [NSMutableArray array];
+    
+    [self.view showLoadingView];
     [self loadData];
     [self setupTableView];
 }
 
 - (void)loadData {
-    [self.view showLoadingView];
-    [HTUserRequest requestHistoryWithSuccessBlock:^(NSArray<HTNewsModel *> * _Nonnull newsList) {
-        self.dataSource = newsList;
-        [self.view hideLoadingView];
+    [HTUserRequest requestHistoryWithOffset:self.offset successBlock:^(NSArray<HTNewsModel *> * _Nonnull newsList, NSInteger pages) {
+        [self.dataSource addObjectsFromArray:newsList];
         [self.tableView reloadData];
+        [self.tableView.mj_header endRefreshing];
+        if (pages > self.offset+1) {
+            self.offset ++;
+            [self.tableView.mj_footer endRefreshing];
+            [self.tableView.mj_footer resetNoMoreData];
+        } else {
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        }
         if (newsList.count == 0) {
             [self.view showEmptyView];
         }
+        [self.view hideLoadingView];
     } failBlock:^(BJError *error) {
         [self.view hideLoadingView];
         [self.view showEmptyViewWithTitle:@"獲取數據失敗，點擊重試" tapBlock:^{
@@ -49,6 +61,12 @@
             [self loadData];
         }];
     }];
+}
+
+- (void)reloadData {
+    self.offset = 0;
+    [self.dataSource removeAllObjects];
+    [self loadData];
 }
 
 - (void)setupTableView {
@@ -68,6 +86,17 @@
     
     [self.tableView registerNib:[UINib nibWithNibName:@"HTNewsHomeCell" bundle:nil]
          forCellReuseIdentifier:@"HTNewsHomeCell"];
+    
+    kWeakSelf
+    self.tableView.mj_header = [MJRefreshGenerator bj_headerWithRefreshingBlock:^{
+        weakSelf.tableView.mj_footer.hidden = YES;
+        [weakSelf reloadData];
+    }];
+    
+    self.tableView.mj_footer = [MJRefreshGenerator bj_foorterWithRefreshingBlock:^{
+        weakSelf.tableView.mj_header.hidden = YES;
+        [weakSelf loadData];
+    }];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -82,6 +111,14 @@
     HTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsHomeCell"];
     [cell setupWithNewsModel:self.dataSource[indexPath.row]];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    HTNewsModel *newsModel = self.dataSource[indexPath.row];
+    
+    HTNewsDetailViewController *detailVc = [HTNewsDetailViewController viewController];
+    detailVc.newsModel = newsModel;
+    [self.navigationController pushViewController:detailVc animated:YES];
 }
 
 @end

@@ -244,5 +244,26 @@
     }];
 }
 
+- (HTUserInfoModel *)userInfo {
+    if (!_userInfo) {
+        _userInfo = [[HTUserInfoModel alloc] init];
+        _userInfo.user_img = self.user_img;
+    }
+    return _userInfo;
+}
+
+- (NSDate *)comt_date_obj {
+    if (!_comt_date_obj) {
+        NSDateFormatter *format = [[NSDateFormatter alloc] init];
+        [format setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        _comt_date_obj = [format dateFromString:self.comment_date];
+    }
+    return _comt_date_obj;
+}
+
+- (void)countCommentHeight {
+    CGFloat commetheight = [self.comment_content jx_sizeWithFont:[UIFont systemFontOfSize:15] constrainedToWidth:SCREEN_WIDTH-71].height;
+    self.my_comment_cell_height = commetheight + 118;
+}
 
 @end

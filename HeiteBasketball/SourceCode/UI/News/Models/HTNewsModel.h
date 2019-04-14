@@ -22,6 +22,14 @@
 @property (nonatomic, assign) NSInteger total_like;
 @property (nonatomic, assign) NSInteger total_save;
 @property (nonatomic, assign) BOOL my_save; // 是否收藏
+@property (nonatomic, copy) NSString *comment_id;
+@property (nonatomic, copy) NSString *user_img;
+@property (nonatomic, copy) NSString *comment_content;
+@property (nonatomic, copy) NSString *comment_date;
+
+@property (nonatomic, strong) HTUserInfoModel *userInfo;
+@property (nonatomic, strong) NSDate *comt_date_obj;
+@property (nonatomic, assign) CGFloat my_comment_cell_height;
 
 @property (nonatomic, copy) NSString *img_url;
 @property (nonatomic, copy) NSString *view_count;
@@ -37,5 +45,7 @@
 
 + (BOOL)canShare;
 - (void)share;
+
+- (void)countCommentHeight;
 
 @end

@@ -10,4 +10,6 @@
 
 @interface HTNewsTopHeaderView : UITableViewHeaderFooterView
 
+- (void)refreshWithTitle:(NSString *)title;
+
 @end

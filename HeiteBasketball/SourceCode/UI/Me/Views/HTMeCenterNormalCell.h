@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface HTMeCenterNormalCell : UITableViewCell
 
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, assign) NSInteger messageCount;
 
 @end
 

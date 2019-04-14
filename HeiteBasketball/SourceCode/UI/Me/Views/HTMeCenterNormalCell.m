@@ -11,6 +11,8 @@
 @interface HTMeCenterNormalCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet JXView *messageCountContent;
+@property (weak, nonatomic) IBOutlet UILabel *messageCountLabel;
 
 @end
 
@@ -30,6 +32,14 @@
 
 - (void)setTitle:(NSString *)title {
     self.titleLabel.text = title;
+}
+
+- (void)setMessageCount:(NSInteger)messageCount {
+    self.messageCountContent.hidden = YES;
+    if (messageCount) {
+        self.messageCountContent.hidden = NO;
+        self.messageCountLabel.text = [NSString stringWithFormat:@"%ld", messageCount];
+    }
 }
 
 @end

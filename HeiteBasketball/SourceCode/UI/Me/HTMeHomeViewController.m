@@ -19,10 +19,12 @@
 #import "HTMeCenterHeaderCell.h"
 #import "HTMeCenterItemsCell.h"
 #import "HTMeCenterNormalCell.h"
+#import "HTUserRequest.h"
 
 @interface HTMeHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, assign) NSInteger messageCount;
 
 @end
 
@@ -43,6 +45,11 @@
                                              selector:@selector(onUserLogStatusChagne)
                                                  name:kUserLogStatusChagneNotice
                                                object:nil];
+    [HTUserRequest requestUnReadMessageCountWithSuccessBlock:^(NSInteger count) {
+        self.messageCount = count;
+        [self.tableView reloadData];
+    } failBlock:nil];
+    
 }
 
 - (void)dealloc {
@@ -118,6 +125,7 @@
     if (indexPath.row == 2) {
         HTMeCenterNormalCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTMeCenterNormalCell class])];
         cell.title = @"消息通知";
+        cell.messageCount = self.messageCount;
         return cell;
     }
     HTMeCenterNormalCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTMeCenterNormalCell class])];

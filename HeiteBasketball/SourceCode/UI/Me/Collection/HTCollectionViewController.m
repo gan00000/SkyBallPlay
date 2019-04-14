@@ -9,6 +9,7 @@
 #import "HTCollectionViewController.h"
 #import "HTUserRequest.h"
 #import "HTNewsHomeCell.h"
+#import "HTNewsDetailViewController.h"
 
 @interface HTCollectionViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -110,6 +111,14 @@
     HTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsHomeCell"];
     [cell setupWithNewsModel:self.dataSource[indexPath.row]];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+   HTNewsModel *newsModel = self.dataSource[indexPath.row];
+    
+    HTNewsDetailViewController *detailVc = [HTNewsDetailViewController viewController];
+    detailVc.newsModel = newsModel;
+    [self.navigationController pushViewController:detailVc animated:YES];
 }
 
 @end

@@ -21,7 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HTUserInfoModel : NSObject
 
-@property (nonatomic, assign) NSInteger user_id;
+@property (nonatomic, copy) NSString *user_id;
 @property (nonatomic, copy) NSString *display_name;
 @property (nonatomic, assign) BOOL change_name;
 @property (nonatomic, copy) NSString *user_email;

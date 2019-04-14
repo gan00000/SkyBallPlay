@@ -8,14 +8,16 @@
 
 #import "HTNewsTopHeaderView.h"
 
+@interface HTNewsTopHeaderView ()
+
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@end
+
 @implementation HTNewsTopHeaderView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)refreshWithTitle:(NSString *)title {
+    self.titleLabel.text = title;
 }
-*/
 
 @end

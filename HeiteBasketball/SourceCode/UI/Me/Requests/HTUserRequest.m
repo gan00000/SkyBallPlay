@@ -77,11 +77,14 @@
     } errorBlock:failBlock];
 }
 
-+ (void)requestHistoryWithSuccessBlock:(void(^)(NSArray <HTNewsModel *> *newsList))successBlock
-                             failBlock:(BJServiceErrorBlock)failBlock {
-    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_HISTORY_LIST params:nil successBlock:^(id responseData) {
++ (void)requestHistoryWithOffset:(NSInteger)offset
+                    successBlock:(HTMyCommentBlock)successBlock
+                       failBlock:(BJServiceErrorBlock)failBlock {
+    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_HISTORY_LIST params:@{@"offset": @(offset)} successBlock:^(id responseData) {
         if (successBlock) {
-            successBlock([NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"historyposts"][@"posts"]]);
+            NSArray *list = [NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"historyposts"][@"posts"]];
+            NSInteger pages = [(NSNumber *)responseData[@"historyposts"][@"pages"] integerValue];
+            successBlock(list, pages);
         }
     } errorBlock:failBlock];
 }
@@ -94,18 +97,22 @@
     } errorBlock:failBlock];
 }
 
-+ (void)requestMyCommentWithOffset:(NSInteger)offset successBlock:(void(^)(NSArray <HTNewsModel *> *newsList))successBlock failBlock:(BJServiceErrorBlock)failBlock {
++ (void)requestMyCommentWithOffset:(NSInteger)offset successBlock:(void(^)(NSArray <HTNewsModel *> *newsList, NSInteger pages))successBlock failBlock:(BJServiceErrorBlock)failBlock {
     [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_MY_COMMENT params:@{@"offset": @(offset)} successBlock:^(id responseData) {
         if (successBlock) {
-            successBlock([NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"posts"]]);
+            NSArray *newsList = [NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"savedposts"][@"comments"]];
+            NSInteger pages = [(NSNumber *)responseData[@"savedposts"][@"pages"] integerValue];
+            successBlock(newsList, pages);
         }
     } errorBlock:failBlock];
 }
 
-+ (void)requestMyLikeWithOffset:(NSInteger)offset successBlock:(void(^)(NSArray <HTNewsModel *> *newsList))successBlock failBlock:(BJServiceErrorBlock)failBlock {
++ (void)requestMyLikeWithOffset:(NSInteger)offset successBlock:(void(^)(NSArray <HTNewsModel *> *newsList, NSInteger pages))successBlock failBlock:(BJServiceErrorBlock)failBlock {
     [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_MY_LIKE params:@{@"offset": @(offset)} successBlock:^(id responseData) {
         if (successBlock) {
-            successBlock([NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"comments"]]);
+            NSArray *newsList = [NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"savedposts"][@"comments"]];
+            NSInteger pages = [(NSNumber *)responseData[@"savedposts"][@"pages"] integerValue];
+            successBlock(newsList, pages);
         }
     } errorBlock:failBlock];
 }
@@ -118,10 +125,14 @@
     } errorBlock:failBlock];
 }
 
-+ (void)requestMyMessageWithOffset:(NSInteger)offset successBlock:(void(^)(NSArray <HTMyMessageModel *> *messageList))successBlock failBlock:(BJServiceErrorBlock)failBlock {
++ (void)requestMyMessageWithOffset:(NSInteger)offset
+                      successBlock:(void(^)(NSArray <HTMyMessageModel *> *messageList, NSInteger pages))successBlock
+                         failBlock:(BJServiceErrorBlock)failBlock {
     [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_MESSAGE_LIST params:@{@"offset": @(offset)} successBlock:^(id responseData) {
         if (successBlock) {
-            successBlock([NSArray yy_modelArrayWithClass:[HTMyMessageModel class] json:responseData[@"result"][@"notification"]]);
+            NSArray *list = [NSArray yy_modelArrayWithClass:[HTMyMessageModel class] json:responseData[@"result"][@"notification"]];
+            NSInteger pages = [(NSNumber *)responseData[@"result"][@"pages"] integerValue];
+            successBlock(list, pages);
         }
     } errorBlock:failBlock];
 }

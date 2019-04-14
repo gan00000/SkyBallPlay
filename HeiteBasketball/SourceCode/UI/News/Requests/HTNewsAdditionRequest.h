@@ -18,13 +18,13 @@ NS_ASSUME_NONNULL_BEGIN
 // 獲取普通評論
 + (void)requestNormalCommentWithOffset:(NSInteger)offset
                                 newsId:(NSString *)newsId
-                          successBlock:(void(^)(NSArray <HTCommentModel *> *commentList))successBlock
+                          successBlock:(void(^)(NSArray <HTCommentModel *> *commentList, NSInteger pages))successBlock
                              failBlock:(BJServiceErrorBlock)failBlock;
 
 // 獲取熱門評論
 + (void)requestHotCommentWithOffset:(NSInteger)offset
                              newsId:(NSString *)newsId
-                       successBlock:(void(^)(NSArray <HTCommentModel *> *commentList))successBlock
+                       successBlock:(void(^)(NSArray <HTCommentModel *> *commentList, NSInteger pages))successBlock
                           failBlock:(BJServiceErrorBlock)failBlock;
 
 // 獲取全部評論
