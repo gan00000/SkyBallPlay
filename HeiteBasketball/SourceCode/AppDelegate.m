@@ -13,11 +13,11 @@
 #import <LineSDK/LineSDK.h>
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import "HTPushAlertView.h"
 
 #import "AFNetworkReachabilityManager.h"
 #import "BJLaunchViewController.h"
 #import "UIView+Toast.h"
+#import "HTNewsDetailViewController.h"
 
 #define UM_APP_KEY @"5bd67116f1f556f834000081"
 #define FB_APP_ID  @"479868032525276"
@@ -58,6 +58,10 @@
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
     
+    self.pushInfo = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+    if (self.pushInfo) {
+        [UMessage didReceiveRemoteNotification:self.pushInfo];
+    }
     
     return YES;
 }
@@ -182,7 +186,6 @@
         //应用处于前台时的远程推送接受
         //必须加这句代码
         [UMessage didReceiveRemoteNotification:userInfo];
-        [HTPushAlertView showPushViewWithUserInfo:userInfo];
     } else {
         //应用处于前台时的本地推送接受
     }
@@ -200,6 +203,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
         //应用处于后台时的远程推送接受
         //必须加这句代码
         [UMessage didReceiveRemoteNotification:userInfo];
+        [self responsePushInfo:userInfo fromViewController:nil]; // 前台或者后台点击响应
     }else{
         //应用处于后台时的本地推送接受
     }
@@ -212,6 +216,26 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     if (pushDeviceToken.length) {
         BJLog(@"deviceToken: %@", pushDeviceToken);
         [HTUserManager saveDeviceToken:pushDeviceToken];
+    }
+}
+
+- (void)responsePushInfo:(NSDictionary *)pushInfo fromViewController:(UIViewController *)vc {
+    if (!pushInfo) {
+        return;
+    }
+    
+    if (!vc) {
+        vc = [BJViewControllerCenter currentViewController];
+    }
+    
+    HTNewsDetailViewController *detailVc = [HTNewsDetailViewController viewController];
+    detailVc.post_id = pushInfo[@"postId"];
+    
+    if (vc.navigationController) {
+        [vc.navigationController pushViewController:detailVc animated:YES];
+    } else {
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:detailVc];
+        [vc presentViewController:nav animated:YES completion:nil];
     }
 }
 

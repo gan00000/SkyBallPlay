@@ -17,6 +17,7 @@
 #import "HTUserRequest.h"
 #import <BlocksKit/BlocksKit.h>
 #import <YYText/YYText.h>
+#import "HTCommentGetter.h"
 
 @interface HTNewsDetailViewController () <UITableViewDelegate, UITableViewDataSource, BJNavigationDelegate>
 
@@ -40,8 +41,8 @@
 @property (nonatomic, assign) BOOL topRequestDone;
 @property (nonatomic, assign) BOOL htmlLoadDone;
 @property (nonatomic, assign) BOOL commentRequestDone;
-@property (nonatomic, assign) NSInteger commentOffset;
 @property (nonatomic, weak) HTCommentModel *currentCommentModel;
+@property (nonatomic, strong) HTCommentGetter *commentGetter;
 
 @end
 
@@ -54,9 +55,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.view showLoadingView];
+    [self setupViews];
     if (self.newsModel) {
-        [self setupViews];
+        self.post_id = self.newsModel.news_id;
         [self loadData];
     } else if (self.post_id.length) {
         [self loadDetail];
@@ -99,14 +100,16 @@
     } else if (indexPath.section == 1) {
         kWeakSelf
         HTNewsWebCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsWebCell"];
-        [cell setupWithClearHtmlContent:self.htmlContent];
-        cell.onContentHeightUpdateBlock = ^(CGFloat height) {
-            if (fabs(height - weakSelf.newsContentHeight) < 1) {
-                return;
-            }
-            weakSelf.newsContentHeight = height;
-            [weakSelf.tableView reloadData];
-        };
+        if (self.newsContentHeight == 0) {
+            [cell setupWithClearHtmlContent:self.htmlContent];
+            cell.onContentHeightUpdateBlock = ^(CGFloat height) {
+                if (fabs(height - weakSelf.newsContentHeight) < 1) {
+                    return;
+                }
+                weakSelf.newsContentHeight = height;
+                [weakSelf.tableView reloadData];
+            };
+        }
         return cell;
     }
     HTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsHomeCell"];
@@ -151,7 +154,11 @@
 
 #pragma mark - private
 - (void)setupViews {
+    [self.view showLoadingView];
+    
     self.title = @"新聞詳情";
+    self.newsContentHeight = 0;
+    self.commentGetter = [HTCommentGetter new];
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -174,12 +181,6 @@
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
-    
-    self.newsContentHeight = 300;
-    self.topRequestDone = NO;
-    self.htmlLoadDone = NO;
-    self.commentRequestDone = NO;
-    self.commentOffset = 0;
     
     if ([HTNewsModel canShare]) {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"nav_icon_share"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonTapped:)];
@@ -221,20 +222,25 @@
 - (void)loadDetail {
     [HTNewsAdditionRequest requestDetailWithPostId:self.post_id successBlock:^(HTNewsModel * _Nonnull newsModel) {
         self.newsModel = newsModel;
-        [self setupViews];
         [self loadData];
     } errorBlock:^(BJError *error) {
         [self.view showToast:@"數據拉取失敗"];
-        [self.view showEmptyViewWithTitle:@"數據拉取失敗，點擊重試" tapBlock:^{
-            [self.view hideEmptyView];
-            [self.view showLoadingView];
-            [self loadDetail];
-        }];
+        if (!self.newsModel) {
+            [self.view showEmptyViewWithTitle:@"數據拉取失敗，點擊重試" tapBlock:^{
+                [self.view hideEmptyView];
+                [self.view showLoadingView];
+                [self loadDetail];
+            }];
+        }
     }];
 }
 
 - (void)loadData {
     kWeakSelf
+    self.topRequestDone = NO;
+    self.commentRequestDone = NO;
+    self.htmlLoadDone = YES;
+    
     [HTNewsTopRequest requestWithSuccessBlock:^(NSArray<HTNewsModel *> *newsList) {
         weakSelf.topNewsList = newsList;
         weakSelf.topRequestDone = YES;
@@ -245,11 +251,14 @@
         [weakSelf refreshUI];
     }];
     
-    [self.newsModel getClearContentWithBlock:^(BOOL success, NSString *content) {
-        weakSelf.htmlContent = content;
-        weakSelf.htmlLoadDone = YES;
-        [weakSelf refreshUI];
-    }];
+    if (!weakSelf.htmlContent) {
+        self.htmlLoadDone = NO;
+        [self.newsModel getClearContentWithBlock:^(BOOL success, NSString *content) {
+            weakSelf.htmlContent = content;
+            weakSelf.htmlLoadDone = YES;
+            [weakSelf refreshUI];
+        }];
+    }
     
     [HTNewsAdditionRequest requestAllCommentWithPostId:self.newsModel.news_id successBlock:^(NSArray<HTCommentModel *> * _Nonnull commentList, NSArray<HTCommentModel *> * _Nonnull hotComments) {
         self.commentRequestDone = YES;
@@ -258,7 +267,7 @@
         [self refreshUI];
     } failBlock:^(BJError *error) {
         [self.view showToast:@"「評論」獲取失敗"];
-        weakSelf.topRequestDone = YES;
+        weakSelf.commentRequestDone = YES;
         [weakSelf refreshUI];
     }];
     [HTUserRequest addHistoryWithNewsId:self.newsModel.news_id successBlock:^{
@@ -329,7 +338,7 @@
     self.newsModel.my_save = sender.selected;
 }
 
-- (IBAction)onCommentAction:(id)sender {
+- (IBAction)onShowCommentListAction:(id)sender {
     CGFloat contentHeight = self.newsContentHeight + self.newsModel.detailHeaderHeight + 90*self.topNewsList.count + 40;
     CGFloat commnetHeight = self.tableView.contentSize.height - contentHeight;
     if (commnetHeight > self.tableView.height) {
@@ -349,6 +358,7 @@
         self.commentInputView.text = nil;
         [self.view endEditing:YES];
         [kWindow showToast:@"評論成功"];
+        [self loadDetail];
     } failBlock:^(BJError *error) {
         [kWindow showToast:@"評論失敗"];
     }];

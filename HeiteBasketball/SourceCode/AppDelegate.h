@@ -12,7 +12,9 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, copy) NSString *post_id;
+@property (nonatomic, strong) NSDictionary *pushInfo;
+
+- (void)responsePushInfo:(NSDictionary *)pushInfo fromViewController:(UIViewController *)vc;
 
 @end
 

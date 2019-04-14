@@ -36,11 +36,6 @@
     [super viewDidLoad];
     
     self.title = @"我的";
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_back"]
-                                                                             style:UIBarButtonItemStylePlain
-                                                                            target:self
-                                                                            action:@selector(dismiss)];
     [self.navigationController.navigationBar setupBackground];
     [self setupTableView];
     
@@ -56,10 +51,6 @@
 
 - (void)onUserLogStatusChagne {
     [self.tableView reloadData];
-}
-
-- (void)dismiss {
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)setupTableView {

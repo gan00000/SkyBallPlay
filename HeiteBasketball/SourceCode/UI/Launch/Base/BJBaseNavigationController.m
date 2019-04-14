@@ -7,6 +7,11 @@
 //
 
 #import "BJBaseNavigationController.h"
+#import "HTMatchHomeViewController.h"
+#import "HTNewsHomeViewController.h"
+#import "HTFilmHomeViewController.h"
+#import "HTDataHomeViewController.h"
+#import "HTRankHomeViewController.h"
 
 @interface UINavigationController (UINavigationControllerPopHooker)
 
@@ -59,7 +64,12 @@
     viewController.hidesBottomBarWhenPushed = YES;
     [super pushViewController:viewController animated:animated];
     
-    if (self.viewControllers.count > 1) {
+    if (self.viewControllers.count > 1 ||
+        (![self isKindOfClass:[HTMatchHomeViewController class]] &&
+         ![self isKindOfClass:[HTNewsHomeViewController class]] &&
+         ![self isKindOfClass:[HTFilmHomeViewController class]] &&
+         ![self isKindOfClass:[HTDataHomeViewController class]] &&
+         ![self isKindOfClass:[HTRankHomeViewController class]])) {
         viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_icon_back"]
                                                                                            style:UIBarButtonItemStylePlain
                                                                                           target:self
@@ -84,6 +94,10 @@
             }
             return; //自定义返回按钮点击事件
         }
+    }
+    if (self.viewControllers.count == 1) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+        return;
     }
     [self popViewControllerAnimated:YES];
 }

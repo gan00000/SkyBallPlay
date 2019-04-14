@@ -44,7 +44,7 @@
                      errorBlock:(BJServiceErrorBlock)errorBlock {
     [BJHTTPServiceEngine postRequestWithFunctionPath:API_NEWS_DETAIL params:@{@"post_id": post_id} successBlock:^(id responseData) {
         if (successBlock) {
-            successBlock([HTNewsModel yy_modelWithJSON:responseData[@"result"]]);
+            successBlock([HTNewsModel yy_modelWithJSON:responseData[@"post"]]);
         }
     } errorBlock:errorBlock];
 }

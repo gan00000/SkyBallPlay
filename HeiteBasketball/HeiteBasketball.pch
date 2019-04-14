@@ -50,7 +50,7 @@
 #define BJ_GUIDE_PAGE_VERSION 1
 //************************//
 
-#define ENABLE_REQUEST_LOG 0
+#define ENABLE_REQUEST_LOG 1
 
 // color
 #define RGBA_COLOR(r, g, b ,al) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:al]

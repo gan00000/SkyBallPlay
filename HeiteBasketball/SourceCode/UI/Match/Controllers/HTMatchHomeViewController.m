@@ -16,6 +16,7 @@
 #import "NSDateFormatter+DRExtension.h"
 #import "UIView+Loading.h"
 #import "UIView+EmptyView.h"
+#import "AppDelegate.h"
 
 @interface HTMatchHomeViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -43,6 +44,18 @@
     [super viewDidLoad];
     
     [self setupViews];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    if (app.pushInfo) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [app responsePushInfo:app.pushInfo fromViewController:self];
+            app.pushInfo = nil;
+        });
+    }
 }
 
 - (void)didReceiveMemoryWarning {
