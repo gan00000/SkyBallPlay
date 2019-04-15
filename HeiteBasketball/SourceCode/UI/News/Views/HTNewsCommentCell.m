@@ -104,6 +104,7 @@
         [attr yy_setColor:[UIColor hx_colorWithHexRGBAString:@"4E8BFF"] range:range];
         self.commentLabel.attributedText = attr;
         
+        self.replyCountLabel.hidden = YES;
     } else {
         if (commentModel.replyHeight == 0) {
             self.replyTableViewTop.constant = 10;
