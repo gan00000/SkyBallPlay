@@ -80,6 +80,13 @@
         [self.likeButton setTintColor:[UIColor hx_colorWithHexRGBAString:@"999999"]];
     }
     
+    if (commentModel.total_like > 0) {
+        [self.likeButton setTitle:[NSString stringWithFormat:@"%ld", commentModel.total_like]
+                         forState:UIControlStateNormal];
+    } else {
+        [self.likeButton setTitle:@"贊" forState:UIControlStateNormal];
+    }
+    
     if (commentModel.isReply) {
         self.replyTableViewHeitht.constant = 0;
         self.replyTableViewTop.constant = 8;
@@ -104,6 +111,8 @@
         [attr yy_setColor:[UIColor hx_colorWithHexRGBAString:@"4E8BFF"] range:range];
         self.commentLabel.attributedText = attr;
         
+        self.replyCountLabel.hidden = YES;
+        
     } else {
         if (commentModel.replyHeight == 0) {
             self.replyTableViewTop.constant = 10;
@@ -119,14 +128,29 @@
 }
 
 - (IBAction)onReplyAction:(id)sender {
+    if (![HTUserManager isUserLogin]) {
+        [HTUserManager doUserLogin];
+        return;
+    }
     if (self.onReplyBlock) {
         self.onReplyBlock(self.commentModel);
     }
 }
 
 - (IBAction)onLikeAction:(UIButton *)sender {
+    if (![HTUserManager isUserLogin]) {
+        [HTUserManager doUserLogin];
+        return;
+    }
     UIView *view = [BJViewControllerCenter currentViewController].view;
     [HTUserRequest likePostWithPostId:self.commentModel.post_id comment_id:self.commentModel.comment_id like:!sender.selected successBlock:^{
+        if (self.commentModel.my_like) {
+            self.commentModel.total_like --;
+            [view showToast:@"已取消點讚"];
+        } else {
+            self.commentModel.total_like ++;
+            [view showToast:@"已點讚"];
+        }
         self.commentModel.my_like = !self.commentModel.my_like;
         [self refreshWithCommentModel:self.commentModel];
     } failBlock:^(BJError *error) {

@@ -11,7 +11,6 @@
 
 @interface HTNewsDetailViewController : BJBaseViewController
 
-@property (nonatomic, strong) HTNewsModel *newsModel;
 @property (nonatomic, copy) NSString *post_id;
 
 @end

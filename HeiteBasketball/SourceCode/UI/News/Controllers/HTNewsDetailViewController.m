@@ -35,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *comtentHeight;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentRight;
 
+@property (nonatomic, strong) HTNewsModel *newsModel;
 @property (nonatomic, strong) NSArray *topNewsList;
 @property (nonatomic, copy) NSString *htmlContent;
 @property (nonatomic, assign) CGFloat newsContentHeight;
@@ -58,7 +59,6 @@
     [super viewDidLoad];
     
     [self setupViews];
-    [self addHistoryRecord];
     
     self.isFirstShow = YES;
 }
@@ -73,14 +73,10 @@
             self.commentInputView.text = nil;
         }
         
-        if (self.newsModel) {
-            self.post_id = self.newsModel.news_id;
+        [self loadDetailWithCompleteBlock:^{
             [self initDataRequests];
-        } else if (self.post_id.length) {
-            [self loadDetailWithCompleteBlock:^{
-                [self initDataRequests];
-            }];
-        }
+        }];
+        [self addHistoryRecord];
     }
 }
 
@@ -167,7 +163,7 @@
         HTNewsModel *newsModel = self.topNewsList[indexPath.row];
         
         HTNewsDetailViewController *detailVc = [HTNewsDetailViewController viewController];
-        detailVc.newsModel = newsModel;
+        detailVc.post_id = newsModel.news_id;
         [self.navigationController pushViewController:detailVc animated:YES];
     }
 }
@@ -290,7 +286,7 @@
 }
 
 - (void)addHistoryRecord {
-    [HTUserRequest addHistoryWithNewsId:self.newsModel.news_id successBlock:^{
+    [HTUserRequest addHistoryWithNewsId:self.post_id successBlock:^{
         BJLog(@"添加瀏覽歷史成功");
     } failBlock:^(BJError *error) {
         BJLog(@"添加瀏覽歷史失敗");

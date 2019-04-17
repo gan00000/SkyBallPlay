@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *viewLabel;
 @property (weak, nonatomic) IBOutlet UIView *shareButtonContentView;
+@property (weak, nonatomic) IBOutlet UIImageView *view_icon;
 
 @property (nonatomic, weak) HTNewsModel *newsModel;
 
@@ -44,6 +45,9 @@
     self.titleLabel.text = newsModel.title;
     self.timeLabel.text = newsModel.time;
     self.viewLabel.text = newsModel.view_count;
+    if (!newsModel.view_count.length) {
+        self.view_icon.hidden = YES;
+    }
 }
 
 - (IBAction)onShareButtonTapped:(id)sender {

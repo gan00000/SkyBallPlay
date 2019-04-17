@@ -71,7 +71,7 @@
     HTNewsModel *newsModel = self.filmList[indexPath.row];
     
     HTNewsDetailViewController *detailVc = [HTNewsDetailViewController viewController];
-    detailVc.newsModel = newsModel;
+    detailVc.post_id = newsModel.news_id;
     [self.navigationController pushViewController:detailVc animated:YES];
 }
 

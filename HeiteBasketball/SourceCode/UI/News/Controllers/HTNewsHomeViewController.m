@@ -66,7 +66,7 @@
         [cell setupWithNewsModels:self.bannerList];
         cell.onBannerTappedBlock = ^(HTNewsModel *newsModel) {
             HTNewsDetailViewController *detailVc = [HTNewsDetailViewController viewController];
-            detailVc.newsModel = newsModel;
+            detailVc.post_id = newsModel.news_id;
             [weakSelf.navigationController pushViewController:detailVc animated:YES];
         };
         return cell;
@@ -93,7 +93,7 @@
     HTNewsModel *newsModel = self.newsList[indexPath.row];
     
     HTNewsDetailViewController *detailVc = [HTNewsDetailViewController viewController];
-    detailVc.newsModel = newsModel;
+    detailVc.post_id = newsModel.news_id;
     [self.navigationController pushViewController:detailVc animated:YES];
 }
 
