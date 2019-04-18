@@ -79,7 +79,7 @@
                             <constraint firstAttribute="width" constant="50" id="dvh-Bh-DAx"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <state key="normal" title=" 贊" image="icon_add_like">
+                        <state key="normal" title="讃" image="icon_add_like">
                             <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
                         <connections>

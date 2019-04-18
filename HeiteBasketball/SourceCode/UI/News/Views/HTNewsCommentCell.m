@@ -84,7 +84,7 @@
         [self.likeButton setTitle:[NSString stringWithFormat:@"%ld", commentModel.total_like]
                          forState:UIControlStateNormal];
     } else {
-        [self.likeButton setTitle:@"贊" forState:UIControlStateNormal];
+        [self.likeButton setTitle:@"讃" forState:UIControlStateNormal];
     }
     
     if (commentModel.isReply) {
