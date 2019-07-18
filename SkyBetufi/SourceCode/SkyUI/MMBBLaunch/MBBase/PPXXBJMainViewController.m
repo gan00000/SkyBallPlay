@@ -6,33 +6,33 @@
 //  Copyright © 2017年 Benjia. All rights reserved.
 //
 
-#import "BJMainViewController.h"
+#import "PPXXBJMainViewController.h"
 #import "HTMatchHomeViewController.h"
 #import "HTNewsHomeViewController.h"
 #import "HTFilmHomeViewController.h"
 #import "HTDataHomeViewController.h"
 #import "HTRankHomeViewController.h"
 
-@interface BJMainViewController ()<UITabBarControllerDelegate>
+@interface PPXXBJMainViewController ()<UITabBarControllerDelegate>
 
-@property (nonatomic, strong) BJNavigationController *nav1;
+@property (nonatomic, strong) PPXXBJNavigationController *nav1;
 @property (nonatomic, strong) HTMatchHomeViewController *vc1;
 
-@property (nonatomic, strong) BJNavigationController *nav2;
+@property (nonatomic, strong) PPXXBJNavigationController *nav2;
 @property (nonatomic, strong) HTNewsHomeViewController *vc2;
 
-@property (nonatomic, strong) BJNavigationController *nav3;
+@property (nonatomic, strong) PPXXBJNavigationController *nav3;
 @property (nonatomic, strong) HTFilmHomeViewController *vc3;
 
-@property (nonatomic, strong) BJNavigationController *nav4;
+@property (nonatomic, strong) PPXXBJNavigationController *nav4;
 @property (nonatomic, strong) HTDataHomeViewController *vc4;
 
-@property (nonatomic, strong) BJNavigationController *nav5;
+@property (nonatomic, strong) PPXXBJNavigationController *nav5;
 @property (nonatomic, strong) HTRankHomeViewController *vc5;
 
 @end
 
-@implementation BJMainViewController
+@implementation PPXXBJMainViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -77,23 +77,23 @@
 - (NSArray<UIViewController *> *)tabBarControllers {
     if (!self.vc1) {
         self.vc1 = [HTMatchHomeViewController viewController];
-        self.nav1 = [[BJNavigationController alloc] initWithRootViewController:self.vc1];
+        self.nav1 = [[PPXXBJNavigationController alloc] initWithRootViewController:self.vc1];
     }
     if (!self.vc2) {
         self.vc2 = [HTNewsHomeViewController viewController];
-        self.nav2 = [[BJNavigationController alloc] initWithRootViewController:self.vc2];
+        self.nav2 = [[PPXXBJNavigationController alloc] initWithRootViewController:self.vc2];
     }
     if (!self.vc3) {
         self.vc3 = [HTFilmHomeViewController viewController];
-        self.nav3 = [[BJNavigationController alloc] initWithRootViewController:self.vc3];
+        self.nav3 = [[PPXXBJNavigationController alloc] initWithRootViewController:self.vc3];
     }
     if (!self.vc4) {
         self.vc4 = [HTDataHomeViewController viewController];
-        self.nav4 = [[BJNavigationController alloc] initWithRootViewController:self.vc4];
+        self.nav4 = [[PPXXBJNavigationController alloc] initWithRootViewController:self.vc4];
     }
     if (!self.vc5) {
         self.vc5 = [HTRankHomeViewController viewController];
-        self.nav5 = [[BJNavigationController alloc] initWithRootViewController:self.vc5];
+        self.nav5 = [[PPXXBJNavigationController alloc] initWithRootViewController:self.vc5];
     }
     return @[self.nav1, self.nav2, self.nav3, self.nav4, self.nav5];
 }

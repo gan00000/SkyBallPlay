@@ -12,7 +12,7 @@
 #import "HTNewsWebCell.h"
 #import "HTNewsHomeCell.h"
 #import "HTNewsTopHeaderView.h"
-#import "BJNavigationController.h"
+#import "PPXXBJNavigationController.h"
 #import "HTNewsAdditionRequest.h"
 #import "HTUserRequest.h"
 #import <BlocksKit/BlocksKit.h>
@@ -334,7 +334,7 @@
     UIImage *commentIcon = [[UIImage imageNamed:@"icon_add_comment"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.commentButton setImage:commentIcon forState:UIControlStateNormal];
     [self.commentButton setTintColor:[UIColor hx_colorWithHexRGBAString:@"999999"]];
-    UIImage *saveIcon = [[BJBaseViewController fixImageSize:[UIImage imageNamed:@"icon_add_collection"] toSize:CGSizeMake(20, 20)] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIImage *saveIcon = [[PPXXBJBaseViewController fixImageSize:[UIImage imageNamed:@"icon_add_collection"] toSize:CGSizeMake(20, 20)] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.saveButton setImage:saveIcon forState:UIControlStateNormal];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onInputBegin) name:UITextViewTextDidBeginEditingNotification object:self.commentInputView];

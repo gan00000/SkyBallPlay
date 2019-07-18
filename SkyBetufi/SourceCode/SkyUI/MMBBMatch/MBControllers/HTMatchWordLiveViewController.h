@@ -6,10 +6,10 @@
 //  Copyright © 2018年 Dean_F. All rights reserved.
 //
 
-#import "BJBaseViewController.h"
+#import "PPXXBJBaseViewController.h"
 #import "HTMatchLiveFeedModel.h"
 
-@interface HTMatchWordLiveViewController : BJBaseViewController
+@interface HTMatchWordLiveViewController : PPXXBJBaseViewController
 
 @property (nonatomic, copy) void (^onTableHeaderRefreshBlock)(void);
 

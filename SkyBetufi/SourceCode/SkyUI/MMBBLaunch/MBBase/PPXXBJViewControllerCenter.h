@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BJMainViewController.h"
+#import "PPXXBJMainViewController.h"
 
-@interface BJViewControllerCenter : NSObject
+@interface PPXXBJViewControllerCenter : NSObject
 
-+ (BJMainViewController *)mainViewController;
++ (PPXXBJMainViewController *)mainViewController;
 + (UIViewController *)currentViewController;
 
 @end

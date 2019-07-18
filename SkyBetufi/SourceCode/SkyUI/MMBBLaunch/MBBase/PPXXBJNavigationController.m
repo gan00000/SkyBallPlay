@@ -6,18 +6,18 @@
 //  Copyright © 2017年 Benjia. All rights reserved.
 //
 
-#import "BJNavigationController.h"
+#import "PPXXBJNavigationController.h"
 #import "HTMatchHomeViewController.h"
 #import "HTNewsHomeViewController.h"
 #import "HTFilmHomeViewController.h"
 #import "HTDataHomeViewController.h"
 #import "HTRankHomeViewController.h"
 
-@interface BJNavigationController ()
+@interface PPXXBJNavigationController ()
 
 @end
 
-@implementation BJNavigationController
+@implementation PPXXBJNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

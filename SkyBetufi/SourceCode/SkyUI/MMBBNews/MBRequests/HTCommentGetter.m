@@ -69,7 +69,7 @@
             [self loadNormalCommentsWithCompleteBlock:block];
         }
     } failBlock:^(BJError *error) {
-        [[BJViewControllerCenter currentViewController].view showToast:@"獲取「熱門評論」失敗"];
+        [[PPXXBJViewControllerCenter currentViewController].view showToast:@"獲取「熱門評論」失敗"];
         if (block) {
             block();
         }
@@ -107,7 +107,7 @@
             block();
         }
     } failBlock:^(BJError *error) {
-        [[BJViewControllerCenter currentViewController].view showToast:@"獲取「全部評論」失敗"];
+        [[PPXXBJViewControllerCenter currentViewController].view showToast:@"獲取「全部評論」失敗"];
         if (block) {
             block();
         }

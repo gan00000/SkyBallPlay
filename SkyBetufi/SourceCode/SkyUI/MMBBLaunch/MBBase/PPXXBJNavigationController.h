@@ -6,8 +6,8 @@
 //  Copyright © 2017年 Benjia. All rights reserved.
 //
 
-#import "BJBaseNavigationController.h"
+#import "PPXXBJBaseNavigationController.h"
 
-@interface BJNavigationController : BJBaseNavigationController
+@interface PPXXBJNavigationController : PPXXBJBaseNavigationController
 
 @end

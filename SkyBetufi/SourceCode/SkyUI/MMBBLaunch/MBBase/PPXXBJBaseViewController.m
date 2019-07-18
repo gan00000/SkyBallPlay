@@ -6,17 +6,17 @@
 //  Copyright © 2017年 Benjia. All rights reserved.
 //
 
-#import "BJBaseViewController.h"
+#import "PPXXBJBaseViewController.h"
 #import "HTMeHomeViewController.h"
-#import "BJNavigationController.h"
+#import "PPXXBJNavigationController.h"
 
-@interface BJBaseViewController ()
+@interface PPXXBJBaseViewController ()
 
 @property (nonatomic, strong) UIButton *meCenterButton;
 
 @end
 
-@implementation BJBaseViewController
+@implementation PPXXBJBaseViewController
 
 + (instancetype)viewController {
     return kLoadStoryboardWithName(NSStringFromClass([self class]));
@@ -51,14 +51,14 @@
 
 - (void)showMeCenter {
     HTMeHomeViewController *meVc = [HTMeHomeViewController viewController];
-    BJNavigationController *nav = [[BJNavigationController alloc] initWithRootViewController:meVc];
+    PPXXBJNavigationController *nav = [[PPXXBJNavigationController alloc] initWithRootViewController:meVc];
     [nav.navigationBar lt_setBackgroundColor:[UIColor hx_colorWithHexRGBAString:@"fc562e"]];
     [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)setupMeCenterButton {
     if ([HTUserManager isUserLogin]) {
-        [self.meCenterButton setImage:[BJBaseViewController fixImageSize:[HTUserManager userInfo].avatar toSize:CGSizeMake(36, 36)] forState:UIControlStateNormal];
+        [self.meCenterButton setImage:[PPXXBJBaseViewController fixImageSize:[HTUserManager userInfo].avatar toSize:CGSizeMake(36, 36)] forState:UIControlStateNormal];
     } else {
         [self.meCenterButton setImage:[UIImage imageNamed:@"default_avatar"] forState:UIControlStateNormal];
     }

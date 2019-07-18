@@ -6,13 +6,13 @@
 //  Copyright © 2017年 Marco. All rights reserved.
 //
 
-#import "BJBaseTabBarController.h"
+#import "PPXXBJBaseTabBarController.h"
 
-@interface BJBaseTabBarController ()
+@interface PPXXBJBaseTabBarController ()
 
 @end
 
-@implementation BJBaseTabBarController
+@implementation PPXXBJBaseTabBarController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

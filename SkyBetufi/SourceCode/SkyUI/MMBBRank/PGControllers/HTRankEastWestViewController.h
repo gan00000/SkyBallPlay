@@ -6,8 +6,8 @@
 //  Copyright © 2018年 Dean_F. All rights reserved.
 //
 
-#import "BJBaseViewController.h"
+#import "PPXXBJBaseViewController.h"
 
-@interface HTRankEastWestViewController : BJBaseViewController
+@interface HTRankEastWestViewController : PPXXBJBaseViewController
 
 @end

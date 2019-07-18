@@ -6,11 +6,11 @@
 //  Copyright © 2018年 Dean_F. All rights reserved.
 //
 
-#import "BJBaseViewController.h"
+#import "PPXXBJBaseViewController.h"
 #import "HTMatchSummaryModel.h"
 
 
-@interface HTMatchCompareViewController : BJBaseViewController
+@interface HTMatchCompareViewController : PPXXBJBaseViewController
 
 @property (nonatomic, copy) void (^onTableHeaderRefreshBlock)(void);
 

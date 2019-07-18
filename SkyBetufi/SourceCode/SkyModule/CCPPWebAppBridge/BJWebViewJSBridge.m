@@ -11,7 +11,7 @@
 #import "BJUtility.h"
 #import "YYModel.h"
 #import "BJURINavigator.h"
-#import "BJViewControllerCenter.h"
+#import "PPXXBJViewControllerCenter.h"
 #import "MJRefreshGenerator.h"
 
 #import <WebKit/WebKit.h>
@@ -127,8 +127,8 @@
         if (tab > 3) {
             tab = 0;
         }
-        [[BJViewControllerCenter currentViewController].navigationController popToRootViewControllerAnimated:NO];
-        [BJViewControllerCenter mainViewController].selectedIndex = tab;
+        [[PPXXBJViewControllerCenter currentViewController].navigationController popToRootViewControllerAnimated:NO];
+        [PPXXBJViewControllerCenter mainViewController].selectedIndex = tab;
     }];
     
     [self.jsBridge registerHandler:@"backToLastPage" handler:^(id data, WVJBResponseCallback responseCallback) {
@@ -136,7 +136,7 @@
         if (data[@"animated"]) {
             animated = [data[@"animated"] integerValue] == 1;
         }
-        [[BJViewControllerCenter currentViewController].navigationController popViewControllerAnimated:animated];
+        [[PPXXBJViewControllerCenter currentViewController].navigationController popViewControllerAnimated:animated];
     }];
     
     [self.jsBridge registerHandler:@"gotoPage" handler:^(id data, WVJBResponseCallback responseCallback) {

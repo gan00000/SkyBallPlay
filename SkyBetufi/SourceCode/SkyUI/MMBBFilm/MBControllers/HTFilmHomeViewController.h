@@ -6,8 +6,8 @@
 //  Copyright © 2018年 Dean_F. All rights reserved.
 //
 
-#import "BJBaseViewController.h"
+#import "PPXXBJBaseViewController.h"
 
-@interface HTFilmHomeViewController : BJBaseViewController
+@interface HTFilmHomeViewController : PPXXBJBaseViewController
 
 @end

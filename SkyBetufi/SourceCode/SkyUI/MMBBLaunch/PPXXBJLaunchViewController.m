@@ -6,17 +6,17 @@
 //  Copyright © 2017年 Benjia. All rights reserved.
 //
 
-#import "BJLaunchViewController.h"
-#import "BJMainViewController.h"
+#import "PPXXBJLaunchViewController.h"
+#import "PPXXBJMainViewController.h"
 #import "AppDelegate.h"
 
-@interface BJLaunchViewController () <CAAnimationDelegate>
+@interface PPXXBJLaunchViewController () <CAAnimationDelegate>
 
-@property (nonatomic, strong) BJMainViewController *tabBarController;
+@property (nonatomic, strong) PPXXBJMainViewController *tabBarController;
 
 @end
 
-@implementation BJLaunchViewController
+@implementation PPXXBJLaunchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,9 +53,9 @@
 }
 
 #pragma mark - getters
-- (BJMainViewController *)tabBarController {
+- (PPXXBJMainViewController *)tabBarController {
     if (!_tabBarController) {
-        _tabBarController = [[BJMainViewController alloc] init];
+        _tabBarController = [[PPXXBJMainViewController alloc] init];
     }
     return _tabBarController;
 }

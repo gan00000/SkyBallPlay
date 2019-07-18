@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Marco. All rights reserved.
 //
 
-#import "BJBaseNavigationController.h"
+#import "PPXXBJBaseNavigationController.h"
 #import "HTMatchHomeViewController.h"
 #import "HTNewsHomeViewController.h"
 #import "HTFilmHomeViewController.h"
@@ -25,10 +25,10 @@
 @end
 #pragma clang diagnostic pop
 
-@interface BJBaseNavigationController () <UIGestureRecognizerDelegate, UINavigationControllerDelegate>
+@interface PPXXBJBaseNavigationController () <UIGestureRecognizerDelegate, UINavigationControllerDelegate>
 @end
 
-@implementation BJBaseNavigationController
+@implementation PPXXBJBaseNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

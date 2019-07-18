@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Benjia. All rights reserved.
 //
 
-#import "BJBaseTabBarController.h"
+#import "PPXXBJBaseTabBarController.h"
 
 typedef NS_ENUM(NSInteger, BJMainTabIndex) {
     BJMainTabIndexMatch= 0,
@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, BJMainTabIndex) {
     BJMainTabIndexRank
 };
 
-@interface BJMainViewController : BJBaseTabBarController
+@interface PPXXBJMainViewController : PPXXBJBaseTabBarController
 
 @property (nonatomic, assign) NSInteger currentSelectedIndex;
 

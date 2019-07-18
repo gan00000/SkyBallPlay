@@ -6,11 +6,11 @@
 //  Copyright © 2018 Dean_F. All rights reserved.
 //
 
-#import "BJBaseViewController.h"
+#import "PPXXBJBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HTSettingViewController : BJBaseViewController
+@interface HTSettingViewController : PPXXBJBaseViewController
 
 @end
 

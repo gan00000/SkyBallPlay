@@ -108,7 +108,7 @@
 		FEB46C822157903B00E482CE /* HTMatchLiveFeedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB46C812157903B00E482CE /* HTMatchLiveFeedModel.m */; };
 		FEC112622143D058002DB617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC112612143D058002DB617 /* Assets.xcassets */; };
 		FEC112682143D058002DB617 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC112672143D058002DB617 /* main.m */; };
-		FEC115BD2143D4A0002DB617 /* BJLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113132143D4A0002DB617 /* BJLaunchViewController.m */; };
+		FEC115BD2143D4A0002DB617 /* PPXXBJLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113132143D4A0002DB617 /* PPXXBJLaunchViewController.m */; };
 		FEC116042143D4A1002DB617 /* XJLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEC1139F2143D4A0002DB617 /* XJLoadingView.xib */; };
 		FEC116052143D4A1002DB617 /* XJLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113A02143D4A0002DB617 /* XJLoadingView.m */; };
 		FEC116062143D4A1002DB617 /* XJToastImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113A42143D4A0002DB617 /* XJToastImageView.m */; };
@@ -131,10 +131,10 @@
 		FEC116292143D4A1002DB617 /* BJHUDView.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113EE2143D4A0002DB617 /* BJHUDView.m */; };
 		FEC1162A2143D4A1002DB617 /* BJHUDView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEC113EF2143D4A0002DB617 /* BJHUDView.xib */; };
 		FEC1162B2143D4A1002DB617 /* BJLoadingHud.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113F02143D4A0002DB617 /* BJLoadingHud.m */; };
-		FEC116492143D4A1002DB617 /* BJMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC114282143D4A0002DB617 /* BJMainViewController.m */; };
-		FEC1164A2143D4A1002DB617 /* BJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC114292143D4A0002DB617 /* BJNavigationController.m */; };
-		FEC1164B2143D4A1002DB617 /* BJBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1142A2143D4A0002DB617 /* BJBaseViewController.m */; };
-		FEC1164C2143D4A1002DB617 /* BJViewControllerCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1142B2143D4A0002DB617 /* BJViewControllerCenter.m */; };
+		FEC116492143D4A1002DB617 /* PPXXBJMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC114282143D4A0002DB617 /* PPXXBJMainViewController.m */; };
+		FEC1164A2143D4A1002DB617 /* PPXXBJNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC114292143D4A0002DB617 /* PPXXBJNavigationController.m */; };
+		FEC1164B2143D4A1002DB617 /* PPXXBJBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1142A2143D4A0002DB617 /* PPXXBJBaseViewController.m */; };
+		FEC1164C2143D4A1002DB617 /* PPXXBJViewControllerCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1142B2143D4A0002DB617 /* PPXXBJViewControllerCenter.m */; };
 		FEC116762143D4A1002DB617 /* BJURINavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC114852143D4A0002DB617 /* BJURINavigator.m */; };
 		FEC116772143D4A1002DB617 /* BJWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC114872143D4A0002DB617 /* BJWebViewController.m */; };
 		FEC116782143D4A1002DB617 /* BJURINavHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC114882143D4A0002DB617 /* BJURINavHelper.m */; };
@@ -146,8 +146,8 @@
 		FEC1168C2143D4A1002DB617 /* BJServiceConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC114B82143D4A0002DB617 /* BJServiceConfigurator.m */; };
 		FEC116932143D4A1002DB617 /* BJHTTPServiceEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC114CE2143D4A0002DB617 /* BJHTTPServiceEngine.m */; };
 		FEC116B62143D4A1002DB617 /* BJBaseHTTPEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1151F2143D4A0002DB617 /* BJBaseHTTPEngine.m */; };
-		FEC116B72143D4A1002DB617 /* BJBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115222143D4A0002DB617 /* BJBaseTabBarController.m */; };
-		FEC116B82143D4A1002DB617 /* BJBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115242143D4A0002DB617 /* BJBaseNavigationController.m */; };
+		FEC116B72143D4A1002DB617 /* PPXXBJBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115222143D4A0002DB617 /* PPXXBJBaseTabBarController.m */; };
+		FEC116B82143D4A1002DB617 /* PPXXBJBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115242143D4A0002DB617 /* PPXXBJBaseNavigationController.m */; };
 		FEC116BF2143D4A1002DB617 /* BJDateFormatUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115342143D4A0002DB617 /* BJDateFormatUtility.m */; };
 		FEC116C02143D4A1002DB617 /* UIImage+Generator.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115372143D4A0002DB617 /* UIImage+Generator.m */; };
 		FEC116C22143D4A1002DB617 /* UIView+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1153D2143D4A0002DB617 /* UIView+ViewController.m */; };
@@ -263,6 +263,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		325BD8C522E0705D00A07EC9 /* PPXXBJLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPXXBJLaunchViewController.h; sourceTree = "<group>"; };
+		325BD8C822E07D6F00A07EC9 /* confuse.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = confuse.sh; sourceTree = "<group>"; };
+		325BD8C922E07D6F00A07EC9 /* func.list */ = {isa = PBXFileReference; lastKnownFileType = text; path = func.list; sourceTree = "<group>"; };
+		325BD8CB22E0840600A07EC9 /* codeObfuscation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codeObfuscation.h; sourceTree = "<group>"; };
 		608E0284ECCB1F2C8732AAA8 /* Pods-HeiteBasketball.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeiteBasketball.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball.debug.xcconfig"; sourceTree = "<group>"; };
 		6DC337F0671EB4742D64BA54 /* Pods_SkyBallPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyBallPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72321527951E473E782564AC /* Pods-HeiteBasketball.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeiteBasketball.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball.release.xcconfig"; sourceTree = "<group>"; };
@@ -427,8 +431,7 @@
 		FEC112612143D058002DB617 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEC112662143D058002DB617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEC112672143D058002DB617 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FEC113122143D4A0002DB617 /* BJLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJLaunchViewController.h; sourceTree = "<group>"; };
-		FEC113132143D4A0002DB617 /* BJLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJLaunchViewController.m; sourceTree = "<group>"; };
+		FEC113132143D4A0002DB617 /* PPXXBJLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPXXBJLaunchViewController.m; sourceTree = "<group>"; };
 		FEC1139C2143D4A0002DB617 /* BJEmptyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJEmptyTableViewCell.h; sourceTree = "<group>"; };
 		FEC1139F2143D4A0002DB617 /* XJLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XJLoadingView.xib; sourceTree = "<group>"; };
 		FEC113A02143D4A0002DB617 /* XJLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJLoadingView.m; sourceTree = "<group>"; };
@@ -467,14 +470,14 @@
 		FEC113EE2143D4A0002DB617 /* BJHUDView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJHUDView.m; sourceTree = "<group>"; };
 		FEC113EF2143D4A0002DB617 /* BJHUDView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BJHUDView.xib; sourceTree = "<group>"; };
 		FEC113F02143D4A0002DB617 /* BJLoadingHud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJLoadingHud.m; sourceTree = "<group>"; };
-		FEC114282143D4A0002DB617 /* BJMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJMainViewController.m; sourceTree = "<group>"; };
-		FEC114292143D4A0002DB617 /* BJNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJNavigationController.m; sourceTree = "<group>"; };
-		FEC1142A2143D4A0002DB617 /* BJBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJBaseViewController.m; sourceTree = "<group>"; };
-		FEC1142B2143D4A0002DB617 /* BJViewControllerCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJViewControllerCenter.m; sourceTree = "<group>"; };
-		FEC1142C2143D4A0002DB617 /* BJNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJNavigationController.h; sourceTree = "<group>"; };
-		FEC1142D2143D4A0002DB617 /* BJMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJMainViewController.h; sourceTree = "<group>"; };
-		FEC114312143D4A0002DB617 /* BJBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJBaseViewController.h; sourceTree = "<group>"; };
-		FEC114322143D4A0002DB617 /* BJViewControllerCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJViewControllerCenter.h; sourceTree = "<group>"; };
+		FEC114282143D4A0002DB617 /* PPXXBJMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPXXBJMainViewController.m; sourceTree = "<group>"; };
+		FEC114292143D4A0002DB617 /* PPXXBJNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPXXBJNavigationController.m; sourceTree = "<group>"; };
+		FEC1142A2143D4A0002DB617 /* PPXXBJBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPXXBJBaseViewController.m; sourceTree = "<group>"; };
+		FEC1142B2143D4A0002DB617 /* PPXXBJViewControllerCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPXXBJViewControllerCenter.m; sourceTree = "<group>"; };
+		FEC1142C2143D4A0002DB617 /* PPXXBJNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPXXBJNavigationController.h; sourceTree = "<group>"; };
+		FEC1142D2143D4A0002DB617 /* PPXXBJMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPXXBJMainViewController.h; sourceTree = "<group>"; };
+		FEC114312143D4A0002DB617 /* PPXXBJBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPXXBJBaseViewController.h; sourceTree = "<group>"; };
+		FEC114322143D4A0002DB617 /* PPXXBJViewControllerCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPXXBJViewControllerCenter.h; sourceTree = "<group>"; };
 		FEC114332143D4A0002DB617 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FEC114812143D4A0002DB617 /* BJWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJWebViewController.h; sourceTree = "<group>"; };
 		FEC114822143D4A0002DB617 /* BJURINavHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJURINavHelper.h; sourceTree = "<group>"; };
@@ -497,10 +500,10 @@
 		FEC1151B2143D4A0002DB617 /* BJAPIAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJAPIAddress.h; sourceTree = "<group>"; };
 		FEC1151E2143D4A0002DB617 /* BJBaseHTTPEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJBaseHTTPEngine.h; sourceTree = "<group>"; };
 		FEC1151F2143D4A0002DB617 /* BJBaseHTTPEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJBaseHTTPEngine.m; sourceTree = "<group>"; };
-		FEC115212143D4A0002DB617 /* BJBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJBaseNavigationController.h; sourceTree = "<group>"; };
-		FEC115222143D4A0002DB617 /* BJBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJBaseTabBarController.m; sourceTree = "<group>"; };
-		FEC115232143D4A0002DB617 /* BJBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJBaseTabBarController.h; sourceTree = "<group>"; };
-		FEC115242143D4A0002DB617 /* BJBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJBaseNavigationController.m; sourceTree = "<group>"; };
+		FEC115212143D4A0002DB617 /* PPXXBJBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPXXBJBaseNavigationController.h; sourceTree = "<group>"; };
+		FEC115222143D4A0002DB617 /* PPXXBJBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPXXBJBaseTabBarController.m; sourceTree = "<group>"; };
+		FEC115232143D4A0002DB617 /* PPXXBJBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPXXBJBaseTabBarController.h; sourceTree = "<group>"; };
+		FEC115242143D4A0002DB617 /* PPXXBJBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPXXBJBaseNavigationController.m; sourceTree = "<group>"; };
 		FEC115342143D4A0002DB617 /* BJDateFormatUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJDateFormatUtility.m; sourceTree = "<group>"; };
 		FEC115362143D4A0002DB617 /* UIView+QuickFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+QuickFrame.h"; sourceTree = "<group>"; };
 		FEC115372143D4A0002DB617 /* UIImage+Generator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Generator.m"; sourceTree = "<group>"; };
@@ -779,6 +782,8 @@
 		FEC1124C2143D057002DB617 = {
 			isa = PBXGroup;
 			children = (
+				325BD8C822E07D6F00A07EC9 /* confuse.sh */,
+				325BD8C922E07D6F00A07EC9 /* func.list */,
 				FEC112572143D057002DB617 /* SkyBetufi */,
 				FEC112562143D057002DB617 /* Products */,
 				ECB62376D5C12D4C8313883B /* Pods */,
@@ -797,6 +802,7 @@
 		FEC112572143D057002DB617 /* SkyBetufi */ = {
 			isa = PBXGroup;
 			children = (
+				325BD8CB22E0840600A07EC9 /* codeObfuscation.h */,
 				FEAC9F282199D94500159AE9 /* SkyBallPlay.entitlements */,
 				FEC1126E2143D4A0002DB617 /* SourceCode */,
 				FEC112612143D058002DB617 /* Assets.xcassets */,
@@ -837,9 +843,9 @@
 		FEC113102143D4A0002DB617 /* MMBBLaunch */ = {
 			isa = PBXGroup;
 			children = (
+				325BD8C522E0705D00A07EC9 /* PPXXBJLaunchViewController.h */,
+				FEC113132143D4A0002DB617 /* PPXXBJLaunchViewController.m */,
 				FEC114272143D4A0002DB617 /* MBBase */,
-				FEC113122143D4A0002DB617 /* BJLaunchViewController.h */,
-				FEC113132143D4A0002DB617 /* BJLaunchViewController.m */,
 				FEC1172A2143E43A002DB617 /* Launch.xcassets */,
 			);
 			path = MMBBLaunch;
@@ -959,18 +965,18 @@
 		FEC114272143D4A0002DB617 /* MBBase */ = {
 			isa = PBXGroup;
 			children = (
-				FEC115212143D4A0002DB617 /* BJBaseNavigationController.h */,
-				FEC115242143D4A0002DB617 /* BJBaseNavigationController.m */,
-				FEC115232143D4A0002DB617 /* BJBaseTabBarController.h */,
-				FEC115222143D4A0002DB617 /* BJBaseTabBarController.m */,
-				FEC114312143D4A0002DB617 /* BJBaseViewController.h */,
-				FEC1142A2143D4A0002DB617 /* BJBaseViewController.m */,
-				FEC1142D2143D4A0002DB617 /* BJMainViewController.h */,
-				FEC114282143D4A0002DB617 /* BJMainViewController.m */,
-				FEC1142C2143D4A0002DB617 /* BJNavigationController.h */,
-				FEC114292143D4A0002DB617 /* BJNavigationController.m */,
-				FEC114322143D4A0002DB617 /* BJViewControllerCenter.h */,
-				FEC1142B2143D4A0002DB617 /* BJViewControllerCenter.m */,
+				FEC115212143D4A0002DB617 /* PPXXBJBaseNavigationController.h */,
+				FEC115242143D4A0002DB617 /* PPXXBJBaseNavigationController.m */,
+				FEC115232143D4A0002DB617 /* PPXXBJBaseTabBarController.h */,
+				FEC115222143D4A0002DB617 /* PPXXBJBaseTabBarController.m */,
+				FEC114312143D4A0002DB617 /* PPXXBJBaseViewController.h */,
+				FEC1142A2143D4A0002DB617 /* PPXXBJBaseViewController.m */,
+				FEC1142D2143D4A0002DB617 /* PPXXBJMainViewController.h */,
+				FEC114282143D4A0002DB617 /* PPXXBJMainViewController.m */,
+				FEC1142C2143D4A0002DB617 /* PPXXBJNavigationController.h */,
+				FEC114292143D4A0002DB617 /* PPXXBJNavigationController.m */,
+				FEC114322143D4A0002DB617 /* PPXXBJViewControllerCenter.h */,
+				FEC1142B2143D4A0002DB617 /* PPXXBJViewControllerCenter.m */,
 			);
 			path = MBBase;
 			sourceTree = "<group>";
@@ -1664,6 +1670,7 @@
 				FEC112532143D057002DB617 /* Resources */,
 				476199E34738CDA5C2954A44 /* [CP] Embed Pods Frameworks */,
 				C5D0E721C5A57C203DACF04F /* [CP] Copy Pods Resources */,
+				325BD8CA22E07E6500A07EC9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1806,6 +1813,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		325BD8CA22E07E6500A07EC9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "chmod 755 \"${SRCROOT}/confuse.sh\" \n\"${SRCROOT}/confuse.sh\"\n";
+		};
 		476199E34738CDA5C2954A44 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1905,14 +1929,14 @@
 			files = (
 				FE8EB0D6215606B400CA20F0 /* HTMatchSummaryRequest.m in Sources */,
 				FEDAC97D214BBD28005E8B63 /* HTDatePickerView.m in Sources */,
-				FEC116B72143D4A1002DB617 /* BJBaseTabBarController.m in Sources */,
+				FEC116B72143D4A1002DB617 /* PPXXBJBaseTabBarController.m in Sources */,
 				FEC112682143D058002DB617 /* main.m in Sources */,
 				FECCA5322258C8D0009EF494 /* HTUserInfoEditViewController.m in Sources */,
 				FEDABE7321738618008C8AFD /* HTMatchSubDsbdViewController.m in Sources */,
 				FECCA580225984B8009EF494 /* TZPhotoPickerController+DRExtention.m in Sources */,
 				FECCA56E22598013009EF494 /* TZImagePickerController.m in Sources */,
 				FEC116762143D4A1002DB617 /* BJURINavigator.m in Sources */,
-				FEC116492143D4A1002DB617 /* BJMainViewController.m in Sources */,
+				FEC116492143D4A1002DB617 /* PPXXBJMainViewController.m in Sources */,
 				FECCA56722598013009EF494 /* UIView+Layout.m in Sources */,
 				FEDABE6521733693008C8AFD /* HTRankEastWestViewController.m in Sources */,
 				FECCA51E2258C8D0009EF494 /* HTMessageViewController.m in Sources */,
@@ -1922,7 +1946,7 @@
 				FEC117242143DF12002DB617 /* HTRankHomeViewController.m in Sources */,
 				FECCA52E2258C8D0009EF494 /* HTCollectionViewController.m in Sources */,
 				FE800F6A22636AFC00E575D5 /* HTNewsCommentCell.m in Sources */,
-				FEC1164B2143D4A1002DB617 /* BJBaseViewController.m in Sources */,
+				FEC1164B2143D4A1002DB617 /* PPXXBJBaseViewController.m in Sources */,
 				FECCA5332258C8D0009EF494 /* HTUserManager.m in Sources */,
 				FEC116052143D4A1002DB617 /* XJLoadingView.m in Sources */,
 				FECCA57122598013009EF494 /* LxGridViewFlowLayout.m in Sources */,
@@ -1937,16 +1961,16 @@
 				FECCA57722598143009EF494 /* DRPhotoKeyboardCell.m in Sources */,
 				FEC116C42143D4A1002DB617 /* UITableView+EstimatedHeight.m in Sources */,
 				FE08C5C82250506A000175CB /* HTMeHomeViewController.m in Sources */,
-				FEC1164C2143D4A1002DB617 /* BJViewControllerCenter.m in Sources */,
+				FEC1164C2143D4A1002DB617 /* PPXXBJViewControllerCenter.m in Sources */,
 				FE6BD07D21457BAF0090118A /* HTNewsDetailViewController.m in Sources */,
-				FEC1164A2143D4A1002DB617 /* BJNavigationController.m in Sources */,
+				FEC1164A2143D4A1002DB617 /* PPXXBJNavigationController.m in Sources */,
 				FECCA53D2258C972009EF494 /* UITabBar+DRExtension.m in Sources */,
 				FEC116102143D4A1002DB617 /* BJTabBarView.m in Sources */,
 				FE81D153214815DC0047A4A2 /* HTDataHomeRequest.m in Sources */,
 				FEC116932143D4A1002DB617 /* BJHTTPServiceEngine.m in Sources */,
 				FEA104F6216CB0F0000DBE63 /* HTMatchSummaryModel.m in Sources */,
 				FE6BD092214584C30090118A /* HTNewsTopHeaderView.m in Sources */,
-				FEC116B82143D4A1002DB617 /* BJBaseNavigationController.m in Sources */,
+				FEC116B82143D4A1002DB617 /* PPXXBJBaseNavigationController.m in Sources */,
 				FEDF8FCE21444A3E005C7C4D /* NSDateFormatter+DRExtension.m in Sources */,
 				FE6BD07921452B570090118A /* HTNewsHomeBannerCell.m in Sources */,
 				FEC117192143DEA0002DB617 /* HTDataHomeViewController.m in Sources */,
@@ -2031,7 +2055,7 @@
 				FE6BD067214512EC0090118A /* HTNewsHomeRequest.m in Sources */,
 				FE6BD06A2145136F0090118A /* HTNewsModel.m in Sources */,
 				FE6BD08321457D7E0090118A /* HTNewsHeaderCell.m in Sources */,
-				FEC115BD2143D4A0002DB617 /* BJLaunchViewController.m in Sources */,
+				FEC115BD2143D4A0002DB617 /* PPXXBJLaunchViewController.m in Sources */,
 				FECCA56C22598013009EF494 /* TZPhotoPickerController.m in Sources */,
 				FEC116772143D4A1002DB617 /* BJWebViewController.m in Sources */,
 				FEAC9F352199EA2300159AE9 /* HTContactUsViewController.m in Sources */,

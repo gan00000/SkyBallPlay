@@ -6,10 +6,10 @@
 //  Copyright © 2018年 Dean_F. All rights reserved.
 //
 
-#import "BJBaseViewController.h"
+#import "PPXXBJBaseViewController.h"
 #import "HTNewsModel.h"
 
-@interface HTNewsDetailViewController : BJBaseViewController
+@interface HTNewsDetailViewController : PPXXBJBaseViewController
 
 @property (nonatomic, copy) NSString *post_id;
 

@@ -8,7 +8,7 @@
 
 #import "BJURINavHelper.h"
 #import "BJWebViewController.h"
-#import "BJViewControllerCenter.h"
+#import "PPXXBJViewControllerCenter.h"
 #import "BJURINavigator.h"
 
 @implementation BJURINavHelper
@@ -29,7 +29,7 @@
         BJWebViewController *webVC = [[BJWebViewController alloc] initWithAddress:uri];
         UINavigationController *navCon = nil;
         if (!viewController) {
-            navCon = [BJViewControllerCenter currentViewController].navigationController;
+            navCon = [PPXXBJViewControllerCenter currentViewController].navigationController;
         } else if ([viewController isKindOfClass:[UINavigationController class]]) {
             navCon = (UINavigationController *)viewController;
         } else {

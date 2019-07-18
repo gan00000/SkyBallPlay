@@ -15,7 +15,7 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 #import "AFNetworkReachabilityManager.h"
-#import "BJLaunchViewController.h"
+#import "PPXXBJLaunchViewController.h"
 #import "UIView+Toast.h"
 #import "HTNewsDetailViewController.h"
 
@@ -49,7 +49,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [self.window makeKeyAndVisible];
     
-    BJLaunchViewController *rootVc = [[BJLaunchViewController alloc] init];
+    PPXXBJLaunchViewController *rootVc = [[PPXXBJLaunchViewController alloc] init];
     self.window.rootViewController = rootVc;
     
     [self setupPushWithLaunchOptions:launchOptions];
@@ -225,7 +225,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
     }
     
     if (!vc) {
-        vc = [BJViewControllerCenter currentViewController];
+        vc = [PPXXBJViewControllerCenter currentViewController];
     }
     
     HTNewsDetailViewController *detailVc = [HTNewsDetailViewController viewController];

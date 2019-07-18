@@ -6,9 +6,9 @@
 //  Copyright © 2018年 Dean_F. All rights reserved.
 //
 
-#import "BJBaseViewController.h"
+#import "PPXXBJBaseViewController.h"
 
-@interface HTDataHomeSubViewController : BJBaseViewController
+@interface HTDataHomeSubViewController : PPXXBJBaseViewController
 
 /// 1. 队员  2. 球队
 @property (nonatomic, assign) NSInteger type;

@@ -39,7 +39,7 @@
 
 @end
 
-@interface BJBaseNavigationController : UINavigationController
+@interface PPXXBJBaseNavigationController : UINavigationController
 
 
 /**

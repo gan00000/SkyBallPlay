@@ -6,10 +6,10 @@
 //  Copyright © 2018年 Dean_F. All rights reserved.
 //
 
-#import "BJBaseViewController.h"
+#import "PPXXBJBaseViewController.h"
 #import "HTMatchDetailsModel.h"
 
-@interface HTMatchSubDsbdViewController : BJBaseViewController
+@interface HTMatchSubDsbdViewController : PPXXBJBaseViewController
 
 - (void)refreshWithDetailList:(NSArray<HTMatchDetailsModel *> *)detailList;
 

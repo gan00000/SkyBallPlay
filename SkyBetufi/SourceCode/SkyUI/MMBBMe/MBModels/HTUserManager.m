@@ -106,7 +106,7 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 #pragma mark - Facebook Authory
 - (void)getAuthWithUserInfoFromFacebook {
     kWeakSelf
-    [self.fbLoginManager logInWithReadPermissions: @[@"public_profile",@"email"] fromViewController:[BJViewControllerCenter currentViewController] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+    [self.fbLoginManager logInWithReadPermissions: @[@"public_profile",@"email"] fromViewController:[PPXXBJViewControllerCenter currentViewController] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
          if (error) {
              [kWindow showToast:@"登錄失敗"];
          } else if (result.isCancelled) {
@@ -181,7 +181,7 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
         }];
         [alert addAction:confirmAction];
     }
-    [[BJViewControllerCenter currentViewController] presentViewController:alert animated:YES completion:nil];
+    [[PPXXBJViewControllerCenter currentViewController] presentViewController:alert animated:YES completion:nil];
 }
 
 + (void)goSystemSettingCenter {

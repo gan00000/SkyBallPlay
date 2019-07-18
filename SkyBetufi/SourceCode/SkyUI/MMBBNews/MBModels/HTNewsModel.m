@@ -12,7 +12,7 @@
 #import "HTHtmlLoadUtil.h"
 #import <UMShare/UMShare.h>
 #import <SDWebImage/SDWebImageManager.h>
-#import "BJViewControllerCenter.h"
+#import "PPXXBJViewControllerCenter.h"
 #import "HTLoginAlertView.h"
 
 @interface HTNewsModel () <NSURLConnectionDelegate>
@@ -216,7 +216,7 @@
             //设置文本
             messageObject.text = [NSString stringWithFormat:@"%@\n链接：%@", weakSelf.title, weakSelf.url];
             if (weakSelf.img_url) {
-                [BJLoadingHud showHUDInView:[BJViewControllerCenter currentViewController].view];
+                [BJLoadingHud showHUDInView:[PPXXBJViewControllerCenter currentViewController].view];
                 [[SDWebImageManager sharedManager] loadImageWithURL:[NSURL URLWithString:weakSelf.img_url] options:0 progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, SDImageCacheType cacheType, BOOL finished, NSURL * _Nullable imageURL) {
                     if (image) {
                         //创建图片内容对象
@@ -229,7 +229,7 @@
                     } else {
                         [weakSelf doShareToPlatform:UMSocialPlatformType_Line withMessage:messageObject];
                     }
-                    [BJLoadingHud hideHUDInView:[BJViewControllerCenter currentViewController].view];
+                    [BJLoadingHud hideHUDInView:[PPXXBJViewControllerCenter currentViewController].view];
                 }];
             } else {
                 [weakSelf doShareToPlatform:UMSocialPlatformType_Line withMessage:messageObject];
@@ -239,7 +239,7 @@
 }
 
 - (void)doShareToPlatform:(UMSocialPlatformType)platformType withMessage:(UMSocialMessageObject *)messageObject {
-    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:[BJViewControllerCenter currentViewController] completion:^(id result, NSError *error) {
+    [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:[PPXXBJViewControllerCenter currentViewController] completion:^(id result, NSError *error) {
         BJLog(@"result = %@", error);
     }];
 }

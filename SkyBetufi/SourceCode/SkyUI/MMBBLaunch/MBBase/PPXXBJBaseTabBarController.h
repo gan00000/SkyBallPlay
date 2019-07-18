@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BJBaseTabBarController : UITabBarController
+@interface PPXXBJBaseTabBarController : UITabBarController
 
 - (NSArray<UIImage *> *)tabBarIcons;
 - (NSArray<UIImage *> *)tabBarSelectedIcons;

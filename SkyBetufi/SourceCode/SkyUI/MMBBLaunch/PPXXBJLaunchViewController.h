@@ -6,8 +6,8 @@
 //  Copyright © 2017年 Benjia. All rights reserved.
 //
 
-#import "BJBaseViewController.h"
+#import "PPXXBJBaseViewController.h"
 
-@interface BJLaunchViewController : BJBaseViewController
+@interface PPXXBJLaunchViewController : PPXXBJBaseViewController
 
 @end

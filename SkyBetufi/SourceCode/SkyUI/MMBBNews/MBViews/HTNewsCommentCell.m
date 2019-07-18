@@ -142,7 +142,7 @@
         [HTUserManager doUserLogin];
         return;
     }
-    UIView *view = [BJViewControllerCenter currentViewController].view;
+    UIView *view = [PPXXBJViewControllerCenter currentViewController].view;
     [HTUserRequest likePostWithPostId:self.commentModel.post_id comment_id:self.commentModel.comment_id like:!sender.selected successBlock:^{
         if (self.commentModel.my_like) {
             self.commentModel.total_like --;

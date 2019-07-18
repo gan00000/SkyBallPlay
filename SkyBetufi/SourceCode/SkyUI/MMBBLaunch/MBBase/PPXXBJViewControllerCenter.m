@@ -6,11 +6,11 @@
 //  Copyright © 2017年 Benjia. All rights reserved.
 //
 
-#import "BJViewControllerCenter.h"
+#import "PPXXBJViewControllerCenter.h"
 
-@implementation BJViewControllerCenter
+@implementation PPXXBJViewControllerCenter
 
-+ (BJMainViewController *)mainViewController {
++ (PPXXBJMainViewController *)mainViewController {
     UIWindow *topWindow = [[UIApplication sharedApplication] keyWindow];
     if (topWindow.windowLevel != UIWindowLevelNormal) {
         NSArray *windows = [[UIApplication sharedApplication] windows];
@@ -19,8 +19,8 @@
                 break;
         }
     }
-    if ([topWindow.rootViewController isKindOfClass:[BJMainViewController class]]) {
-        return (BJMainViewController *)topWindow.rootViewController;
+    if ([topWindow.rootViewController isKindOfClass:[PPXXBJMainViewController class]]) {
+        return (PPXXBJMainViewController *)topWindow.rootViewController;
     }
     return nil;
 }
@@ -75,8 +75,8 @@
         result = [(UINavigationController *)result topViewController];
     }
     
-    if ([result isKindOfClass:[BJMainViewController class]]) {
-        UIViewController *tVc = [(BJMainViewController *)result selectedViewController];
+    if ([result isKindOfClass:[PPXXBJMainViewController class]]) {
+        UIViewController *tVc = [(PPXXBJMainViewController *)result selectedViewController];
         if ([tVc isKindOfClass:[UINavigationController class]]) {
             result = [(UINavigationController *)tVc topViewController];
         } else {

@@ -6,11 +6,11 @@
 //  Copyright © 2017年 Benjia. All rights reserved.
 //
 
-#import "BJBaseNavigationController.h"
-#import "BJBaseViewController.h"
+#import "PPXXBJBaseNavigationController.h"
+#import "PPXXBJBaseViewController.h"
 #import <WebKit/WebKit.h>
 
-@interface BJWebViewController : BJBaseViewController <WKNavigationDelegate, WKUIDelegate, BJNavigationDelegate>
+@interface BJWebViewController : PPXXBJBaseViewController <WKNavigationDelegate, WKUIDelegate, BJNavigationDelegate>
 
 @property (nonatomic, strong, readonly) WKWebView *webView;
 

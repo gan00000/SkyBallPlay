@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BJNavigationController.h"
+#import "PPXXBJNavigationController.h"
 
-@interface BJBaseViewController : UIViewController <BJNavigationDelegate>
+@interface PPXXBJBaseViewController : UIViewController <BJNavigationDelegate>
 
 /// 子类必须重写
 + (instancetype)viewController;
