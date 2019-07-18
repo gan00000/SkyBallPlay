@@ -35,8 +35,8 @@
 
 #endif
 
-#ifndef HeiteBasketball_pch
-#define HeiteBasketball_pch
+#ifndef SkyBallPlay_pch
+#define SkyBallPlay_pch
 
 //**********重要***********//
 // 是否向外发布版本(1: 是, 0: 否)

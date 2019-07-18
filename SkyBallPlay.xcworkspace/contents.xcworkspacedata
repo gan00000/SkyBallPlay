@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/gan/iospro/&#x9ed1;&#x7279;&#x7bee;&#x7403;/SkyBallPlay.xcodeproj">
+      location = "group:SkyBallPlay.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

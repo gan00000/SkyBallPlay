@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A7BB61B7CF3D5542ED6EC2A /* Pods_HeiteBasketball.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C96ED51AF657F6A6678FAF42 /* Pods_HeiteBasketball.framework */; };
+		E96EB72A062D72ACD051C26D /* Pods_SkyBallPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC337F0671EB4742D64BA54 /* Pods_SkyBallPlay.framework */; };
 		FE08C5C422504F0C000175CB /* Me.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE08C5C322504F0C000175CB /* Me.xcassets */; };
 		FE08C5C82250506A000175CB /* HTMeHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08C5C62250506A000175CB /* HTMeHomeViewController.m */; };
 		FE08C5C92250506A000175CB /* HTMeHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE08C5C72250506A000175CB /* HTMeHomeViewController.xib */; };
@@ -264,7 +264,10 @@
 
 /* Begin PBXFileReference section */
 		608E0284ECCB1F2C8732AAA8 /* Pods-HeiteBasketball.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeiteBasketball.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball.debug.xcconfig"; sourceTree = "<group>"; };
+		6DC337F0671EB4742D64BA54 /* Pods_SkyBallPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyBallPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72321527951E473E782564AC /* Pods-HeiteBasketball.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeiteBasketball.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball.release.xcconfig"; sourceTree = "<group>"; };
+		89189E29CC0B9E5A3FEA5137 /* Pods-SkyBallPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyBallPlay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay.debug.xcconfig"; sourceTree = "<group>"; };
+		C0EBF7000495782F4C2F67C5 /* Pods-SkyBallPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyBallPlay.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay.release.xcconfig"; sourceTree = "<group>"; };
 		C96ED51AF657F6A6678FAF42 /* Pods_HeiteBasketball.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeiteBasketball.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE08C5C322504F0C000175CB /* Me.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Me.xcassets; sourceTree = "<group>"; };
 		FE08C5C52250506A000175CB /* HTMeHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMeHomeViewController.h; sourceTree = "<group>"; };
@@ -410,7 +413,7 @@
 		FEAB2106216DD731002A05AB /* HTMatchDetailsModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchDetailsModel.h; sourceTree = "<group>"; };
 		FEAB2107216DD731002A05AB /* HTMatchDetailsModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchDetailsModel.m; sourceTree = "<group>"; };
 		FEAC9F262199D92900159AE9 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
-		FEAC9F282199D94500159AE9 /* HeiteBasketball.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HeiteBasketball.entitlements; sourceTree = "<group>"; };
+		FEAC9F282199D94500159AE9 /* SkyBallPlay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkyBallPlay.entitlements; sourceTree = "<group>"; };
 		FEAC9F2C2199E25F00159AE9 /* HTSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTSettingViewController.h; sourceTree = "<group>"; };
 		FEAC9F2D2199E25F00159AE9 /* HTSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTSettingViewController.m; sourceTree = "<group>"; };
 		FEAC9F2F2199E28800159AE9 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
@@ -530,7 +533,7 @@
 		FEC116EE2143D8C9002DB617 /* MatchHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MatchHome.storyboard; sourceTree = "<group>"; };
 		FEC116F02143D91D002DB617 /* HTMatchHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchHomeViewController.h; sourceTree = "<group>"; };
 		FEC116F12143D91D002DB617 /* HTMatchHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchHomeViewController.m; sourceTree = "<group>"; };
-		FEC116F32143D994002DB617 /* HeiteBasketball.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeiteBasketball.pch; sourceTree = "<group>"; };
+		FEC116F32143D994002DB617 /* SkyBallPlay.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkyBallPlay.pch; sourceTree = "<group>"; };
 		FEC116F72143DC57002DB617 /* NewsHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsHome.storyboard; sourceTree = "<group>"; };
 		FEC116F92143DC72002DB617 /* News.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = News.xcassets; sourceTree = "<group>"; };
 		FEC116FE2143DCAF002DB617 /* FilmHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilmHome.storyboard; sourceTree = "<group>"; };
@@ -703,7 +706,7 @@
 				FE0C270E2186BCF6001C9B8C /* libsqlite3.tbd in Frameworks */,
 				FE0C270C2186BCE8001C9B8C /* libz.tbd in Frameworks */,
 				FE6BD0492144EB660090118A /* ImageIO.framework in Frameworks */,
-				3A7BB61B7CF3D5542ED6EC2A /* Pods_HeiteBasketball.framework in Frameworks */,
+				E96EB72A062D72ACD051C26D /* Pods_SkyBallPlay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,6 +725,7 @@
 				FE0C270B2186BCE7001C9B8C /* libz.tbd */,
 				FE6BD0482144EB660090118A /* ImageIO.framework */,
 				C96ED51AF657F6A6678FAF42 /* Pods_HeiteBasketball.framework */,
+				6DC337F0671EB4742D64BA54 /* Pods_SkyBallPlay.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -731,6 +735,8 @@
 			children = (
 				608E0284ECCB1F2C8732AAA8 /* Pods-HeiteBasketball.debug.xcconfig */,
 				72321527951E473E782564AC /* Pods-HeiteBasketball.release.xcconfig */,
+				89189E29CC0B9E5A3FEA5137 /* Pods-SkyBallPlay.debug.xcconfig */,
+				C0EBF7000495782F4C2F67C5 /* Pods-SkyBallPlay.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -773,7 +779,7 @@
 		FEC1124C2143D057002DB617 = {
 			isa = PBXGroup;
 			children = (
-				FEC112572143D057002DB617 /* SkyHeiteBasketball */,
+				FEC112572143D057002DB617 /* SkyBetufi */,
 				FEC112562143D057002DB617 /* Products */,
 				ECB62376D5C12D4C8313883B /* Pods */,
 				CB747A826453EE017B9DDDC1 /* Frameworks */,
@@ -788,19 +794,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FEC112572143D057002DB617 /* SkyHeiteBasketball */ = {
+		FEC112572143D057002DB617 /* SkyBetufi */ = {
 			isa = PBXGroup;
 			children = (
-				FEAC9F282199D94500159AE9 /* HeiteBasketball.entitlements */,
+				FEAC9F282199D94500159AE9 /* SkyBallPlay.entitlements */,
 				FEC1126E2143D4A0002DB617 /* SourceCode */,
 				FEC112612143D058002DB617 /* Assets.xcassets */,
 				FEC112662143D058002DB617 /* Info.plist */,
 				FEC112672143D058002DB617 /* main.m */,
-				FEC116F32143D994002DB617 /* HeiteBasketball.pch */,
+				FEC116F32143D994002DB617 /* SkyBallPlay.pch */,
 				FE81D14C2146CA1E0047A4A2 /* logo_load.html */,
 				FEEABBE62149F90700A585DA /* iframe_load.html */,
 			);
-			path = SkyHeiteBasketball;
+			path = SkyBetufi;
 			sourceTree = "<group>";
 		};
 		FEC1126E2143D4A0002DB617 /* SourceCode */ = {
@@ -1806,7 +1812,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FDStackView/FDStackView.framework",
@@ -1851,7 +1857,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BF9D3AFDF9A356103E352831 /* [CP] Check Pods Manifest.lock */ = {
@@ -1865,7 +1871,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-HeiteBasketball-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SkyBallPlay-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1877,21 +1883,17 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-resources.sh",
 				"${PODS_ROOT}/UMCCommonLog/UMCommonLog/UMCommonLog.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMCommonLog.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2185,21 +2187,18 @@
 		};
 		FEC1126C2143D058002DB617 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 608E0284ECCB1F2C8732AAA8 /* Pods-HeiteBasketball.debug.xcconfig */;
+			baseConfigurationReference = 89189E29CC0B9E5A3FEA5137 /* Pods-SkyBallPlay.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = HeiteBasketball/HeiteBasketball.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SkyBetufi/SkyBallPlay.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MSFG5PN83S;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/HeiteBasketball/SourceCode/Module/FacebookSDKs-iOS-4.40.0",
-				);
-				GCC_PREFIX_HEADER = "$(SRCROOT)/HeiteBasketball/HeiteBasketball.pch";
-				INFOPLIST_FILE = HeiteBasketball/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SkyBetufi/SkyBallPlay.pch";
+				INFOPLIST_FILE = SkyBetufi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2214,21 +2213,18 @@
 		};
 		FEC1126D2143D058002DB617 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72321527951E473E782564AC /* Pods-HeiteBasketball.release.xcconfig */;
+			baseConfigurationReference = C0EBF7000495782F4C2F67C5 /* Pods-SkyBallPlay.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = HeiteBasketball/HeiteBasketball.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SkyBetufi/SkyBallPlay.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MSFG5PN83S;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/HeiteBasketball/SourceCode/Module/FacebookSDKs-iOS-4.40.0",
-				);
-				GCC_PREFIX_HEADER = "$(SRCROOT)/HeiteBasketball/HeiteBasketball.pch";
-				INFOPLIST_FILE = HeiteBasketball/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SkyBetufi/SkyBallPlay.pch";
+				INFOPLIST_FILE = SkyBetufi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
