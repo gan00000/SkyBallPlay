@@ -716,6 +716,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3256201222E17A9200973889 /* SkySrc */ = {
+			isa = PBXGroup;
+			children = (
+				FEC1126F2143D4A0002DB617 /* SkyUI */,
+				FEC114342143D4A0002DB617 /* SkyModule */,
+			);
+			path = SkySrc;
+			sourceTree = "<group>";
+		};
 		CB747A826453EE017B9DDDC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -818,10 +827,9 @@
 		FEC1126E2143D4A0002DB617 /* SourceCode */ = {
 			isa = PBXGroup;
 			children = (
+				3256201222E17A9200973889 /* SkySrc */,
 				FEC114332143D4A0002DB617 /* AppDelegate.h */,
 				FEC1149C2143D4A0002DB617 /* AppDelegate.m */,
-				FEC1126F2143D4A0002DB617 /* SkyUI */,
-				FEC114342143D4A0002DB617 /* SkyModule */,
 			);
 			path = SourceCode;
 			sourceTree = "<group>";
