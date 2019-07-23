@@ -75,7 +75,7 @@
 
 - (IBAction)onSelectDateButtonTapped:(id)sender {
     kWeakSelf
-    [HTDatePickerView showWithWithDate:self.startDate didTapEnterBlock:^BOOL(NSDate *date) {
+    [HTDatePickerView skargshowWithWithDate:self.startDate didTapEnterBlock:^BOOL(NSDate *date) {
         weakSelf.startDate = date;
         [BJLoadingHud showHUDInView:weakSelf.view];
         return YES;
@@ -95,7 +95,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HTMatchHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTMatchHomeCell"];
     HTMatchHomeGroupModel *groupModel = self.matchList[indexPath.section];
-    [cell setupWithMatchModel:groupModel.matchList[indexPath.row]];
+    [cell skargsetupWithMatchModel:groupModel.matchList[indexPath.row]];
     return cell;
 }
 
@@ -236,7 +236,7 @@
     }
     
     self.requesting = YES;
-    [HTMatchHomeRequest requestWithStartDate:[self ymdWithDate:self.startDate]
+    [HTMatchHomeRequest skargrequestWithStartDate:[self ymdWithDate:self.startDate]
                                      endDate:[self ymdWithDate:self.endDate]
                                 successBlock:^(NSArray<HTMatchHomeGroupModel *> *matchList) {
                                     self.matchList = matchList;
@@ -257,7 +257,7 @@
                                             [self refreshUI];
                                         } else {
                                             for (HTMatchHomeModel *model in self.inProgressMatchs.allValues) {
-                                                [HTMatchHomeRequest requestMatchProgressWithGameId:model.game_id successBlock:^(NSString *game_id, NSString *quarter, NSString *time) {
+                                                [HTMatchHomeRequest skargrequestMatchProgressWithGameId:model.game_id successBlock:^(NSString *game_id, NSString *quarter, NSString *time) {
                                                     HTMatchHomeModel *matchModel = [self.inProgressMatchs objectForKey:game_id];
                                                     matchModel.quarter = [NSString stringWithFormat:@"第%@節", quarter];
                                                     matchModel.quarter_time = time;

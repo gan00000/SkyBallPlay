@@ -12,12 +12,12 @@
 
 @interface HTMatchHomeRequest : NSObject
 
-+ (void)requestWithStartDate:(NSString *)startDate
++ (void)skargrequestWithStartDate:(NSString *)startDate
                      endDate:(NSString *)endDate
                 successBlock:(void(^)(NSArray<HTMatchHomeGroupModel *> *matchList))successBlock
                   errorBlock:(BJServiceErrorBlock)errorBlock;
 
-+ (void)requestMatchProgressWithGameId:(NSString *)game_id
++ (void)skargrequestMatchProgressWithGameId:(NSString *)game_id
                           successBlock:(void(^)(NSString *game_id, NSString *quarter, NSString *time))successBlock
                             errorBlock:(BJServiceErrorBlock)errorBlock;
 

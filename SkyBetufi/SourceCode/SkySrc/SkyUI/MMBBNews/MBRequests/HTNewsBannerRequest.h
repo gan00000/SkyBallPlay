@@ -12,7 +12,7 @@
 
 @interface HTNewsBannerRequest : NSObject
 
-+ (void)requestWithSuccessBlock:(void(^)(NSArray<HTNewsModel*> *bannerList))successBlock
++ (void)skargrequestWithSuccessBlock:(void(^)(NSArray<HTNewsModel*> *bannerList))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock;
 
 @end

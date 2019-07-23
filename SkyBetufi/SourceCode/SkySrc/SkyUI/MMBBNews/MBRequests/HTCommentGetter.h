@@ -17,10 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableArray<HTCommentModel *> *normalComments;
 @property (nonatomic, assign) BOOL hasMore;
 
-- (instancetype)initWithPostId:(NSString *)post_id;
+- (instancetype)skarginitWithPostId:(NSString *)post_id;
 
-- (void)doRequestWithCompleteBlock:(dispatch_block_t)commentBlock;
-- (void)reset;
+- (void)skargdoRequestWithCompleteBlock:(dispatch_block_t)commentBlock;
+- (void)skargreset;
 
 @end
 

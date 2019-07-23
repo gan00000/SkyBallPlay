@@ -13,7 +13,7 @@
 
 @interface HTMatchSummaryRequest : NSObject
 
-+ (void)requestSummaryWithGameId:(NSString *)game_id
++ (void)skargrequestSummaryWithGameId:(NSString *)game_id
                     successBlock:(void(^)(HTMatchSummaryModel *summaryModel, HTMatchCompareModel *compareModel))successBlock
                       errorBlock:(BJServiceErrorBlock)errorBlock;
 

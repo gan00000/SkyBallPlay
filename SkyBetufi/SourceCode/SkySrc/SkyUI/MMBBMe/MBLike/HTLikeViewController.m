@@ -40,7 +40,7 @@
 - (void)loadData {
     [HTUserRequest skargrequestMyLikeWithOffset:self.offset successBlock:^(NSArray<HTNewsModel *> * _Nonnull newsList, NSInteger pages) {
         for (HTNewsModel *model in newsList) {
-            [model countCommentHeight];
+            [model skargcountCommentHeight];
         }
         [self.dataSource addObjectsFromArray:newsList];
         [self.tableView reloadData];
@@ -113,7 +113,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HTMyCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTMyCommentCell"];
-    [cell setupWithNewsModel:self.dataSource[indexPath.row]];
+    [cell skargsetupWithNewsModel:self.dataSource[indexPath.row]];
     return cell;
 }
 

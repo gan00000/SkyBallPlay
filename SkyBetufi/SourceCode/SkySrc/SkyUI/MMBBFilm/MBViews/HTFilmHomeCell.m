@@ -36,7 +36,7 @@
         make.top.left.bottom.right.mas_equalTo(0);
     }];
     
-    if ([HTNewsModel canShare]) {
+    if ([HTNewsModel skargcanShare]) {
         self.shareButtonContentView.hidden = NO;
     }
 }
@@ -63,7 +63,7 @@
 }
 
 - (IBAction)onShareButtonTapped:(id)sender {
-    [self.newsModel share];
+    [self.newsModel skargshare];
 }
 
 #pragma mark - WKNavigationDelegate

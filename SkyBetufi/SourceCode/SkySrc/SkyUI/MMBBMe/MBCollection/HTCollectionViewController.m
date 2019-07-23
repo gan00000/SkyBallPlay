@@ -109,7 +109,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsHomeCell"];
-    [cell setupWithNewsModel:self.dataSource[indexPath.row]];
+    [cell skargsetupWithNewsModel:self.dataSource[indexPath.row]];
     return cell;
 }
 

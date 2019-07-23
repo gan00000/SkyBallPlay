@@ -11,6 +11,6 @@
 
 @interface HTMatchDataRightCell : UITableViewCell
 
-- (void)refreshWithModel:(HTMatchDetailsModel *)model row:(NSInteger)row;
+- (void)skargrefreshWithModel:(HTMatchDetailsModel *)model row:(NSInteger)row;
 
 @end

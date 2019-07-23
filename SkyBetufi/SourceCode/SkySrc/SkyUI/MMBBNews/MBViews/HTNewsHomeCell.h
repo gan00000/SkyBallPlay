@@ -11,6 +11,6 @@
 
 @interface HTNewsHomeCell : UITableViewCell
 
-- (void)setupWithNewsModel:(HTNewsModel *)newsModel;
+- (void)skargsetupWithNewsModel:(HTNewsModel *)newsModel;
 
 @end

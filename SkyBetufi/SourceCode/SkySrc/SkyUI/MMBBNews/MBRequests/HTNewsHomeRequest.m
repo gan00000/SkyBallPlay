@@ -17,7 +17,7 @@
 
 @implementation HTNewsHomeRequest
 
-- (void)requestWithSuccessBlock:(void(^)(NSArray<HTNewsModel *> *newsList))successBlock
+- (void)skargrequestWithSuccessBlock:(void(^)(NSArray<HTNewsModel *> *newsList))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock {
     if (!self.newsList) {
         self.newsList = [NSMutableArray array];
@@ -52,7 +52,7 @@
     
 }
 
-- (void)loadNextPageWithSuccessBlock:(void(^)(NSArray<HTNewsModel *> *newsList))successBlock
+- (void)skargloadNextPageWithSuccessBlock:(void(^)(NSArray<HTNewsModel *> *newsList))successBlock
                           errorBlock:(BJServiceErrorBlock)errorBlock {
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"json"] = @1;

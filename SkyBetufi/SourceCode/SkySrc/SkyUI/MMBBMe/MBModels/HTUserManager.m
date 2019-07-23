@@ -20,7 +20,7 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 @interface HTUserManager () <LineSDKLoginDelegate>
 
 @property (nonatomic, strong) HTUserInfoModel *userInfoModel;
-@property (nonatomic, strong) FBSDKLoginManager *fbLoginManager;
+@property (nonatomic, strong) FBSDKLoginManager *skarg_fbLoginManager;
 
 @end
 
@@ -30,7 +30,7 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
     self = [super init];
     if (self) {
         if ([HTUserManager skarg_isUserLogin]) {
-            NSData *data = [NSData dataWithContentsOfFile:[HTUserManager userInfoPath]];
+            NSData *data = [NSData dataWithContentsOfFile:[HTUserManager skarguserInfoPath]];
             self.userInfoModel = [HTUserInfoModel yy_modelWithJSON:data];
         }
     }
@@ -58,7 +58,7 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
     HTUserManager *manager = [HTUserManager manager];
     manager.userInfoModel = [HTUserInfoModel yy_modelWithJSON:userInfo];
     NSData *data = [userInfo yy_modelToJSONData];
-    [data writeToFile:[HTUserManager userInfoPath] atomically:YES];
+    [data writeToFile:[HTUserManager skarguserInfoPath] atomically:YES];
     [[NSNotificationCenter defaultCenter] postNotificationName:kUserLogStatusChagneNotice object:nil];
 }
 
@@ -84,7 +84,7 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 
 // 执行用户登录
 + (void)skarg_doUserLogin {
-    [HTLoginAlertView showLoginAlertViewWithSelectBlock:^(HTLoginPlatform platform) {
+    [HTLoginAlertView skargshowLoginAlertViewWithSelectBlock:^(HTLoginPlatform platform) {
         HTUserManager *manager = [HTUserManager manager];
         if (platform == HTLoginPlatformFB) {
             [manager getAuthWithUserInfoFromFacebook];
@@ -96,17 +96,17 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 
 + (void)skarg_doUserLogout {
     [self saveUserToken:nil];
-    [DRSandBoxManager deleteFileAtPath:[self userInfoPath] doneBlock:^(NSString * _Nonnull filePath, BOOL success, NSError * _Nonnull error) {
+    [DRSandBoxManager skargdeleteFileAtPath:[self skarguserInfoPath] doneBlock:^(NSString * _Nonnull filePath, BOOL success, NSError * _Nonnull error) {
         BJLog(@"用戶信息刪除 %d", success);
     }];
     [[NSNotificationCenter defaultCenter] postNotificationName:kUserLogStatusChagneNotice object:nil];
-    [[HTUserManager manager].fbLoginManager logOut];
+    [[HTUserManager manager].skarg_fbLoginManager logOut];
 }
 
 #pragma mark - Facebook Authory
 - (void)getAuthWithUserInfoFromFacebook {
     kWeakSelf
-    [self.fbLoginManager logInWithReadPermissions: @[@"public_profile",@"email"] fromViewController:[PPXXBJViewControllerCenter currentViewController] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+    [self.skarg_fbLoginManager logInWithReadPermissions: @[@"public_profile",@"email"] fromViewController:[PPXXBJViewControllerCenter currentViewController] handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
          if (error) {
              [kWindow showToast:@"登錄失敗"];
          } else if (result.isCancelled) {
@@ -152,19 +152,19 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 }
 
 #pragma mark - util
-+ (NSString *)userInfoPath {
-    return [NSString stringWithFormat:@"%@/userInfo.json", [DRSandBoxManager getDocumentPath]];
++ (NSString *)skarguserInfoPath {
+    return [NSString stringWithFormat:@"%@/userInfo.json", [DRSandBoxManager skarggetDocumentPath]];
 }
 
 + (void)skargcameraDenied {
     [self skarg_showAlertWithTitle:@"相機權限未開啟" message:@"檢測到相機被禁用，無法拍照" cancelButton:@"取消" confirmButton:@"去開啟" confirmBlock:^{
-        [self goSystemSettingCenter];
+        [self skarg_goSystemSettingCenter];
     }];
 }
 
 + (void)skargphotoAlbumDenied {
     [self skarg_showAlertWithTitle:@"相冊權限未開啟" message:@"檢測到相冊被禁用，無法查看照片" cancelButton:@"取消" confirmButton:@"去開啟" confirmBlock:^{
-        [self goSystemSettingCenter];
+        [self skarg_goSystemSettingCenter];
     }];
 }
 
@@ -184,16 +184,16 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
     [[PPXXBJViewControllerCenter currentViewController] presentViewController:alert animated:YES completion:nil];
 }
 
-+ (void)goSystemSettingCenter {
++ (void)skarg_goSystemSettingCenter {
     NSURL *appSettings = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
     [[UIApplication sharedApplication] openURL:appSettings];
 }
 
-- (FBSDKLoginManager *)fbLoginManager {
-    if (!_fbLoginManager) {
-        _fbLoginManager = [[FBSDKLoginManager alloc] init];
+- (FBSDKLoginManager *)skarg_fbLoginManager {
+    if (!_skarg_fbLoginManager) {
+        _skarg_fbLoginManager = [[FBSDKLoginManager alloc] init];
     }
-    return _fbLoginManager;
+    return _skarg_fbLoginManager;
 }
 
 @end

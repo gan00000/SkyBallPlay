@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HTMyMessaageCell : UITableViewCell
 
-- (void)refreshWithMyMessageModel:(HTMyMessageModel *)model;
+- (void)skargrefreshWithMyMessageModel:(HTMyMessageModel *)model;
 
 @end
 

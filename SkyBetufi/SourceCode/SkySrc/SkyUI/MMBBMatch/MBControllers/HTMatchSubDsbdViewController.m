@@ -77,7 +77,7 @@
     [self.scrollContentView addSubview:self.rightTableView];
 }
 
-- (void)refreshWithDetailList:(NSArray<HTMatchDetailsModel *> *)detailList {
+- (void)skargrefreshWithDetailList:(NSArray<HTMatchDetailsModel *> *)detailList {
     self.dataList = detailList;
     
     [self countWithDataList:detailList];
@@ -162,11 +162,11 @@
     HTMatchDetailsModel *model = self.dataList[indexPath.row];
     if (tableView == self.leftTableView) {
         HTMatchDataLeftCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTMatchDataLeftCell class])];
-        [cell refreshWithName:model.name row:indexPath.row];
+        [cell skargrefreshWithName:model.name row:indexPath.row];
         return cell;
     }
     HTMatchDataRightCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTMatchDataRightCell class])];
-    [cell refreshWithModel:model row:indexPath.row];
+    [cell skargrefreshWithModel:model row:indexPath.row];
     return cell;
 }
 

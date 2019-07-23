@@ -91,7 +91,7 @@
     kWeakSelf
     if (indexPath.row == 0) {
         HTMeCenterHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTMeCenterHeaderCell class])];
-        [cell refreshUI];
+        [cell skarg_refreshUI];
         return cell;
     }
     if (indexPath.row == 1) {

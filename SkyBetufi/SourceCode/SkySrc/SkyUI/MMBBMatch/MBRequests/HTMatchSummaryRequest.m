@@ -10,7 +10,7 @@
 
 @implementation HTMatchSummaryRequest
 
-+ (void)requestSummaryWithGameId:(NSString *)game_id
++ (void)skargrequestSummaryWithGameId:(NSString *)game_id
                     successBlock:(void(^)(HTMatchSummaryModel *summaryModel, HTMatchCompareModel *compareModel))successBlock
                       errorBlock:(BJServiceErrorBlock)errorBlock {
     [BJHTTPServiceEngine getRequestWithFunctionPath:API_MATCH_SUMMARY params:@{@"game_id":game_id} successBlock:^(id responseData) {

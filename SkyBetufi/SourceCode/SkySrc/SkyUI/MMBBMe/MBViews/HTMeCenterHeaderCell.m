@@ -32,7 +32,7 @@
     // Configure the view for the selected state
 }
 
-- (void)refreshUI {
+- (void)skarg_refreshUI {
     if ([HTUserManager skarg_isUserLogin]) {
         self.userInfoContentView.hidden = NO;
         self.loginButton.hidden = YES;

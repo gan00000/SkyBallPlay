@@ -81,18 +81,18 @@
     if ([self.loadedFlagArray[index] boolValue]) {
         HTMatchSubDsbdViewController *vc = self.loadedControllersArray[index];
         if (index == 0) {
-            [vc refreshWithDetailList:self.compareModel.awayTeamDetails];
+            [vc skargrefreshWithDetailList:self.compareModel.awayTeamDetails];
         } else if (index == 1) {
-            [vc refreshWithDetailList:self.compareModel.homeTeamDetails];
+            [vc skargrefreshWithDetailList:self.compareModel.homeTeamDetails];
         }
         return;
     }
     
     HTMatchSubDsbdViewController *vc = [HTMatchSubDsbdViewController skargviewController];
     if (index == 0) {
-        [vc refreshWithDetailList:self.compareModel.awayTeamDetails];
+        [vc skargrefreshWithDetailList:self.compareModel.awayTeamDetails];
     } else if (index == 1) {
-        [vc refreshWithDetailList:self.compareModel.homeTeamDetails];
+        [vc skargrefreshWithDetailList:self.compareModel.homeTeamDetails];
     }
     [self addChildViewController:vc];
     [self.containerView addSubview:vc.view];
@@ -164,7 +164,7 @@
     BJLog(@"\n---- %@ is dealloc!!\n-",[self class]);
 }
 
-- (void)refreshWithMatchCompareModel:(HTMatchCompareModel *)compareModel {
+- (void)skargrefreshWithMatchCompareModel:(HTMatchCompareModel *)compareModel {
     self.compareModel = compareModel;
     if (_segmentControl) {
         [self segmentedValueChangedHandle:self.currentIndex];

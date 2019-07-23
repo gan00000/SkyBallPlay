@@ -63,7 +63,7 @@
     if (indexPath.section == 0) {
         kWeakSelf
         HTNewsHomeBannerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsHomeBannerCell"];
-        [cell setupWithNewsModels:self.bannerList];
+        [cell skargsetupWithNewsModels:self.bannerList];
         cell.onBannerTappedBlock = ^(HTNewsModel *newsModel) {
             HTNewsDetailViewController *detailVc = [HTNewsDetailViewController skargviewController];
             detailVc.post_id = newsModel.news_id;
@@ -73,7 +73,7 @@
     }
     
     HTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsHomeCell"];
-    [cell setupWithNewsModel:self.newsList[indexPath.row]];
+    [cell skargsetupWithNewsModel:self.newsList[indexPath.row]];
     return cell;
 }
 
@@ -173,7 +173,7 @@
     self.newsRequestDone = NO;
     
     kWeakSelf
-    [self.request requestWithSuccessBlock:^(NSArray<HTNewsModel *> *newsList) {
+    [self.request skargrequestWithSuccessBlock:^(NSArray<HTNewsModel *> *newsList) {
         weakSelf.newsList = newsList;
         weakSelf.newsRequestDone = YES;
         [weakSelf refreshUI];
@@ -183,7 +183,7 @@
         [weakSelf refreshUI];
     }];
     
-    [HTNewsBannerRequest requestWithSuccessBlock:^(NSArray<HTNewsModel *> *bannerList) {
+    [HTNewsBannerRequest skargrequestWithSuccessBlock:^(NSArray<HTNewsModel *> *bannerList) {
         weakSelf.bannerList = bannerList;
         weakSelf.bannerRequestDone = YES;
         [weakSelf refreshUI];
@@ -198,7 +198,7 @@
     self.newsRequestDone = NO;
     
     kWeakSelf
-    [self.request loadNextPageWithSuccessBlock:^(NSArray<HTNewsModel *> *newsList) {
+    [self.request skargloadNextPageWithSuccessBlock:^(NSArray<HTNewsModel *> *newsList) {
         weakSelf.newsList = newsList;
         weakSelf.newsRequestDone = YES;
         [weakSelf refreshUI];

@@ -11,6 +11,6 @@
 
 @interface HTMatchDashboardViewController : PPXXBJBaseViewController
 
-- (void)refreshWithMatchCompareModel:(HTMatchCompareModel *)compareModel;
+- (void)skargrefreshWithMatchCompareModel:(HTMatchCompareModel *)compareModel;
 
 @end

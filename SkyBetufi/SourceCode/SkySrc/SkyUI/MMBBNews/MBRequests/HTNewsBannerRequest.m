@@ -10,7 +10,7 @@
 
 @implementation HTNewsBannerRequest
 
-+ (void)requestWithSuccessBlock:(void(^)(NSArray<HTNewsModel*> *bannerList))successBlock
++ (void)skargrequestWithSuccessBlock:(void(^)(NSArray<HTNewsModel*> *bannerList))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock {
     
     [BJHTTPServiceEngine getRequestWithFunctionPath:API_NEWS_BANNER params:nil successBlock:^(id responseData) {

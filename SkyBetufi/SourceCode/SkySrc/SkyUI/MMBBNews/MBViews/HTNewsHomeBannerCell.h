@@ -13,6 +13,6 @@
 
 @property (nonatomic, copy) void(^onBannerTappedBlock)(HTNewsModel *newsModel);
 
-- (void)setupWithNewsModels:(NSArray *)bannerList;
+- (void)skargsetupWithNewsModels:(NSArray *)bannerList;
 
 @end

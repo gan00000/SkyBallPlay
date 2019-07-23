@@ -11,6 +11,6 @@
 
 @interface HTMatchPtsCompareCell : UITableViewCell
 
-- (void)setupWithMatchSummaryModel:(HTMatchSummaryModel *)summaryModel;
+- (void)skargsetupWithMatchSummaryModel:(HTMatchSummaryModel *)summaryModel;
 
 @end

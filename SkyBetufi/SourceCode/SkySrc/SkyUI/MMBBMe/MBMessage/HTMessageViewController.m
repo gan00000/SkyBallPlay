@@ -40,7 +40,7 @@
 - (void)loadData {
     [HTUserRequest skargrequestMyMessageWithOffset:self.offset successBlock:^(NSArray<HTMyMessageModel *> * _Nonnull messageList, NSInteger pages) {
         for (HTMyMessageModel *model in messageList) {
-            [model countHeight];
+            [model skarg_countHeight];
         }
         [self.dataSource addObjectsFromArray:messageList];
         [self.tableView reloadData];
@@ -113,7 +113,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HTMyMessaageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTMyMessaageCell"];
-    [cell refreshWithMyMessageModel:self.dataSource[indexPath.row]];
+    [cell skargrefreshWithMyMessageModel:self.dataSource[indexPath.row]];
     return cell;
 }
 

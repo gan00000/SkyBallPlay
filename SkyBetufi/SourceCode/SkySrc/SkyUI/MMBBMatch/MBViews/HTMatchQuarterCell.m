@@ -36,7 +36,7 @@
     // Configure the view for the selected state
 }
 
-- (void)setupWithMatchSummaryModel:(HTMatchSummaryModel *)summaryModel {
+- (void)skargsetupWithMatchSummaryModel:(HTMatchSummaryModel *)summaryModel {
     self.homeTeamLabel.text = summaryModel.homeName;
     self.homePtsLabel.text = summaryModel.home_pts;
     self.awayTeamLabel.text = summaryModel.awayName;

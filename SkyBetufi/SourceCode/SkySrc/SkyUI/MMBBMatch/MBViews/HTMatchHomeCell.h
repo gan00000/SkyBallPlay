@@ -11,6 +11,6 @@
 
 @interface HTMatchHomeCell : UITableViewCell
 
-- (void)setupWithMatchModel:(HTMatchHomeModel *)matchModel;
+- (void)skargsetupWithMatchModel:(HTMatchHomeModel *)matchModel;
 
 @end

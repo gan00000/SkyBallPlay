@@ -12,7 +12,7 @@
 
 @interface HTNewsTopRequest : NSObject
 
-+ (void)requestWithSuccessBlock:(void(^)(NSArray<HTNewsModel *> *newsList))successBlock
++ (void)skargrequestWithSuccessBlock:(void(^)(NSArray<HTNewsModel *> *newsList))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock;
 
 @end

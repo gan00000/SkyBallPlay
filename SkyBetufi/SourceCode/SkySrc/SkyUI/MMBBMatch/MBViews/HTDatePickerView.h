@@ -12,7 +12,7 @@ typedef BOOL(^HTDatePickerEnterBlock)(NSDate *date);
 
 @interface HTDatePickerView : UIView
 
-+ (void)showWithWithDate:(NSDate *)date
++ (void)skargshowWithWithDate:(NSDate *)date
         didTapEnterBlock:(HTDatePickerEnterBlock)enterBlock;
 
 @end

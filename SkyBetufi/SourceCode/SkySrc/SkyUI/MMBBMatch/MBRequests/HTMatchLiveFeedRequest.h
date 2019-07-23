@@ -12,7 +12,7 @@
 
 @interface HTMatchLiveFeedRequest : NSObject
 
-+ (void)requestLiveFeedWithGameId:(NSString *)game_id
++ (void)skargrequestLiveFeedWithGameId:(NSString *)game_id
                      successBlock:(void(^)(NSArray<HTMatchLiveFeedModel *> *feedList))successBlock
                        errorBlock:(BJServiceErrorBlock)errorBlock;
 

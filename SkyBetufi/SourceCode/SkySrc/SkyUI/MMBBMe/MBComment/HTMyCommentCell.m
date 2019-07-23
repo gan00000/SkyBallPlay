@@ -33,7 +33,7 @@
     // Configure the view for the selected state
 }
 
-- (void)setupWithNewsModel:(HTNewsModel *)newsModel {
+- (void)skargsetupWithNewsModel:(HTNewsModel *)newsModel {
     self.avatarImageView.image = newsModel.userInfo.avatar;
     self.userNameLabel.text = [HTUserManager skarg_userInfo].display_name;
     self.timeLabel.text = [BJDateFormatUtility dateToShowFromDate:newsModel.comt_date_obj];

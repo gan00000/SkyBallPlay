@@ -40,7 +40,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)refreshWithMatchSummaryModel:(HTMatchSummaryModel *)summaryModel {
+- (void)skargrefreshWithMatchSummaryModel:(HTMatchSummaryModel *)summaryModel {
     [self.tableView.mj_header endRefreshing];
     self.summaryModel = summaryModel;
     [self.tableView reloadData];
@@ -85,16 +85,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
         HTMatchQuarterCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTMatchQuarterCell class])];
-        [cell setupWithMatchSummaryModel:self.summaryModel];
+        [cell skargsetupWithMatchSummaryModel:self.summaryModel];
         return cell;
     }
     if (indexPath.section == 1) {
         HTMatchPtsCompareCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTMatchPtsCompareCell class])];
-        [cell setupWithMatchSummaryModel:self.summaryModel];
+        [cell skargsetupWithMatchSummaryModel:self.summaryModel];
         return cell;
     }
     HTMatchBestPlayerCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTMatchBestPlayerCell class])];
-    [cell setupWithMatchSummaryModel:self.summaryModel];
+    [cell skargsetupWithMatchSummaryModel:self.summaryModel];
     return cell;
 }
 

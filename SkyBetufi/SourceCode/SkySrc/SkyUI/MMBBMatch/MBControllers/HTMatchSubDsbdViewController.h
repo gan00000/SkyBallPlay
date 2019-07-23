@@ -11,6 +11,6 @@
 
 @interface HTMatchSubDsbdViewController : PPXXBJBaseViewController
 
-- (void)refreshWithDetailList:(NSArray<HTMatchDetailsModel *> *)detailList;
+- (void)skargrefreshWithDetailList:(NSArray<HTMatchDetailsModel *> *)detailList;
 
 @end

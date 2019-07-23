@@ -49,7 +49,7 @@
     HTNewsModel *model = self.filmList[indexPath.row];
     if ([model.news_type isEqualToString:@"新聞"]) {
         HTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsHomeCell"];
-        [cell setupWithNewsModel:model];
+        [cell skargsetupWithNewsModel:model];
         return cell;
     }
     

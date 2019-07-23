@@ -14,6 +14,6 @@
 
 @property (nonatomic, copy) void (^onTableHeaderRefreshBlock)(void);
 
-- (void)refreshWithMatchSummaryModel:(HTMatchSummaryModel *)summaryModel;
+- (void)skargrefreshWithMatchSummaryModel:(HTMatchSummaryModel *)summaryModel;
 
 @end

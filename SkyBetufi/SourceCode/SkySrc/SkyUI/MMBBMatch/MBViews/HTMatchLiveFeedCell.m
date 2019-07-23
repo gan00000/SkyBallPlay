@@ -31,7 +31,7 @@
     // Configure the view for the selected state
 }
 
-- (void)setupWithMatchLiveFeedModel:(HTMatchLiveFeedModel *)feedModel {
+- (void)skargsetupWithMatchLiveFeedModel:(HTMatchLiveFeedModel *)feedModel {
     self.timeLabel.text = feedModel.time;
     self.teamLabel.text = feedModel.teamName;
     self.eventLabel.text = feedModel.desc;

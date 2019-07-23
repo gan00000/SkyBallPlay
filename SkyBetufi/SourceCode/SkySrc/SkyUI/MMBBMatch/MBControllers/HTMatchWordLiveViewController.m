@@ -37,7 +37,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)refreshWithLiveFeedList:(NSArray<HTMatchLiveFeedModel *> *)liveFeedList {
+- (void)skargrefreshWithLiveFeedList:(NSArray<HTMatchLiveFeedModel *> *)liveFeedList {
     [self.tableView.mj_header endRefreshing];
     self.liveFeedList = liveFeedList;
     [self.tableView reloadData];
@@ -73,7 +73,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HTMatchLiveFeedCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTMatchLiveFeedCell class])];
-    [cell setupWithMatchLiveFeedModel:self.liveFeedList[indexPath.row]];
+    [cell skargsetupWithMatchLiveFeedModel:self.liveFeedList[indexPath.row]];
     return cell;
 }
 

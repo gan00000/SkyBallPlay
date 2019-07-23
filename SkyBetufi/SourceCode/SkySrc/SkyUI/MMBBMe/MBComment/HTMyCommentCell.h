@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HTMyCommentCell : UITableViewCell
 
-- (void)setupWithNewsModel:(HTNewsModel *)newsModel;
+- (void)skargsetupWithNewsModel:(HTNewsModel *)newsModel;
 
 @end
 

@@ -127,7 +127,7 @@
     self.summaryLoaded = NO;
     self.error = nil;
     
-    [HTMatchLiveFeedRequest requestLiveFeedWithGameId:self.matchModel.game_id successBlock:^(NSArray<HTMatchLiveFeedModel *> *feedList) {
+    [HTMatchLiveFeedRequest skargrequestLiveFeedWithGameId:self.matchModel.game_id successBlock:^(NSArray<HTMatchLiveFeedModel *> *feedList) {
         self.liveFeedList = feedList;
         self.feedLoaded = YES;
         [self refreshUI];
@@ -137,7 +137,7 @@
         [self refreshUI];
     }];
     
-    [HTMatchSummaryRequest requestSummaryWithGameId:self.matchModel.game_id successBlock:^(HTMatchSummaryModel *summaryModel, HTMatchCompareModel *compareModel) {
+    [HTMatchSummaryRequest skargrequestSummaryWithGameId:self.matchModel.game_id successBlock:^(HTMatchSummaryModel *summaryModel, HTMatchCompareModel *compareModel) {
         self.matchSummaryModel = summaryModel;
         self.matchCompareModel = compareModel;
         self.summaryLoaded = YES;
@@ -255,13 +255,13 @@
     if ([self.loadedFlagArray[index] boolValue]) {
         if (index == 0) {
             HTMatchWordLiveViewController *wordVc = self.loadedControllersArray[index];
-            [wordVc refreshWithLiveFeedList:self.liveFeedList];
+            [wordVc skargrefreshWithLiveFeedList:self.liveFeedList];
         } else if (index == 1) {
             HTMatchCompareViewController *compareVc = self.loadedControllersArray[index];
-            [compareVc refreshWithMatchSummaryModel:self.matchSummaryModel];
+            [compareVc skargrefreshWithMatchSummaryModel:self.matchSummaryModel];
         } else {
             HTMatchDashboardViewController *dashbdVc = self.loadedControllersArray[index];
-            [dashbdVc refreshWithMatchCompareModel:self.matchCompareModel];
+            [dashbdVc skargrefreshWithMatchCompareModel:self.matchCompareModel];
         }
         return;
     }
@@ -276,14 +276,14 @@
         vc = wordVc;
     } else if (index == 1) {
         HTMatchCompareViewController *compareVc = [HTMatchCompareViewController skargviewController];
-        [compareVc refreshWithMatchSummaryModel:self.matchSummaryModel];
+        [compareVc skargrefreshWithMatchSummaryModel:self.matchSummaryModel];
         compareVc.onTableHeaderRefreshBlock = ^{
             [weakSelf loadData];
         };
         vc = compareVc;
     } else {
         HTMatchDashboardViewController *dashboardVc = [HTMatchDashboardViewController skargviewController];
-        [dashboardVc refreshWithMatchCompareModel:self.matchCompareModel];
+        [dashboardVc skargrefreshWithMatchCompareModel:self.matchCompareModel];
         vc = dashboardVc;
     }
     [self addChildViewController:vc];

@@ -10,7 +10,7 @@
 
 @implementation HTNoCommentFooterView
 
-+ (instancetype)footerViewWithFrame:(CGRect)frame {
++ (instancetype)skargfooterViewWithFrame:(CGRect)frame {
     HTNoCommentFooterView *footerView = kLoadXibWithName(NSStringFromClass([HTNoCommentFooterView class]));
     footerView.frame = frame;
     return footerView;

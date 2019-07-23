@@ -65,7 +65,7 @@
     // Configure the view for the selected state
 }
 
-- (void)refreshWithCommentModel:(HTCommentModel *)commentModel {
+- (void)skargrefreshWithCommentModel:(HTCommentModel *)commentModel {
     self.commentModel = commentModel;
     self.avatarImageView.image = commentModel.userModel.avatar;
     self.authorLabel.text = commentModel.comment_author;
@@ -152,7 +152,7 @@
             [view showToast:@"已點讚"];
         }
         self.commentModel.my_like = !self.commentModel.my_like;
-        [self refreshWithCommentModel:self.commentModel];
+        [self skargrefreshWithCommentModel:self.commentModel];
     } failBlock:^(BJError *error) {
         if (sender.selected) {
             [view showToast:@"取消點讚失敗"];
@@ -180,14 +180,14 @@
                 self.onReplyBlock(commentModel);
             }
         };
-        [cell refreshWithCommentModel:self.commentModel.reply[indexPath.row]];
+        [cell skargrefreshWithCommentModel:self.commentModel.reply[indexPath.row]];
         return cell;
     }
     kWeakSelf
     HTCommentExpendCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTCommentExpendCell class])];
     cell.onExpendChangeBlock = ^(BOOL expend) {
         weakSelf.commentModel.expend = expend;
-        [weakSelf refreshWithCommentModel:weakSelf.commentModel];
+        [weakSelf skargrefreshWithCommentModel:weakSelf.commentModel];
         if (weakSelf.onExpendBlock) {
             weakSelf.onExpendBlock();
             [weakSelf.replyTableView reloadData];

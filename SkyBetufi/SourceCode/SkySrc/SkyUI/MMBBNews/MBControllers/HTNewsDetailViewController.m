@@ -118,12 +118,12 @@
     kWeakSelf
     if (indexPath.section == 0) {
         HTNewsHeaderCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsHeaderCell"];
-        [cell setupWithNewsModel:self.newsModel];
+        [cell skargsetupWithNewsModel:self.newsModel];
         return cell;
     } else if (indexPath.section == 1) {
         HTNewsWebCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsWebCell"];
         if (self.newsContentHeight == 0) {
-            [cell setupWithClearHtmlContent:self.htmlContent];
+            [cell skargsetupWithClearHtmlContent:self.htmlContent];
             cell.onContentHeightUpdateBlock = ^(CGFloat height) {
                 if (fabs(height - weakSelf.newsContentHeight) < 1) {
                     return;
@@ -135,7 +135,7 @@
         return cell;
     } else if (indexPath.section == 2) {
         HTNewsHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsHomeCell"];
-        [cell setupWithNewsModel:self.topNewsList[indexPath.row]];
+        [cell skargsetupWithNewsModel:self.topNewsList[indexPath.row]];
         return cell;
     }
     HTNewsCommentCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTNewsCommentCell class])];
@@ -150,9 +150,9 @@
         [weakSelf.tableView endUpdates];
     };
     if (indexPath.section == 3 && self.commentGetter.hotComments.count > 0) {
-        [cell refreshWithCommentModel:self.commentGetter.hotComments[indexPath.row]];
+        [cell skargrefreshWithCommentModel:self.commentGetter.hotComments[indexPath.row]];
     } else {
-        [cell refreshWithCommentModel:self.commentGetter.normalComments[indexPath.row]];
+        [cell skargrefreshWithCommentModel:self.commentGetter.normalComments[indexPath.row]];
     }
     return cell;
 }
@@ -198,18 +198,18 @@
     }
     HTNewsTopHeaderView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"HTNewsTopHeaderView"];
     if (section == 2) {
-        [headerView refreshWithTitle:@"推薦閱讀"];
+        [headerView skargrefreshWithTitle:@"推薦閱讀"];
     } else if (section == 3 && self.commentGetter.hotComments.count > 0) {
-        [headerView refreshWithTitle:@"熱門回復"];
+        [headerView skargrefreshWithTitle:@"熱門回復"];
     } else {
-        [headerView refreshWithTitle:@"全部回復"];
+        [headerView skargrefreshWithTitle:@"全部回復"];
     }
     return headerView;
 }
 
 #pragma mark - requests
 - (void)loadDetailWithCompleteBlock:(dispatch_block_t)block {
-    [HTNewsAdditionRequest requestDetailWithPostId:self.post_id successBlock:^(HTNewsModel * _Nonnull newsModel) {
+    [HTNewsAdditionRequest skargrequestDetailWithPostId:self.post_id successBlock:^(HTNewsModel * _Nonnull newsModel) {
         self.newsModel = newsModel;
         if (block) {
             block();
@@ -232,7 +232,7 @@
     self.topRequestDone = NO;
     self.htmlLoadDone = YES;
     
-    [HTNewsTopRequest requestWithSuccessBlock:^(NSArray<HTNewsModel *> *newsList) {
+    [HTNewsTopRequest skargrequestWithSuccessBlock:^(NSArray<HTNewsModel *> *newsList) {
         weakSelf.topNewsList = newsList;
         weakSelf.topRequestDone = YES;
         [weakSelf refreshUI];
@@ -244,7 +244,7 @@
     
     if (!weakSelf.htmlContent) {
         self.htmlLoadDone = NO;
-        [self.newsModel getClearContentWithBlock:^(BOOL success, NSString *content) {
+        [self.newsModel skarggetClearContentWithBlock:^(BOOL success, NSString *content) {
             weakSelf.htmlContent = content;
             weakSelf.htmlLoadDone = YES;
             [weakSelf refreshUI];
@@ -266,7 +266,7 @@
     self.tableView.mj_footer.hidden = NO;
     
     kWeakSelf
-    [self.commentGetter doRequestWithCompleteBlock:^{
+    [self.commentGetter skargdoRequestWithCompleteBlock:^{
         if (weakSelf.commentGetter.hasMore) {
             [weakSelf.tableView.mj_footer endRefreshing];
         } else {
@@ -280,7 +280,7 @@
 - (void)updateAfterComment {
     [self loadDetailWithCompleteBlock:^{
         [self refreshUI];
-        [self.commentGetter reset];
+        [self.commentGetter skargreset];
         [self loadComments];
     }];
 }
@@ -327,7 +327,7 @@
         [weakSelf loadComments];
     }];
     
-    if ([HTNewsModel canShare]) {
+    if ([HTNewsModel skargcanShare]) {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"nav_icon_share"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] style:UIBarButtonItemStylePlain target:self action:@selector(onShareButtonTapped:)];
     }
     
@@ -393,7 +393,7 @@
 
 #pragma mark - actions
 - (void)onShareButtonTapped:(id)sender {
-    [self.newsModel share];
+    [self.newsModel skargshare];
 }
 
 - (IBAction)onSaveAction:(UIButton *)sender {
@@ -478,14 +478,14 @@
 #pragma mark - lazy load
 - (HTCommentGetter *)commentGetter {
     if (!_commentGetter) {
-        _commentGetter = [[HTCommentGetter alloc] initWithPostId:self.post_id];
+        _commentGetter = [[HTCommentGetter alloc] skarginitWithPostId:self.post_id];
     }
     return _commentGetter;
 }
 
 - (HTNoCommentFooterView *)noCommentsFooterView {
     if (!_noCommentsFooterView) {
-        _noCommentsFooterView = [HTNoCommentFooterView footerViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 100)];
+        _noCommentsFooterView = [HTNoCommentFooterView skargfooterViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 100)];
     }
     return _noCommentsFooterView;
 }

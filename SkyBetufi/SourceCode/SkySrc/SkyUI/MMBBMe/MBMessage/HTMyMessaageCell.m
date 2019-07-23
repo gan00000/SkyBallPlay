@@ -32,7 +32,7 @@
     // Configure the view for the selected state
 }
 
-- (void)refreshWithMyMessageModel:(HTMyMessageModel *)model {
+- (void)skargrefreshWithMyMessageModel:(HTMyMessageModel *)model {
     self.descLabel.text = model.desc;
     self.contentLabel.text = model.reply_msg;
     self.titleLabel.text = model.post_title;

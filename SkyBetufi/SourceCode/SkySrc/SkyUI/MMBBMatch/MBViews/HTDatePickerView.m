@@ -29,7 +29,7 @@ static const CGFloat HTDatePickerHeight = 245.0;
     return self;
 }
 
-+ (void)showWithWithDate:(NSDate *)date didTapEnterBlock:(HTDatePickerEnterBlock)enterBlock {
++ (void)skargshowWithWithDate:(NSDate *)date didTapEnterBlock:(HTDatePickerEnterBlock)enterBlock {
     HTDatePickerView *datePicker = [[HTDatePickerView alloc] init];
     datePicker.frame = [UIScreen mainScreen].bounds;
     if (date) {
