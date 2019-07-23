@@ -44,7 +44,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSArray<Class> *)viewControllersNotHideTabBar {
+- (NSArray<Class> *)skargviewControllersNotHideTabBar {
     return @[[HTMatchHomeViewController class],
              [HTNewsHomeViewController class],
              [HTFilmHomeViewController class],

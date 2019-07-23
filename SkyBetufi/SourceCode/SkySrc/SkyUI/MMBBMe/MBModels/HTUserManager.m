@@ -29,7 +29,7 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 - (instancetype)init {
     self = [super init];
     if (self) {
-        if ([HTUserManager isUserLogin]) {
+        if ([HTUserManager skarg_isUserLogin]) {
             NSData *data = [NSData dataWithContentsOfFile:[HTUserManager userInfoPath]];
             self.userInfoModel = [HTUserInfoModel yy_modelWithJSON:data];
         }
@@ -46,11 +46,11 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
     return manager;
 }
 
-+ (BOOL)isUserLogin {
-    return [HTUserManager userToken].length > 0;
++ (BOOL)skarg_isUserLogin {
+    return [HTUserManager skarg_userToken].length > 0;
 }
 
-+ (HTUserInfoModel *)userInfo {
++ (HTUserInfoModel *)skarg_userInfo {
     return [HTUserManager manager].userInfoModel;
 }
 
@@ -63,7 +63,7 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 }
 
 // token
-+ (NSString *)userToken {
++ (NSString *)skarg_userToken {
     return [[NSUserDefaults standardUserDefaults] objectForKey:kUserTokenKey];
 }
 
@@ -73,17 +73,17 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 }
 
 // 推送deviceToken
-+ (NSString *)deviceToken {
++ (NSString *)skarg_deviceToken {
     return [[NSUserDefaults standardUserDefaults] objectForKey:kDeviceTokenKey];
 }
 
-+ (void)saveDeviceToken:(NSString *)deviceToken {
++ (void)skarg_saveDeviceToken:(NSString *)deviceToken {
     [[NSUserDefaults standardUserDefaults] setObject:deviceToken forKey:kDeviceTokenKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 // 执行用户登录
-+ (void)doUserLogin {
++ (void)skarg_doUserLogin {
     [HTLoginAlertView showLoginAlertViewWithSelectBlock:^(HTLoginPlatform platform) {
         HTUserManager *manager = [HTUserManager manager];
         if (platform == HTLoginPlatformFB) {
@@ -94,7 +94,7 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
     }];
 }
 
-+ (void)doUserLogout {
++ (void)skarg_doUserLogout {
     [self saveUserToken:nil];
     [DRSandBoxManager deleteFileAtPath:[self userInfoPath] doneBlock:^(NSString * _Nonnull filePath, BOOL success, NSError * _Nonnull error) {
         BJLog(@"用戶信息刪除 %d", success);
@@ -132,16 +132,16 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 
 #pragma mark - request
 - (void)doLoginRequesWithAccessToken:(NSString *)accessToken sns:(NSInteger)sns {
-    [HTUserRequest doLoginRequestWithAccessToken:accessToken sns:sns successBlock:^(NSString * _Nonnull userToken) {
+    [HTUserRequest skargdoLoginRequestWithAccessToken:accessToken sns:sns successBlock:^(NSString * _Nonnull userToken) {
         [HTUserManager saveUserToken:userToken];
-        [HTUserManager refreshUserInfoWithSuccessBlock:nil];
+        [HTUserManager skarg_refreshUserInfoWithSuccessBlock:nil];
     } failBlock:^(BJError *error) {
         BJLog(@"登錄失敗");
     }];
 }
 
-+ (void)refreshUserInfoWithSuccessBlock:(dispatch_block_t)block {
-    [HTUserRequest requestUserInfoWithSuccessBlock:^(NSDictionary * _Nonnull userInfo) {
++ (void)skarg_refreshUserInfoWithSuccessBlock:(dispatch_block_t)block {
+    [HTUserRequest skargrequestUserInfoWithSuccessBlock:^(NSDictionary * _Nonnull userInfo) {
         [self saveUserInfo:userInfo];
         if (block) {
             block();
@@ -156,19 +156,19 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
     return [NSString stringWithFormat:@"%@/userInfo.json", [DRSandBoxManager getDocumentPath]];
 }
 
-+ (void)cameraDenied {
-    [self showAlertWithTitle:@"相機權限未開啟" message:@"檢測到相機被禁用，無法拍照" cancelButton:@"取消" confirmButton:@"去開啟" confirmBlock:^{
++ (void)skargcameraDenied {
+    [self skarg_showAlertWithTitle:@"相機權限未開啟" message:@"檢測到相機被禁用，無法拍照" cancelButton:@"取消" confirmButton:@"去開啟" confirmBlock:^{
         [self goSystemSettingCenter];
     }];
 }
 
-+ (void)photoAlbumDenied {
-    [self showAlertWithTitle:@"相冊權限未開啟" message:@"檢測到相冊被禁用，無法查看照片" cancelButton:@"取消" confirmButton:@"去開啟" confirmBlock:^{
++ (void)skargphotoAlbumDenied {
+    [self skarg_showAlertWithTitle:@"相冊權限未開啟" message:@"檢測到相冊被禁用，無法查看照片" cancelButton:@"取消" confirmButton:@"去開啟" confirmBlock:^{
         [self goSystemSettingCenter];
     }];
 }
 
-+ (void)showAlertWithTitle:(NSString *)title message:(NSString *)message cancelButton:(NSString *)cancelButton confirmButton:(NSString *)confirmButton confirmBlock:(dispatch_block_t)confirmBlock {
++ (void)skarg_showAlertWithTitle:(NSString *)title message:(NSString *)message cancelButton:(NSString *)cancelButton confirmButton:(NSString *)confirmButton confirmBlock:(dispatch_block_t)confirmBlock {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelButton style:UIAlertActionStyleCancel handler:nil];
     [alert addAction:cancelAction];

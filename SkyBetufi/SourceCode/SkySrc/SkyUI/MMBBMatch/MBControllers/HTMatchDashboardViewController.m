@@ -25,7 +25,7 @@
 
 @implementation HTMatchDashboardViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"MatchDashboard");
 }
 
@@ -88,7 +88,7 @@
         return;
     }
     
-    HTMatchSubDsbdViewController *vc = [HTMatchSubDsbdViewController viewController];
+    HTMatchSubDsbdViewController *vc = [HTMatchSubDsbdViewController skargviewController];
     if (index == 0) {
         [vc refreshWithDetailList:self.compareModel.awayTeamDetails];
     } else if (index == 1) {

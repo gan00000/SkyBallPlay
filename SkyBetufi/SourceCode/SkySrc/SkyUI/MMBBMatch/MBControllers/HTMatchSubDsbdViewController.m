@@ -24,7 +24,7 @@
 
 @implementation HTMatchSubDsbdViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"MatchSubDsbd");
 }
 

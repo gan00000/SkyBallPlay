@@ -50,7 +50,7 @@
 
 @implementation HTMatchDetailViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"MatchDetail");
 }
 
@@ -269,20 +269,20 @@
     kWeakSelf
     UIViewController *vc;
     if (index == 0) {
-        HTMatchWordLiveViewController *wordVc = [HTMatchWordLiveViewController viewController];
+        HTMatchWordLiveViewController *wordVc = [HTMatchWordLiveViewController skargviewController];
         wordVc.onTableHeaderRefreshBlock = ^{
             [weakSelf loadData];
         };
         vc = wordVc;
     } else if (index == 1) {
-        HTMatchCompareViewController *compareVc = [HTMatchCompareViewController viewController];
+        HTMatchCompareViewController *compareVc = [HTMatchCompareViewController skargviewController];
         [compareVc refreshWithMatchSummaryModel:self.matchSummaryModel];
         compareVc.onTableHeaderRefreshBlock = ^{
             [weakSelf loadData];
         };
         vc = compareVc;
     } else {
-        HTMatchDashboardViewController *dashboardVc = [HTMatchDashboardViewController viewController];
+        HTMatchDashboardViewController *dashboardVc = [HTMatchDashboardViewController skargviewController];
         [dashboardVc refreshWithMatchCompareModel:self.matchCompareModel];
         vc = dashboardVc;
     }

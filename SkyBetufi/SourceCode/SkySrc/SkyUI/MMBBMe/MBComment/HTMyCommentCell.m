@@ -35,7 +35,7 @@
 
 - (void)setupWithNewsModel:(HTNewsModel *)newsModel {
     self.avatarImageView.image = newsModel.userInfo.avatar;
-    self.userNameLabel.text = [HTUserManager userInfo].display_name;
+    self.userNameLabel.text = [HTUserManager skarg_userInfo].display_name;
     self.timeLabel.text = [BJDateFormatUtility dateToShowFromDate:newsModel.comt_date_obj];
     self.contentLabel.text = newsModel.comment_content;
     self.titleLabel.text = newsModel.title;

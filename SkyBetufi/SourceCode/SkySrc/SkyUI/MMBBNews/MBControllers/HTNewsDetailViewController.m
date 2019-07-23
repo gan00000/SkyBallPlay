@@ -51,7 +51,7 @@
 
 @implementation HTNewsDetailViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"NewsDetail");
 }
 
@@ -162,7 +162,7 @@
     if (indexPath.section == 2) {
         HTNewsModel *newsModel = self.topNewsList[indexPath.row];
         
-        HTNewsDetailViewController *detailVc = [HTNewsDetailViewController viewController];
+        HTNewsDetailViewController *detailVc = [HTNewsDetailViewController skargviewController];
         detailVc.post_id = newsModel.news_id;
         [self.navigationController pushViewController:detailVc animated:YES];
     }
@@ -286,7 +286,7 @@
 }
 
 - (void)addHistoryRecord {
-    [HTUserRequest addHistoryWithNewsId:self.post_id successBlock:^{
+    [HTUserRequest skargaddHistoryWithNewsId:self.post_id successBlock:^{
         BJLog(@"添加瀏覽歷史成功");
     } failBlock:^(BJError *error) {
         BJLog(@"添加瀏覽歷史失敗");
@@ -334,7 +334,7 @@
     UIImage *commentIcon = [[UIImage imageNamed:@"icon_add_comment"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.commentButton setImage:commentIcon forState:UIControlStateNormal];
     [self.commentButton setTintColor:[UIColor hx_colorWithHexRGBAString:@"999999"]];
-    UIImage *saveIcon = [[PPXXBJBaseViewController fixImageSize:[UIImage imageNamed:@"icon_add_collection"] toSize:CGSizeMake(20, 20)] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIImage *saveIcon = [[PPXXBJBaseViewController skargfixImageSize:[UIImage imageNamed:@"icon_add_collection"] toSize:CGSizeMake(20, 20)] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.saveButton setImage:saveIcon forState:UIControlStateNormal];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onInputBegin) name:UITextViewTextDidBeginEditingNotification object:self.commentInputView];
@@ -397,13 +397,13 @@
 }
 
 - (IBAction)onSaveAction:(UIButton *)sender {
-    if (![HTUserManager isUserLogin]) {
-        [HTUserManager doUserLogin];
+    if (![HTUserManager skarg_isUserLogin]) {
+        [HTUserManager skarg_doUserLogin];
         [self.view showToast:@"請登錄"];
         return;
     }
     if (sender.selected) {
-        [HTUserRequest deleteCollectionWithNewsId:self.newsModel.news_id successBlock:^{
+        [HTUserRequest skargdeleteCollectionWithNewsId:self.newsModel.news_id successBlock:^{
             [self.view showToast:@"已取消收藏"];
             self.newsModel.my_save = NO;
             [self setupSaveButton];
@@ -411,7 +411,7 @@
             [self.view showToast:@"取消收藏失敗"];
         }];
     } else {
-        [HTUserRequest addCollectionWithNewsId:self.newsModel.news_id successBlock:^{
+        [HTUserRequest skargaddCollectionWithNewsId:self.newsModel.news_id successBlock:^{
             [self.view showToast:@"已收藏"];
             self.newsModel.my_save = YES;
             [self setupSaveButton];
@@ -439,7 +439,7 @@
         return;
     }
     
-    [HTUserRequest postCommentWithComment_txt:self.commentInputView.text post_id:self.newsModel.news_id reply_comment_id:self.currentCommentModel.comment_id successBlock:^{
+    [HTUserRequest skargpostCommentWithComment_txt:self.commentInputView.text post_id:self.newsModel.news_id reply_comment_id:self.currentCommentModel.comment_id successBlock:^{
         self.commentInputView.text = nil;
         [self.view endEditing:YES];
         [kWindow showToast:@"評論成功"];
@@ -450,9 +450,9 @@
 }
 
 - (void)onInputBegin {
-    if (![HTUserManager isUserLogin]) {
+    if (![HTUserManager skarg_isUserLogin]) {
         [self.view endEditing:YES];
-        [HTUserManager doUserLogin];
+        [HTUserManager skarg_doUserLogin];
         [self.view showToast:@"請登錄"];
         return;
     }

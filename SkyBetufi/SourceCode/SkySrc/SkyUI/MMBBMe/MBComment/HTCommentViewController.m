@@ -22,7 +22,7 @@
 
 @implementation HTCommentViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return [[HTCommentViewController alloc] init];
 }
 
@@ -38,7 +38,7 @@
 }
 
 - (void)loadData {
-    [HTUserRequest requestMyCommentWithOffset:self.offset successBlock:^(NSArray<HTNewsModel *> * _Nonnull newsList, NSInteger pages) {
+    [HTUserRequest skargrequestMyCommentWithOffset:self.offset successBlock:^(NSArray<HTNewsModel *> * _Nonnull newsList, NSInteger pages) {
         for (HTNewsModel *model in newsList) {
             [model countCommentHeight];
         }
@@ -120,7 +120,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     HTNewsModel *newsModel = self.dataSource[indexPath.row];
     
-    HTNewsDetailViewController *detailVc = [HTNewsDetailViewController viewController];
+    HTNewsDetailViewController *detailVc = [HTNewsDetailViewController skargviewController];
     detailVc.post_id = newsModel.news_id;
     [self.navigationController pushViewController:detailVc animated:YES];
 }

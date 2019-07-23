@@ -30,7 +30,7 @@
 
 @implementation HTDataMoreViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"DataMore");
 }
 

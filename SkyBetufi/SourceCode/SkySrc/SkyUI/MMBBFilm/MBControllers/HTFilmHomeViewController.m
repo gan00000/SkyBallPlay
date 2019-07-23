@@ -23,7 +23,7 @@
 
 @implementation HTFilmHomeViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"FilmHome");
 }
 
@@ -70,7 +70,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     HTNewsModel *newsModel = self.filmList[indexPath.row];
     
-    HTNewsDetailViewController *detailVc = [HTNewsDetailViewController viewController];
+    HTNewsDetailViewController *detailVc = [HTNewsDetailViewController skargviewController];
     detailVc.post_id = newsModel.news_id;
     [self.navigationController pushViewController:detailVc animated:YES];
 }

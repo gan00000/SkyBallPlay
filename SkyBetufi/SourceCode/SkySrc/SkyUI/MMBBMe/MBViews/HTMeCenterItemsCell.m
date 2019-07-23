@@ -23,8 +23,8 @@
 }
 
 - (IBAction)onItemAction:(UIButton *)sender {
-    if (![HTUserManager isUserLogin]) {
-        [HTUserManager doUserLogin];
+    if (![HTUserManager skarg_isUserLogin]) {
+        [HTUserManager skarg_doUserLogin];
         return;
     }
     if (self.onItemTappedBlock) {

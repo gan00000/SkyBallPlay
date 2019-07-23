@@ -36,7 +36,7 @@
 
 @implementation HTMatchHomeViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"MatchHome");
 }
 
@@ -103,7 +103,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     HTMatchHomeGroupModel *groupModel = self.matchList[indexPath.section];
     
-    HTMatchDetailViewController *detailVc = [HTMatchDetailViewController viewController];
+    HTMatchDetailViewController *detailVc = [HTMatchDetailViewController skargviewController];
     detailVc.matchModel = groupModel.matchList[indexPath.row];
     [self.navigationController pushViewController:detailVc animated:YES];
 }

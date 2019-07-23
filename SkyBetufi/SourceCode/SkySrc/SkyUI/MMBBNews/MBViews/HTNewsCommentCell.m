@@ -128,8 +128,8 @@
 }
 
 - (IBAction)onReplyAction:(id)sender {
-    if (![HTUserManager isUserLogin]) {
-        [HTUserManager doUserLogin];
+    if (![HTUserManager skarg_isUserLogin]) {
+        [HTUserManager skarg_doUserLogin];
         return;
     }
     if (self.onReplyBlock) {
@@ -138,12 +138,12 @@
 }
 
 - (IBAction)onLikeAction:(UIButton *)sender {
-    if (![HTUserManager isUserLogin]) {
-        [HTUserManager doUserLogin];
+    if (![HTUserManager skarg_isUserLogin]) {
+        [HTUserManager skarg_doUserLogin];
         return;
     }
     UIView *view = [PPXXBJViewControllerCenter currentViewController].view;
-    [HTUserRequest likePostWithPostId:self.commentModel.post_id comment_id:self.commentModel.comment_id like:!sender.selected successBlock:^{
+    [HTUserRequest skarglikePostWithPostId:self.commentModel.post_id comment_id:self.commentModel.comment_id like:!sender.selected successBlock:^{
         if (self.commentModel.my_like) {
             self.commentModel.total_like --;
             [view showToast:@"已取消點讚"];

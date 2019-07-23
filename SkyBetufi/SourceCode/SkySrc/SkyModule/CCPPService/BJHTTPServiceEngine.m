@@ -45,8 +45,8 @@
                       successBlock:(BJServiceSuccessBlock)successBlock
                         errorBlock:(BJServiceErrorBlock)errorBlock {
     NSMutableDictionary *allParams = [NSMutableDictionary dictionary];
-    if ([HTUserManager isUserLogin]) {
-        allParams[@"token"] = [HTUserManager userToken];
+    if ([HTUserManager skarg_isUserLogin]) {
+        allParams[@"token"] = [HTUserManager skarg_userToken];
     }
     if (params) {
         [allParams addEntriesFromDictionary:params];
@@ -89,8 +89,8 @@
                        successBlock:(BJServiceSuccessBlock)successBlock
                          errorBlock:(BJServiceErrorBlock)errorBlock {
     NSMutableDictionary *allParams = [NSMutableDictionary dictionary];
-    if ([HTUserManager isUserLogin]) {
-        allParams[@"token"] = [HTUserManager userToken];
+    if ([HTUserManager skarg_isUserLogin]) {
+        allParams[@"token"] = [HTUserManager skarg_userToken];
     }
     if (params) {
         [allParams addEntriesFromDictionary:params];

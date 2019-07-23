@@ -16,7 +16,7 @@
     if (status == AVAuthorizationStatusAuthorized) {
         [self openCamera];
     } else if (status == AVAuthorizationStatusDenied) {
-        [HTUserManager cameraDenied];
+        [HTUserManager skargcameraDenied];
     } else {
         kWeakSelf
         [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {

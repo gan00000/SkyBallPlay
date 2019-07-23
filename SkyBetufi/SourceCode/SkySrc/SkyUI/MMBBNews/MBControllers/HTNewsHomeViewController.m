@@ -28,7 +28,7 @@
 
 @implementation HTNewsHomeViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"NewsHome");
 }
 
@@ -65,7 +65,7 @@
         HTNewsHomeBannerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTNewsHomeBannerCell"];
         [cell setupWithNewsModels:self.bannerList];
         cell.onBannerTappedBlock = ^(HTNewsModel *newsModel) {
-            HTNewsDetailViewController *detailVc = [HTNewsDetailViewController viewController];
+            HTNewsDetailViewController *detailVc = [HTNewsDetailViewController skargviewController];
             detailVc.post_id = newsModel.news_id;
             [weakSelf.navigationController pushViewController:detailVc animated:YES];
         };
@@ -92,7 +92,7 @@
     
     HTNewsModel *newsModel = self.newsList[indexPath.row];
     
-    HTNewsDetailViewController *detailVc = [HTNewsDetailViewController viewController];
+    HTNewsDetailViewController *detailVc = [HTNewsDetailViewController skargviewController];
     detailVc.post_id = newsModel.news_id;
     [self.navigationController pushViewController:detailVc animated:YES];
 }

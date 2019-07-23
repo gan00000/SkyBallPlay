@@ -21,7 +21,7 @@
 
 @implementation HTRankZoneViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"RankZone");
 }
 

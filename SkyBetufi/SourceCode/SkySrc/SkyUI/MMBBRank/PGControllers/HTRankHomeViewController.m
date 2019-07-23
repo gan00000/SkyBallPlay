@@ -25,7 +25,7 @@
 
 @implementation HTRankHomeViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"RankHome");
 }
 
@@ -90,10 +90,10 @@
     
     UIViewController *vc;
     if (index == 0) {
-        HTRankEastWestViewController *ewVc = [HTRankEastWestViewController viewController];
+        HTRankEastWestViewController *ewVc = [HTRankEastWestViewController skargviewController];
         vc = ewVc;
     } else if (index == 1) {
-        HTRankZoneViewController *zoneVc = [HTRankZoneViewController viewController];
+        HTRankZoneViewController *zoneVc = [HTRankZoneViewController skargviewController];
         vc = zoneVc;
     }
     [self addChildViewController:vc];

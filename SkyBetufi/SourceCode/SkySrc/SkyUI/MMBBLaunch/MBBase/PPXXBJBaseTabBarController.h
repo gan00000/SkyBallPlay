@@ -10,9 +10,9 @@
 
 @interface PPXXBJBaseTabBarController : UITabBarController
 
-- (NSArray<UIImage *> *)tabBarIcons;
-- (NSArray<UIImage *> *)tabBarSelectedIcons;
-- (NSArray<NSString *> *)tabBarTitles;
-- (NSArray<UIViewController *> *)tabBarControllers;
+- (NSArray<UIImage *> *)skargtabBarIcons;
+- (NSArray<UIImage *> *)skargtabBarSelectedIcons;
+- (NSArray<NSString *> *)skargtabBarTitles;
+- (NSArray<UIViewController *> *)skargtabBarControllers;
 
 @end

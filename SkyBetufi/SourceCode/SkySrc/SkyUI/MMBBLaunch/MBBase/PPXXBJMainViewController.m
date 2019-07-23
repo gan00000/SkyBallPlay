@@ -12,6 +12,7 @@
 #import "HTFilmHomeViewController.h"
 #import "HTDataHomeViewController.h"
 #import "HTRankHomeViewController.h"
+#import "HTMeHomeViewController.h"
 
 @interface PPXXBJMainViewController ()<UITabBarControllerDelegate>
 
@@ -29,6 +30,9 @@
 
 @property (nonatomic, strong) PPXXBJNavigationController *nav5;
 @property (nonatomic, strong) HTRankHomeViewController *vc5;
+
+@property (nonatomic, strong) PPXXBJNavigationController *nav6;
+@property (nonatomic, strong) HTMeHomeViewController *vc6;
 
 @end
 
@@ -54,48 +58,56 @@
 }
 
 #pragma mark - 
-- (NSArray<NSString *> *)tabBarTitles {
+- (NSArray<NSString *> *)skargtabBarTitles {
     return @[@"比賽", @"新聞", @"影片", @"數據", @"排行"];
+//    return @[@"比賽", @"新聞", @"影片", @"數據", @"排行" , @"我的"];
 }
 
-- (NSArray<UIImage *> *)tabBarIcons {
+- (NSArray<UIImage *> *)skargtabBarIcons {
     return @[[[UIImage imageNamed:@"tab_icon_normal1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_normal2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_normal3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_normal4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_normal5"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//    [[UIImage imageNamed:@"tab_icon_normal5"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 }
 
-- (NSArray<UIImage *> *)tabBarSelectedIcons {
+- (NSArray<UIImage *> *)skargtabBarSelectedIcons {
     return @[[[UIImage imageNamed:@"tab_icon_selected1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_selected2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_selected3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_selected4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_selected5"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//             [[UIImage imageNamed:@"tab_icon_selected5"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 }
 
-- (NSArray<UIViewController *> *)tabBarControllers {
+- (NSArray<UIViewController *> *)skargtabBarControllers {
     if (!self.vc1) {
-        self.vc1 = [HTMatchHomeViewController viewController];
+        self.vc1 = [HTMatchHomeViewController skargviewController];
         self.nav1 = [[PPXXBJNavigationController alloc] initWithRootViewController:self.vc1];
     }
     if (!self.vc2) {
-        self.vc2 = [HTNewsHomeViewController viewController];
+        self.vc2 = [HTNewsHomeViewController skargviewController];
         self.nav2 = [[PPXXBJNavigationController alloc] initWithRootViewController:self.vc2];
     }
     if (!self.vc3) {
-        self.vc3 = [HTFilmHomeViewController viewController];
+        self.vc3 = [HTFilmHomeViewController skargviewController];
         self.nav3 = [[PPXXBJNavigationController alloc] initWithRootViewController:self.vc3];
     }
     if (!self.vc4) {
-        self.vc4 = [HTDataHomeViewController viewController];
+        self.vc4 = [HTDataHomeViewController skargviewController];
         self.nav4 = [[PPXXBJNavigationController alloc] initWithRootViewController:self.vc4];
     }
     if (!self.vc5) {
-        self.vc5 = [HTRankHomeViewController viewController];
+        self.vc5 = [HTRankHomeViewController skargviewController];
         self.nav5 = [[PPXXBJNavigationController alloc] initWithRootViewController:self.vc5];
     }
+    if (!self.vc6) {
+        self.vc6 = [HTMeHomeViewController skargviewController];
+        self.nav6 = [[PPXXBJNavigationController alloc] initWithRootViewController:self.vc6];
+    }
     return @[self.nav1, self.nav2, self.nav3, self.nav4, self.nav5];
+//    return @[self.nav1, self.nav2, self.nav3, self.nav4, self.nav5,self.nav6];
 }
 
 #pragma MARK -- UITabBarControllerDelegate

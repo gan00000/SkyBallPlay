@@ -21,7 +21,7 @@
 
 @implementation HTMatchCompareViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"MatchCompare");
 }
 

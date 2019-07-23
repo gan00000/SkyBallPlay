@@ -18,7 +18,7 @@
 
 @implementation HTMatchWordLiveViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"MatchWordLive");
 }
 

@@ -22,7 +22,7 @@
 
 @implementation HTMessageViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return [[HTMessageViewController alloc] init];
 }
 
@@ -38,7 +38,7 @@
 }
 
 - (void)loadData {
-    [HTUserRequest requestMyMessageWithOffset:self.offset successBlock:^(NSArray<HTMyMessageModel *> * _Nonnull messageList, NSInteger pages) {
+    [HTUserRequest skargrequestMyMessageWithOffset:self.offset successBlock:^(NSArray<HTMyMessageModel *> * _Nonnull messageList, NSInteger pages) {
         for (HTMyMessageModel *model in messageList) {
             [model countHeight];
         }
@@ -120,7 +120,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     HTMyMessageModel *mesageModel = self.dataSource[indexPath.row];
     
-    HTNewsDetailViewController *detailVc = [HTNewsDetailViewController viewController];
+    HTNewsDetailViewController *detailVc = [HTNewsDetailViewController skargviewController];
     detailVc.post_id = mesageModel.post_id;
     [self.navigationController pushViewController:detailVc animated:YES];
 }

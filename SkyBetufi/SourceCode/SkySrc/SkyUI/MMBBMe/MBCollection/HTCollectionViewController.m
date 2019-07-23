@@ -22,7 +22,7 @@
 
 @implementation HTCollectionViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return [[HTCollectionViewController alloc] init];
 }
 
@@ -38,7 +38,7 @@
 }
 
 - (void)loadData {
-    [HTUserRequest requestCollectionListWithOffset:self.offset successBlock:^(NSArray<HTNewsModel *> * _Nonnull newsList, NSInteger pages) {
+    [HTUserRequest skargrequestCollectionListWithOffset:self.offset successBlock:^(NSArray<HTNewsModel *> * _Nonnull newsList, NSInteger pages) {
         [self.dataSource addObjectsFromArray:newsList];
         [self.tableView reloadData];
         [self.tableView.mj_header endRefreshing];
@@ -116,7 +116,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
    HTNewsModel *newsModel = self.dataSource[indexPath.row];
     
-    HTNewsDetailViewController *detailVc = [HTNewsDetailViewController viewController];
+    HTNewsDetailViewController *detailVc = [HTNewsDetailViewController skargviewController];
     detailVc.post_id = newsModel.news_id;
     [self.navigationController pushViewController:detailVc animated:YES];
 }

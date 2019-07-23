@@ -33,11 +33,11 @@
 }
 
 - (void)refreshUI {
-    if ([HTUserManager isUserLogin]) {
+    if ([HTUserManager skarg_isUserLogin]) {
         self.userInfoContentView.hidden = NO;
         self.loginButton.hidden = YES;
-        self.avatarImageView.image = [HTUserManager userInfo].avatar;
-        self.userNameLabel.text = [HTUserManager userInfo].display_name;
+        self.avatarImageView.image = [HTUserManager skarg_userInfo].avatar;
+        self.userNameLabel.text = [HTUserManager skarg_userInfo].display_name;
     } else {
         self.userInfoContentView.hidden = YES;
         self.loginButton.hidden = NO;
@@ -45,7 +45,7 @@
 }
 
 - (IBAction)loginAction:(id)sender {
-    [HTUserManager doUserLogin];
+    [HTUserManager skarg_doUserLogin];
 }
 
 

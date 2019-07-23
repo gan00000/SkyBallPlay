@@ -20,7 +20,7 @@
 
 @implementation HTSettingViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"Setting");
 }
 
@@ -78,7 +78,7 @@
 }
 
 - (IBAction)logoutAction:(id)sender {
-    [HTUserManager doUserLogout];
+    [HTUserManager skarg_doUserLogout];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

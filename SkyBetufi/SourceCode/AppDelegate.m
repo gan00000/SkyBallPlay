@@ -215,7 +215,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
                                  stringByReplacingOccurrencesOfString:@" " withString:@""];
     if (pushDeviceToken.length) {
         BJLog(@"deviceToken: %@", pushDeviceToken);
-        [HTUserManager saveDeviceToken:pushDeviceToken];
+        [HTUserManager skarg_saveDeviceToken:pushDeviceToken];
     }
 }
 
@@ -228,7 +228,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
         vc = [PPXXBJViewControllerCenter currentViewController];
     }
     
-    HTNewsDetailViewController *detailVc = [HTNewsDetailViewController viewController];
+    HTNewsDetailViewController *detailVc = [HTNewsDetailViewController skargviewController];
     detailVc.post_id = pushInfo[@"postId"];
     
     if (vc.navigationController) {

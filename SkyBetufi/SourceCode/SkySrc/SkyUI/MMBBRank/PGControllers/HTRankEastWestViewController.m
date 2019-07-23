@@ -22,7 +22,7 @@
 
 @implementation HTRankEastWestViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"RankEastWest");
 }
 

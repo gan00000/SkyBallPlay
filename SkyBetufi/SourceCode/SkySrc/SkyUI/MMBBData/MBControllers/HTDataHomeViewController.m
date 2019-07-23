@@ -23,7 +23,7 @@
 
 @implementation HTDataHomeViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"DataHome");
 }
 
@@ -81,7 +81,7 @@
         return;
     }
     
-    HTDataHomeSubViewController *vc = [HTDataHomeSubViewController viewController];
+    HTDataHomeSubViewController *vc = [HTDataHomeSubViewController skargviewController];
     vc.type = index + 1;
     [self addChildViewController:vc];
     [self.containerView addSubview:vc.view];

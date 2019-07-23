@@ -23,7 +23,7 @@
 
 @implementation HTDataHomeSubViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return kLoadStoryboardWithName(@"DataHomeSub");
 }
 
@@ -135,7 +135,7 @@
     
     NSMutableString *title = [NSMutableString stringWithString:self.type==1?@"球員":@"球隊"];
     
-    HTDataMoreViewController *moreVc = [HTDataMoreViewController viewController];
+    HTDataMoreViewController *moreVc = [HTDataMoreViewController skargviewController];
     moreVc.type = self.type;
     switch (indexPath.section) {
         case 0: {

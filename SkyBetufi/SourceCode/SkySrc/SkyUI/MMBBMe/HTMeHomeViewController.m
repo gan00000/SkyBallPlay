@@ -30,7 +30,7 @@
 
 @implementation HTMeHomeViewController
 
-+ (instancetype)viewController {
++ (instancetype)skargviewController {
     return [[HTMeHomeViewController alloc] init];
 }
 
@@ -45,7 +45,7 @@
                                              selector:@selector(onUserLogStatusChagne)
                                                  name:kUserLogStatusChagneNotice
                                                object:nil];
-    [HTUserRequest requestUnReadMessageCountWithSuccessBlock:^(NSInteger count) {
+    [HTUserRequest skargrequestUnReadMessageCountWithSuccessBlock:^(NSInteger count) {
         self.messageCount = count;
         [self.tableView reloadData];
     } failBlock:nil];
@@ -100,19 +100,19 @@
             UIViewController *viewController;
             switch (index) {
                 case 0: {
-                    viewController = [HTCollectionViewController viewController];
+                    viewController = [HTCollectionViewController skargviewController];
                 } break;
                     
                 case 1: {
-                    viewController = [HTCommentViewController viewController];
+                    viewController = [HTCommentViewController skargviewController];
                 } break;
                     
                 case 2: {
-                    viewController = [HTLikeViewController viewController];
+                    viewController = [HTLikeViewController skargviewController];
                 } break;
                     
                 case 3: {
-                    viewController = [HTHistoryViewController viewController];
+                    viewController = [HTHistoryViewController skargviewController];
                 } break;
                     
                 default:
@@ -135,20 +135,20 @@
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (![HTUserManager isUserLogin]) {
-        [HTUserManager doUserLogin];
+    if (![HTUserManager skarg_isUserLogin]) {
+        [HTUserManager skarg_doUserLogin];
         return;
     }
     
     UIViewController *viewController;
     if (indexPath.row == 0) {
-        viewController = [HTUserInfoEditViewController viewController];
+        viewController = [HTUserInfoEditViewController skargviewController];
     }
     if (indexPath.row == 2) {
-        viewController = [HTMessageViewController viewController];
+        viewController = [HTMessageViewController skargviewController];
     }
     if (indexPath.row == 3) {
-        viewController = [HTSettingViewController viewController];
+        viewController = [HTSettingViewController skargviewController];
     }
     [self.navigationController pushViewController:viewController animated:YES];
 }
