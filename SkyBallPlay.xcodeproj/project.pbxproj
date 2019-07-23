@@ -1705,6 +1705,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -2226,8 +2229,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = SkyBetufi/SkyBallPlay.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MSFG5PN83S;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = N64JLDR4LD;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SkyBetufi/SkyBallPlay.pch";
 				INFOPLIST_FILE = SkyBetufi/Info.plist;
@@ -2236,9 +2239,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.deanf.HeiteBasketball;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamamobi.twsdios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = twsd_dev_0516;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -2252,8 +2255,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = SkyBetufi/SkyBallPlay.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MSFG5PN83S;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = N64JLDR4LD;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SkyBetufi/SkyBallPlay.pch";
 				INFOPLIST_FILE = SkyBetufi/Info.plist;
@@ -2262,9 +2265,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.deanf.HeiteBasketball;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gamamobi.twsdios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = twsd_dev_0516;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
