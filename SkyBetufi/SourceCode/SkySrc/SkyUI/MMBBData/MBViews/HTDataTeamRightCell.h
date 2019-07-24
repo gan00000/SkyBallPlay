@@ -11,7 +11,7 @@
 
 @interface HTDataTeamRightCell : UITableViewCell
 
-- (void)refreshWithTeamModel:(HTDataTeamRankModel *)teamModel row:(NSInteger)row;
+- (void)skargrefreshWithTeamModel:(HTDataTeamRankModel *)teamModel row:(NSInteger)row;
 
 @end
 

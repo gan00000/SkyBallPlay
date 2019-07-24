@@ -46,7 +46,7 @@
     self.rightTableView.frame = CGRectMake(0, 0, 560, self.leftTableView.jx_height);
 }
 
-- (void)setupWithTitle:(NSString *)title rankList:(NSArray<HTRankModel *> *)rankList {
+- (void)skargsetupWithTitle:(NSString *)title rankList:(NSArray<HTRankModel *> *)rankList {
     self.titleLabel.text = title;
     
     self.rankList = rankList;
@@ -112,11 +112,11 @@
     HTRankModel *model = self.rankList[indexPath.row];
     if (tableView == self.leftTableView) {
         HTRankLeftCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTRankLeftCell class])];
-        [cell refreshWithRankModel:model row:indexPath.row];
+        [cell skargrefreshWithRankModel:model row:indexPath.row];
         return cell;
     }
     HTRankRightCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTRankRightCell class])];
-    [cell refreshWithRankModel:model row:indexPath.row];
+    [cell skargrefreshWithRankModel:model row:indexPath.row];
     return cell;
 }
 

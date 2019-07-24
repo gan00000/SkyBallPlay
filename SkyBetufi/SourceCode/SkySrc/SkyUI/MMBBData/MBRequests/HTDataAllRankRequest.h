@@ -13,7 +13,7 @@
 
 @interface HTDataAllRankRequest : NSObject
 
-+ (void)requestAllTeamRankDataWithType:(NSString *)type
++ (void)skargrequestAllTeamRankDataWithType:(NSString *)type
                           successBlock:(void(^)(NSArray<HTDataTeamRankModel *> *allTeamRankList))successBlock
                             errorBlock:(BJServiceErrorBlock)errorBlock;
 

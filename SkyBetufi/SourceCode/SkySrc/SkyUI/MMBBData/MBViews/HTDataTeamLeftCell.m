@@ -29,7 +29,7 @@
     // Configure the view for the selected state
 }
 
-- (void)refreshWithTeamModel:(HTDataTeamRankModel *)teamModel row:(NSInteger)row {
+- (void)skargrefreshWithTeamModel:(HTDataTeamRankModel *)teamModel row:(NSInteger)row {
     
     self.orderLabel.text = [NSString stringWithFormat:@"%ld", row + 1];
     self.teamNameLabel.text = teamModel.teamName;

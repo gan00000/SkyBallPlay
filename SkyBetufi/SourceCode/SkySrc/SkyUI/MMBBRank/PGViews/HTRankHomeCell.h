@@ -11,6 +11,6 @@
 
 @interface HTRankHomeCell : UITableViewCell
 
-- (void)setupWithTitle:(NSString *)title rankList:(NSArray<HTRankModel *> *)rankList;
+- (void)skargsetupWithTitle:(NSString *)title rankList:(NSArray<HTRankModel *> *)rankList;
 
 @end

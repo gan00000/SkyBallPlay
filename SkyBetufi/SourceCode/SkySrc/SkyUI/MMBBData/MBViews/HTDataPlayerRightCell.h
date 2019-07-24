@@ -11,6 +11,6 @@
 
 @interface HTDataPlayerRightCell : UITableViewCell
 
-- (void)refreshWithPlayerModel:(HTDataPlayerRankModel *)playerModel row:(NSInteger)row;
+- (void)skargrefreshWithPlayerModel:(HTDataPlayerRankModel *)playerModel row:(NSInteger)row;
 
 @end

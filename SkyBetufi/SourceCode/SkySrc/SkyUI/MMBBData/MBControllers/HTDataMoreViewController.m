@@ -83,7 +83,7 @@
             [self refreshUI];
         }];
     } else {
-        [HTDataAllRankRequest requestAllTeamRankDataWithType:self.subType successBlock:^(NSArray<HTDataTeamRankModel *> *allTeamRankList) {
+        [HTDataAllRankRequest skargrequestAllTeamRankDataWithType:self.subType successBlock:^(NSArray<HTDataTeamRankModel *> *allTeamRankList) {
             self.teamList = allTeamRankList;
             [self refreshUI];
         } errorBlock:^(BJError *error) {
@@ -171,21 +171,21 @@
         HTDataPlayerRankModel *playerModel = self.playerList[indexPath.row];
         if (tableView == self.leftTableView) {
             HTDataPlayerLeftCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTDataPlayerLeftCell class])];
-            [cell refreshWithPlayerModel:playerModel row:indexPath.row];
+            [cell skargrefreshWithPlayerModel:playerModel row:indexPath.row];
             return cell;
         }
         HTDataPlayerRightCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTDataPlayerRightCell class])];
-        [cell refreshWithPlayerModel:playerModel row:indexPath.row];
+        [cell skargrefreshWithPlayerModel:playerModel row:indexPath.row];
         return cell;
     } else {
         HTDataTeamRankModel *teamModel = self.teamList[indexPath.row];
         if (tableView == self.leftTableView) {
             HTDataTeamLeftCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTDataTeamLeftCell class])];
-            [cell refreshWithTeamModel:teamModel row:indexPath.row];
+            [cell skargrefreshWithTeamModel:teamModel row:indexPath.row];
             return cell;
         }
         HTDataTeamRightCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTDataTeamRightCell class])];
-        [cell refreshWithTeamModel:teamModel row:indexPath.row];
+        [cell skargrefreshWithTeamModel:teamModel row:indexPath.row];
         return cell;
     }
 }

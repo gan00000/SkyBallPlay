@@ -69,38 +69,38 @@
     switch (indexPath.section) {
         case 0: {
             headerCell.title = @"得分";
-            [playerCell setupWithDatas:self.homeInfoModel.pts];
-            [teamCell setupWithDatas:self.homeInfoModel.pts];
+            [playerCell skargsetupWithDatas:self.homeInfoModel.pts];
+            [teamCell skargsetupWithDatas:self.homeInfoModel.pts];
         } break;
             
         case 1: {
             headerCell.title = @"籃板";
-            [playerCell setupWithDatas:self.homeInfoModel.reb];
-            [teamCell setupWithDatas:self.homeInfoModel.reb];
+            [playerCell skargsetupWithDatas:self.homeInfoModel.reb];
+            [teamCell skargsetupWithDatas:self.homeInfoModel.reb];
         } break;
             
         case 2: {
             headerCell.title = @"助攻";
-            [playerCell setupWithDatas:self.homeInfoModel.ast];
-            [teamCell setupWithDatas:self.homeInfoModel.ast];
+            [playerCell skargsetupWithDatas:self.homeInfoModel.ast];
+            [teamCell skargsetupWithDatas:self.homeInfoModel.ast];
         } break;
             
         case 3: {
             headerCell.title = @"搶斷";
-            [playerCell setupWithDatas:self.homeInfoModel.stl];
-            [teamCell setupWithDatas:self.homeInfoModel.stl];
+            [playerCell skargsetupWithDatas:self.homeInfoModel.stl];
+            [teamCell skargsetupWithDatas:self.homeInfoModel.stl];
         } break;
             
         case 4: {
             headerCell.title = @"蓋帽";
-            [playerCell setupWithDatas:self.homeInfoModel.blk];
-            [teamCell setupWithDatas:self.homeInfoModel.blk];
+            [playerCell skargsetupWithDatas:self.homeInfoModel.blk];
+            [teamCell skargsetupWithDatas:self.homeInfoModel.blk];
         } break;
             
         case 5: {
             headerCell.title = @"失誤";
-            [playerCell setupWithDatas:self.homeInfoModel.turnover];
-            [teamCell setupWithDatas:self.homeInfoModel.turnover];
+            [playerCell skargsetupWithDatas:self.homeInfoModel.turnover];
+            [teamCell skargsetupWithDatas:self.homeInfoModel.turnover];
         } break;
             
         default:
@@ -234,7 +234,7 @@
 }
 
 - (void)loadData {
-    [HTDataHomeRequest requestWithType:self.type successBlock:^(HTDataHomeInfoModel *infoModel) {
+    [HTDataHomeRequest skargrequestWithType:self.type successBlock:^(HTDataHomeInfoModel *infoModel) {
         self.homeInfoModel = infoModel;
         [self refreshUI];
         if (infoModel.pts.count == 0) {

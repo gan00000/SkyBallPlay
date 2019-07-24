@@ -12,6 +12,6 @@
 @interface HTDataCellPlayerView : UIView
 
 + (instancetype)dataCellViewWithFrame:(CGRect)frame addToView:(UIView *)view;
-- (void)setupWithDataModel:(HTDataHomeModel *)dataModel;
+- (void)skargsetupWithDataModel:(HTDataHomeModel *)dataModel;
 
 @end

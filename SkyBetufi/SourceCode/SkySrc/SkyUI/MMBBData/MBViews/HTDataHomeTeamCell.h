@@ -11,6 +11,6 @@
 
 @interface HTDataHomeTeamCell : UITableViewCell
 
-- (void)setupWithDatas:(NSArray<HTDataHomeModel *> *)datas;
+- (void)skargsetupWithDatas:(NSArray<HTDataHomeModel *> *)datas;
 
 @end

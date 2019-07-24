@@ -41,7 +41,7 @@
     // Configure the view for the selected state
 }
 
-- (void)refreshWithTeamModel:(HTDataTeamRankModel *)teamModel row:(NSInteger)row {
+- (void)skargrefreshWithTeamModel:(HTDataTeamRankModel *)teamModel row:(NSInteger)row {
     
     NSInteger matches = teamModel.matches.integerValue;
     if (matches > 0) {

@@ -54,7 +54,7 @@
     }
     
     HTFilmHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HTFilmHomeCell"];
-    [cell setupWithNewsModel:self.filmList[indexPath.row]];
+    [cell skargsetupWithNewsModel:self.filmList[indexPath.row]];
     return cell;
 }
 
@@ -139,7 +139,7 @@
 
 - (void)loadData {
     kWeakSelf
-    [self.request requestWithSuccessBlock:^(NSArray<HTNewsModel *> *newsList) {
+    [self.request skargrequestWithSuccessBlock:^(NSArray<HTNewsModel *> *newsList) {
         weakSelf.filmList = newsList;
         [weakSelf refreshUI];
     } errorBlock:^(BJError *error) {

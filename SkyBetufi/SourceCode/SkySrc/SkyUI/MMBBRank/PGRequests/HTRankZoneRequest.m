@@ -10,7 +10,7 @@
 
 @implementation HTRankZoneRequest
 
-+ (void)requestWithSuccessBlock:(void(^)(HTRankZoneModel *zoneModel))successBlock
++ (void)skargrequestWithSuccessBlock:(void(^)(HTRankZoneModel *zoneModel))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock {
     [BJHTTPServiceEngine getRequestWithFunctionPath:API_RANK_ZONE params:nil successBlock:^(id responseData) {
         if (successBlock) {

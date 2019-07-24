@@ -47,7 +47,7 @@
     // Configure the view for the selected state
 }
 
-- (void)setupWithNewsModel:(HTNewsModel *)newsModel {
+- (void)skargsetupWithNewsModel:(HTNewsModel *)newsModel {
     if (!newsModel) {
         return;
     }

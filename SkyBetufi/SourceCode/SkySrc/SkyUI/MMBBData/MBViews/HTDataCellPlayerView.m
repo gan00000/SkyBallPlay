@@ -30,7 +30,7 @@
     return cellView;
 }
 
-- (void)setupWithDataModel:(HTDataHomeModel *)dataModel {
+- (void)skargsetupWithDataModel:(HTDataHomeModel *)dataModel {
     self.scoreLabel.text = [NSString stringWithFormat:@"%.1f", dataModel.score];
     self.nameLabel.text = dataModel.name;
     self.teamNameLabel.text = dataModel.teamName;

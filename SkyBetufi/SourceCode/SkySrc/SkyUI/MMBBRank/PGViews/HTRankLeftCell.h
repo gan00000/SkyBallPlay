@@ -11,7 +11,7 @@
 
 @interface HTRankLeftCell : UITableViewCell
 
-- (void)refreshWithRankModel:(HTRankModel *)rankModel row:(NSInteger)row;
+- (void)skargrefreshWithRankModel:(HTRankModel *)rankModel row:(NSInteger)row;
 
 @end
 

@@ -12,7 +12,7 @@
 
 @interface HTRankEastWestRequest : NSObject
 
-+ (void)requestWithSuccessBlock:(void(^)(HTRankEastWestModel *eastWestModel))successBlock
++ (void)skargrequestWithSuccessBlock:(void(^)(HTRankEastWestModel *eastWestModel))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock;
 
 @end

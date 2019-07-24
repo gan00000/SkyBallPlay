@@ -12,7 +12,7 @@
 
 @interface HTRankZoneRequest : NSObject
 
-+ (void)requestWithSuccessBlock:(void(^)(HTRankZoneModel *zoneModel))successBlock
++ (void)skargrequestWithSuccessBlock:(void(^)(HTRankZoneModel *zoneModel))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock;
 
 @end

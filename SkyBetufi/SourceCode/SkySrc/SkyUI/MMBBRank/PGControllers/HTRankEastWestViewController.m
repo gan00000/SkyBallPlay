@@ -45,11 +45,11 @@
     HTRankHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([HTRankHomeCell class])];
     switch (indexPath.row) {
         case 0:
-            [cell setupWithTitle:@"東部" rankList:self.eastWestModel.Eastern];
+            [cell skargsetupWithTitle:@"東部" rankList:self.eastWestModel.Eastern];
             break;
             
         case 1:
-            [cell setupWithTitle:@"西部" rankList:self.eastWestModel.Western];
+            [cell skargsetupWithTitle:@"西部" rankList:self.eastWestModel.Western];
             break;
             
         default:
@@ -74,7 +74,7 @@
 
 #pragma mark - private
 - (void)loadData {
-    [HTRankEastWestRequest requestWithSuccessBlock:^(HTRankEastWestModel *eastWestModel) {
+    [HTRankEastWestRequest skargrequestWithSuccessBlock:^(HTRankEastWestModel *eastWestModel) {
         self.eastWestModel = eastWestModel;
         [self refreshUI];
         if (eastWestModel.Eastern.count == 0) {

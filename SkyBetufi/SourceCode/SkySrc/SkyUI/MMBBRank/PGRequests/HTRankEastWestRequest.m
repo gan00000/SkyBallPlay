@@ -10,7 +10,7 @@
 
 @implementation HTRankEastWestRequest
 
-+ (void)requestWithSuccessBlock:(void(^)(HTRankEastWestModel *eastWestModel))successBlock
++ (void)skargrequestWithSuccessBlock:(void(^)(HTRankEastWestModel *eastWestModel))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock {
     [BJHTTPServiceEngine getRequestWithFunctionPath:API_RANK_EAST_WEST params:nil successBlock:^(id responseData) {
         HTRankEastWestModel *eastWestModel = [HTRankEastWestModel yy_modelWithJSON:responseData];
