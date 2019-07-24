@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSMutableArray<HTCommentModel *> *normalComments;
 @property (nonatomic, assign) BOOL hasMore;
 
-- (instancetype)skarginitWithPostId:(NSString *)post_id;
+- (instancetype)initWithPostId:(NSString *)post_id;
 
 - (void)skargdoRequestWithCompleteBlock:(dispatch_block_t)commentBlock;
 - (void)skargreset;

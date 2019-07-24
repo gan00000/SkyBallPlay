@@ -478,7 +478,7 @@
 #pragma mark - lazy load
 - (HTCommentGetter *)commentGetter {
     if (!_commentGetter) {
-        _commentGetter = [[HTCommentGetter alloc] skarginitWithPostId:self.post_id];
+        _commentGetter = [[HTCommentGetter alloc] initWithPostId:self.post_id];
     }
     return _commentGetter;
 }

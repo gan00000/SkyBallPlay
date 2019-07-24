@@ -22,8 +22,10 @@
 
 @implementation HTCommentGetter
 
-- (instancetype)skarginitWithPostId:(NSString *)post_id {
+- (instancetype)initWithPostId:(NSString *)post_id {
+
     self = [super init];
+    
     if (self) {
         self.post_id = post_id;
         self.hotComments = [NSMutableArray array];
