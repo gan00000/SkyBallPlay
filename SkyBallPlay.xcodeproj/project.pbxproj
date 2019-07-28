@@ -729,6 +729,10 @@
 		3256201222E17A9200973889 /* SkySrc */ = {
 			isa = PBXGroup;
 			children = (
+				FEC112612143D058002DB617 /* MMBBAssets.xcassets */,
+				FEC114332143D4A0002DB617 /* AppDelegate.h */,
+				FEC1149C2143D4A0002DB617 /* AppDelegate.m */,
+				FEC116F32143D994002DB617 /* SkyBallPlay.pch */,
 				FEC1126F2143D4A0002DB617 /* SkyUI */,
 				FEC114342143D4A0002DB617 /* SkyModule */,
 			);
@@ -827,10 +831,8 @@
 				325BD8CB22E0840600A07EC9 /* codeObfuscation.h */,
 				FEAC9F282199D94500159AE9 /* SkyBallPlay.entitlements */,
 				FEC1126E2143D4A0002DB617 /* SourceCode */,
-				FEC112612143D058002DB617 /* MMBBAssets.xcassets */,
 				FEC112662143D058002DB617 /* Info.plist */,
 				FEC112672143D058002DB617 /* main.m */,
-				FEC116F32143D994002DB617 /* SkyBallPlay.pch */,
 				FE81D14C2146CA1E0047A4A2 /* logo_load.html */,
 				FEEABBE62149F90700A585DA /* iframe_load.html */,
 			);
@@ -841,8 +843,6 @@
 			isa = PBXGroup;
 			children = (
 				3256201222E17A9200973889 /* SkySrc */,
-				FEC114332143D4A0002DB617 /* AppDelegate.h */,
-				FEC1149C2143D4A0002DB617 /* AppDelegate.m */,
 			);
 			path = SourceCode;
 			sourceTree = "<group>";
@@ -2252,7 +2252,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = N64JLDR4LD;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_PREFIX_HEADER = "$(SRCROOT)/SkyBetufi/SkyBallPlay.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SkyBetufi/SourceCode/SkySrc/SkyBallPlay.pch";
 				INFOPLIST_FILE = SkyBetufi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -2278,7 +2278,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = N64JLDR4LD;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
-				GCC_PREFIX_HEADER = "$(SRCROOT)/SkyBetufi/SkyBallPlay.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/SkyBetufi/SourceCode/SkySrc/SkyBallPlay.pch";
 				INFOPLIST_FILE = SkyBetufi/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
