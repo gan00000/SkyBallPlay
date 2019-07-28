@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32ABE1CC22EDF4C2008505BA /* HTNewsHomeOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ABE1CA22EDF4C1008505BA /* HTNewsHomeOtherViewController.m */; };
+		32ABE1CE22EDF4D0008505BA /* NewsHomeOther.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32ABE1CD22EDF4D0008505BA /* NewsHomeOther.storyboard */; };
+		32ABE1D222EDF733008505BA /* HTTabBarHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ABE1CF22EDF732008505BA /* HTTabBarHomeViewController.m */; };
+		32ABE1D322EDF733008505BA /* HTTabBarHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32ABE1D022EDF732008505BA /* HTTabBarHomeViewController.xib */; };
 		E96EB72A062D72ACD051C26D /* Pods_SkyBallPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC337F0671EB4742D64BA54 /* Pods_SkyBallPlay.framework */; };
 		FE08C5C422504F0C000175CB /* Me.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE08C5C322504F0C000175CB /* Me.xcassets */; };
 		FE08C5C82250506A000175CB /* HTMeHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08C5C62250506A000175CB /* HTMeHomeViewController.m */; };
@@ -267,6 +271,12 @@
 		325BD8C822E07D6F00A07EC9 /* confuse.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = confuse.sh; sourceTree = "<group>"; };
 		325BD8C922E07D6F00A07EC9 /* func.list */ = {isa = PBXFileReference; lastKnownFileType = text; path = func.list; sourceTree = "<group>"; };
 		325BD8CB22E0840600A07EC9 /* codeObfuscation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codeObfuscation.h; sourceTree = "<group>"; };
+		32ABE1CA22EDF4C1008505BA /* HTNewsHomeOtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTNewsHomeOtherViewController.m; sourceTree = "<group>"; };
+		32ABE1CB22EDF4C2008505BA /* HTNewsHomeOtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTNewsHomeOtherViewController.h; sourceTree = "<group>"; };
+		32ABE1CD22EDF4D0008505BA /* NewsHomeOther.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewsHomeOther.storyboard; sourceTree = "<group>"; };
+		32ABE1CF22EDF732008505BA /* HTTabBarHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTabBarHomeViewController.m; sourceTree = "<group>"; };
+		32ABE1D022EDF732008505BA /* HTTabBarHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HTTabBarHomeViewController.xib; sourceTree = "<group>"; };
+		32ABE1D122EDF733008505BA /* HTTabBarHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTabBarHomeViewController.h; sourceTree = "<group>"; };
 		608E0284ECCB1F2C8732AAA8 /* Pods-HeiteBasketball.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeiteBasketball.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball.debug.xcconfig"; sourceTree = "<group>"; };
 		6DC337F0671EB4742D64BA54 /* Pods_SkyBallPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkyBallPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72321527951E473E782564AC /* Pods-HeiteBasketball.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HeiteBasketball.release.xcconfig"; path = "Pods/Target Support Files/Pods-HeiteBasketball/Pods-HeiteBasketball.release.xcconfig"; sourceTree = "<group>"; };
@@ -756,6 +766,9 @@
 		FE2DDB0421F41AEA006D824A /* MMBBMe */ = {
 			isa = PBXGroup;
 			children = (
+				32ABE1D122EDF733008505BA /* HTTabBarHomeViewController.h */,
+				32ABE1CF22EDF732008505BA /* HTTabBarHomeViewController.m */,
+				32ABE1D022EDF732008505BA /* HTTabBarHomeViewController.xib */,
 				FE08C5C52250506A000175CB /* HTMeHomeViewController.h */,
 				FE08C5C62250506A000175CB /* HTMeHomeViewController.m */,
 				FE08C5C72250506A000175CB /* HTMeHomeViewController.xib */,
@@ -1176,6 +1189,7 @@
 		FEC116D72143D80A002DB617 /* MMBBNews */ = {
 			isa = PBXGroup;
 			children = (
+				32ABE1CD22EDF4D0008505BA /* NewsHomeOther.storyboard */,
 				FEC117032143DDBC002DB617 /* MBRequests */,
 				FEC117022143DDB6002DB617 /* MBModels */,
 				FEC117012143DDAF002DB617 /* MBViews */,
@@ -1209,6 +1223,8 @@
 		FEC117002143DD87002DB617 /* MBControllers */ = {
 			isa = PBXGroup;
 			children = (
+				32ABE1CB22EDF4C2008505BA /* HTNewsHomeOtherViewController.h */,
+				32ABE1CA22EDF4C1008505BA /* HTNewsHomeOtherViewController.m */,
 				FEC117072143DDED002DB617 /* HTNewsHomeViewController.h */,
 				FEC117082143DDEE002DB617 /* HTNewsHomeViewController.m */,
 				FE6BD07B21457BAF0090118A /* HTNewsDetailViewController.h */,
@@ -1755,6 +1771,7 @@
 				FEDAC97A214B9139005E8B63 /* HTDataCellTeamView.xib in Resources */,
 				FEDF8FE02144D05C005C7C4D /* HTMatchHomeGroupHeaderView.xib in Resources */,
 				FEC116042143D4A1002DB617 /* XJLoadingView.xib in Resources */,
+				32ABE1D322EDF733008505BA /* HTTabBarHomeViewController.xib in Resources */,
 				FE82BB382179B6C500C52C51 /* HTDataPlayerLeftCell.xib in Resources */,
 				FE82A484216E42680070FFC0 /* HTMatchLiveFeedCell.xib in Resources */,
 				FE800F752263BA1600E575D5 /* HTMyCommentCell.xib in Resources */,
@@ -1778,6 +1795,7 @@
 				FEC1161C2143D4A1002DB617 /* BJTabBarView.xib in Resources */,
 				FE08C5C422504F0C000175CB /* Me.xcassets in Resources */,
 				FEC116EF2143D8C9002DB617 /* MatchHome.storyboard in Resources */,
+				32ABE1CE22EDF4D0008505BA /* NewsHomeOther.storyboard in Resources */,
 				FECCA51D2258C8D0009EF494 /* HTMessageViewController.xib in Resources */,
 				FECCA5242258C8D0009EF494 /* HTLoginAlertView.xib in Resources */,
 				FE6BD094214584DA0090118A /* HTNewsTopHeaderView.xib in Resources */,
@@ -1975,6 +1993,7 @@
 				FEC1164C2143D4A1002DB617 /* PPXXBJViewControllerCenter.m in Sources */,
 				FE6BD07D21457BAF0090118A /* HTNewsDetailViewController.m in Sources */,
 				FEC1164A2143D4A1002DB617 /* PPXXBJNavigationController.m in Sources */,
+				32ABE1CC22EDF4C2008505BA /* HTNewsHomeOtherViewController.m in Sources */,
 				FECCA53D2258C972009EF494 /* UITabBar+DRExtension.m in Sources */,
 				FEC116102143D4A1002DB617 /* BJTabBarView.m in Sources */,
 				FE81D153214815DC0047A4A2 /* HTDataHomeRequest.m in Sources */,
@@ -2104,6 +2123,7 @@
 				FEC116C82143D4A1002DB617 /* NSDate+Core.m in Sources */,
 				FE588BFC22620DFA00A44884 /* HTCommentGetter.m in Sources */,
 				FEA104F9216CB10C000DBE63 /* HTMatchCompareModel.m in Sources */,
+				32ABE1D222EDF733008505BA /* HTTabBarHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
