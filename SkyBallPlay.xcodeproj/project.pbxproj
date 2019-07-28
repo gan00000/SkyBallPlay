@@ -12,7 +12,7 @@
 		32ABE1D222EDF733008505BA /* HTTabBarHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ABE1CF22EDF732008505BA /* HTTabBarHomeViewController.m */; };
 		32ABE1D322EDF733008505BA /* HTTabBarHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32ABE1D022EDF732008505BA /* HTTabBarHomeViewController.xib */; };
 		E96EB72A062D72ACD051C26D /* Pods_SkyBallPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DC337F0671EB4742D64BA54 /* Pods_SkyBallPlay.framework */; };
-		FE08C5C422504F0C000175CB /* Me.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE08C5C322504F0C000175CB /* Me.xcassets */; };
+		FE08C5C422504F0C000175CB /* MMBBMe.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE08C5C322504F0C000175CB /* MMBBMe.xcassets */; };
 		FE08C5C82250506A000175CB /* HTMeHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE08C5C62250506A000175CB /* HTMeHomeViewController.m */; };
 		FE08C5C92250506A000175CB /* HTMeHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE08C5C72250506A000175CB /* HTMeHomeViewController.xib */; };
 		FE0C270C2186BCE8001C9B8C /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FE0C270B2186BCE7001C9B8C /* libz.tbd */; };
@@ -110,7 +110,7 @@
 		FEAC9F352199EA2300159AE9 /* HTContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAC9F342199EA2300159AE9 /* HTContactUsViewController.m */; };
 		FEAC9F382199EA3A00159AE9 /* HTAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAC9F372199EA3A00159AE9 /* HTAboutUsViewController.m */; };
 		FEB46C822157903B00E482CE /* HTMatchLiveFeedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEB46C812157903B00E482CE /* HTMatchLiveFeedModel.m */; };
-		FEC112622143D058002DB617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC112612143D058002DB617 /* Assets.xcassets */; };
+		FEC112622143D058002DB617 /* MMBBAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC112612143D058002DB617 /* MMBBAssets.xcassets */; };
 		FEC112682143D058002DB617 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC112672143D058002DB617 /* main.m */; };
 		FEC115BD2143D4A0002DB617 /* PPXXBJLaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC113132143D4A0002DB617 /* PPXXBJLaunchViewController.m */; };
 		FEC116042143D4A1002DB617 /* XJLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEC1139F2143D4A0002DB617 /* XJLoadingView.xib */; };
@@ -166,11 +166,11 @@
 		FEC116CC2143D4A1002DB617 /* UIColor+Generator.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115542143D4A0002DB617 /* UIColor+Generator.m */; };
 		FEC116CD2143D4A1002DB617 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115552143D4A0002DB617 /* UIImage+Resize.m */; };
 		FEC116D22143D4A1002DB617 /* BJUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC115632143D4A0002DB617 /* BJUtility.m */; };
-		FEC116DD2143D877002DB617 /* Match.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC116DC2143D877002DB617 /* Match.xcassets */; };
+		FEC116DD2143D877002DB617 /* MMBBMatch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC116DC2143D877002DB617 /* MMBBMatch.xcassets */; };
 		FEC116EF2143D8C9002DB617 /* MatchHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC116EE2143D8C9002DB617 /* MatchHome.storyboard */; };
 		FEC116F22143D91D002DB617 /* HTMatchHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC116F12143D91D002DB617 /* HTMatchHomeViewController.m */; };
 		FEC116F82143DC57002DB617 /* NewsHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC116F72143DC57002DB617 /* NewsHome.storyboard */; };
-		FEC116FA2143DC72002DB617 /* News.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC116F92143DC72002DB617 /* News.xcassets */; };
+		FEC116FA2143DC72002DB617 /* MMBBNews.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC116F92143DC72002DB617 /* MMBBNews.xcassets */; };
 		FEC116FF2143DCAF002DB617 /* FilmHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC116FE2143DCAF002DB617 /* FilmHome.storyboard */; };
 		FEC117092143DDEE002DB617 /* HTNewsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC117082143DDEE002DB617 /* HTNewsHomeViewController.m */; };
 		FEC117102143DE50002DB617 /* HTFilmHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1170F2143DE50002DB617 /* HTFilmHomeViewController.m */; };
@@ -178,7 +178,7 @@
 		FEC1171B2143DEAD002DB617 /* DataHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC1171A2143DEAD002DB617 /* DataHome.storyboard */; };
 		FEC117242143DF12002DB617 /* HTRankHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC117232143DF12002DB617 /* HTRankHomeViewController.m */; };
 		FEC117262143DF33002DB617 /* RankHome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC117252143DF33002DB617 /* RankHome.storyboard */; };
-		FEC1172B2143E43A002DB617 /* Launch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC1172A2143E43A002DB617 /* Launch.xcassets */; };
+		FEC1172B2143E43A002DB617 /* MMBBLaunch.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC1172A2143E43A002DB617 /* MMBBLaunch.xcassets */; };
 		FEC1172E2143EAA3002DB617 /* BJError.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1172D2143EAA3002DB617 /* BJError.m */; };
 		FEC117312143EAC2002DB617 /* BJBaseResponceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEC1172F2143EAC2002DB617 /* BJBaseResponceModel.m */; };
 		FECCA4E62258C858009EF494 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FECCA4E52258C858009EF494 /* Security.framework */; };
@@ -283,7 +283,7 @@
 		89189E29CC0B9E5A3FEA5137 /* Pods-SkyBallPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyBallPlay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay.debug.xcconfig"; sourceTree = "<group>"; };
 		C0EBF7000495782F4C2F67C5 /* Pods-SkyBallPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkyBallPlay.release.xcconfig"; path = "Pods/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay.release.xcconfig"; sourceTree = "<group>"; };
 		C96ED51AF657F6A6678FAF42 /* Pods_HeiteBasketball.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HeiteBasketball.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FE08C5C322504F0C000175CB /* Me.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Me.xcassets; sourceTree = "<group>"; };
+		FE08C5C322504F0C000175CB /* MMBBMe.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MMBBMe.xcassets; sourceTree = "<group>"; };
 		FE08C5C52250506A000175CB /* HTMeHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMeHomeViewController.h; sourceTree = "<group>"; };
 		FE08C5C62250506A000175CB /* HTMeHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMeHomeViewController.m; sourceTree = "<group>"; };
 		FE08C5C72250506A000175CB /* HTMeHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HTMeHomeViewController.xib; sourceTree = "<group>"; };
@@ -438,7 +438,7 @@
 		FEB46C802157903B00E482CE /* HTMatchLiveFeedModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchLiveFeedModel.h; sourceTree = "<group>"; };
 		FEB46C812157903B00E482CE /* HTMatchLiveFeedModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchLiveFeedModel.m; sourceTree = "<group>"; };
 		FEC112552143D057002DB617 /* SkyBallPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyBallPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEC112612143D058002DB617 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FEC112612143D058002DB617 /* MMBBAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MMBBAssets.xcassets; sourceTree = "<group>"; };
 		FEC112662143D058002DB617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEC112672143D058002DB617 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FEC113132143D4A0002DB617 /* PPXXBJLaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPXXBJLaunchViewController.m; sourceTree = "<group>"; };
@@ -542,13 +542,13 @@
 		FEC1155B2143D4A0002DB617 /* BJUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJUtility.h; sourceTree = "<group>"; };
 		FEC1155C2143D4A0002DB617 /* BJDateFormatUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJDateFormatUtility.h; sourceTree = "<group>"; };
 		FEC115632143D4A0002DB617 /* BJUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJUtility.m; sourceTree = "<group>"; };
-		FEC116DC2143D877002DB617 /* Match.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Match.xcassets; sourceTree = "<group>"; };
+		FEC116DC2143D877002DB617 /* MMBBMatch.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MMBBMatch.xcassets; sourceTree = "<group>"; };
 		FEC116EE2143D8C9002DB617 /* MatchHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MatchHome.storyboard; sourceTree = "<group>"; };
 		FEC116F02143D91D002DB617 /* HTMatchHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTMatchHomeViewController.h; sourceTree = "<group>"; };
 		FEC116F12143D91D002DB617 /* HTMatchHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTMatchHomeViewController.m; sourceTree = "<group>"; };
 		FEC116F32143D994002DB617 /* SkyBallPlay.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkyBallPlay.pch; sourceTree = "<group>"; };
 		FEC116F72143DC57002DB617 /* NewsHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsHome.storyboard; sourceTree = "<group>"; };
-		FEC116F92143DC72002DB617 /* News.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = News.xcassets; sourceTree = "<group>"; };
+		FEC116F92143DC72002DB617 /* MMBBNews.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MMBBNews.xcassets; sourceTree = "<group>"; };
 		FEC116FE2143DCAF002DB617 /* FilmHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FilmHome.storyboard; sourceTree = "<group>"; };
 		FEC117072143DDED002DB617 /* HTNewsHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTNewsHomeViewController.h; sourceTree = "<group>"; };
 		FEC117082143DDEE002DB617 /* HTNewsHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTNewsHomeViewController.m; sourceTree = "<group>"; };
@@ -560,7 +560,7 @@
 		FEC117222143DF11002DB617 /* HTRankHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTRankHomeViewController.h; sourceTree = "<group>"; };
 		FEC117232143DF12002DB617 /* HTRankHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTRankHomeViewController.m; sourceTree = "<group>"; };
 		FEC117252143DF33002DB617 /* RankHome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RankHome.storyboard; sourceTree = "<group>"; };
-		FEC1172A2143E43A002DB617 /* Launch.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Launch.xcassets; sourceTree = "<group>"; };
+		FEC1172A2143E43A002DB617 /* MMBBLaunch.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MMBBLaunch.xcassets; sourceTree = "<group>"; };
 		FEC1172C2143EAA3002DB617 /* BJError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BJError.h; sourceTree = "<group>"; };
 		FEC1172D2143EAA3002DB617 /* BJError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJError.m; sourceTree = "<group>"; };
 		FEC1172F2143EAC2002DB617 /* BJBaseResponceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BJBaseResponceModel.m; sourceTree = "<group>"; };
@@ -782,7 +782,7 @@
 				FECCA5192258C8D0009EF494 /* MBLike */,
 				FECCA4E72258C8CE009EF494 /* MBMessage */,
 				FEAC9F2B2199E22700159AE9 /* MBSetting */,
-				FE08C5C322504F0C000175CB /* Me.xcassets */,
+				FE08C5C322504F0C000175CB /* MMBBMe.xcassets */,
 			);
 			path = MMBBMe;
 			sourceTree = "<group>";
@@ -827,7 +827,7 @@
 				325BD8CB22E0840600A07EC9 /* codeObfuscation.h */,
 				FEAC9F282199D94500159AE9 /* SkyBallPlay.entitlements */,
 				FEC1126E2143D4A0002DB617 /* SourceCode */,
-				FEC112612143D058002DB617 /* Assets.xcassets */,
+				FEC112612143D058002DB617 /* MMBBAssets.xcassets */,
 				FEC112662143D058002DB617 /* Info.plist */,
 				FEC112672143D058002DB617 /* main.m */,
 				FEC116F32143D994002DB617 /* SkyBallPlay.pch */,
@@ -867,7 +867,7 @@
 				325BD8C522E0705D00A07EC9 /* PPXXBJLaunchViewController.h */,
 				FEC113132143D4A0002DB617 /* PPXXBJLaunchViewController.m */,
 				FEC114272143D4A0002DB617 /* MBBase */,
-				FEC1172A2143E43A002DB617 /* Launch.xcassets */,
+				FEC1172A2143E43A002DB617 /* MMBBLaunch.xcassets */,
 			);
 			path = MMBBLaunch;
 			sourceTree = "<group>";
@@ -1136,7 +1136,7 @@
 				FEDF8FBC21443505005C7C4D /* MBModels */,
 				FEDF8FBB214434F8005C7C4D /* MBViews */,
 				FEC116D82143D82D002DB617 /* MBControllers */,
-				FEC116DC2143D877002DB617 /* Match.xcassets */,
+				FEC116DC2143D877002DB617 /* MMBBMatch.xcassets */,
 				FEC116EE2143D8C9002DB617 /* MatchHome.storyboard */,
 				FE6BD0512144FC270090118A /* MatchDetail.storyboard */,
 				FE6BD05F2144FED00090118A /* MatchWordLive.storyboard */,
@@ -1196,7 +1196,7 @@
 				FEC117002143DD87002DB617 /* MBControllers */,
 				FEC116F72143DC57002DB617 /* NewsHome.storyboard */,
 				FE6BD07E21457BBC0090118A /* NewsDetail.storyboard */,
-				FEC116F92143DC72002DB617 /* News.xcassets */,
+				FEC116F92143DC72002DB617 /* MMBBNews.xcassets */,
 			);
 			path = MMBBNews;
 			sourceTree = "<group>";
@@ -1766,7 +1766,7 @@
 				FE6BD075214526980090118A /* HTNewsHomeCell.xib in Resources */,
 				FE800F6B22636AFC00E575D5 /* HTNewsCommentCell.xib in Resources */,
 				FE7E6C9B2263CADB00B2973D /* HTMyMessaageCell.xib in Resources */,
-				FEC116FA2143DC72002DB617 /* News.xcassets in Resources */,
+				FEC116FA2143DC72002DB617 /* MMBBNews.xcassets in Resources */,
 				FE08C5C92250506A000175CB /* HTMeHomeViewController.xib in Resources */,
 				FEDAC97A214B9139005E8B63 /* HTDataCellTeamView.xib in Resources */,
 				FEDF8FE02144D05C005C7C4D /* HTMatchHomeGroupHeaderView.xib in Resources */,
@@ -1791,9 +1791,9 @@
 				FEDABE4E2171BCEE008C8AFD /* HTMatchPtsCompareCell.xib in Resources */,
 				FEC116072143D4A1002DB617 /* XJToastView.xib in Resources */,
 				FE6BD07F21457BBC0090118A /* NewsDetail.storyboard in Resources */,
-				FEC1172B2143E43A002DB617 /* Launch.xcassets in Resources */,
+				FEC1172B2143E43A002DB617 /* MMBBLaunch.xcassets in Resources */,
 				FEC1161C2143D4A1002DB617 /* BJTabBarView.xib in Resources */,
-				FE08C5C422504F0C000175CB /* Me.xcassets in Resources */,
+				FE08C5C422504F0C000175CB /* MMBBMe.xcassets in Resources */,
 				FEC116EF2143D8C9002DB617 /* MatchHome.storyboard in Resources */,
 				32ABE1CE22EDF4D0008505BA /* NewsHomeOther.storyboard in Resources */,
 				FECCA51D2258C8D0009EF494 /* HTMessageViewController.xib in Resources */,
@@ -1823,7 +1823,7 @@
 				FECCA57D2259824F009EF494 /* DRDeleteAlertView.xib in Resources */,
 				FECCA5292258C8D0009EF494 /* HTCommentViewController.xib in Resources */,
 				FE81D15B2149613B0047A4A2 /* DataHomeSub.storyboard in Resources */,
-				FEC116DD2143D877002DB617 /* Match.xcassets in Resources */,
+				FEC116DD2143D877002DB617 /* MMBBMatch.xcassets in Resources */,
 				FE82BB3D2179B6DF00C52C51 /* HTDataPlayerRightCell.xib in Resources */,
 				FEDABE6E21734A53008C8AFD /* RankEastWest.storyboard in Resources */,
 				FE83FE4D21778341006C714C /* HTMatchDataLeftCell.xib in Resources */,
@@ -1835,7 +1835,7 @@
 				FE6BD0622144FEF90090118A /* MatchCompare.storyboard in Resources */,
 				FEAC9F302199E28800159AE9 /* Setting.storyboard in Resources */,
 				FEEABBE72149F90800A585DA /* iframe_load.html in Resources */,
-				FEC112622143D058002DB617 /* Assets.xcassets in Resources */,
+				FEC112622143D058002DB617 /* MMBBAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
