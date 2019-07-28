@@ -871,7 +871,7 @@
 				FEC113BE2143D4A0002DB617 /* BJUnPasteTextField.m */,
 				FEC113EA2143D4A0002DB617 /* PKHUD */,
 				FEC113B72143D4A0002DB617 /* PKLJViewPager */,
-				FEC113BF2143D4A0002DB617 /* MJRefreshGenerator */,
+				FEC113BF2143D4A0002DB617 /* CCPPMJRefreshGenerator */,
 				FEC1139D2143D4A0002DB617 /* PKViewStatus */,
 			);
 			path = CCPPViews;
@@ -940,13 +940,13 @@
 			path = PKLJViewPager;
 			sourceTree = "<group>";
 		};
-		FEC113BF2143D4A0002DB617 /* MJRefreshGenerator */ = {
+		FEC113BF2143D4A0002DB617 /* CCPPMJRefreshGenerator */ = {
 			isa = PBXGroup;
 			children = (
 				FEC113C02143D4A0002DB617 /* MJRefreshGenerator.h */,
 				FEC113C12143D4A0002DB617 /* MJRefreshGenerator.m */,
 			);
-			path = MJRefreshGenerator;
+			path = CCPPMJRefreshGenerator;
 			sourceTree = "<group>";
 		};
 		FEC113EA2143D4A0002DB617 /* PKHUD */ = {
