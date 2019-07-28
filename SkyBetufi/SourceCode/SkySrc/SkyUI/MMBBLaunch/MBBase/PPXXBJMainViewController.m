@@ -13,6 +13,8 @@
 #import "HTDataHomeViewController.h"
 #import "HTRankHomeViewController.h"
 #import "HTMeHomeViewController.h"
+#import "HTUserManager.h"
+#import "HTTabBarHomeViewController.h"
 
 @interface PPXXBJMainViewController ()<UITabBarControllerDelegate>
 
@@ -32,7 +34,7 @@
 @property (nonatomic, strong) HTRankHomeViewController *vc5;
 
 @property (nonatomic, strong) PPXXBJNavigationController *nav6;
-@property (nonatomic, strong) HTMeHomeViewController *vc6;
+@property (nonatomic, strong) HTTabBarHomeViewController *vc6;
 
 @end
 
@@ -59,11 +61,23 @@
 
 #pragma mark - 
 - (NSArray<NSString *> *)skargtabBarTitles {
+    if ([HTUserManager manager].appInView) {
+        return @[@"比賽", @"新聞", @"排行", @"數據", @"我的"];
+    }
     return @[@"比賽", @"新聞", @"影片", @"數據", @"排行"];
-//    return @[@"比賽", @"新聞", @"影片", @"數據", @"排行" , @"我的"];
+   
 }
 
 - (NSArray<UIImage *> *)skargtabBarIcons {
+    
+     if ([HTUserManager manager].appInView) {
+         return @[[[UIImage imageNamed:@"tab_icon_normal1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+                  [[UIImage imageNamed:@"tab_icon_normal2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+                  [[UIImage imageNamed:@"tab_icon_normal5"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+                  [[UIImage imageNamed:@"tab_icon_normal4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+                  [[UIImage imageNamed:@"default_avatar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+     }
+    
     return @[[[UIImage imageNamed:@"tab_icon_normal1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_normal2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_normal3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
@@ -73,12 +87,23 @@
 }
 
 - (NSArray<UIImage *> *)skargtabBarSelectedIcons {
+    
+    if ([HTUserManager manager].appInView) {
+        
+        return @[[[UIImage imageNamed:@"tab_icon_selected1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+                 [[UIImage imageNamed:@"tab_icon_selected2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+                 [[UIImage imageNamed:@"tab_icon_selected5"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+                 [[UIImage imageNamed:@"tab_icon_selected4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+                 [[UIImage imageNamed:@"default_avatar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+        
+    }
     return @[[[UIImage imageNamed:@"tab_icon_selected1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_selected2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_selected3"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_selected4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
              [[UIImage imageNamed:@"tab_icon_selected5"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 //             [[UIImage imageNamed:@"tab_icon_selected5"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
 }
 
 - (NSArray<UIViewController *> *)skargtabBarControllers {
@@ -103,8 +128,12 @@
         self.nav5 = [[PPXXBJNavigationController alloc] initWithRootViewController:self.vc5];
     }
     if (!self.vc6) {
-        self.vc6 = [HTMeHomeViewController skargviewController];
+        self.vc6 = [HTTabBarHomeViewController skargviewController];
         self.nav6 = [[PPXXBJNavigationController alloc] initWithRootViewController:self.vc6];
+    }
+    
+    if ([HTUserManager manager].appInView) {
+         return @[self.nav1, self.nav2, self.nav5, self.nav4, self.nav6];
     }
     return @[self.nav1, self.nav2, self.nav3, self.nav4, self.nav5];
 //    return @[self.nav1, self.nav2, self.nav3, self.nav4, self.nav5,self.nav6];

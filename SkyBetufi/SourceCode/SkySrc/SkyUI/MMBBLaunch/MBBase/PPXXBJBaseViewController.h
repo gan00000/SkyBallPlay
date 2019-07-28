@@ -11,6 +11,8 @@
 
 @interface PPXXBJBaseViewController : UIViewController <BJNavigationDelegate>
 
+@property (nonatomic, strong) UIButton *skargmeCenterButton;
+
 /// 子类必须重写
 + (instancetype)skargviewController;
 

@@ -12,6 +12,7 @@
 #import "HTFilmHomeViewController.h"
 #import "HTDataHomeViewController.h"
 #import "HTRankHomeViewController.h"
+#import "HTTabBarHomeViewController.h"
 
 @interface PPXXBJNavigationController ()
 
@@ -49,7 +50,8 @@
              [HTNewsHomeViewController class],
              [HTFilmHomeViewController class],
              [HTDataHomeViewController class],
-             [HTRankHomeViewController class]];
+             [HTRankHomeViewController class],
+             [HTTabBarHomeViewController class]];
 }
 
 @end

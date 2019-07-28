@@ -12,7 +12,7 @@
 
 @interface PPXXBJBaseViewController ()
 
-@property (nonatomic, strong) UIButton *skargmeCenterButton;
+
 
 @end
 

@@ -13,6 +13,11 @@ extern const NSString * kUserLogStatusChagneNotice;
 
 @interface HTUserManager : NSObject
 
+
+@property (nonatomic, assign)BOOL appInView;
+
++ (instancetype)manager;
+
 // 判断用是否登录
 + (BOOL)skarg_isUserLogin;
 // 獲取用戶信息
