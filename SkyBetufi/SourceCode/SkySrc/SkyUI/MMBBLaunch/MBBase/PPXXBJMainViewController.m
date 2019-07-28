@@ -15,6 +15,7 @@
 #import "HTMeHomeViewController.h"
 #import "HTUserManager.h"
 #import "HTTabBarHomeViewController.h"
+#import "HTNewsHomeOtherViewController.h"
 
 @interface PPXXBJMainViewController ()<UITabBarControllerDelegate>
 
@@ -35,6 +36,9 @@
 
 @property (nonatomic, strong) PPXXBJNavigationController *nav6;
 @property (nonatomic, strong) HTTabBarHomeViewController *vc6;
+
+@property (nonatomic, strong) PPXXBJNavigationController *nav7;
+@property (nonatomic, strong) HTNewsHomeOtherViewController *vc7;
 
 @end
 
@@ -132,8 +136,13 @@
         self.nav6 = [[PPXXBJNavigationController alloc] initWithRootViewController:self.vc6];
     }
     
+    if (!self.vc7) {
+        self.vc7 = [HTNewsHomeOtherViewController skargviewController];
+        self.nav7 = [[PPXXBJNavigationController alloc] initWithRootViewController:self.vc7];
+    }
+    
     if ([HTUserManager manager].appInView) {
-         return @[self.nav1, self.nav2, self.nav5, self.nav4, self.nav6];
+         return @[self.nav1, self.nav7, self.nav5, self.nav4, self.nav6];
     }
     return @[self.nav1, self.nav2, self.nav3, self.nav4, self.nav5];
 //    return @[self.nav1, self.nav2, self.nav3, self.nav4, self.nav5,self.nav6];
