@@ -24,6 +24,25 @@
 
 @implementation AppDelegate
 
+- (void)openViewController:(UIApplication * _Nonnull)application launchOptions:(NSDictionary * _Nullable)launchOptions {
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window makeKeyAndVisible];
+    
+    PPXXBJLaunchViewController *rootVc = [[PPXXBJLaunchViewController alloc] init];
+    self.window.rootViewController = rootVc;
+    
+    [self setupPushWithLaunchOptions:launchOptions];
+    
+    [IQKeyboardManager sharedManager].toolbarBarTintColor = [UIColor whiteColor];
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
+    
+    self.pushInfo = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+    if (self.pushInfo) {
+        [UMessage didReceiveRemoteNotification:self.pushInfo];
+    }
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     [UMConfigure initWithAppkey:UM_APP_KEY channel:@"App Store"];
@@ -46,22 +65,7 @@
     
     [self sdk_setUpNetworkReachability];
     
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    [self.window makeKeyAndVisible];
-    
-    PPXXBJLaunchViewController *rootVc = [[PPXXBJLaunchViewController alloc] init];
-    self.window.rootViewController = rootVc;
-    
-    [self setupPushWithLaunchOptions:launchOptions];
-    
-    [IQKeyboardManager sharedManager].toolbarBarTintColor = [UIColor whiteColor];
-    [[FBSDKApplicationDelegate sharedInstance] application:application
-                             didFinishLaunchingWithOptions:launchOptions];
-    
-    self.pushInfo = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
-    if (self.pushInfo) {
-        [UMessage didReceiveRemoteNotification:self.pushInfo];
-    }
+    [self openViewController:application launchOptions:launchOptions];
     
     return YES;
 }
@@ -93,22 +97,6 @@
     
 }
 
-#pragma mark - SDK init
-- (void)sdk_setUpNetworkReachability {
-    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(appNetworkChangedNotification:)
-                                                 name:AFNetworkingReachabilityDidChangeNotification
-                                               object:nil];
-}
-
-#pragma mark - Notifications
-- (void)appNetworkChangedNotification:(NSNotification *)notification {
-    AFNetworkReachabilityStatus status = [notification.userInfo[AFNetworkingReachabilityNotificationStatusItem] integerValue];
-    if (status == AFNetworkReachabilityStatusNotReachable) {
-        [self.window showToast:@"未连接到网络！" duration:3];
-    }
-}
 
 #pragma mark - share
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey, id> *)options {
@@ -176,6 +164,56 @@
     completionHandler(UIBackgroundFetchResultNewData);
 }
 
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    NSString *pushDeviceToken = [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<" withString:@""]
+                                  stringByReplacingOccurrencesOfString:@">" withString:@""]
+                                 stringByReplacingOccurrencesOfString:@" " withString:@""];
+    if (pushDeviceToken.length) {
+        BJLog(@"deviceToken: %@", pushDeviceToken);
+        [HTUserManager skarg_saveDeviceToken:pushDeviceToken];
+    }
+}
+
+- (void)responsePushInfo:(NSDictionary *)pushInfo fromViewController:(UIViewController *)vc {
+    if (!pushInfo) {
+        return;
+    }
+    
+    if (!vc) {
+        vc = [PPXXBJViewControllerCenter currentViewController];
+    }
+    
+    HTNewsDetailViewController *detailVc = [HTNewsDetailViewController skargviewController];
+    detailVc.post_id = pushInfo[@"postId"];
+    
+    if (vc.navigationController) {
+        [vc.navigationController pushViewController:detailVc animated:YES];
+    } else {
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:detailVc];
+        [vc presentViewController:nav animated:YES completion:nil];
+    }
+}
+
+#pragma mark - SDK init
+- (void)sdk_setUpNetworkReachability {
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(appNetworkChangedNotification:)
+                                                 name:AFNetworkingReachabilityDidChangeNotification
+                                               object:nil];
+}
+
+#pragma mark - Notifications
+- (void)appNetworkChangedNotification:(NSNotification *)notification {
+    AFNetworkReachabilityStatus status = [notification.userInfo[AFNetworkingReachabilityNotificationStatusItem] integerValue];
+    if (status == AFNetworkReachabilityStatusNotReachable) {
+        [self.window showToast:@"未连接到网络！" duration:3];
+    }
+}
+
+
+
 //iOS10新增：处理前台收到通知的代理方法
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center
       willPresentNotification:(UNNotification *)notification
@@ -206,36 +244,6 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
         [self responsePushInfo:userInfo fromViewController:nil]; // 前台或者后台点击响应
     }else{
         //应用处于后台时的本地推送接受
-    }
-}
-
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    NSString *pushDeviceToken = [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<" withString:@""]
-                                  stringByReplacingOccurrencesOfString:@">" withString:@""]
-                                 stringByReplacingOccurrencesOfString:@" " withString:@""];
-    if (pushDeviceToken.length) {
-        BJLog(@"deviceToken: %@", pushDeviceToken);
-        [HTUserManager skarg_saveDeviceToken:pushDeviceToken];
-    }
-}
-
-- (void)responsePushInfo:(NSDictionary *)pushInfo fromViewController:(UIViewController *)vc {
-    if (!pushInfo) {
-        return;
-    }
-    
-    if (!vc) {
-        vc = [PPXXBJViewControllerCenter currentViewController];
-    }
-    
-    HTNewsDetailViewController *detailVc = [HTNewsDetailViewController skargviewController];
-    detailVc.post_id = pushInfo[@"postId"];
-    
-    if (vc.navigationController) {
-        [vc.navigationController pushViewController:detailVc animated:YES];
-    } else {
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:detailVc];
-        [vc presentViewController:nav animated:YES completion:nil];
     }
 }
 
