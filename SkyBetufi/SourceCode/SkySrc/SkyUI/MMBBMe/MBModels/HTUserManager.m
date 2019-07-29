@@ -29,6 +29,7 @@ const NSString * kUserLogStatusChagneNotice = @"UserLogStatusChagneNotice";
 - (instancetype)init {
     self = [super init];
     if (self) {
+//        self.appInView = YES;
         if ([HTUserManager skarg_isUserLogin]) {
             NSData *data = [NSData dataWithContentsOfFile:[HTUserManager skarguserInfoPath]];
             self.userInfoModel = [HTUserInfoModel yy_modelWithJSON:data];

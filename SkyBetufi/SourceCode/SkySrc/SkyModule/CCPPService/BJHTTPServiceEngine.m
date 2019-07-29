@@ -39,6 +39,49 @@
     return instance;
 }
 
+
+#pragma mark -
++ (void)getRequestCommon:(NSString *)path
+                            params:(NSDictionary *)params
+                      successBlock:(BJServiceSuccessBlock)successBlock
+                        errorBlock:(BJServiceErrorBlock)errorBlock {
+    NSMutableDictionary *allParams = [NSMutableDictionary dictionary];
+   
+    if (params) {
+        [allParams addEntriesFromDictionary:params];
+    }
+    
+    [[BJHTTPServiceEngine sharedInstance].httpEngine getRequestWithFunctionPath:path params:allParams successBlock:^(NSURLSessionDataTask *task, id responseData) {
+        
+#if ENABLE_REQUEST_LOG
+        BJLog(@"get: path = %@,requsetHeader = %@, params = %@, data = %@", task.originalRequest.URL,task.originalRequest.allHTTPHeaderFields,params, responseData);
+#endif
+        
+        NSDictionary *responseDict = responseData;
+        
+        if (responseData) {
+            if (successBlock) {
+                successBlock(responseData);
+            }
+        } else {
+            BJError *errorObject = [BJError yy_modelWithDictionary:responseDict];
+            if (errorBlock) {
+                errorBlock(errorObject);
+            }
+        }
+        
+    } errorBlock:^(NSURLSessionDataTask *task, NSError *error) {
+        
+        BJLog(@"get: path = %@, error = %@", path, error);
+        if (errorBlock) {
+            BJError *errorObject = [[BJError alloc] init];
+            errorObject.code = error.code;
+            errorObject.msg = @"请求失败"; //TODO:获取NSError里面的描述信息
+            errorBlock(errorObject);
+        }
+    }];
+}
+
 #pragma mark -
 + (void)getRequestWithFunctionPath:(NSString *)path
                             params:(NSDictionary *)params

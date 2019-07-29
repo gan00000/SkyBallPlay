@@ -16,6 +16,14 @@ typedef void (^BJServiceErrorBlock)(BJError *error);
 
 @interface BJHTTPServiceEngine : NSObject
 
++ (instancetype)sharedInstance;
+
+
++ (void)getRequestCommon:(NSString *)path
+                  params:(NSDictionary *)params
+            successBlock:(BJServiceSuccessBlock)successBlock
+              errorBlock:(BJServiceErrorBlock)errorBlock;
+
 + (void)getRequestWithFunctionPath:(NSString *)path
                             params:(NSDictionary *)params
                       successBlock:(BJServiceSuccessBlock)successBlock

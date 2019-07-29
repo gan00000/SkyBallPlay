@@ -9,6 +9,7 @@
 #import "PPXXBJLaunchViewController.h"
 #import "PPXXBJMainViewController.h"
 #import "AppDelegate.h"
+#import "BJHTTPServiceEngine.h"
 
 @interface PPXXBJLaunchViewController () <CAAnimationDelegate>
 
@@ -20,6 +21,51 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    BJLog(@"getRequestCommon start");
+    [BJHTTPServiceEngine getRequestCommon:@"ios_config.json" params:nil successBlock:^(id responseData) {
+        
+        NSDictionary *configDictionary = responseData; //[NSDictionary dictionaryWithDictionary:responseData];
+        if (configDictionary) {
+            NSString *version = configDictionary[@"version"];
+            NSString *status = configDictionary[@"status"];
+            NSString *examine = configDictionary[@"examine"];
+            if ([examine isEqualToString:@"1"]) {
+                [HTUserManager manager].appInView = YES;
+                BJLog(@"getRequestCommon in view");
+                
+            }else{
+                BJLog(@"getRequestCommon not in view");
+                [HTUserManager manager].appInView = NO;
+            }
+        }
+        
+        [[UIApplication sharedApplication].delegate.window insertSubview:self.tabBarController.view atIndex:0];
+        CATransition *animation = [CATransition animation];
+        animation.delegate = self;
+        animation.duration = 0.2f;//间隔时间
+        animation.timingFunction = [CAMediaTimingFunction functionWithName:@"easeInEaseOut"];
+        animation.type = kCATransitionFade;
+        
+        [[UIApplication sharedApplication].delegate.window exchangeSubviewAtIndex:1 withSubviewAtIndex:0];
+        [[UIApplication sharedApplication].delegate.window.layer addAnimation:animation forKey:@"animation"];
+
+        
+    } errorBlock:^(BJError *error) {
+        
+        BJLog(@"ERROR:%@",error);
+        
+        [[UIApplication sharedApplication].delegate.window insertSubview:self.tabBarController.view atIndex:0];
+        CATransition *animation = [CATransition animation];
+        animation.delegate = self;
+        animation.duration = 0.2f;//间隔时间
+        animation.timingFunction = [CAMediaTimingFunction functionWithName:@"easeInEaseOut"];
+        animation.type = kCATransitionFade;
+        
+        [[UIApplication sharedApplication].delegate.window exchangeSubviewAtIndex:1 withSubviewAtIndex:0];
+        [[UIApplication sharedApplication].delegate.window.layer addAnimation:animation forKey:@"animation"];
+
+        
+    }];
     
     NSString *imageName = [NSString stringWithFormat:@"%ldx%ld", (long)(SCREEN_WIDTH*SCREEN_SCALE), (long)(SCREEN_HEIGHT*SCREEN_SCALE)];
     UIImage *image = [UIImage imageNamed:imageName];
@@ -31,15 +77,15 @@
         make.top.left.bottom.right.mas_offset(0);
     }];
     
-    [[UIApplication sharedApplication].delegate.window insertSubview:self.tabBarController.view atIndex:0];
-    CATransition *animation = [CATransition animation];
-    animation.delegate = self;
-    animation.duration = 0.3f;//间隔时间
-    animation.timingFunction = [CAMediaTimingFunction functionWithName:@"easeInEaseOut"];
-    animation.type = kCATransitionFade;
-    
-    [[UIApplication sharedApplication].delegate.window exchangeSubviewAtIndex:1 withSubviewAtIndex:0];
-    [[UIApplication sharedApplication].delegate.window.layer addAnimation:animation forKey:@"animation"];
+//    [[UIApplication sharedApplication].delegate.window insertSubview:self.tabBarController.view atIndex:0];
+//    CATransition *animation = [CATransition animation];
+//    animation.delegate = self;
+//    animation.duration = 0.3f;//间隔时间
+//    animation.timingFunction = [CAMediaTimingFunction functionWithName:@"easeInEaseOut"];
+//    animation.type = kCATransitionFade;
+//
+//    [[UIApplication sharedApplication].delegate.window exchangeSubviewAtIndex:1 withSubviewAtIndex:0];
+//    [[UIApplication sharedApplication].delegate.window.layer addAnimation:animation forKey:@"animation"];
 }
 
 - (void)didReceiveMemoryWarning {

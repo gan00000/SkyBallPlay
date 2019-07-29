@@ -46,7 +46,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+     BJLog(@"PPXXBJMainViewController viewDidLoad");
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:RGBA_COLOR_HEX(0x999999)} forState:UIControlStateNormal];
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor hx_colorWithHexRGBAString:@"fc562e"]} forState:UIControlStateSelected];
     [[UITabBarItem appearance] setTitlePositionAdjustment:UIOffsetMake(0, -4)];
@@ -65,6 +65,7 @@
 
 #pragma mark - 
 - (NSArray<NSString *> *)skargtabBarTitles {
+    BJLog(@"PPXXBJMainViewController skargtabBarTitles");
     if ([HTUserManager manager].appInView) {
         return @[@"比賽", @"新聞", @"排行", @"數據", @"我的"];
     }
