@@ -13,7 +13,7 @@
 + (void)skargrequestSummaryWithGameId:(NSString *)game_id
                     successBlock:(void(^)(HTMatchSummaryModel *summaryModel, HTMatchCompareModel *compareModel))successBlock
                       errorBlock:(BJServiceErrorBlock)errorBlock {
-    [BJHTTPServiceEngine getRequestWithFunctionPath:API_MATCH_SUMMARY params:@{@"game_id":game_id} successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_getRequestWithFunctionPath:API_MATCH_SUMMARY params:@{@"game_id":game_id} successBlock:^(id responseData) {
         HTMatchSummaryModel *summaryModel = [HTMatchSummaryModel yy_modelWithJSON:[responseData[@"match_summary"] firstObject]];
         HTMatchCompareModel *compareModel = [[HTMatchCompareModel alloc] init];
         NSMutableArray *homeTeamDetails = [NSMutableArray array];

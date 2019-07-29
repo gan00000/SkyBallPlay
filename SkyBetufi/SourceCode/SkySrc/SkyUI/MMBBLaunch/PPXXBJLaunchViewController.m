@@ -22,7 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     BJLog(@"getRequestCommon start");
-    [BJHTTPServiceEngine getRequestCommon:@"ios_config.json" params:nil successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_getRequestCommon:@"ios_config.json" params:nil successBlock:^(id responseData) {
         
         NSDictionary *configDictionary = responseData; //[NSDictionary dictionaryWithDictionary:responseData];
         if (configDictionary) {

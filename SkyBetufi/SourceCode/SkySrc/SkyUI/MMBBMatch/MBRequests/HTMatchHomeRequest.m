@@ -18,7 +18,7 @@
     params[@"date_from"] = startDate;
     params[@"date_to"] = endDate;
     
-    [BJHTTPServiceEngine getRequestWithFunctionPath:API_MATCH_HOME params:params successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_getRequestWithFunctionPath:API_MATCH_HOME params:params successBlock:^(id responseData) {
         NSArray *allMatchList = [NSArray yy_modelArrayWithClass:[HTMatchHomeModel class] json:responseData[@"matches"]];
         NSMutableArray *groupedMatchList = [NSMutableArray array];
         NSMutableArray *matchList;
@@ -51,7 +51,7 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"game_id"] = game_id;
     
-    [BJHTTPServiceEngine getRequestWithFunctionPath:API_MATCH_PROGRESS params:params successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_getRequestWithFunctionPath:API_MATCH_PROGRESS params:params successBlock:^(id responseData) {
         if (successBlock) {
             NSDictionary *match_progress = responseData[@"match_progress"];
             successBlock(match_progress[@"game_id"], match_progress[@"quarter"], match_progress[@"time"]);

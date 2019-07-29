@@ -37,8 +37,8 @@ typedef NS_ENUM(NSInteger, BJResponseCode) {
 
 @property (nonatomic, assign) unsigned int total;
 
-- (NSInteger)pagesValueOfPage; //当有分页时，此值表示第几页
-- (NSInteger)totalValueOfPage; //当有分页时，此值表示总数据量
+- (NSInteger)skargpagesValueOfPage; //当有分页时，此值表示第几页
+- (NSInteger)skargtotalValueOfPage; //当有分页时，此值表示总数据量
 
 @end
 

@@ -28,7 +28,7 @@
         instance = [[BJHTTPServiceEngine alloc] init];
         NSString *servicePath = [[BJServiceConfigurator sharedInstance] serverBaseUrl];
         instance.httpEngine = [[BJBaseHTTPEngine alloc] initWithBasePath:servicePath];
-        [instance.httpEngine updateSessionWithBlock:^(AFHTTPSessionManager *session) {
+        [instance.httpEngine skarg_updateSessionWithBlock:^(AFHTTPSessionManager *session) {
             session.requestSerializer.timeoutInterval = 30;
             [session.requestSerializer setValue:@"89bc52ca5b" forHTTPHeaderField:@"X-User-AppId"];
             [session.requestSerializer setValue:@"1" forHTTPHeaderField:@"X-User-Platform"];
@@ -41,7 +41,7 @@
 
 
 #pragma mark -
-+ (void)getRequestCommon:(NSString *)path
++ (void)skarg_getRequestCommon:(NSString *)path
                             params:(NSDictionary *)params
                       successBlock:(BJServiceSuccessBlock)successBlock
                         errorBlock:(BJServiceErrorBlock)errorBlock {
@@ -51,7 +51,7 @@
         [allParams addEntriesFromDictionary:params];
     }
     
-    [[BJHTTPServiceEngine sharedInstance].httpEngine getRequestWithFunctionPath:path params:allParams successBlock:^(NSURLSessionDataTask *task, id responseData) {
+    [[BJHTTPServiceEngine sharedInstance].httpEngine skarg_getRequestWithFunctionPath:path params:allParams successBlock:^(NSURLSessionDataTask *task, id responseData) {
         
 #if ENABLE_REQUEST_LOG
         BJLog(@"get: path = %@,requsetHeader = %@, params = %@, data = %@", task.originalRequest.URL,task.originalRequest.allHTTPHeaderFields,params, responseData);
@@ -83,7 +83,7 @@
 }
 
 #pragma mark -
-+ (void)getRequestWithFunctionPath:(NSString *)path
++ (void)skarg_getRequestWithFunctionPath:(NSString *)path
                             params:(NSDictionary *)params
                       successBlock:(BJServiceSuccessBlock)successBlock
                         errorBlock:(BJServiceErrorBlock)errorBlock {
@@ -95,7 +95,7 @@
         [allParams addEntriesFromDictionary:params];
     }
     
-    [[BJHTTPServiceEngine sharedInstance].httpEngine getRequestWithFunctionPath:path params:allParams successBlock:^(NSURLSessionDataTask *task, id responseData) {
+    [[BJHTTPServiceEngine sharedInstance].httpEngine skarg_getRequestWithFunctionPath:path params:allParams successBlock:^(NSURLSessionDataTask *task, id responseData) {
         
 #if ENABLE_REQUEST_LOG
         BJLog(@"get: path = %@,requsetHeader = %@, params = %@, data = %@", task.originalRequest.URL,task.originalRequest.allHTTPHeaderFields,params, responseData);
@@ -127,7 +127,7 @@
     }];
 }
 
-+ (void)postRequestWithFunctionPath:(NSString *)path
++ (void)skarg_postRequestWithFunctionPath:(NSString *)path
                              params:(NSDictionary *)params
                        successBlock:(BJServiceSuccessBlock)successBlock
                          errorBlock:(BJServiceErrorBlock)errorBlock {
@@ -139,7 +139,7 @@
         [allParams addEntriesFromDictionary:params];
     }
     
-    [[BJHTTPServiceEngine sharedInstance].httpEngine postRequestWithFunctionPath:path params:allParams successBlock:^(NSURLSessionDataTask *task, id responseData) {
+    [[BJHTTPServiceEngine sharedInstance].httpEngine skarg_postRequestWithFunctionPath:path params:allParams successBlock:^(NSURLSessionDataTask *task, id responseData) {
         
 #if ENABLE_REQUEST_LOG
         NSLog(@"post: path = %@,requsetHeader = %@,data = %@", task.originalRequest.URL,task.originalRequest.HTTPBody, responseData);
@@ -171,7 +171,7 @@
     }];
 }
 
-+ (void)fileUploadWithFunctionPath:(NSString *)functionPath
++ (void)skarg_fileUploadWithFunctionPath:(NSString *)functionPath
                             params:(NSDictionary *)params
                           fileData:(NSData *)fileData
                           fileName:(NSString *)fileName
@@ -180,7 +180,7 @@
                       successBlock:(BJServiceSuccessBlock)successBlock
                         errorBlock:(BJServiceErrorBlock)errorBlock {
     
-    [[BJHTTPServiceEngine sharedInstance].httpEngine fileUploadWithFunctionPath:functionPath params:params fileData:fileData fileName:fileName mimeType:mimeType progressBlock:^(float progress) {
+    [[BJHTTPServiceEngine sharedInstance].httpEngine skarg_fileUploadWithFunctionPath:functionPath params:params fileData:fileData fileName:fileName mimeType:mimeType progressBlock:^(float progress) {
         
         if (progressBlock) {
             progressBlock(progress);
@@ -216,7 +216,7 @@
     
 }
 
-+ (void)imageUploadWithFunctionPath:(NSString *)functionPath
++ (void)skarg_imageUploadWithFunctionPath:(NSString *)functionPath
                              params:(NSDictionary *)params
                           imageData:(NSData *)imageData
                           imageName:(NSString *)imageName
@@ -224,7 +224,7 @@
                        successBlock:(BJServiceSuccessBlock)successBlock
                          errorBlock:(BJServiceErrorBlock)errorBlock {
     
-    [[BJHTTPServiceEngine sharedInstance].httpEngine imageUploadWithFunctionPath:functionPath params:params imageData:imageData imageName:imageName progressBlock:^(float progress) {
+    [[BJHTTPServiceEngine sharedInstance].httpEngine skarg_imageUploadWithFunctionPath:functionPath params:params imageData:imageData imageName:imageName progressBlock:^(float progress) {
         
         if (progressBlock) {
             progressBlock(progress);

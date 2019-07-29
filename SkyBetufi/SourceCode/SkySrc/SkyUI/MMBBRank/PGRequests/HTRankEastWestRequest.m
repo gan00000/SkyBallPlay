@@ -12,7 +12,7 @@
 
 + (void)skargrequestWithSuccessBlock:(void(^)(HTRankEastWestModel *eastWestModel))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock {
-    [BJHTTPServiceEngine getRequestWithFunctionPath:API_RANK_EAST_WEST params:nil successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_getRequestWithFunctionPath:API_RANK_EAST_WEST params:nil successBlock:^(id responseData) {
         HTRankEastWestModel *eastWestModel = [HTRankEastWestModel yy_modelWithJSON:responseData];
         if (successBlock) {
             successBlock(eastWestModel);

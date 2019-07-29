@@ -19,22 +19,22 @@ typedef void (^BJServiceErrorBlock)(BJError *error);
 + (instancetype)sharedInstance;
 
 
-+ (void)getRequestCommon:(NSString *)path
++ (void)skarg_getRequestCommon:(NSString *)path
                   params:(NSDictionary *)params
             successBlock:(BJServiceSuccessBlock)successBlock
               errorBlock:(BJServiceErrorBlock)errorBlock;
 
-+ (void)getRequestWithFunctionPath:(NSString *)path
++ (void)skarg_getRequestWithFunctionPath:(NSString *)path
                             params:(NSDictionary *)params
                       successBlock:(BJServiceSuccessBlock)successBlock
                         errorBlock:(BJServiceErrorBlock)errorBlock;
 
-+ (void)postRequestWithFunctionPath:(NSString *)path
++ (void)skarg_postRequestWithFunctionPath:(NSString *)path
                              params:(NSDictionary *)params
                        successBlock:(BJServiceSuccessBlock)successBlock
                          errorBlock:(BJServiceErrorBlock)errorBlock;
 
-+ (void)fileUploadWithFunctionPath:(NSString *)functionPath
++ (void)skarg_fileUploadWithFunctionPath:(NSString *)functionPath
                             params:(NSDictionary *)params
                           fileData:(NSData *)fileData
                           fileName:(NSString *)fileName
@@ -43,7 +43,7 @@ typedef void (^BJServiceErrorBlock)(BJError *error);
                       successBlock:(BJServiceSuccessBlock)successBlock
                         errorBlock:(BJServiceErrorBlock)errorBlock;
 
-+ (void)imageUploadWithFunctionPath:(NSString *)functionPath
++ (void)skarg_imageUploadWithFunctionPath:(NSString *)functionPath
                              params:(NSDictionary *)params
                           imageData:(NSData *)imageData
                           imageName:(NSString *)imageName

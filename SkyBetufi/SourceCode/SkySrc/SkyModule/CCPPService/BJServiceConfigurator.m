@@ -65,22 +65,22 @@ static NSString * const kServiceUrlTypeKey = @"kServiceUrlTypeKey"; //正式环�
 }
 
 //---
-- (void)switchToProductServer {
+- (void)skarg_switchToProductServer {
     [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:kServiceUrlTypeKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-- (void)switchToTestServer {
+- (void)skarg_switchToTestServer {
     [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:kServiceUrlTypeKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-- (void)switchToDevServer {
+- (void)skarg_switchToDevServer {
     [[NSUserDefaults standardUserDefaults] setInteger:2 forKey:kServiceUrlTypeKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-- (NSInteger)currentServerType {
+- (NSInteger)skarg_currentServerType {
     return [[NSUserDefaults standardUserDefaults] integerForKey:kServiceUrlTypeKey];
 }
 

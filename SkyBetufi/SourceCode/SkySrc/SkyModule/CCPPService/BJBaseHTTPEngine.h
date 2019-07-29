@@ -18,19 +18,19 @@ typedef void (^BJHTTPFailureBlock)(NSURLSessionDataTask *task, NSError *error);
 
 - (instancetype)initWithBasePath:(NSString *)basePath;
 
-- (void)updateSessionWithBlock:(void(^)(AFHTTPSessionManager *session))updateBlock;
+- (void)skarg_updateSessionWithBlock:(void(^)(AFHTTPSessionManager *session))updateBlock;
 
-- (void)getRequestWithFunctionPath:(NSString *)path
+- (void)skarg_getRequestWithFunctionPath:(NSString *)path
                             params:(NSDictionary *)params
                       successBlock:(BJHTTPSuccessBlock)successBlock
                         errorBlock:(BJHTTPFailureBlock)errorBlock;
 
-- (void)postRequestWithFunctionPath:(NSString *)path
+- (void)skarg_postRequestWithFunctionPath:(NSString *)path
                              params:(NSDictionary *)params
                        successBlock:(BJHTTPSuccessBlock)successBlock
                          errorBlock:(BJHTTPFailureBlock)errorBlock;
 
-- (void)fileUploadWithFunctionPath:(NSString *)functionPath
+- (void)skarg_fileUploadWithFunctionPath:(NSString *)functionPath
                             params:(NSDictionary *)params
                           fileData:(NSData *)fileData
                           fileName:(NSString *)fileName
@@ -39,7 +39,7 @@ typedef void (^BJHTTPFailureBlock)(NSURLSessionDataTask *task, NSError *error);
                       successBlock:(BJHTTPSuccessBlock)successBlock
                         errorBlock:(BJHTTPFailureBlock)errorBlock;
 
-- (void)imageUploadWithFunctionPath:(NSString *)functionPath
+- (void)skarg_imageUploadWithFunctionPath:(NSString *)functionPath
                              params:(NSDictionary *)params
                           imageData:(NSData *)imageData
                           imageName:(NSString *)imageName

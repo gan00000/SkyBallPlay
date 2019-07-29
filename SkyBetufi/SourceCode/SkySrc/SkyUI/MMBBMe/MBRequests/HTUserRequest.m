@@ -20,7 +20,7 @@
     param[@"device_token"] = [HTUserManager skarg_deviceToken];
     param[@"device_type"] = @(1);
     
-    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_LOGIN params:param successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_postRequestWithFunctionPath:API_USER_LOGIN params:param successBlock:^(id responseData) {
         if (successBlock) {
             successBlock(responseData[@"result"][@"user_token"]);
         }
@@ -29,7 +29,7 @@
 
 + (void)skargrequestUserInfoWithSuccessBlock:(void(^)(NSDictionary *userInfo))successBlock
                               failBlock:(BJServiceErrorBlock)failBlock {
-    [BJHTTPServiceEngine getRequestWithFunctionPath:API_USER_INFO params:nil successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_getRequestWithFunctionPath:API_USER_INFO params:nil successBlock:^(id responseData) {
         if (successBlock) {
             successBlock(responseData[@"result"]);
         }
@@ -46,7 +46,7 @@
     param[@"display_name"] = displayName;
     param[@"file"] = file;
     
-    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_UPDATE params:param successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_postRequestWithFunctionPath:API_USER_UPDATE params:param successBlock:^(id responseData) {
         if (successBlock) {
             successBlock(responseData[@"result"]);
         }
@@ -54,7 +54,7 @@
 }
 
 + (void)skargrequestCollectionListWithOffset:(NSInteger)offset successBlock:(void(^)(NSArray <HTNewsModel *> *newsList, NSInteger pages))successBlock failBlock:(BJServiceErrorBlock)failBlock {
-    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_SAVE_LIST params:@{@"offset": @(offset)} successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_postRequestWithFunctionPath:API_USER_SAVE_LIST params:@{@"offset": @(offset)} successBlock:^(id responseData) {
         if (successBlock) {
             successBlock([NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"savedposts"][@"posts"]], [(NSNumber *)responseData[@"savedposts"][@"pages"] integerValue]);
         }
@@ -62,7 +62,7 @@
 }
 
 + (void)skargaddCollectionWithNewsId:(NSString *)news_id successBlock:(dispatch_block_t)successBlock failBlock:(BJServiceErrorBlock)failBlock {
-    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_SAVE_ADD params:@{@"post_id": news_id} successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_postRequestWithFunctionPath:API_USER_SAVE_ADD params:@{@"post_id": news_id} successBlock:^(id responseData) {
         if (successBlock) {
             successBlock();
         }
@@ -70,7 +70,7 @@
 }
 
 + (void)skargdeleteCollectionWithNewsId:(NSString *)news_id successBlock:(dispatch_block_t)successBlock failBlock:(BJServiceErrorBlock)failBlock {
-    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_UNSAVE params:@{@"post_id": news_id} successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_postRequestWithFunctionPath:API_USER_UNSAVE params:@{@"post_id": news_id} successBlock:^(id responseData) {
         if (successBlock) {
             successBlock();
         }
@@ -80,7 +80,7 @@
 + (void)skargrequestHistoryWithOffset:(NSInteger)offset
                     successBlock:(HTMyCommentBlock)successBlock
                        failBlock:(BJServiceErrorBlock)failBlock {
-    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_HISTORY_LIST params:@{@"offset": @(offset)} successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_postRequestWithFunctionPath:API_USER_HISTORY_LIST params:@{@"offset": @(offset)} successBlock:^(id responseData) {
         if (successBlock) {
             NSArray *list = [NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"historyposts"][@"posts"]];
             NSInteger pages = [(NSNumber *)responseData[@"historyposts"][@"pages"] integerValue];
@@ -90,7 +90,7 @@
 }
 
 + (void)skargaddHistoryWithNewsId:(NSString *)news_id successBlock:(dispatch_block_t)successBlock failBlock:(BJServiceErrorBlock)failBlock {
-    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_HISTORY_ADD params:@{@"post_id": news_id} successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_postRequestWithFunctionPath:API_USER_HISTORY_ADD params:@{@"post_id": news_id} successBlock:^(id responseData) {
         if (successBlock) {
             successBlock();
         }
@@ -98,7 +98,7 @@
 }
 
 + (void)skargrequestMyCommentWithOffset:(NSInteger)offset successBlock:(void(^)(NSArray <HTNewsModel *> *newsList, NSInteger pages))successBlock failBlock:(BJServiceErrorBlock)failBlock {
-    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_MY_COMMENT params:@{@"offset": @(offset)} successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_postRequestWithFunctionPath:API_USER_MY_COMMENT params:@{@"offset": @(offset)} successBlock:^(id responseData) {
         if (successBlock) {
             NSArray *newsList = [NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"savedposts"][@"comments"]];
             NSInteger pages = [(NSNumber *)responseData[@"savedposts"][@"pages"] integerValue];
@@ -108,7 +108,7 @@
 }
 
 + (void)skargrequestMyLikeWithOffset:(NSInteger)offset successBlock:(void(^)(NSArray <HTNewsModel *> *newsList, NSInteger pages))successBlock failBlock:(BJServiceErrorBlock)failBlock {
-    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_MY_LIKE params:@{@"offset": @(offset)} successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_postRequestWithFunctionPath:API_USER_MY_LIKE params:@{@"offset": @(offset)} successBlock:^(id responseData) {
         if (successBlock) {
             NSArray *newsList = [NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"savedposts"][@"comments"]];
             NSInteger pages = [(NSNumber *)responseData[@"savedposts"][@"pages"] integerValue];
@@ -118,7 +118,7 @@
 }
 
 + (void)skargrequestUnReadMessageCountWithSuccessBlock:(void(^)(NSInteger count))successBlock failBlock:(BJServiceErrorBlock)failBlock {
-    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_MESSAGE_COUNT params:nil successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_postRequestWithFunctionPath:API_USER_MESSAGE_COUNT params:nil successBlock:^(id responseData) {
         if (successBlock) {
             successBlock([(NSString *)responseData[@"result"][@"total_unread"] integerValue]);
         }
@@ -128,7 +128,7 @@
 + (void)skargrequestMyMessageWithOffset:(NSInteger)offset
                       successBlock:(void(^)(NSArray <HTMyMessageModel *> *messageList, NSInteger pages))successBlock
                          failBlock:(BJServiceErrorBlock)failBlock {
-    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_MESSAGE_LIST params:@{@"offset": @(offset)} successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_postRequestWithFunctionPath:API_USER_MESSAGE_LIST params:@{@"offset": @(offset)} successBlock:^(id responseData) {
         if (successBlock) {
             NSArray *list = [NSArray yy_modelArrayWithClass:[HTMyMessageModel class] json:responseData[@"result"][@"notification"]];
             NSInteger pages = [(NSNumber *)responseData[@"result"][@"pages"] integerValue];
@@ -143,7 +143,7 @@
     params[@"comment_id"] = comment_id;
     params[@"like"] = @(like);
     
-    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_LIKE_ADD params:params successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_postRequestWithFunctionPath:API_USER_LIKE_ADD params:params successBlock:^(id responseData) {
         if (successBlock) {
             successBlock();
         }
@@ -156,7 +156,7 @@
     params[@"comment_txt"] = comment_txt;
     params[@"reply_comment_id"] = reply_comment_id;
     
-    [BJHTTPServiceEngine postRequestWithFunctionPath:API_USER_POST_COMMENT params:params successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_postRequestWithFunctionPath:API_USER_POST_COMMENT params:params successBlock:^(id responseData) {
         if (successBlock) {
             successBlock();
         }

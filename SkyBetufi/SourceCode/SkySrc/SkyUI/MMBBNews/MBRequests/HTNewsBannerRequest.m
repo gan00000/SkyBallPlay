@@ -13,7 +13,7 @@
 + (void)skargrequestWithSuccessBlock:(void(^)(NSArray<HTNewsModel*> *bannerList))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock {
     
-    [BJHTTPServiceEngine getRequestWithFunctionPath:API_NEWS_BANNER params:nil successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_getRequestWithFunctionPath:API_NEWS_BANNER params:nil successBlock:^(id responseData) {
         NSArray *arr = [NSArray yy_modelArrayWithClass:[HTNewsModel class] json:responseData[@"topslideposts"][@"posts"]];
         if (successBlock) {
             successBlock(arr);

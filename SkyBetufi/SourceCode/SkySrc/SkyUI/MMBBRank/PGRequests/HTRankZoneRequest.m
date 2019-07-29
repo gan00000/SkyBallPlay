@@ -12,7 +12,7 @@
 
 + (void)skargrequestWithSuccessBlock:(void(^)(HTRankZoneModel *zoneModel))successBlock
                      errorBlock:(BJServiceErrorBlock)errorBlock {
-    [BJHTTPServiceEngine getRequestWithFunctionPath:API_RANK_ZONE params:nil successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_getRequestWithFunctionPath:API_RANK_ZONE params:nil successBlock:^(id responseData) {
         if (successBlock) {
             HTRankZoneModel *zoneModel = [HTRankZoneModel yy_modelWithJSON:responseData];
             successBlock(zoneModel);

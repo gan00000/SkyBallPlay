@@ -13,7 +13,7 @@
 + (void)skargrequestLiveFeedWithGameId:(NSString *)game_id
                      successBlock:(void(^)(NSArray<HTMatchLiveFeedModel *> *feedList))successBlock
                        errorBlock:(BJServiceErrorBlock)errorBlock {
-    [BJHTTPServiceEngine getRequestWithFunctionPath:API_MATCH_LIVE_FEED params:@{@"game_id":game_id} successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_getRequestWithFunctionPath:API_MATCH_LIVE_FEED params:@{@"game_id":game_id} successBlock:^(id responseData) {
         NSMutableArray *feedList = [NSMutableArray array];
         NSArray *data = responseData[@"live_feed"];
         if ([data isKindOfClass:[NSArray class]] && data.count > 0) {

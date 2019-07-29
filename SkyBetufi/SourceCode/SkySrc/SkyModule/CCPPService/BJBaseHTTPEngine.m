@@ -28,11 +28,11 @@
     return self;
 }
 
-- (void)updateSessionWithBlock:(void(^)(AFHTTPSessionManager *sesson))updateBlock {
+- (void)skarg_updateSessionWithBlock:(void(^)(AFHTTPSessionManager *sesson))updateBlock {
     updateBlock(self.sessionManager);
 }
 
-- (void)getRequestWithFunctionPath:(NSString *)path
+- (void)skarg_getRequestWithFunctionPath:(NSString *)path
                             params:(NSDictionary *)params
                       successBlock:(BJHTTPSuccessBlock)successBlock
                         errorBlock:(BJHTTPFailureBlock)errorBlock {
@@ -56,7 +56,7 @@
     };
 }
 
-- (void)postRequestWithFunctionPath:(NSString *)path
+- (void)skarg_postRequestWithFunctionPath:(NSString *)path
                              params:(NSDictionary *)params
                        successBlock:(BJHTTPSuccessBlock)successBlock
                          errorBlock:(BJHTTPFailureBlock)errorBlock {
@@ -80,7 +80,7 @@
     };
 }
 
-- (void)fileUploadWithFunctionPath:(NSString *)functionPath
+- (void)skarg_fileUploadWithFunctionPath:(NSString *)functionPath
                             params:(NSDictionary *)params
                           fileData:(NSData *)fileData
                           fileName:(NSString *)fileName
@@ -121,7 +121,7 @@
     
 }
 
-- (void)imageUploadWithFunctionPath:(NSString *)functionPath
+- (void)skarg_imageUploadWithFunctionPath:(NSString *)functionPath
                              params:(NSDictionary *)params
                           imageData:(NSData *)imageData
                           imageName:(NSString *)imageName
@@ -129,7 +129,7 @@
                        successBlock:(BJHTTPSuccessBlock)successBlock
                          errorBlock:(BJHTTPFailureBlock)errorBlock {
     
-    [self fileUploadWithFunctionPath:functionPath params:params fileData:imageData fileName:imageName mimeType:@"image/jpeg" progressBlock:progressBlock successBlock:successBlock errorBlock:errorBlock];
+    [self skarg_fileUploadWithFunctionPath:functionPath params:params fileData:imageData fileName:imageName mimeType:@"image/jpeg" progressBlock:progressBlock successBlock:successBlock errorBlock:errorBlock];
     
 }
 

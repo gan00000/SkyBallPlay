@@ -18,7 +18,7 @@
                              @"sort_by": @"desc"
                              };
     
-    [BJHTTPServiceEngine getRequestWithFunctionPath:API_TEAM_RANK_ALL params:params successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_getRequestWithFunctionPath:API_TEAM_RANK_ALL params:params successBlock:^(id responseData) {
         if (successBlock) {
             NSArray *allTeamRankList = [NSArray yy_modelArrayWithClass:[HTDataTeamRankModel class] json:responseData[@"teams_rank"]];
             successBlock(allTeamRankList);
@@ -34,7 +34,7 @@
                              @"sort_by": @"desc"
                              };
     
-    [BJHTTPServiceEngine getRequestWithFunctionPath:API_PLAYER_RANK_ALL params:params successBlock:^(id responseData) {
+    [BJHTTPServiceEngine skarg_getRequestWithFunctionPath:API_PLAYER_RANK_ALL params:params successBlock:^(id responseData) {
         if (successBlock) {
             NSArray *allTeamRankList = [NSArray yy_modelArrayWithClass:[HTDataPlayerRankModel class] json:responseData[@"players_rank"]];
             successBlock(allTeamRankList);

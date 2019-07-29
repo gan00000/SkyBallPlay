@@ -9,14 +9,14 @@
 
 @implementation BJBaseResponceModel
 
-- (NSInteger)pagesValueOfPage {
+- (NSInteger)skargpagesValueOfPage {
     if (self.page) {
         return [self.page[@"pages"] integerValue];
     }
     return 0;
 }
 
-- (NSInteger)totalValueOfPage {
+- (NSInteger)skargtotalValueOfPage {
 //    if (self.page) {
 //        return [self.page[@"total"] integerValue];
 //    }
