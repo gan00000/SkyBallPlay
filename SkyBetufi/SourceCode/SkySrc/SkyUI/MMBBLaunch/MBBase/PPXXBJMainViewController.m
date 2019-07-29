@@ -80,7 +80,7 @@
                   [[UIImage imageNamed:@"tab_icon_normal2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                   [[UIImage imageNamed:@"tab_icon_normal5"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                   [[UIImage imageNamed:@"tab_icon_normal4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                  [[UIImage imageNamed:@"default_avatar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                  [[UIImage imageNamed:@"tab_icon_me"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
      }
     
     return @[[[UIImage imageNamed:@"tab_icon_normal1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
@@ -99,7 +99,7 @@
                  [[UIImage imageNamed:@"tab_icon_selected2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                  [[UIImage imageNamed:@"tab_icon_selected5"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                  [[UIImage imageNamed:@"tab_icon_selected4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                 [[UIImage imageNamed:@"default_avatar"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+                 [[UIImage imageNamed:@"tab_icon_me_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
         
     }
     return @[[[UIImage imageNamed:@"tab_icon_selected1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],

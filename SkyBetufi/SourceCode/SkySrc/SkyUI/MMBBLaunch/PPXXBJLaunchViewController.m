@@ -42,7 +42,7 @@
         [[UIApplication sharedApplication].delegate.window insertSubview:self.tabBarController.view atIndex:0];
         CATransition *animation = [CATransition animation];
         animation.delegate = self;
-        animation.duration = 0.2f;//间隔时间
+        animation.duration = 0.1f;//间隔时间
         animation.timingFunction = [CAMediaTimingFunction functionWithName:@"easeInEaseOut"];
         animation.type = kCATransitionFade;
         
@@ -57,7 +57,7 @@
         [[UIApplication sharedApplication].delegate.window insertSubview:self.tabBarController.view atIndex:0];
         CATransition *animation = [CATransition animation];
         animation.delegate = self;
-        animation.duration = 0.2f;//间隔时间
+        animation.duration = 0.1f;//间隔时间
         animation.timingFunction = [CAMediaTimingFunction functionWithName:@"easeInEaseOut"];
         animation.type = kCATransitionFade;
         
