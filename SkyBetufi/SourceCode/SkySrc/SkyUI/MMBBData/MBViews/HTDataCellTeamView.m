@@ -8,6 +8,7 @@
 
 #import "HTDataCellTeamView.h"
 #import <WebKit/WebKit.h>
+#import <UIImageView+SVG.h>
 
 @interface HTDataCellTeamView ()
 
@@ -15,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *teamNameLabel;
 
-@property (nonatomic, strong) WKWebView *teamLogoWeb;
+//@property (nonatomic, strong) WKWebView *teamLogoWeb;
 @property (nonatomic, assign) NSInteger width;
 
 
@@ -37,10 +38,12 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     
-    [self addSubview:self.teamLogoWeb];
-    [self.teamLogoWeb mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.bottom.right.equalTo(self.imageView);
-    }];
+//    [self addSubview:self.teamLogoWeb];
+//    [self.teamLogoWeb mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.left.bottom.right.equalTo(self.imageView);
+//    }];
+    
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
 - (void)skargsetupWithDataModel:(HTDataHomeModel *)dataModel {
@@ -49,26 +52,33 @@
     
     [dataModel skargimageUrlFixWithWidth:self.width-30];
     
-    self.imageView.hidden = YES;
-    self.teamLogoWeb.hidden = YES;
-    if (dataModel.html_team_logo.length > 0) {
-        self.teamLogoWeb.hidden = NO;
-        [self.teamLogoWeb loadHTMLString:dataModel.html_team_logo baseURL:nil];
-    } else {
-        self.imageView.hidden = NO;
-        [self.imageView sd_setImageWithURL:[NSURL URLWithString:dataModel.team_logo]
-                          placeholderImage:HT_DEFAULT_IMAGE];
+//    self.imageView.hidden = YES;
+//    self.teamLogoWeb.hidden = YES;
+//    if (dataModel.html_team_logo.length > 0) {
+//        self.teamLogoWeb.hidden = NO;
+//        [self.teamLogoWeb loadHTMLString:dataModel.html_team_logo baseURL:nil];
+//    } else {
+//        self.imageView.hidden = NO;
+//        [self.imageView sd_setImageWithURL:[NSURL URLWithString:dataModel.team_logo]
+//                          placeholderImage:HT_DEFAULT_IMAGE];
+//    }
+    
+    self.imageView.hidden = NO;
+    if ([dataModel.team_logo hasSuffix:@"svg"]) {
+         [self.imageView svg_setImageWithURL:[NSURL URLWithString:dataModel.team_logo] placeholderImage:HT_DEFAULT_IMAGE];
+    }else{
+        [self.imageView sd_setImageWithURL:[NSURL URLWithString:dataModel.team_logo] placeholderImage:HT_DEFAULT_IMAGE];
     }
 }
 
 
-- (WKWebView *)teamLogoWeb {
-    if (!_teamLogoWeb) {
-        _teamLogoWeb = [[WKWebView alloc] init];
-        _teamLogoWeb.scrollView.scrollEnabled = NO;
-        _teamLogoWeb.clipsToBounds = YES;
-    }
-    return _teamLogoWeb;
-}
+//- (WKWebView *)teamLogoWeb {
+//    if (!_teamLogoWeb) {
+//        _teamLogoWeb = [[WKWebView alloc] init];
+//        _teamLogoWeb.scrollView.scrollEnabled = NO;
+//        _teamLogoWeb.clipsToBounds = YES;
+//    }
+//    return _teamLogoWeb;
+//}
 
 @end

@@ -37,8 +37,8 @@
 @property (nonatomic, strong) PPXXBJNavigationController *nav6;
 @property (nonatomic, strong) HTTabBarHomeViewController *vc6;
 
-@property (nonatomic, strong) PPXXBJNavigationController *nav7;
-@property (nonatomic, strong) HTNewsHomeOtherViewController *vc7;
+//@property (nonatomic, strong) PPXXBJNavigationController *nav7;
+//@property (nonatomic, strong) HTNewsHomeOtherViewController *vc7;
 
 @end
 
@@ -67,7 +67,7 @@
 - (NSArray<NSString *> *)skargtabBarTitles {
     BJLog(@"PPXXBJMainViewController skargtabBarTitles");
     if ([HTUserManager manager].appInView) {
-        return @[@"比賽", @"新聞", @"排行", @"數據", @"我的"];
+        return @[@"新聞",@"比賽",  @"排行", @"數據", @"我的"];
     }
     return @[@"比賽", @"新聞", @"影片", @"數據", @"排行"];
    
@@ -76,8 +76,8 @@
 - (NSArray<UIImage *> *)skargtabBarIcons {
     
      if ([HTUserManager manager].appInView) {
-         return @[[[UIImage imageNamed:@"tab_icon_normal1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                  [[UIImage imageNamed:@"tab_icon_normal2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+         return @[[[UIImage imageNamed:@"tab_icon_normal2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+                  [[UIImage imageNamed:@"tab_icon_normal1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                   [[UIImage imageNamed:@"tab_icon_normal5"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                   [[UIImage imageNamed:@"tab_icon_normal4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                   [[UIImage imageNamed:@"tab_icon_me"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
@@ -95,8 +95,8 @@
     
     if ([HTUserManager manager].appInView) {
         
-        return @[[[UIImage imageNamed:@"tab_icon_selected1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
-                 [[UIImage imageNamed:@"tab_icon_selected2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+        return @[[[UIImage imageNamed:@"tab_icon_selected2"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
+                 [[UIImage imageNamed:@"tab_icon_selected1"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                  [[UIImage imageNamed:@"tab_icon_selected5"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                  [[UIImage imageNamed:@"tab_icon_selected4"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal],
                  [[UIImage imageNamed:@"tab_icon_me_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
@@ -137,13 +137,13 @@
         self.nav6 = [[PPXXBJNavigationController alloc] initWithRootViewController:self.vc6];
     }
     
-    if (!self.vc7) {
-        self.vc7 = [HTNewsHomeOtherViewController skargviewController];
-        self.nav7 = [[PPXXBJNavigationController alloc] initWithRootViewController:self.vc7];
-    }
+//    if (!self.vc7) {
+//        self.vc7 = [HTNewsHomeOtherViewController skargviewController];
+//        self.nav7 = [[PPXXBJNavigationController alloc] initWithRootViewController:self.vc7];
+//    }
     
     if ([HTUserManager manager].appInView) {
-         return @[self.nav1, self.nav7, self.nav5, self.nav4, self.nav6];
+         return @[self.nav2, self.nav1, self.nav5, self.nav4, self.nav6];
     }
     return @[self.nav1, self.nav2, self.nav3, self.nav4, self.nav5];
 //    return @[self.nav1, self.nav2, self.nav3, self.nav4, self.nav5,self.nav6];
