@@ -1743,8 +1743,7 @@
 			knownRegions = (
 				Base,
 				en,
-				"zh-Hans",
-				"zh-HK",
+				"zh-Hant",
 			);
 			mainGroup = FEC1124C2143D057002DB617;
 			productRefGroup = FEC112562143D057002DB617 /* Products */;
@@ -2258,7 +2257,7 @@
 				CODE_SIGN_ENTITLEMENTS = SkyBetufi/SkyBallPlay.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = N64JLDR4LD;
+				DEVELOPMENT_TEAM = 98DGMGPLHN;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SkyBetufi/SourceCode/SkySrc/SkyBallPlay.pch";
 				INFOPLIST_FILE = SkyBetufi/Info.plist;
@@ -2267,9 +2266,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gamamobi.twsdios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skyball.heit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = twsd_dev_0516;
+				PROVISIONING_PROFILE_SPECIFIER = skyball_20190730;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -2282,9 +2281,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = SkyBetufi/SkyBallPlay.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = N64JLDR4LD;
+				DEVELOPMENT_TEAM = 98DGMGPLHN;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SkyBetufi/SourceCode/SkySrc/SkyBallPlay.pch";
 				INFOPLIST_FILE = SkyBetufi/Info.plist;
@@ -2293,9 +2292,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gamamobi.twsdios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skyball.heit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = twsd_dev_0516;
+				PROVISIONING_PROFILE_SPECIFIER = skyball_dis_20190730;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
