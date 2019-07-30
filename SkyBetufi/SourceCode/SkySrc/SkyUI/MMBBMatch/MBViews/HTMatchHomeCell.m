@@ -8,18 +8,19 @@
 
 #import "HTMatchHomeCell.h"
 #import <WebKit/WebKit.h>
+#import "UIImageView+SVG.h"
 
 @interface HTMatchHomeCell () <WKNavigationDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *homeTeamNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *homeTeamLogo;
 @property (weak, nonatomic) IBOutlet UILabel *homeTeamPtsLabel;
-@property (strong, nonatomic) WKWebView *homeTeamLogoWeb;
+//@property (strong, nonatomic) WKWebView *homeTeamLogoWeb;
 
 @property (weak, nonatomic) IBOutlet UILabel *awayTeamNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *awayTeamLogo;
 @property (weak, nonatomic) IBOutlet UILabel *awayTeamPtsLabel;
-@property (strong, nonatomic) WKWebView *awayTeamLogoWeb;
+//@property (strong, nonatomic) WKWebView *awayTeamLogoWeb;
 
 @property (weak, nonatomic) IBOutlet UILabel *matchStatusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
@@ -37,21 +38,21 @@
     self.homeTeamLogo.contentMode = UIViewContentModeScaleAspectFit;
     self.awayTeamLogo.contentMode = UIViewContentModeScaleAspectFit;
     
-    [self addSubview:self.homeTeamLogoWeb];
-    [self.homeTeamLogoWeb mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.homeTeamLogo);
-        make.left.equalTo(self.homeTeamLogo);
-        make.bottom.equalTo(self.homeTeamLogo);
-        make.right.equalTo(self.homeTeamLogo);
-    }];
+//    [self addSubview:self.homeTeamLogoWeb];
+//    [self.homeTeamLogoWeb mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.homeTeamLogo);
+//        make.left.equalTo(self.homeTeamLogo);
+//        make.bottom.equalTo(self.homeTeamLogo);
+//        make.right.equalTo(self.homeTeamLogo);
+//    }];
     
-    [self addSubview:self.awayTeamLogoWeb];
-    [self.awayTeamLogoWeb mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.awayTeamLogo);
-        make.left.equalTo(self.awayTeamLogo);
-        make.bottom.equalTo(self.awayTeamLogo);
-        make.right.equalTo(self.awayTeamLogo);
-    }];
+//    [self addSubview:self.awayTeamLogoWeb];
+//    [self.awayTeamLogoWeb mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.awayTeamLogo);
+//        make.left.equalTo(self.awayTeamLogo);
+//        make.bottom.equalTo(self.awayTeamLogo);
+//        make.right.equalTo(self.awayTeamLogo);
+//    }];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -59,29 +60,43 @@
 }
 
 - (void)skargsetupWithMatchModel:(HTMatchHomeModel *)matchModel {
-    self.homeTeamLogo.hidden = YES;
-    self.homeTeamLogoWeb.hidden = YES;
-    self.awayTeamLogo.hidden = YES;
-    self.awayTeamLogoWeb.hidden = YES;
+//    self.homeTeamLogo.hidden = YES;
+//    self.homeTeamLogoWeb.hidden = YES;
+//    self.awayTeamLogo.hidden = YES;
+//    self.awayTeamLogoWeb.hidden = YES;
     
-    if (matchModel.img_home_logo) {
-        self.homeTeamLogoWeb.hidden = NO;
-        [self.homeTeamLogoWeb loadHTMLString:matchModel.img_home_logo baseURL:nil];
-    } else {
-        self.homeTeamLogo.hidden = NO;
+//    if (matchModel.img_home_logo) {
+//        self.homeTeamLogoWeb.hidden = NO;
+//        [self.homeTeamLogoWeb loadHTMLString:matchModel.img_home_logo baseURL:nil];
+//    } else {
+//        self.homeTeamLogo.hidden = NO;
+//        [self.homeTeamLogo sd_setImageWithURL:[NSURL URLWithString:matchModel.homeLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
+//    }
+
+    if ([matchModel.homeLogo hasSuffix:@"svg"]) {
+         [self.homeTeamLogo svg_setImageWithURL:[NSURL URLWithString:matchModel.homeLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
+    }else{
         [self.homeTeamLogo sd_setImageWithURL:[NSURL URLWithString:matchModel.homeLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
     }
+   
     
     self.homeTeamNameLabel.text = matchModel.homeName;
     self.homeTeamPtsLabel.text = matchModel.home_pts;
     
-    if (matchModel.img_away_logo) {
-        self.awayTeamLogoWeb.hidden = NO;
-        [self.awayTeamLogoWeb loadHTMLString:matchModel.img_away_logo baseURL:nil];
-    } else {
-        self.awayTeamLogo.hidden = NO;
-        [self.awayTeamLogo sd_setImageWithURL:[NSURL URLWithString:matchModel.awayLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
+//    if (matchModel.img_away_logo) {
+//        self.awayTeamLogoWeb.hidden = NO;
+//        [self.awayTeamLogoWeb loadHTMLString:matchModel.img_away_logo baseURL:nil];
+//    } else {
+//        self.awayTeamLogo.hidden = NO;
+//        [self.awayTeamLogo sd_setImageWithURL:[NSURL URLWithString:matchModel.awayLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
+//    }
+    
+    if ([matchModel.awayLogo hasSuffix:@"svg"]) {
+        [self.awayTeamLogo svg_setImageWithURL:[NSURL URLWithString:matchModel.awayLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
+    }else{
+         [self.awayTeamLogo sd_setImageWithURL:[NSURL URLWithString:matchModel.awayLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
     }
+ 
     
     self.awayTeamNameLabel.text = matchModel.awayName;
     self.awayTeamPtsLabel.text = matchModel.away_pts;
@@ -121,20 +136,20 @@
     }
 }
 
-- (WKWebView *)homeTeamLogoWeb {
-    if (!_homeTeamLogoWeb) {
-        _homeTeamLogoWeb = [[WKWebView alloc] init];
-        _homeTeamLogoWeb.scrollView.scrollEnabled = NO;
-    }
-    return _homeTeamLogoWeb;
-}
+//- (WKWebView *)homeTeamLogoWeb {
+//    if (!_homeTeamLogoWeb) {
+//        _homeTeamLogoWeb = [[WKWebView alloc] init];
+//        _homeTeamLogoWeb.scrollView.scrollEnabled = NO;
+//    }
+//    return _homeTeamLogoWeb;
+//}
 
-- (WKWebView *)awayTeamLogoWeb {
-    if (!_awayTeamLogoWeb) {
-        _awayTeamLogoWeb = [[WKWebView alloc] init];
-        _awayTeamLogoWeb.scrollView.scrollEnabled = NO;
-    }
-    return _awayTeamLogoWeb;
-}
+//- (WKWebView *)awayTeamLogoWeb {
+//    if (!_awayTeamLogoWeb) {
+//        _awayTeamLogoWeb = [[WKWebView alloc] init];
+//        _awayTeamLogoWeb.scrollView.scrollEnabled = NO;
+//    }
+//    return _awayTeamLogoWeb;
+//}
 
 @end

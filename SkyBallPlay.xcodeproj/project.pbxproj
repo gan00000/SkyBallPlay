@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32642A5722EFE8FD00D2DA1E /* UIImageView+SVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 32642A5622EFE8FD00D2DA1E /* UIImageView+SVG.m */; };
 		32ABE1CC22EDF4C2008505BA /* HTNewsHomeOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ABE1CA22EDF4C1008505BA /* HTNewsHomeOtherViewController.m */; };
 		32ABE1CE22EDF4D0008505BA /* NewsHomeOther.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32ABE1CD22EDF4D0008505BA /* NewsHomeOther.storyboard */; };
 		32ABE1D222EDF733008505BA /* HTTabBarHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ABE1CF22EDF732008505BA /* HTTabBarHomeViewController.m */; };
@@ -271,6 +272,8 @@
 		325BD8C822E07D6F00A07EC9 /* confuse.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = confuse.sh; sourceTree = "<group>"; };
 		325BD8C922E07D6F00A07EC9 /* func.list */ = {isa = PBXFileReference; lastKnownFileType = text; path = func.list; sourceTree = "<group>"; };
 		325BD8CB22E0840600A07EC9 /* codeObfuscation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codeObfuscation.h; sourceTree = "<group>"; };
+		32642A5522EFE8FD00D2DA1E /* UIImageView+SVG.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+SVG.h"; sourceTree = "<group>"; };
+		32642A5622EFE8FD00D2DA1E /* UIImageView+SVG.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+SVG.m"; sourceTree = "<group>"; };
 		32ABE1CA22EDF4C1008505BA /* HTNewsHomeOtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTNewsHomeOtherViewController.m; sourceTree = "<group>"; };
 		32ABE1CB22EDF4C2008505BA /* HTNewsHomeOtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTNewsHomeOtherViewController.h; sourceTree = "<group>"; };
 		32ABE1CD22EDF4D0008505BA /* NewsHomeOther.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewsHomeOther.storyboard; sourceTree = "<group>"; };
@@ -1098,6 +1101,8 @@
 				FEC115422143D4A0002DB617 /* UIView+BlockGesture.m */,
 				FEC115362143D4A0002DB617 /* UIView+QuickFrame.h */,
 				FEC115472143D4A0002DB617 /* UIView+QuickFrame.m */,
+				32642A5522EFE8FD00D2DA1E /* UIImageView+SVG.h */,
+				32642A5622EFE8FD00D2DA1E /* UIImageView+SVG.m */,
 			);
 			path = PKCategory;
 			sourceTree = "<group>";
@@ -1847,11 +1852,7 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
-			);
-			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
@@ -1868,6 +1869,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-SkyBallPlay/Pods-SkyBallPlay-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/FDStackView/FDStackView.framework",
 				"${BUILT_PRODUCTS_DIR}/HMSegmentedControl/HMSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/HexColors/HexColors.framework",
@@ -1882,7 +1884,9 @@
 				"${BUILT_PRODUCTS_DIR}/RegExCategories/RegExCategories.framework",
 				"${BUILT_PRODUCTS_DIR}/SDVersion/SDVersion.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework",
 				"${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework",
+				"${BUILT_PRODUCTS_DIR}/XCDYouTubeKit/XCDYouTubeKit.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 				"${BUILT_PRODUCTS_DIR}/YYText/YYText.framework",
 			);
@@ -1890,6 +1894,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlocksKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDStackView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HexColors.framework",
@@ -1904,7 +1909,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RegExCategories.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDVersion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVGKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebViewJavascriptBridge.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCDYouTubeKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYText.framework",
 			);
@@ -1987,6 +1994,7 @@
 				FEDF8FDE2144D04B005C7C4D /* HTMatchHomeGroupHeaderView.m in Sources */,
 				FEEABBF6214AA57600A585DA /* HTDataCellPlayerView.m in Sources */,
 				FEC1162B2143D4A1002DB617 /* BJLoadingHud.m in Sources */,
+				32642A5722EFE8FD00D2DA1E /* UIImageView+SVG.m in Sources */,
 				FECCA57722598143009EF494 /* DRPhotoKeyboardCell.m in Sources */,
 				FEC116C42143D4A1002DB617 /* UITableView+EstimatedHeight.m in Sources */,
 				FE08C5C82250506A000175CB /* HTMeHomeViewController.m in Sources */,

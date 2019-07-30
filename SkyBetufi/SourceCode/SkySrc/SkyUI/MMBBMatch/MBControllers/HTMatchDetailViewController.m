@@ -15,6 +15,7 @@
 #import <WebKit/WebKit.h>
 #import "HTMatchLiveFeedRequest.h"
 #import "HTMatchSummaryRequest.h"
+#import "UIImageView+SVG.h"
 
 @interface HTMatchDetailViewController () <UIScrollViewDelegate>
 
@@ -26,8 +27,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *awayTeamPtsLabel;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 
-@property (strong, nonatomic) WKWebView *homeTeamLogoWeb;
-@property (strong, nonatomic) WKWebView *awayTeamLogoWeb;
+//@property (strong, nonatomic) WKWebView *homeTeamLogoWeb;
+//@property (strong, nonatomic) WKWebView *awayTeamLogoWeb;
 
 @property (nonatomic, strong) HMSegmentedControl *segmentControl;
 @property (nonatomic, strong) UIScrollView *containerView;
@@ -88,22 +89,24 @@
         make.top.mas_equalTo(self.segmentControl.mas_bottom).mas_offset(1);
     }];
     
-    [self.view addSubview:self.homeTeamLogoWeb];
-    [self.homeTeamLogoWeb mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.homeTeamLogo);
-        make.left.equalTo(self.homeTeamLogo);
-        make.bottom.equalTo(self.homeTeamLogo);
-        make.right.equalTo(self.homeTeamLogo);
-    }];
+//    [self.view addSubview:self.homeTeamLogoWeb];
+//    [self.homeTeamLogoWeb mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.homeTeamLogo);
+//        make.left.equalTo(self.homeTeamLogo);
+//        make.bottom.equalTo(self.homeTeamLogo);
+//        make.right.equalTo(self.homeTeamLogo);
+//    }];
+//
+//    [self.view addSubview:self.awayTeamLogoWeb];
+//    [self.awayTeamLogoWeb mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.awayTeamLogo);
+//        make.left.equalTo(self.awayTeamLogo);
+//        make.bottom.equalTo(self.awayTeamLogo);
+//        make.right.equalTo(self.awayTeamLogo);
+//    }];
     
-    [self.view addSubview:self.awayTeamLogoWeb];
-    [self.awayTeamLogoWeb mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.awayTeamLogo);
-        make.left.equalTo(self.awayTeamLogo);
-        make.bottom.equalTo(self.awayTeamLogo);
-        make.right.equalTo(self.awayTeamLogo);
-    }];
-    
+    self.homeTeamLogo.contentMode = UIViewContentModeScaleAspectFit;
+    self.awayTeamLogo.contentMode = UIViewContentModeScaleAspectFit;
     [self segmentedValueChangedHandle:0];
     [self.view showLoadingView];
 }
@@ -169,26 +172,43 @@
     }
     
     self.homeTeamLogo.hidden = YES;
-    self.homeTeamLogoWeb.hidden = YES;
+//    self.homeTeamLogoWeb.hidden = YES;
     self.awayTeamLogo.hidden = YES;
-    self.awayTeamLogoWeb.hidden = YES;
+//    self.awayTeamLogoWeb.hidden = YES;
     
-    if (self.matchSummaryModel.img_home_logo) {
-        self.homeTeamLogoWeb.hidden = NO;
-        [self.homeTeamLogoWeb loadHTMLString:self.matchSummaryModel.img_home_logo baseURL:nil];
-    } else {
-        self.homeTeamLogo.hidden = NO;
+//    if (self.matchSummaryModel.img_home_logo) {
+//        self.homeTeamLogoWeb.hidden = NO;
+//        [self.homeTeamLogoWeb loadHTMLString:self.matchSummaryModel.img_home_logo baseURL:nil];
+//    } else {
+//        self.homeTeamLogo.hidden = NO;
+//        [self.homeTeamLogo sd_setImageWithURL:[NSURL URLWithString:self.matchSummaryModel.homeLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
+//    }
+    self.homeTeamLogo.hidden = NO;
+    if ([self.matchSummaryModel.homeLogo hasSuffix:@"svg"]) {
+        
+        [self.homeTeamLogo svg_setImageWithURL:[NSURL URLWithString:self.matchSummaryModel.homeLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
+        
+    }else{
         [self.homeTeamLogo sd_setImageWithURL:[NSURL URLWithString:self.matchSummaryModel.homeLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
     }
+    
+    
     self.homeTeamPtsLabel.text = self.matchSummaryModel.home_pts;
     
-    if (self.matchSummaryModel.img_away_logo) {
-        self.awayTeamLogoWeb.hidden = NO;
-        [self.awayTeamLogoWeb loadHTMLString:self.matchSummaryModel.img_away_logo baseURL:nil];
-    } else {
-        self.awayTeamLogo.hidden = NO;
+//    if (self.matchSummaryModel.img_away_logo) {
+//        self.awayTeamLogoWeb.hidden = NO;
+//        [self.awayTeamLogoWeb loadHTMLString:self.matchSummaryModel.img_away_logo baseURL:nil];
+//    } else {
+//        self.awayTeamLogo.hidden = NO;
+//        [self.awayTeamLogo sd_setImageWithURL:[NSURL URLWithString:self.matchSummaryModel.awayLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
+//    }
+    self.awayTeamLogo.hidden = NO;
+    if ([self.matchSummaryModel.awayLogo hasSuffix:@"svg"]) {
+        [self.awayTeamLogo svg_setImageWithURL:[NSURL URLWithString:self.matchSummaryModel.awayLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
+    }else{
         [self.awayTeamLogo sd_setImageWithURL:[NSURL URLWithString:self.matchSummaryModel.awayLogo] placeholderImage:HT_DEFAULT_TEAM_LOGO];
     }
+    
     self.awayTeamPtsLabel.text = self.matchSummaryModel.away_pts;
     
     self.timeLabel.hidden = YES;
@@ -350,23 +370,23 @@
     return _containerView;
 }
 
-- (WKWebView *)homeTeamLogoWeb {
-    if (!_homeTeamLogoWeb) {
-        _homeTeamLogoWeb = [[WKWebView alloc] init];
-        _homeTeamLogoWeb.scrollView.scrollEnabled = NO;
-        _homeTeamLogoWeb.backgroundColor = [UIColor clearColor];
-    }
-    return _homeTeamLogoWeb;
-}
-
-- (WKWebView *)awayTeamLogoWeb {
-    if (!_awayTeamLogoWeb) {
-        _awayTeamLogoWeb = [[WKWebView alloc] init];
-        _awayTeamLogoWeb.scrollView.scrollEnabled = NO;
-        _awayTeamLogoWeb.backgroundColor = [UIColor clearColor];
-    }
-    return _awayTeamLogoWeb;
-}
+//- (WKWebView *)homeTeamLogoWeb {
+//    if (!_homeTeamLogoWeb) {
+//        _homeTeamLogoWeb = [[WKWebView alloc] init];
+//        _homeTeamLogoWeb.scrollView.scrollEnabled = NO;
+//        _homeTeamLogoWeb.backgroundColor = [UIColor clearColor];
+//    }
+//    return _homeTeamLogoWeb;
+//}
+//
+//- (WKWebView *)awayTeamLogoWeb {
+//    if (!_awayTeamLogoWeb) {
+//        _awayTeamLogoWeb = [[WKWebView alloc] init];
+//        _awayTeamLogoWeb.scrollView.scrollEnabled = NO;
+//        _awayTeamLogoWeb.backgroundColor = [UIColor clearColor];
+//    }
+//    return _awayTeamLogoWeb;
+//}
 
 
 
