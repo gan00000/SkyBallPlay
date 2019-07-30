@@ -14,14 +14,13 @@
 @interface PPXXBJLaunchViewController () <CAAnimationDelegate>
 
 @property (nonatomic, strong) PPXXBJMainViewController *tabBarController;
+@property (nonatomic, assign) NSInteger tryTimes;
 
 @end
 
 @implementation PPXXBJLaunchViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    BJLog(@"getRequestCommon start");
+- (void)requestConfig {
     [BJHTTPServiceEngine skarg_getRequestCommon:@"ios_config.json" params:nil successBlock:^(id responseData) {
         
         NSDictionary *configDictionary = responseData; //[NSDictionary dictionaryWithDictionary:responseData];
@@ -42,30 +41,42 @@
         [[UIApplication sharedApplication].delegate.window insertSubview:self.tabBarController.view atIndex:0];
         CATransition *animation = [CATransition animation];
         animation.delegate = self;
-        animation.duration = 0.1f;//间隔时间
+        animation.duration = 0.2f;//间隔时间
         animation.timingFunction = [CAMediaTimingFunction functionWithName:@"easeInEaseOut"];
         animation.type = kCATransitionFade;
         
         [[UIApplication sharedApplication].delegate.window exchangeSubviewAtIndex:1 withSubviewAtIndex:0];
         [[UIApplication sharedApplication].delegate.window.layer addAnimation:animation forKey:@"animation"];
-
+        
         
     } errorBlock:^(BJError *error) {
         
         BJLog(@"ERROR:%@",error);
         
+        if (self.tryTimes == 0) {
+            self.tryTimes++;
+            [self requestConfig];
+            return;
+        }
+        
         [[UIApplication sharedApplication].delegate.window insertSubview:self.tabBarController.view atIndex:0];
         CATransition *animation = [CATransition animation];
         animation.delegate = self;
-        animation.duration = 0.1f;//间隔时间
+        animation.duration = 0.2f;//间隔时间
         animation.timingFunction = [CAMediaTimingFunction functionWithName:@"easeInEaseOut"];
         animation.type = kCATransitionFade;
         
         [[UIApplication sharedApplication].delegate.window exchangeSubviewAtIndex:1 withSubviewAtIndex:0];
         [[UIApplication sharedApplication].delegate.window.layer addAnimation:animation forKey:@"animation"];
-
         
     }];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    BJLog(@"getRequestCommon start");
+    self.tryTimes = 0;
+    [self requestConfig];
     
     NSString *imageName = [NSString stringWithFormat:@"%ldx%ld", (long)(SCREEN_WIDTH*SCREEN_SCALE), (long)(SCREEN_HEIGHT*SCREEN_SCALE)];
     UIImage *image = [UIImage imageNamed:imageName];
