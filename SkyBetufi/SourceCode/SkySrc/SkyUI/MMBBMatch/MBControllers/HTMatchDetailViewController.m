@@ -16,6 +16,7 @@
 #import "HTMatchLiveFeedRequest.h"
 #import "HTMatchSummaryRequest.h"
 #import "UIImageView+SVG.h"
+#import "HTMatchVideoLiveViewController.h"
 
 @interface HTMatchDetailViewController () <UIScrollViewDelegate>
 
@@ -274,8 +275,13 @@
 - (void)loadChildViewControllerByIndex:(NSInteger)index {
     if ([self.loadedFlagArray[index] boolValue]) {
         if (index == 0) {
-            HTMatchWordLiveViewController *wordVc = self.loadedControllersArray[index];
-            [wordVc skargrefreshWithLiveFeedList:self.liveFeedList];
+//            HTMatchWordLiveViewController *wordVc = self.loadedControllersArray[index];
+//            [wordVc skargrefreshWithLiveFeedList:self.liveFeedList];
+            
+            HTMatchVideoLiveViewController *detailVc = [HTMatchVideoLiveViewController skargviewController];
+            detailVc.post_id = self.matchModel.game_id;
+//            [weakSelf.navigationController pushViewController:detailVc animated:YES];
+            
         } else if (index == 1) {
             HTMatchCompareViewController *compareVc = self.loadedControllersArray[index];
             [compareVc skargrefreshWithMatchSummaryModel:self.matchSummaryModel];
@@ -289,11 +295,16 @@
     kWeakSelf
     UIViewController *vc;
     if (index == 0) {
-        HTMatchWordLiveViewController *wordVc = [HTMatchWordLiveViewController skargviewController];
-        wordVc.onTableHeaderRefreshBlock = ^{
-            [weakSelf loadData];
-        };
-        vc = wordVc;
+//        HTMatchWordLiveViewController *wordVc = [HTMatchWordLiveViewController skargviewController];
+//        wordVc.onTableHeaderRefreshBlock = ^{
+//            [weakSelf loadData];
+//        };
+//        vc = wordVc;
+        
+        HTMatchVideoLiveViewController *detailVc = [HTMatchVideoLiveViewController skargviewController];
+        detailVc.post_id = self.matchModel.game_idT;
+        vc = detailVc;
+        
     } else if (index == 1) {
         HTMatchCompareViewController *compareVc = [HTMatchCompareViewController skargviewController];
         [compareVc skargrefreshWithMatchSummaryModel:self.matchSummaryModel];
@@ -339,7 +350,7 @@
 
 - (HMSegmentedControl *)segmentControl {
     if (!_segmentControl) {
-        _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"文字直播", @"對陣", @"數據統計"]];
+        _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:@[@"視頻直播", @"對陣", @"數據統計"]];
         _segmentControl.selectionIndicatorColor = [UIColor hx_colorWithHexRGBAString:@"fc562e"];
         _segmentControl.selectionIndicatorHeight = 3.0f;
         _segmentControl.selectionIndicatorEdgeInsets = UIEdgeInsetsMake(0, -8, 0, -18);

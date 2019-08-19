@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		321AB4C7230534900026EB18 /* HTMatchVideoLive.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 321AB4C6230534900026EB18 /* HTMatchVideoLive.storyboard */; };
+		321AB4CA230534B80026EB18 /* HTMatchVideoLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 321AB4C9230534B80026EB18 /* HTMatchVideoLiveViewController.m */; };
 		32642A5722EFE8FD00D2DA1E /* UIImageView+SVG.m in Sources */ = {isa = PBXBuildFile; fileRef = 32642A5622EFE8FD00D2DA1E /* UIImageView+SVG.m */; };
 		32ABE1CC22EDF4C2008505BA /* HTNewsHomeOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32ABE1CA22EDF4C1008505BA /* HTNewsHomeOtherViewController.m */; };
 		32ABE1CE22EDF4D0008505BA /* NewsHomeOther.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32ABE1CD22EDF4D0008505BA /* NewsHomeOther.storyboard */; };
@@ -268,6 +270,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		321AB4C6230534900026EB18 /* HTMatchVideoLive.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HTMatchVideoLive.storyboard; sourceTree = "<group>"; };
+		321AB4C8230534B80026EB18 /* HTMatchVideoLiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMatchVideoLiveViewController.h; sourceTree = "<group>"; };
+		321AB4C9230534B80026EB18 /* HTMatchVideoLiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMatchVideoLiveViewController.m; sourceTree = "<group>"; };
 		325BD8C522E0705D00A07EC9 /* PPXXBJLaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPXXBJLaunchViewController.h; sourceTree = "<group>"; };
 		325BD8C822E07D6F00A07EC9 /* confuse.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = confuse.sh; sourceTree = "<group>"; };
 		325BD8C922E07D6F00A07EC9 /* func.list */ = {isa = PBXFileReference; lastKnownFileType = text; path = func.list; sourceTree = "<group>"; };
@@ -1145,6 +1150,7 @@
 				FEC116EE2143D8C9002DB617 /* MatchHome.storyboard */,
 				FE6BD0512144FC270090118A /* MatchDetail.storyboard */,
 				FE6BD05F2144FED00090118A /* MatchWordLive.storyboard */,
+				321AB4C6230534900026EB18 /* HTMatchVideoLive.storyboard */,
 				FE6BD0612144FEF90090118A /* MatchCompare.storyboard */,
 				FE6BD0632144FF1F0090118A /* MatchDashboard.storyboard */,
 				FEDABE6F217385F4008C8AFD /* MatchSubDsbd.storyboard */,
@@ -1209,6 +1215,8 @@
 		FEC116D82143D82D002DB617 /* MBControllers */ = {
 			isa = PBXGroup;
 			children = (
+				321AB4C8230534B80026EB18 /* HTMatchVideoLiveViewController.h */,
+				321AB4C9230534B80026EB18 /* HTMatchVideoLiveViewController.m */,
 				FEC116F02143D91D002DB617 /* HTMatchHomeViewController.h */,
 				FEC116F12143D91D002DB617 /* HTMatchHomeViewController.m */,
 				FE6BD04E2144FC190090118A /* HTMatchDetailViewController.h */,
@@ -1820,6 +1828,7 @@
 				FECCA5372258C8D0009EF494 /* HTLikeViewController.xib in Resources */,
 				FE706F04214FF3530078DF30 /* DataMore.storyboard in Resources */,
 				FE6BD0602144FED00090118A /* MatchWordLive.storyboard in Resources */,
+				321AB4C7230534900026EB18 /* HTMatchVideoLive.storyboard in Resources */,
 				FEDF8FC5214441C6005C7C4D /* HTMatchHomeCell.xib in Resources */,
 				FE81D14D2146CA1F0047A4A2 /* logo_load.html in Resources */,
 				FE81D14B2146B3090047A4A2 /* HTFilmHomeCell.xib in Resources */,
@@ -2040,6 +2049,7 @@
 				FECCA57C2259824F009EF494 /* DRDeleteAlertView.m in Sources */,
 				FEAC9F2E2199E25F00159AE9 /* HTSettingViewController.m in Sources */,
 				FEC116152143D4A1002DB617 /* MJRefreshGenerator.m in Sources */,
+				321AB4CA230534B80026EB18 /* HTMatchVideoLiveViewController.m in Sources */,
 				FEC1160C2143D4A1002DB617 /* XJEmptyView.m in Sources */,
 				FE82BB4D2179B7F100C52C51 /* HTDataPlayerRankModel.m in Sources */,
 				FECCA5252258C8D0009EF494 /* HTMeCenterHeaderCell.m in Sources */,

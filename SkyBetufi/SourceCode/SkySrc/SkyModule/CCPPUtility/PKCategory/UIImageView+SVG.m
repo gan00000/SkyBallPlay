@@ -12,7 +12,12 @@
 
 - (void)svg_setImageWithURL:(nullable NSURL *)url placeholderImage:(nullable UIImage *)placeholder {
     
-    SVGKImage *theSvgImage = [SVGKImage imageWithData:[NSData dataWithContentsOfURL:url]];
+    NSData *svgImageData = [NSData dataWithContentsOfURL:url];
+    SVGKImage *theSvgImage;
+    if (svgImageData) {
+         theSvgImage = [SVGKImage imageWithData:svgImageData];
+    }
+   
     if (theSvgImage && theSvgImage.UIImage) {
         [self setImage:theSvgImage.UIImage];
     }else
